@@ -24,6 +24,7 @@ import com.jerry.electrical_checklist.ChecklistCatalog.ReferenceDocument;
 /** Offline, in-app reference reader. Document resources are confined to a serial worker. */
 public final class DocumentReaderActivity extends AppCompatActivity {
     public static final String EXTRA_AIRCRAFT_ID = "aircraft_id";
+    public static final String EXTRA_INITIAL_PAGE = "initial_page";
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
     private List<ReferenceDocument> documents;
     private DocumentPageView pageView;
@@ -66,6 +67,7 @@ public final class DocumentReaderActivity extends AppCompatActivity {
         } catch (Exception error) {
             showError(); findViewById(R.id.reader_retry).setVisibility(View.GONE); return;
         }
+        pageIndex = Math.max(0, getIntent().getIntExtra(EXTRA_INITIAL_PAGE, 0));
         if (savedState != null) {
             documentIndex = Math.max(0, Math.min(documents.size() - 1, savedState.getInt("document")));
             pageIndex = Math.max(0, savedState.getInt("page"));

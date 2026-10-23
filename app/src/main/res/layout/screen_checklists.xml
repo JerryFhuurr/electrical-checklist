@@ -4,14 +4,15 @@
         <TextView android:id="@+id/model_eyebrow" style="@style/Eyebrow"/>
         <TextView android:id="@+id/model_title" style="@style/PageTitle"/>
         <TextView style="@style/BodyText" android:text="@string/choose_phase"/>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:orientation="vertical" android:padding="20dp" android:background="@drawable/panel_background">
-            <TextView android:id="@+id/model_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="30sp" android:textStyle="bold" android:textColor="@color/accent"/>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/checklists_complete" android:textColor="@color/muted" android:textSize="11sp" android:textStyle="bold"/>
-            <ProgressBar android:id="@+id/model_progress" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="5dp" android:layout_marginTop="18dp" android:progressTint="@color/accent" android:progressBackgroundTint="@color/border"/>
-        </LinearLayout>
         <TextView style="@style/Eyebrow" android:layout_marginTop="24dp" android:text="@string/flight_phases"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/view_checklist_button" style="@style/PrimaryAction" android:layout_marginTop="12dp" android:layout_marginBottom="6dp" android:text="@string/view_checklist"/>
+        <TextView android:id="@+id/checklist_mode_label" style="@style/BodyText" android:textSize="12sp" android:visibility="gone"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/checklist_mode_button" style="@style/TextAction" android:layout_width="match_parent" android:visibility="gone"/>
         <LinearLayout android:id="@+id/phase_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/extended_reference_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <TextView android:id="@+id/extended_reference_note" style="@style/BodyText" android:textSize="13sp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/extended_reference_button" style="@style/TextAction" android:text="@string/view_reference_data"/>
+        </LinearLayout>
         <com.google.android.material.button.MaterialButton android:id="@+id/source_button" style="@style/TextAction" android:layout_marginTop="18dp" android:text="@string/source_notes"/>
     </LinearLayout>
 </ScrollView>

@@ -6,6 +6,11 @@
     <string name="reset_all_description">Reset all checklists for all aircraft</string>
     <string name="back_checklists">Back to checklists</string>
     <string name="back_aircraft">Back to aircraft</string>
+    <string name="back_manufacturers">Back to manufacturers</string>
+    <string name="manufacturers_title">MANUFACTURERS</string>
+    <string name="choose_manufacturer">Choose a manufacturer, then your aircraft model to open its checklists.</string>
+    <string name="select_aircraft">Choose aircraft  →</string>
+    <string name="open_manufacturer_description">Choose aircraft from %1$s</string>
     <string name="flight_companion">YOUR FLIGHT COMPANION</string>
     <string name="home_title">Every check.\nA little clearer.</string>
     <string name="choose_aircraft">Choose your aircraft to start a checklist or pick up where you left off.</string>
@@ -18,13 +23,8 @@
     <string name="normal_checklists">NORMAL CHECKLISTS</string>
     <string name="open_checklists">Open checklists  →</string>
     <string name="choose_phase">Choose a flight phase. Progress is saved as you check.</string>
-    <string name="checklists_complete">CHECKLISTS COMPLETE</string>
     <string name="flight_phases">FLIGHT PHASES</string>
     <string name="aircraft_description">%1$s / %2$s / %3$s</string>
-    <plurals name="aircraft_status">
-        <item quantity="one">%1$d of %2$d checklist complete</item>
-        <item quantity="other">%1$d of %2$d checklists complete</item>
-    </plurals>
     <plurals name="checklist_count">
         <item quantity="one">%d checklist</item>
         <item quantity="other">%d checklists</item>
@@ -33,7 +33,6 @@
         <item quantity="one">%d item</item>
         <item quantity="other">%d items</item>
     </plurals>
-    <string name="fraction">%1$d / %2$d</string>
     <string name="model_eyebrow">%1$s / NORMAL CHECKLISTS</string>
     <string name="phase_status" tools:ignore="PluralsCandidate">%1$s  ·  %2$d / %3$d checked</string>
     <string name="complete">Complete</string>
@@ -45,12 +44,11 @@
     <string name="mark_item">Mark item as complete</string>
     <string name="mark_checklist">Mark checklist as complete</string>
     <string name="checklist_done">Checklist complete</string>
-    <string name="checklist_legend">* Through flights   ·   ** If applicable\nBlank responses (___) are values to verify in the aircraft.</string>
     <string name="reset_title">Reset all checklists?</string>
     <string name="reset_message">Clear every checked item and completed checklist for all aircraft. This starts a new session.</string>
     <string name="cancel">Cancel</string>
     <string name="reset_success">All checklist progress reset</string>
-    <string name="source_message">%1$s\n\n%2$s\n\nSource markers\n* Through flights\n** If applicable\n\nAll items remain visible; these markers do not skip items automatically. Blank responses are retained from the PDF.\n\nFlight simulation use. This transcription has not been approved for aircraft operation.</string>
+    <string name="source_message">%1$s\n\n%2$s\n\n%3$s\n\nFlight simulation use. This transcription has not been approved for aircraft operation.</string>
     <string name="got_it">Got it</string>
     <string name="load_error_title">Unable to open checklists</string>
     <string name="load_error_message">The bundled checklist data could not be read. Please reinstall the app.</string>
@@ -78,4 +76,13 @@
     <string name="reader_next">Next</string>
     <string name="reader_page_count">Page %1$d / %2$d</string>
     <string name="reader_page_description">%1$s, page %2$d of %3$d</string>
+    <string name="show_extended">Show extended items</string>
+    <string name="show_normal">Show normal checklist</string>
+    <string name="normal_mode_label">Normal checklist - page 1</string>
+    <string name="extended_mode_label">Extended items - pages 2-4</string>
+    <string name="model_eyebrow_extended">%1$s / EXTENDED ITEMS</string>
+    <string name="view_reference_data">View reference data (page 4)</string>
+    <string name="open_aircraft_description">Open checklists for %1$s</string>
+    <string name="reference_notes">Reference notes</string>
+    <string name="continue_checklist">Continue to next checklist</string>
 </resources>

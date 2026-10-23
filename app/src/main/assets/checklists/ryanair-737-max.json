@@ -1,0 +1,663 @@
+{
+  "id": "ryanair-737-max",
+  "manufacturer": "Boeing",
+  "name": "Boeing 737 MAX Family",
+  "operator": "Ryanair / 737-8200",
+  "source": "RYANAIR BOEING 737-8200.pdf",
+  "notice": "Flight Crews must complete both Safety Inspection and Before Start Checklists in their entirety if Engineering have performed any maintenance actions (with the exception of Weight Change) with the aircraft during a turnaround or during a crew change. This entry uses the supplied Ryanair 737-8200 source checklist.",
+  "checklists": [
+    {
+      "id": "safety-inspection",
+      "name": "Safety Inspection",
+      "description": "Prepare the aircraft",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "surfaces-chocks",
+          "challenge": "SURFACES & CHOCKS",
+          "response": "CHECKED",
+          "sourcePage": 1
+        },
+        {
+          "id": "maintenance-status",
+          "challenge": "MAINTENANCE STATUS",
+          "response": "CHECKED",
+          "sourcePage": 1
+        },
+        {
+          "id": "battery",
+          "challenge": "BATTERY",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "electric-hydraulic-pumps",
+          "challenge": "ELECTRIC HYDRAULIC PUMPS",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "landing-gear-lever",
+          "challenge": "LANDING GEAR LEVER",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "ships-library",
+          "challenge": "SHIPS LIBRARY",
+          "response": "CHECKED",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "before-start",
+      "name": "Before Start",
+      "description": "Flight deck preparation",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "irs-mode-selectors",
+          "challenge": "IRS MODE SELECTORS",
+          "response": "NAV",
+          "sourcePage": 1
+        },
+        {
+          "id": "gear-pins",
+          "challenge": "GEAR PINS",
+          "response": "1,2,3 REMOVED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "probe-covers",
+          "challenge": "PROBE COVERS",
+          "response": "1,2,3,4,5 REMOVED",
+          "sourcePage": 1,
+          "note": "If applicable (**)"
+        },
+        {
+          "id": "elt",
+          "challenge": "ELT",
+          "response": "ARM",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "light-test",
+          "challenge": "LIGHT TEST",
+          "response": "CHECKED",
+          "sourcePage": 1
+        },
+        {
+          "id": "oxygen",
+          "challenge": "OXYGEN",
+          "response": "TESTED, 100%",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "yaw-damper",
+          "challenge": "YAW DAMPER",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "nav-transfer-display-switches",
+          "challenge": "NAV TRANSFER & DISPLAY SWITCHES",
+          "response": "NORMAL, AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel",
+          "challenge": "FUEL",
+          "response": "___ REQ'D, ___ ONBOARD, ___ PUMPS ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "cab-util-ife-galley-power",
+          "challenge": "CAB/UTIL, IFE/GALLEY POWER",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "As installed"
+        },
+        {
+          "id": "emergency-exit-lights",
+          "challenge": "EMERGENCY EXIT LIGHTS",
+          "response": "ARMED",
+          "sourcePage": 1
+        },
+        {
+          "id": "fasten-belts",
+          "challenge": "FASTEN BELTS",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "window-heat",
+          "challenge": "WINDOW HEAT",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "air-cond-press",
+          "challenge": "AIR COND & PRESS",
+          "response": "PACKS ___, BLEEDS ON, SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "pressurization-mode-selector",
+          "challenge": "PRESSURIZATION MODE SELECTOR",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "instruments",
+          "challenge": "INSTRUMENTS",
+          "response": "X-CHECKED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "autobrake",
+          "challenge": "AUTOBRAKE",
+          "response": "RTO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "hydraulics",
+          "challenge": "HYDRAULICS",
+          "response": "NORMAL",
+          "sourcePage": 1
+        },
+        {
+          "id": "speedbrake",
+          "challenge": "SPEEDBRAKE",
+          "response": "DOWN DETENT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "stab-trim-cutout-switches",
+          "challenge": "STAB TRIM CUTOUT SWITCHES",
+          "response": "NORMAL",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "wheel-well-fire-warning",
+          "challenge": "WHEEL WELL FIRE WARNING",
+          "response": "CHECKED",
+          "sourcePage": 1
+        },
+        {
+          "id": "radios-radar-txpdr",
+          "challenge": "RADIOS, RADAR & TXPDR",
+          "response": "SET & STBY",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "rudder-aileron-trims",
+          "challenge": "RUDDER & AILERON TRIMS",
+          "response": "FREE & ZERO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "takeoff-briefing",
+          "challenge": "TAKEOFF BRIEFING",
+          "response": "DISCUSSED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "pa",
+          "challenge": "PA",
+          "response": "COMPLETE",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "fmc-cdu",
+          "challenge": "FMC/CDU",
+          "response": "SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "n1-ias-bugs",
+          "challenge": "N1, IAS BUGS",
+          "response": "AUTO ___ / ___ SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "stab-trim",
+          "challenge": "STAB TRIM",
+          "response": "___ SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "performance-w-b",
+          "challenge": "PERFORMANCE/W&B",
+          "response": "SIGNED & SENT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "phones",
+          "challenge": "PHONES",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "efb",
+          "challenge": "EFB",
+          "response": "AIRPLANE MODE, STOWED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "flight-deck-windows-cockpit-door",
+          "challenge": "FLIGHT DECK WINDOWS & COCKPIT DOOR",
+          "response": "LOCKED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "doors",
+          "challenge": "DOORS",
+          "response": "CLOSED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "passengers",
+          "challenge": "PASSENGERS",
+          "response": "SEATED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "air-cond-packs",
+          "challenge": "AIR COND PACKS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)",
+          "group": "Below the line"
+        },
+        {
+          "id": "anticollision-light",
+          "challenge": "ANTICOLLISION LIGHT",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "parking-brake-final",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "transponder",
+          "challenge": "TRANSPONDER",
+          "response": "ALT OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        }
+      ]
+    },
+    {
+      "id": "before-taxi",
+      "name": "Before Taxi",
+      "description": "Ready for taxi",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "generators",
+          "challenge": "GENERATORS",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "___",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "start-switches",
+          "challenge": "START SWITCHES",
+          "response": "CONT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "probe-heat",
+          "challenge": "PROBE HEAT",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "___",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "air-cond",
+          "challenge": "AIR COND",
+          "response": "PACKS AUTO, BLEEDS ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "isolation-valve",
+          "challenge": "ISOLATION VALVE",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "___ REQ'D ___ SEL'D, GREEN LIGHT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "stab-trim",
+          "challenge": "STAB TRIM",
+          "response": "___ UNITS REQ'D, ___ SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "start-levers",
+          "challenge": "START LEVERS",
+          "response": "IDLE DETENT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "flight-controls",
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECKED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "recall",
+          "challenge": "RECALL",
+          "response": "CHECKED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        }
+      ]
+    },
+    {
+      "id": "shutdown",
+      "name": "Shutdown",
+      "description": "After parking",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "fuel-pumps",
+          "challenge": "FUEL PUMPS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "electrical",
+          "challenge": "ELECTRICAL",
+          "response": "ON ___",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "fasten-belts",
+          "challenge": "FASTEN BELTS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "window-heat",
+          "challenge": "WINDOW HEAT",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "probe-heat",
+          "challenge": "PROBE HEAT",
+          "response": "AUTO/OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "electric-hydraulic-pumps",
+          "challenge": "ELECTRIC HYDRAULIC PUMPS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "voice-recorder",
+          "challenge": "VOICE RECORDER",
+          "response": "*ON/AUTO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "air-cond-pack-s",
+          "challenge": "AIR COND PACK(S)",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "eng-bleed",
+          "challenge": "ENG BLEED",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU BLEED",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "exterior-lights",
+          "challenge": "EXTERIOR LIGHTS",
+          "response": "___",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "start-switches",
+          "challenge": "START SWITCHES",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "autobrake",
+          "challenge": "AUTOBRAKE",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "speedbrake",
+          "challenge": "SPEEDBRAKE",
+          "response": "DOWN DETENT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "UP, NO LIGHTS",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "start-levers",
+          "challenge": "START LEVERS",
+          "response": "CUTOFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "weather-radar",
+          "challenge": "WEATHER RADAR",
+          "response": "OFF",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "transponder",
+          "challenge": "TRANSPONDER",
+          "response": "2000, STANDBY",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "cvr-cb",
+          "challenge": "CVR CB",
+          "response": "IN/OUT",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "cockpit-door",
+          "challenge": "COCKPIT DOOR",
+          "response": "UNLOCKED",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        },
+        {
+          "id": "elt",
+          "challenge": "ELT",
+          "response": "ARM",
+          "sourcePage": 1,
+          "note": "Through flights (*)"
+        }
+      ]
+    },
+    {
+      "id": "secure",
+      "name": "Secure",
+      "description": "Leave the aircraft secured",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "irs-mode-selectors",
+          "challenge": "IRS MODE SELECTORS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "cab-util-ife-galley-power",
+          "challenge": "CAB/UTIL, IFE/GALLEY POWER",
+          "response": "ON",
+          "sourcePage": 1,
+          "note": "As installed"
+        },
+        {
+          "id": "elt",
+          "challenge": "ELT",
+          "response": "ARM",
+          "sourcePage": 1
+        },
+        {
+          "id": "emergency-exit-lights",
+          "challenge": "EMERGENCY EXIT LIGHTS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "air-cond-packs",
+          "challenge": "AIR COND PACKS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "trim-air",
+          "challenge": "TRIM AIR",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-ground-power",
+          "challenge": "APU / GROUND POWER",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "battery",
+          "challenge": "BATTERY",
+          "response": "OFF",
+          "sourcePage": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "normal-checklist",
+      "title": "Ryanair 737-8200 Normal Checklist",
+      "path": "references/ryanair-737-max/normal-checklist.pdf"
+    }
+  ],
+  "legend": "* Through flights   ·   ** If applicable\nBlank responses (___) are values to verify in the aircraft."
+}

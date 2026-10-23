@@ -1,0 +1,2107 @@
+{
+  "id": "ini-a350",
+  "manufacturer": "Airbus",
+  "name": "Airbus A350",
+  "operator": "iniBuilds",
+  "source": "INI A350.pdf",
+  "notice": "Transcribed from the supplied INI A350 checklist. Section headings and embedded notes are preserved as non-interactive text. Source spelling and simulator-specific reminders are retained.",
+  "legend": "Subheadings and notes are informational; only checkbox rows count toward completion.",
+  "checklists": [
+    {
+      "id": "pre-flight",
+      "name": "PRE FLIGHT",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "vatsim-flightplan-filed-volanta-va-tracking-started-simbreif",
+          "type": "note",
+          "text": "VATSIM Flightplan filed? Volanta/VA Tracking Started? Simbreif\nFlightplan Imported?",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "preliminary-cockpit-preparation",
+      "name": "Preliminary Cockpit Preparation",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "engine-master-switches",
+          "challenge": "ENGINE MASTER SWITCHES",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "parking-brake-or-chocks",
+          "challenge": "PARKING BRAKE(OR CHOCKS)",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "speed-brake-lever",
+          "challenge": "SPEED BRAKE LEVER",
+          "response": "RETRACTED",
+          "sourcePage": 1
+        },
+        {
+          "id": "flaps-lever",
+          "challenge": "FLAPS LEVER",
+          "response": "RETRACTED",
+          "sourcePage": 1
+        },
+        {
+          "id": "weather-radar",
+          "challenge": "WEATHER RADAR",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "ENGINE MODE SELECTOR",
+          "response": "NORM",
+          "sourcePage": 1
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "THRUST LEVERS",
+          "response": "IDLE",
+          "sourcePage": 1
+        },
+        {
+          "id": "gear-lever",
+          "challenge": "GEAR LEVER",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "wipers-both",
+          "challenge": "WIPERS(BOTH)",
+          "response": "OFF",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "power-up",
+      "name": "POWER UP",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "battery-voltage",
+          "challenge": "BATTERY VOLTAGE",
+          "response": "WITHIN LIMITS",
+          "sourcePage": 1
+        },
+        {
+          "id": "all-batteries",
+          "challenge": "ALL BATTERIES",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "all-external-power",
+          "challenge": "ALL EXTERNAL POWER",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "cockpit-lighting",
+          "challenge": "COCKPIT LIGHTING",
+          "response": "AS REQ",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "ois-mfd",
+      "name": "OIS & MFD",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "flt-ops",
+          "challenge": "FLT OPS",
+          "response": "Simbrief Import",
+          "sourcePage": 1
+        },
+        {
+          "id": "loadsheet",
+          "challenge": "LOADSHEET",
+          "response": "Simbrief Import",
+          "sourcePage": 1
+        },
+        {
+          "id": "terml-charts",
+          "challenge": "TERML CHARTS",
+          "response": "PIN",
+          "sourcePage": 1
+        },
+        {
+          "id": "gsx",
+          "challenge": "GSX",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "navigation-database",
+          "challenge": "NAVIGATION DATABASE",
+          "response": "CONFIRM",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "overhead-panel-left-bottom-to-top",
+      "name": "Overhead Panel Left (bottom to top)",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "crew-supply",
+          "challenge": "CREW SUPPLY",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "evac-capt-capt-purs",
+          "challenge": "EVAC CAPT/CAPT & PURS",
+          "response": "CAPT",
+          "sourcePage": 1
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "NAV",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "overhead-panel-center-bottom-to-top",
+      "name": "Overhead Panel Center (bottom to top)",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "strobe",
+          "challenge": "STROBE",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "beacon",
+          "challenge": "BEACON",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "remaining-exterior-lights",
+          "challenge": "REMAINING EXTERIOR LIGHTS",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "consider-refueling-in-progress",
+          "type": "heading",
+          "text": "CONSIDER REFUELING IN-PROGRESS",
+          "bold": true,
+          "italic": true,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "seatbelts",
+          "challenge": "SEATBELTS",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "no-smoking",
+          "challenge": "NO SMOKING",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "no-mobile",
+          "challenge": "NO MOBILE",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "emergency-exit-lights",
+          "challenge": "EMERGENCY EXIT LIGHTS",
+          "response": "ARM",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "START",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU BLEED",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "xbleed",
+          "challenge": "XBLEED",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "airflow",
+          "challenge": "AIRFLOW",
+          "response": "NORM",
+          "sourcePage": 1
+        },
+        {
+          "id": "ckpt",
+          "challenge": "CKPT",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "cabin",
+          "challenge": "CABIN",
+          "response": "PURS SEL",
+          "sourcePage": 1
+        },
+        {
+          "id": "trim-tk-feed",
+          "challenge": "TRIM TK FEED",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "FUEL PUMPS",
+          "response": "ALL ON",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "overhead-panel-right-bottom-to-top",
+      "name": "Overhead Panel Right (bottom to top)",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "cargo-air-cond",
+          "challenge": "CARGO AIR COND",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "no-lights",
+          "challenge": "NO LIGHTS",
+          "response": "Check",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "centre-instrument-panel",
+      "name": "Centre Instrument Panel",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "air-data-switch",
+          "challenge": "AIR DATA SWITCH",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "fms-switch",
+          "challenge": "FMS SWITCH",
+          "response": "NORM",
+          "sourcePage": 1
+        },
+        {
+          "id": "isis",
+          "challenge": "ISIS",
+          "response": "ON, ALIGNED, QNH",
+          "sourcePage": 1
+        },
+        {
+          "id": "gear",
+          "challenge": "GEAR",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "anti-skid-a-skid",
+          "challenge": "ANTI SKID (A/SKID)",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "n-w-strg",
+          "challenge": "N/W STRG",
+          "response": "ON",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "pedestal",
+      "name": "Pedestal",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "radios-rmp",
+          "challenge": "RADIOS (RMP)",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "spoiler",
+          "challenge": "SPOILER",
+          "response": "RET",
+          "sourcePage": 1
+        },
+        {
+          "id": "park-brake",
+          "challenge": "PARK BRAKE",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "body-accumulator-pressure",
+          "challenge": "BODY ACCUMULATOR PRESSURE",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "THRUST LEVERS",
+          "response": "IDLE",
+          "sourcePage": 1
+        },
+        {
+          "id": "thrust-reverse",
+          "challenge": "THRUST REVERSE",
+          "response": "STOWED",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-masters",
+          "challenge": "ENGINE MASTERS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "cockpit-door",
+          "challenge": "COCKPIT DOOR",
+          "response": "NORM",
+          "sourcePage": 1
+        },
+        {
+          "id": "obtain-an-ifr-clearance",
+          "type": "heading",
+          "text": "OBTAIN AN IFR CLEARANCE",
+          "bold": true,
+          "italic": false,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "POSITION CROSS CHECK",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "initialise-fms",
+      "name": "Initialise FMS",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "at-this-point-the-flight-management-system-fms-should-be",
+          "type": "note",
+          "text": "At this point, the Flight Management System (FMS) should be\ninitialised.",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "glareshield-lateral-consoles",
+      "name": "Glareshield & Lateral Consoles",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "integral-lights",
+          "challenge": "INTEGRAL LIGHTS",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "barometric-reference",
+          "challenge": "BAROMETRIC REFERENCE",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "nd-mode-and-range",
+          "challenge": "ND MODE AND RANGE",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "wx-radar",
+          "challenge": "WX RADAR",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "other-efis-options",
+          "challenge": "OTHER EFIS OPTIONS",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "spd-hdg",
+          "challenge": "SPD, HDG",
+          "response": "MANAGED",
+          "sourcePage": 1
+        },
+        {
+          "id": "fd",
+          "challenge": "FD",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "alt",
+          "challenge": "ALT",
+          "response": "INITIAL CLIMB (STOP ALT)",
+          "sourcePage": 1
+        },
+        {
+          "id": "north-ref",
+          "challenge": "NORTH REF",
+          "response": "MAG",
+          "sourcePage": 1
+        },
+        {
+          "id": "pfd-nd-modes-check",
+          "challenge": "PFD/ND MODES CHECK",
+          "response": "CONFIRM",
+          "sourcePage": 1
+        },
+        {
+          "id": "oxygen-masks",
+          "challenge": "OXYGEN MASKS",
+          "response": "TEST",
+          "sourcePage": 1
+        },
+        {
+          "id": "door-sd-page-regul-pr-lo",
+          "challenge": "DOOR SD PAGE REGUL PR LO",
+          "response": "CHECK NOT DISPLAYED",
+          "sourcePage": 1
+        },
+        {
+          "id": "takeoff-breifing",
+          "challenge": "TAKEOFF BREIFING",
+          "response": "PERFORM",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "before-push-start",
+      "name": "Before Push & Start",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "ifr-clearance-obtained",
+          "type": "note",
+          "text": "IFR clearance obtained",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "the-aircraft-is-secure",
+          "type": "note",
+          "text": "The aircraft is secure",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "apu-is-available",
+          "type": "note",
+          "text": "APU is available",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "ext-power",
+          "challenge": "EXT POWER",
+          "response": "DISCONNECT and CHECK AVAIL",
+          "sourcePage": 1
+        },
+        {
+          "id": "external-power-disconnection",
+          "challenge": "EXTERNAL POWER DISCONNECTION",
+          "response": "REQUEST",
+          "sourcePage": 1
+        },
+        {
+          "id": "obtain-push-start-clearance",
+          "type": "note",
+          "text": "OBTAIN PUSH & START CLEARANCE",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1,
+          "indent": 28
+        },
+        {
+          "id": "doors",
+          "challenge": "DOORS",
+          "response": "CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "slides",
+          "challenge": "SLIDES",
+          "response": "ARMED",
+          "sourcePage": 1
+        },
+        {
+          "id": "beacon",
+          "challenge": "BEACON",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "THRUST LEVERS",
+          "response": "IDLE",
+          "sourcePage": 1
+        },
+        {
+          "id": "parking-brake-chocks",
+          "challenge": "PARKING BRAKE & CHOCKS",
+          "response": "OFF & REMOVED",
+          "sourcePage": 1
+        },
+        {
+          "id": "kccu-surv",
+          "challenge": "KCCU SURV",
+          "response": "DEFAULT",
+          "sourcePage": 1
+        },
+        {
+          "id": "before-start-chkl",
+          "challenge": "BEFORE START CHKL",
+          "response": "COMPLETE",
+          "sourcePage": 1
+        },
+        {
+          "id": "commence-push",
+          "type": "note",
+          "text": "COMMENCE PUSH",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 1,
+          "alignment": "end"
+        }
+      ]
+    },
+    {
+      "id": "engine-start",
+      "name": "Engine Start",
+      "description": "INI A350 - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "engine-start-selector",
+          "challenge": "ENGINE START selector",
+          "response": "IGN START",
+          "sourcePage": 1
+        },
+        {
+          "id": "start-engines-1",
+          "challenge": "START ENGINES 1",
+          "response": "ANNOUNCE",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-master-1",
+          "challenge": "ENGINE MASTER 1",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "when-avail-engine-idle-parameters",
+          "challenge": "WHEN AVAIL: ENGINE IDLE PARAMETERS",
+          "response": "CHECK NORMAL",
+          "sourcePage": 1
+        },
+        {
+          "id": "start-engines2",
+          "challenge": "START ENGINES2",
+          "response": "ANNOUNCE",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-master-2",
+          "challenge": "ENGINE MASTER 2",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "when-avail-engine-idle-parameters-2",
+          "challenge": "WHEN AVAIL: ENGINE IDLE PARAMETERS",
+          "response": "CHECK NORMAL",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "after-engine-start",
+      "name": "After Engine Start",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "engine-start-selector",
+          "challenge": "ENGINE START selector",
+          "response": "NORM",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU BLEED",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI ICE",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "ground-spoilers",
+          "challenge": "GROUND SPOILERS",
+          "response": "ARM",
+          "sourcePage": 2
+        },
+        {
+          "id": "rudder-trim",
+          "challenge": "RUDDER TRIM",
+          "response": "ZERO",
+          "sourcePage": 2
+        },
+        {
+          "id": "trim",
+          "challenge": "TRIM",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "to-flaps",
+          "challenge": "TO FLAPS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-status",
+          "challenge": "ECAM STATUS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "disconnect-ground-crew-hand-signals-recieved",
+          "type": "heading",
+          "text": "DISCONNECT GROUND CREW, HAND SIGNALS RECIEVED",
+          "bold": true,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "tug",
+          "challenge": "TUG",
+          "response": "CLEAR",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-controls",
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "a-brk",
+          "challenge": "A/BRK",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "after-start-chkl",
+          "challenge": "AFTER START CHKL",
+          "response": "COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "taxi",
+      "name": "Taxi",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "nd-range",
+          "challenge": "ND RANGE",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "wx-radar",
+          "challenge": "WX RADAR",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "to-config",
+          "challenge": "TO CONFIG",
+          "response": "HOLD",
+          "sourcePage": 2
+        },
+        {
+          "id": "taxi-clearance",
+          "challenge": "TAXI CLEARANCE",
+          "response": "OBTAIN",
+          "sourcePage": 2
+        },
+        {
+          "id": "nose-lights",
+          "challenge": "NOSE LIGHTS",
+          "response": "TAXI",
+          "sourcePage": 2
+        },
+        {
+          "id": "park-brake",
+          "challenge": "PARK BRAKE",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "brakes",
+          "challenge": "BRAKES",
+          "response": "CHECKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "nw-steering",
+          "challenge": "NW Steering",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "atc-clearance",
+          "challenge": "ATC CLEARANCE",
+          "response": "CONFIRM",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff",
+      "name": "Before takeoff",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "selected-runway-and-input-data",
+          "challenge": "SELECTED RUNWAY AND INPUT DATA",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "f-pln-sid-trans",
+          "challenge": "F-PLN (SID, TRANS)",
+          "response": "REVISE OR CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "initial-climb-speed-and-speed-limit",
+          "challenge": "INITIAL CLIMB SPEED AND SPEED LIMIT",
+          "response": "MODIFY OR CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "cleared-altitude-on-fcu",
+          "challenge": "CLEARED ALTITUDE ON FCU",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "hdg-on-fcu",
+          "challenge": "HDG ON FCU",
+          "response": "IF REQUIRED, PRESET",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-director",
+          "challenge": "FLIGHT DIRECTOR",
+          "response": "CHECK SELECTED ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "pfd-nd",
+          "challenge": "PFD/ND",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "mfd",
+          "challenge": "MFD",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "v1-vr-v2-thr-rating",
+          "challenge": "V1/VR/V2/THR RATING",
+          "response": "CHECK (BOTH)",
+          "sourcePage": 2
+        },
+        {
+          "id": "takeoff-briefing",
+          "challenge": "TAKEOFF BRIEFING",
+          "response": "CONFIRM",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-instruments",
+          "challenge": "FLIGHT INSTRUMENTS",
+          "response": "CONFIRM",
+          "sourcePage": 2
+        },
+        {
+          "id": "splrs",
+          "challenge": "SPLRS",
+          "response": "ARM",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "T.O",
+          "sourcePage": 2
+        },
+        {
+          "id": "autobrake-rto",
+          "challenge": "AUTOBRAKE RTO",
+          "response": "ARM",
+          "sourcePage": 2
+        },
+        {
+          "id": "signs",
+          "challenge": "SIGNS",
+          "response": "AS NEEDED",
+          "sourcePage": 2
+        },
+        {
+          "id": "t-o-memo",
+          "challenge": "T.O MEMO",
+          "response": "NO BLUE LINE",
+          "sourcePage": 2
+        },
+        {
+          "id": "cabin",
+          "challenge": "CABIN",
+          "response": "READY",
+          "sourcePage": 2
+        },
+        {
+          "id": "before-takeoff-checklist-taxi-down-to-the-line",
+          "challenge": "BEFORE TAKEOFF CHECKLIST (TAXI - down to the line)",
+          "response": "COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "lineup",
+      "name": "Lineup",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "obtain-takeoff-or-lineup-clearance",
+          "type": "note",
+          "text": "OBTAIN TAKEOFF OR LINEUP CLEARANCE",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "CABIN CREW",
+          "response": "ADVISE",
+          "sourcePage": 2
+        },
+        {
+          "id": "packs-1-and-2",
+          "challenge": "PACKS 1 and 2",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "exterior-lights",
+          "challenge": "EXTERIOR LIGHTS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "nd-range",
+          "challenge": "ND RANGE",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "efis",
+          "challenge": "EFIS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "approach-path",
+          "challenge": "APPROACH PATH",
+          "response": "CLEAR",
+          "sourcePage": 2
+        },
+        {
+          "id": "strobes",
+          "challenge": "STROBES",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "takeoff-rwy",
+          "challenge": "TAKEOFF RWY",
+          "response": "CONFIRM (RAAS)",
+          "sourcePage": 2
+        },
+        {
+          "id": "sliding-table",
+          "challenge": "SLIDING TABLE",
+          "response": "STOWED",
+          "sourcePage": 2
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "TA/RA",
+          "sourcePage": 2
+        },
+        {
+          "id": "before-takeoff-checklist-line-up-below-the-line",
+          "challenge": "BEFORE TAKEOFF CHECKLIST (Line-Up - below the line",
+          "response": "COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "takeoff",
+      "name": "Takeoff",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "takeoff-clearance-recieved",
+          "type": "note",
+          "text": "TAKEOFF CLEARANCE RECIEVED",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "park-brake",
+          "challenge": "PARK BRAKE",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "brakes",
+          "challenge": "BRAKES",
+          "response": "PRESS & HOLD",
+          "sourcePage": 2
+        },
+        {
+          "id": "takeoff",
+          "challenge": "TAKEOFF",
+          "response": "ANNOUNCE",
+          "sourcePage": 2
+        },
+        {
+          "id": "thrust",
+          "challenge": "THRUST",
+          "response": "25%",
+          "sourcePage": 2
+        },
+        {
+          "id": "brakes-2",
+          "challenge": "BRAKES",
+          "response": "RELEASE",
+          "sourcePage": 2
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "THRUST LEVERS",
+          "response": "FLX/MCT or TOGA",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff",
+      "name": "After Takeoff",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "thrust-levers",
+          "challenge": "THRUST LEVERS",
+          "response": "CLIMB",
+          "sourcePage": 2
+        },
+        {
+          "id": "a-thr",
+          "challenge": "A/THR",
+          "response": "CHECK ACTIVE",
+          "sourcePage": 2
+        },
+        {
+          "id": "packs",
+          "challenge": "PACKS",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "ap",
+          "challenge": "AP",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "at-f-speed",
+          "challenge": "AT F SPEED",
+          "response": "FLAPS 1",
+          "sourcePage": 2
+        },
+        {
+          "id": "at-s-speed",
+          "challenge": "AT S SPEED",
+          "response": "FLAPS 0",
+          "sourcePage": 2
+        },
+        {
+          "id": "exterior-lights",
+          "challenge": "EXTERIOR LIGHTS",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "ground-spoilers",
+          "challenge": "GROUND SPOILERS",
+          "response": "DISARM",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "CONFIRM OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "CONFIRM TA/RA",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI ICE",
+          "response": "AS REQ",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "climb",
+      "name": "Climb",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "aircraft-is-climbing-to-or-is-at-initially-clrd-fl",
+          "type": "note",
+          "text": "Aircraft is Climbing to or is at Initially CLRD FL",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "complete-after-takeoff-checklist",
+          "type": "note",
+          "text": "Complete After Takeoff Checklist",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "atc-has-cleared-further-climb",
+          "challenge": "ATC has cleared further climb",
+          "response": "action",
+          "sourcePage": 2
+        },
+        {
+          "id": "cruise-fl",
+          "challenge": "Cruise FL",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI ICE",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "on-passing-10-000ft",
+          "type": "heading",
+          "text": "ON PASSING 10,000ft",
+          "bold": true,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "landing-lights",
+          "challenge": "Landing Lights",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "seatbelts",
+          "challenge": "SEATBELTS",
+          "response": "CONSIDER OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "efis",
+          "challenge": "EFIS",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM MEMO",
+          "response": "REVIEW",
+          "sourcePage": 2
+        },
+        {
+          "id": "consider-optimal-max-altitude",
+          "type": "note",
+          "text": "consider optimal/max altitude",
+          "bold": false,
+          "italic": true,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "baro",
+          "challenge": "BARO",
+          "response": "STD",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "cruise",
+      "name": "Cruise",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "alt-crz",
+          "challenge": "ALT CRZ",
+          "response": "CONFIRM",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM MEMO",
+          "response": "REVEIW",
+          "sourcePage": 2
+        },
+        {
+          "id": "sd-pages",
+          "challenge": "SD PAGES",
+          "response": "REVIEW",
+          "sourcePage": 2
+        },
+        {
+          "id": "monitor-flight-progress-fuel-etc",
+          "type": "note",
+          "text": "Monitor flight progress, fuel etc",
+          "bold": false,
+          "italic": true,
+          "sourcePage": 2,
+          "alignment": "end"
+        }
+      ]
+    },
+    {
+      "id": "before-tod",
+      "name": "Before TOD",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "weather-and-landing-information",
+          "challenge": "WEATHER AND LANDING INFORMATION",
+          "response": "OBTAIN",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-elevation",
+          "challenge": "LANDING ELEVATION",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "baro",
+          "challenge": "BARO",
+          "response": "PRE SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-performance",
+          "challenge": "LANDING PERFORMANCE",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "in-fms",
+          "type": "heading",
+          "text": "IN FMS",
+          "bold": true,
+          "italic": false,
+          "sourcePage": 2,
+          "indent": 28
+        },
+        {
+          "id": "fms-active-f-pln-arrival-page",
+          "challenge": "FMS ACTIVE/F-PLN/ARRIVAL PAGE",
+          "response": "INSERT/CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "des-panel-of-the-fms-active-perf-page",
+          "challenge": "DES PANEL OF THE FMS ACTIVE/PERF PAGE",
+          "response": "INSERT/CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "appr-panel-of-the-fms-active-perf-page",
+          "challenge": "APPR PANEL OF THE FMS ACTIVE/PERF PAGE",
+          "response": "INSERT/CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "ga-panel-of-the-fms-active-perf-page",
+          "challenge": "GA PANEL OF THE FMS ACTIVE/PERF PAGE",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "fms-positional-navaids-page",
+          "challenge": "FMS POSITIONAL/NAVAIDS PAGE",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-brief",
+          "challenge": "LANDING BRIEF",
+          "response": "PERFROM",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "oans-and-btv-if-avail",
+      "name": "OANS and BTV if AVAIL",
+      "description": "INI A350 - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "runway-shift",
+          "challenge": "RUNWAY SHIFT",
+          "response": "AS REQUIRED",
+          "sourcePage": 2
+        },
+        {
+          "id": "nd-mode",
+          "challenge": "ND MODE",
+          "response": "PLAN",
+          "sourcePage": 2
+        },
+        {
+          "id": "nd-range",
+          "challenge": "ND RANGE",
+          "response": "ZOOM",
+          "sourcePage": 2
+        },
+        {
+          "id": "runway",
+          "challenge": "RUNWAY",
+          "response": "SELECT",
+          "sourcePage": 2
+        },
+        {
+          "id": "runway-exit",
+          "challenge": "RUNWAY EXIT",
+          "response": "SELECT",
+          "sourcePage": 2
+        },
+        {
+          "id": "auto-brake-btv",
+          "challenge": "AUTO BRAKE/BTV",
+          "response": "SELECT, AS REQUIRED",
+          "sourcePage": 2
+        },
+        {
+          "id": "oans-rwy-length-charts-rwy-length",
+          "challenge": "OANS RWY LENGTH/CHARTS RWY LENGTH",
+          "response": "CROSSCHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-brief",
+          "challenge": "LANDING BRIEF",
+          "response": "PERFORM",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "name": "Descent",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "descent-clearance",
+          "challenge": "DESCENT CLEARANCE",
+          "response": "OBTAIN",
+          "sourcePage": 3
+        },
+        {
+          "id": "cleared-altitude-fl",
+          "challenge": "CLEARED ALTITUDE/FL",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "descent",
+          "challenge": "DESCENT",
+          "response": "INITIATE",
+          "sourcePage": 3
+        },
+        {
+          "id": "crew",
+          "challenge": "CREW",
+          "response": "ADVISE",
+          "sourcePage": 3
+        },
+        {
+          "id": "20-000ft",
+          "type": "note",
+          "text": "20,000ft",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "CABIN CREW",
+          "response": "ADVISE",
+          "sourcePage": 3
+        },
+        {
+          "id": "ter-wx-radar",
+          "challenge": "TER & WX RADAR",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "10-000ft",
+          "type": "note",
+          "text": "10,000ft",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "landing-lights",
+          "challenge": "LANDING LIGHTS",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-data",
+          "challenge": "LANDING DATA",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "seatbelts",
+          "challenge": "SEATBELTS",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "cstr-ls-button",
+          "challenge": "CSTR & LS BUTTON",
+          "response": "PUSH",
+          "sourcePage": 3
+        },
+        {
+          "id": "navaids",
+          "challenge": "NAVAIDS",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "approach-checklist",
+          "challenge": "APPROACH CHECKLIST",
+          "response": "COMPLETE",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "before-intercepting-ils",
+      "name": "Before Intercepting ILS",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "altimeter",
+          "challenge": "ALTIMETER",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "approach-phase",
+          "challenge": "APPROACH PHASE",
+          "response": "CHECK/ACTIVATE",
+          "sourcePage": 3
+        },
+        {
+          "id": "managed-speed",
+          "challenge": "MANAGED SPEED",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "speedbrakes",
+          "challenge": "SPEEDBRAKES",
+          "response": "AS REQ",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "ils-approach",
+      "name": "ILS Approach",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "ils-frequency",
+          "challenge": "ILS FREQUENCY",
+          "response": "VERIFY",
+          "sourcePage": 3
+        },
+        {
+          "id": "ls",
+          "challenge": "LS",
+          "response": "CHECK ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "altitude",
+          "challenge": "ALTITUDE",
+          "response": "VERIFY",
+          "sourcePage": 3
+        },
+        {
+          "id": "atc-approach-clearance",
+          "type": "note",
+          "text": "ATC APPROACH CLEARANCE",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "speed-mode",
+          "challenge": "SPEED MODE",
+          "response": "MANAGED",
+          "sourcePage": 3
+        },
+        {
+          "id": "appr-mode",
+          "challenge": "APPR MODE",
+          "response": "PRESS",
+          "sourcePage": 3
+        },
+        {
+          "id": "autopilot-1-2",
+          "challenge": "AUTOPILOT 1+2",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "flight-mode-annunciator",
+          "challenge": "FLIGHT MODE ANNUNCIATOR",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps-1-at-v-fe-15",
+          "challenge": "FLAPS 1 (at V~FE~ -15)",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "tcas-mode",
+          "challenge": "TCAS MODE",
+          "response": "TA/RA",
+          "sourcePage": 3
+        },
+        {
+          "id": "loc-capture",
+          "challenge": "LOC CAPTURE",
+          "response": "MONITOR",
+          "sourcePage": 3
+        },
+        {
+          "id": "atc-contact",
+          "challenge": "ATC CONTACT",
+          "response": "TOWER",
+          "sourcePage": 3
+        },
+        {
+          "id": "go-around-altitude",
+          "challenge": "GO AROUND ALTITUDE",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps-2-2-500ft-and-below-v-fe",
+          "challenge": "FLAPS 2 (~2.500ft and below V~FE~)",
+          "response": "SET",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "below-2-000ft",
+          "type": "note",
+          "text": "Below 2,000ft",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "LANDING GEAR",
+          "response": "DOWN",
+          "sourcePage": 3
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "AUTO BRAKE",
+          "response": "CONFIRM",
+          "sourcePage": 3
+        },
+        {
+          "id": "ground-spoilers",
+          "challenge": "GROUND SPOILERS",
+          "response": "ARM",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps-3-after-l-g-down-and-below-v-fe",
+          "challenge": "FLAPS 3 (after L/G down and below V~FE~)",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "wheel-system-display-page",
+          "challenge": "WHEEL SYSTEM DISPLAY PAGE",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps-below-v-fe",
+          "challenge": "FLAPS (below V~FE~)",
+          "response": "FULL",
+          "sourcePage": 3
+        },
+        {
+          "id": "autothrust",
+          "challenge": "AUTOTHRUST",
+          "response": "CHECK IN SPEED MODE OR OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-memo",
+          "challenge": "LANDING MEMO",
+          "response": "NO BLUE LINE",
+          "sourcePage": 3
+        },
+        {
+          "id": "cabin",
+          "challenge": "CABIN",
+          "response": "READY",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-checklist",
+          "challenge": "LANDING CHECKLIST",
+          "response": "COMPLETE",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "after-landing",
+      "name": "After Landing",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "reverse-levers",
+          "challenge": "REVERSE LEVERS",
+          "response": "STOW",
+          "sourcePage": 3
+        },
+        {
+          "id": "autobrake",
+          "challenge": "AUTOBRAKE",
+          "response": "DISARM",
+          "sourcePage": 3
+        },
+        {
+          "id": "spoiler",
+          "challenge": "SPOILER",
+          "response": "DISARM",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "RETRACT",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-master",
+          "challenge": "APU MASTER",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-start",
+          "challenge": "APU START",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-start-selector",
+          "challenge": "ENGINE START SELECTOR",
+          "response": "CHECK NORM",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-lights",
+          "challenge": "LANDING LIGHTS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "strobe",
+          "challenge": "STROBE",
+          "response": "AUTO",
+          "sourcePage": 3
+        },
+        {
+          "id": "other-exterior-lights",
+          "challenge": "OTHER EXTERIOR LIGHTS",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "NOSE LIGHT",
+          "response": "TAXI",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "taxi-in",
+      "name": "Taxi In",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "airport-navigation-display",
+          "challenge": "AIRPORT NAVIGATION DISPLAY",
+          "response": "ZOOM, AS APPROPRIATE",
+          "sourcePage": 3
+        },
+        {
+          "id": "efis-taxi",
+          "challenge": "EFIS TAXI",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "wx-radar",
+          "challenge": "WX RADAR",
+          "response": "CHECK OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "wx-radar-left-on-will-cause-ground-crew-serious-health-side",
+          "type": "note",
+          "text": "WX Radar left on will cause ground crew serious health side\neffects",
+          "bold": false,
+          "italic": true,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "brake-temp",
+          "challenge": "BRAKE TEMP",
+          "response": "MONITOR",
+          "sourcePage": 3
+        },
+        {
+          "id": "after-sufficient-time-eng-1-can-be-shutdown-before-arriving-at-the-gate",
+          "type": "note",
+          "text": "After sufficient time ENG 1 can be shutdown before arriving at the gate",
+          "bold": false,
+          "italic": false,
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "turning-into-gate-engine-shut-down",
+      "name": "Turning Into Gate & Engine Shut Down",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "nose-lights",
+          "challenge": "NOSE LIGHTS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU BLEED",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "ON",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-masters",
+          "challenge": "ENGINE MASTERS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "seatbelts",
+          "challenge": "SEATBELTS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "slides",
+          "challenge": "SLIDES",
+          "response": "DISARM",
+          "sourcePage": 3
+        },
+        {
+          "id": "after-engine-n1-5",
+          "type": "heading",
+          "text": "After engine N1 <5%",
+          "bold": true,
+          "italic": false,
+          "sourcePage": 3,
+          "indent": 28
+        },
+        {
+          "id": "beacon",
+          "challenge": "BEACON",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "ground-contact",
+          "challenge": "GROUND CONTACT",
+          "response": "ESTABLISH",
+          "sourcePage": 3
+        },
+        {
+          "id": "call-gsx",
+          "type": "note",
+          "text": "call GSX",
+          "bold": false,
+          "italic": true,
+          "sourcePage": 3,
+          "alignment": "end"
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "FUEL PUMPS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "fuel-quantity",
+          "challenge": "FUEL QUANTITY",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "parking-checklist",
+          "challenge": "PARKING CHECKLIST",
+          "response": "COMPLETE",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "securing-the-aircraft",
+      "name": "Securing the Aircraft",
+      "description": "INI A350 - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "parking-brake-chocks",
+          "challenge": "PARKING BRAKE & CHOCKS",
+          "response": "ON, SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "oxygen-crew-supply",
+          "challenge": "OXYGEN CREW SUPPLY",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "exterior-lights",
+          "challenge": "EXTERIOR LIGHTS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU BLEED",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "external-power",
+          "challenge": "EXTERNAL POWER",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-master",
+          "challenge": "APU MASTER",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "emergency-lights",
+          "challenge": "EMERGENCY LIGHTS",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "no-smoking-mobile",
+          "challenge": "NO SMOKING/MOBILE",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "securing-the-aircraft-checklist",
+          "challenge": "SECURING THE AIRCRAFT CHECKLIST",
+          "response": "COMPLETE",
+          "sourcePage": 3
+        },
+        {
+          "id": "all-batt",
+          "challenge": "ALL BATT",
+          "response": "OFF",
+          "sourcePage": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "ini-a350-original",
+      "title": "INI A350 - Original Checklist",
+      "path": "references/ini-a350/ini-a350.pdf"
+    }
+  ]
+}

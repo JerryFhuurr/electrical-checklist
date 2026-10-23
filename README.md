@@ -4,7 +4,7 @@ Native Java / Material Android app for offline, manual flight-simulator checklis
 
 ## Use
 
-Choose an aircraft, choose a checklist, and tap the item or its checkbox to check/uncheck it. The bottom **Mark item as complete** button checks the first unchecked item. When every item is checked, **Mark checklist as complete** becomes available. Pressing it saves completion and immediately opens the next checklist. Completing the final checklist leaves it open with a disabled **Checklist complete** button. Unchecking an item in a completed checklist reopens it.
+Choose a manufacturer, choose an aircraft model, choose a checklist, and tap the item or its checkbox to check/uncheck it. Boeing contains the 737-NG and 737 MAX Family (Ryanair 737-8200 source); Airbus contains the A320 Family and A350. Back moves through checklist, phases, aircraft models, and manufacturers. Rotation restores the selected manufacturer and model. The bottom **Mark item as complete** button checks the first unchecked item. When every item is checked, **Mark checklist as complete** becomes available. Pressing it saves completion and immediately opens the next checklist. Completing the final checklist leaves it open with a disabled **Checklist complete** button. Unchecking an item in a completed checklist reopens it.
 
 Checklist rows follow a compact challenge/response layout: checkbox, challenge, connecting line, and right-aligned response. Long text wraps without truncation. Source markers stay alongside challenges; other applicability notes remain visible underneath. Checking the bottom visible row scrolls the next unchecked item into view. The bottom action also reveals the next unchecked item. Other row taps and unchecking items preserve the reading position.
 
@@ -18,17 +18,32 @@ Aircraft definitions and original documents are stored separately:
 app/src/main/assets/
   checklists/
     index.json                  # Ordered list of aircraft JSON filenames
-    ryanair-737-ng.json          # Aircraft metadata and interactive checklist items
+    ryanair-737-ng.json          # Ryanair 737-NG items
+    airbus-a320-family.json      # A319/A320/A321 Normal and Extended items
+    ini-a350.json                # A350 items, subheadings and notes
+    ryanair-737-max.json         # Ryanair 737-8200 / 737 MAX family items
   references/
     ryanair-737-ng/
       normal-checklist.pdf      # Original supplied PDF, unchanged
+    airbus-a320-family/
+      normal-extended-v26.pdf    # Full four-page A320 family source
+    ini-a350/
+      ini-a350.pdf              # Full three-page A350 source, unchanged
+    ryanair-737-max/
+      normal-checklist.pdf      # Original single-page Ryanair 737-8200 PDF
 ```
 
-The current aircraft includes Safety Inspection (6), Before Start (38), Before Taxi (12), Shutdown (22), and Secure (7): 85 items transcribed from the supplied `RYANAIR BOEING 737.pdf`. Blank responses, applicability markers, and the Before Start divider are retained. Existing aircraft/checklist/item IDs remain unchanged, preserving saved progress when updating from v1.1.
+The Ryanair 737-NG includes Safety Inspection (6), Before Start (38), Before Taxi (12), Shutdown (22), and Secure (7): 85 items transcribed from the supplied `RYANAIR BOEING 737.pdf`. Blank responses, applicability markers, and the Before Start divider are retained. Existing aircraft/checklist/item IDs remain unchanged, preserving saved progress when updating from v1.1.
+
+The Boeing 737 MAX Family entry uses the supplied Ryanair 737-8200 PDF: Safety Inspection (6), Before Start (39), Before Taxi (12), Shutdown (23), and Secure (8), totaling 88 items. It preserves the three ELT checks, through-flight and applicability markers, fill-in prompts, the Before Start divider, and the original wording. The source-specific 737-8200 label appears on the model card and in source notes. MAX progress is independent of the NG, and **View checklist** opens the unchanged original single-page PDF.
+
+The Airbus A320 Family (A319/A320/A321) uses page 1 of the supplied v26 PDF as the default Normal view: 11 phases and 69 items. **Show extended items** opens the separate Extended phase list from pages 2-4: 22 phases and 252 items. **Show normal checklist** switches back. The two views have independent progress, and Reset all clears both for all aircraft. Completing a checklist advances only within the current view. Re-entering the aircraft starts in Normal view; rotation and returning from the PDF reader retain the current view.
+
+The mode button is available above the phase list and in a checklist header. Switching from a checklist returns to the other view's phase picker because the source views have different phase structures. The Taxi section from pages 2 and 3 is combined in source order. Crew roles (B/PF/PM), phase prerequisites, conditional notes, and blank responses are preserved. The original page 4 charts/limits remain reference data in the PDF; a **View reference data (page 4)** button below the Extended phase list opens that page directly.
 
 To add an aircraft:
 
-1. Add `checklists/<model-id>.json` following `ryanair-737-ng.json`. Include `id`, `name`, `operator`, `source`, `notice`, `checklists`, and optionally `references`.
+1. Add `checklists/<model-id>.json` following `ryanair-737-ng.json`. Include `id`, `manufacturer` (for example `Boeing` or `Airbus`), `name`, `operator`, `source`, `notice`, `checklists`, and optionally `references`, `legend`, `extendedChecklists`, `extendedReferenceNote`, and `extendedReferencePage`. Manufacturer groups are generated from this field, in first-appearance order; models retain catalog order. Use the same manufacturer spelling for all its models. Adding a new manufacturer requires no UI changes.
 2. Append that filename to the `aircraft` array in `checklists/index.json`. This controls aircraft order.
 3. Add original documents under `references/<model-id>/` and list them in the aircraft definition:
 
@@ -47,15 +62,19 @@ To add an aircraft:
 ]
 ```
 
-Use stable lowercase aircraft/checklist/item/reference IDs with digits/hyphens. Each checklist contains `id`, `name`, `description`, `items`; each item contains `id`, `challenge`, `response` and optional `note`/`group`. Do not reuse IDs for different content. Document filenames accept letters, digits, underscores and hyphens. Supported reference formats: PDF, PNG, JPG/JPEG and WebP. Aircraft without references hide the viewer button. Rebuild the APK after adding bundled files; no UI code changes are required.
+Use stable lowercase aircraft/checklist/item/reference IDs with digits/hyphens. Each checklist contains `id`, `name`, `description`, `items` and an optional phase `note`; each item contains `id`, `challenge`, `response` and optional `note`/`group`. Do not reuse IDs for different content. Document filenames accept letters, digits, underscores and hyphens. Supported reference formats: PDF, PNG, JPG/JPEG and WebP. Aircraft without references hide the viewer button. Rebuild the APK after adding bundled files; no UI code changes are required.
+
+The iniBuilds Airbus A350 includes all three supplied PDF pages: 31 sections, 258 checkable items, and 26 informational text rows. Subheadings such as **IN FMS** and embedded notes retain their source order, capitalization, bold/italic style, indentation, and start/end alignment. They have no checkbox or tap action and do not contribute to progress. The two text-only sections use **Continue to next checklist** without recording checked items or completion. The original three-page PDF is available through **View checklist**.
+
+An `items` entry may instead use `type: "heading"` or `type: "note"`, with `id`, `text`, and optional `bold`, `italic`, `indent` (dp), and `alignment` (`start`/`end`). Such entries only affect display. See `ini-a350.json` and the checklist folder README for examples.
 
 ## Original checklist reader
 
-**View checklist** appears above the flight-phase list and above interactive checklist items. It opens the selected aircraft's bundled reference inside a separate native Android screen. Use pinch/double-tap or +/- buttons to zoom, drag to pan, and **Fit page** to reset the view. PDF files have Previous/Next controls and a page counter. Images are single-page documents. If an aircraft has several documents, select one from the dropdown. Back returns to the same interactive checklist and reading position without changing saved checks.
+**View checklist** appears above the flight-phase list and above interactive checklist items. It opens the selected aircraft's bundled reference inside a separate native Android screen. For A320 it starts on page 1 in Normal view and page 2 in Extended view; Previous/Next still provide access to all four pages. Use pinch/double-tap or +/- buttons to zoom, drag to pan, and **Fit page** to reset the view. PDF files have Previous/Next controls and a page counter. Images are single-page documents. If an aircraft has several documents, select one from the dropdown. Back returns to the same interactive checklist and reading position without changing saved checks.
 
 The reader uses Android `PdfRenderer` and `ImageDecoder`, with a shared native `DocumentPageView` for display and gestures. File loading, decoding, rendering, and PDF cleanup run on one background worker. Only the current page is rendered; bitmap dimensions are bounded to 3200px per edge and 8 million pixels. PDF descriptors and temporary cache files are released on reader destruction or document changes. Document/page/zoom state is restored after rotation. Files open offline without another reader app, network access, or storage permissions. Failed loads show an error and retry action.
 
-The source legend (* Through flights, ** If applicable) is informational; the app never automatically skips these items. Fill-in responses remain prompts for the user to verify. Source notes are available in the app. This is a simulator tool; the transcription is not approved for aircraft operation.
+Each aircraft has its own source legend. Ryanair through-flight/applicability markers and Airbus crew-role markers are informational; the app never automatically skips these items. Fill-in responses remain prompts for the user to verify. Source notes are available in the app. This is a simulator tool; the transcription is not approved for aircraft operation.
 
 Manual interaction reference: https://docs.flybywiresim.com/aircraft/common/flypados3/checklists/
 
@@ -76,19 +95,21 @@ Debug APK: `app/build/outputs/apk/debug/app-debug.apk`.
 All screens and reusable rows are XML resources in `app/src/main/res/layout/`:
 
 - `activity_main.xml`: app toolbar, back/reset buttons and screen container.
-- `screen_aircraft.xml`, `row_aircraft.xml`: aircraft selection.
-- `screen_checklists.xml`, `row_phase.xml`: checklist selection and progress.
+- `screen_manufacturers.xml`, `row_manufacturer.xml`: manufacturer selection.
+- `screen_aircraft.xml`, `row_aircraft.xml`: models belonging to the selected manufacturer.
+- `screen_checklists.xml`, `row_phase.xml`: checklist selection and per-phase status.
 - `screen_checklist.xml`: compact checklist header, scrolling rows and pinned outlined action.
 - `row_checklist_item.xml`, `row_checklist_group.xml`: challenge/response rows and section dividers.
+- `row_checklist_text.xml`: non-interactive source subheadings and notes.
 - `activity_document_reader.xml`: reference viewer toolbar, document selector, viewport and page/zoom controls.
 
 Shared styles, colors and user-facing strings are in `res/values/`. `MainActivity` inflates/binds these layouts and handles navigation and state. Checking an item updates the existing row and status in place, preserving scroll and focus. Text column width limits adapt to the available row width, leaving the XML leader to fill the gap. Aircraft definitions and saved-progress IDs are unchanged, so existing progress survives an app update.
 
 The state tests cover completion gating, reopening, isolation between aircraft/phases, restoring snapshots, and global reset. Device tests cover the bundled catalog, persistence, automatic next-checklist navigation, staying on the final checklist, bottom-row automatic scrolling, rotation, and reset cancellation/confirmation.
 
-Version 1.2 (version code 3). The packaged debug build is copied to `output/flight-check-debug.apk`, with screenshots in `output/screens/`.
+Version 1.6 (version code 8). The packaged debug build is copied to `output/flight-check-debug.apk`, with screenshots in `output/screens/`.
 
-Verified on 2026-10-23: all 15 device tests passed on Android 12 / API 31, covering checklist regressions, opening/returning from the reader, zoom/pan/rotation, original and multi-page PDF rendering, PNG/JPEG/WebP decoding, and unreadable references. Android lint: 0 errors, 6 existing dependency-update warnings. The bundled original PDF matches the supplied source by SHA-256.
+Verified on 2026-10-23: all 31 device tests passed on Android 12 / API 31. MAX tests cover all five source section counts, variant-specific ELT checks and wording, the Before Start divider, progress isolation from the NG, advancement and staying on the final checklist, global reset, and returning from the original PDF without losing checks. Manufacturer navigation tests cover model filtering, toolbar/system back navigation through all levels, restoration after rotation, preserving checks across manufacturer switches, and global reset from the home screen. A350 tests cover the imported catalog, non-clickable formatted subheadings, progress and advancement excluding text rows, text-only sections, rotation, and original PDF navigation. Existing Ryanair NG, A320 Normal/Extended, and PDF/image reader tests pass. Lint: 0 errors (6 existing dependency update warnings and 1 range-typography suggestion). The MAX transcription was reviewed against the complete source page; JSON `sourcePage`/`sourcePages` fields preserve traceability.
 
 On Windows, if the unit test JVM fails with a PATH-related `ClassNotFoundException`, remove literal quotes from PATH for the current shell and start a fresh Gradle process:
 
@@ -96,3 +117,5 @@ On Windows, if the unit test JVM fails with a PATH-related `ClassNotFoundExcepti
 $env:Path = $env:Path.Replace('"', '')
 .\gradlew.bat --no-daemon --no-configuration-cache testDebugUnitTest
 ```
+
+Version 1.3.1 removes the aircraft-card completion bar/count and the aggregate completion panel above the phase list. Per-item and per-phase progress are still saved.

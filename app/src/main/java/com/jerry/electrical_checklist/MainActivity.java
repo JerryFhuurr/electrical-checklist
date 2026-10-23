@@ -2,13 +2,13 @@ package com.jerry.electrical_checklist;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -29,14 +29,17 @@ import java.util.Map;
 import com.jerry.electrical_checklist.ChecklistCatalog.Aircraft;
 import com.jerry.electrical_checklist.ChecklistCatalog.Checklist;
 import com.jerry.electrical_checklist.ChecklistCatalog.Item;
+import com.jerry.electrical_checklist.ChecklistCatalog.ChecklistRow;
 
 /** XML layouts own presentation; this activity binds the catalog and manual checklist state. */
 public class MainActivity extends AppCompatActivity {
     private ChecklistCatalog catalog;
     private ChecklistProgress progress;
     private ProgressStore store;
+    private String manufacturer;
     private Aircraft aircraft;
     private Checklist checklist;
+    private boolean showExtended;
     private View root, screen;
     private FrameLayout container;
     private ScrollView scroll;
@@ -69,15 +72,20 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (state != null) {
+            String savedManufacturer = state.getString("manufacturer");
+            if (catalog.manufacturers.contains(savedManufacturer)) manufacturer = savedManufacturer;
+            showExtended = state.getBoolean("extended");
             for (Aircraft model : catalog.aircraft)
                 if (model.id.equals(state.getString("aircraft"))) aircraft = model;
-            if (aircraft != null) for (Checklist list : aircraft.checklists)
+            if (aircraft != null) manufacturer = aircraft.manufacturer;
+            if (aircraft != null) for (Checklist list : activeChecklists())
                 if (list.id.equals(state.getString("checklist"))) checklist = list;
         }
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override public void handleOnBackPressed() {
                 if (checklist != null) { checklist = null; render(); }
-                else if (aircraft != null) { aircraft = null; render(); }
+                else if (aircraft != null) { aircraft = null; showExtended = false; render(); }
+                else if (manufacturer != null) { manufacturer = null; render(); }
                 else { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); }
             }
         });
@@ -87,19 +95,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override protected void onSaveInstanceState(@NonNull Bundle state) {
         super.onSaveInstanceState(state);
+        if (manufacturer != null) state.putString("manufacturer", manufacturer);
         if (aircraft != null) state.putString("aircraft", aircraft.id);
         if (checklist != null) state.putString("checklist", checklist.id);
+        state.putBoolean("extended", showExtended);
         if (scroll != null) state.putInt("scroll", scroll.getScrollY());
     }
 
     private void render() {
         container.removeAllViews();
         itemViews.clear();
-        root.findViewById(R.id.back_button).setVisibility(aircraft == null ? View.GONE : View.VISIBLE);
-        root.findViewById(R.id.back_button).setContentDescription(getString(checklist == null ? R.string.back_aircraft : R.string.back_checklists));
+        root.findViewById(R.id.back_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
+        root.findViewById(R.id.back_button).setContentDescription(getString(checklist != null ? R.string.back_checklists
+                : aircraft != null ? R.string.back_aircraft : R.string.back_manufacturers));
         int background = getColor(checklist == null ? R.color.app_background : R.color.checklist_background);
         getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(background));
-        if (aircraft == null) renderAircraft();
+        if (manufacturer == null) renderManufacturers();
+        else if (aircraft == null) renderAircraft();
         else if (checklist == null) renderChecklists();
         else renderItems();
         ViewCompat.requestApplyInsets(root);
@@ -118,46 +130,79 @@ public class MainActivity extends AppCompatActivity {
         View reference = screen.findViewById(R.id.view_checklist_button);
         if (reference != null) {
             reference.setVisibility(aircraft == null || aircraft.references.isEmpty() ? View.GONE : View.VISIBLE);
-            reference.setOnClickListener(v -> startActivity(new Intent(this, DocumentReaderActivity.class)
-                    .putExtra(DocumentReaderActivity.EXTRA_AIRCRAFT_ID, aircraft.id)));
+            reference.setOnClickListener(v -> openReference(showExtended ? 1 : 0));
+        }
+        MaterialButton mode = screen.findViewById(R.id.checklist_mode_button);
+        if (mode != null) {
+            mode.setVisibility(aircraft == null || aircraft.extendedChecklists.isEmpty() ? View.GONE : View.VISIBLE);
+            mode.setText(showExtended ? R.string.show_normal : R.string.show_extended);
+            mode.setOnClickListener(v -> { showExtended = !showExtended; checklist = null; render(); });
         }
     }
 
     private void renderAircraft() {
         inflateScreen(R.layout.screen_aircraft);
+        label(screen, R.id.aircraft_title, manufacturer);
+        screen.setAccessibilityPaneTitle(manufacturer);
         LinearLayout rows = screen.findViewById(R.id.aircraft_rows);
-        for (Aircraft model : catalog.aircraft) {
+        for (Aircraft model : catalog.aircraftFor(manufacturer)) {
             View row = getLayoutInflater().inflate(R.layout.row_aircraft, rows, false);
+            row.setTag(model.id);
             label(row, R.id.aircraft_name, model.name);
             label(row, R.id.aircraft_description, getString(R.string.aircraft_description, model.operator,
                     getResources().getQuantityString(R.plurals.checklist_count, model.checklists.size(), model.checklists.size()),
                     getResources().getQuantityString(R.plurals.item_count, model.itemCount(), model.itemCount())));
-            int done = completedCount(model);
-            bindProgress(row, R.id.aircraft_progress, done, model.checklists.size());
-            label(row, R.id.aircraft_status, getResources().getQuantityString(R.plurals.aircraft_status,
-                    model.checklists.size(), done, model.checklists.size()));
-            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { aircraft = model; render(); });
+            row.findViewById(R.id.open_aircraft).setContentDescription(getString(R.string.open_aircraft_description, model.name));
+            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { aircraft = model; showExtended = false; render(); });
+            rows.addView(row);
+        }
+    }
+
+    private void renderManufacturers() {
+        inflateScreen(R.layout.screen_manufacturers);
+        screen.setAccessibilityPaneTitle(getString(R.string.manufacturers_title));
+        LinearLayout rows = screen.findViewById(R.id.manufacturer_rows);
+        for (String name : catalog.manufacturers) {
+            View row = getLayoutInflater().inflate(R.layout.row_manufacturer, rows, false);
+            row.setTag(name);
+            label(row, R.id.manufacturer_name, name);
+            List<String> modelNames = new ArrayList<>();
+            for (Aircraft model : catalog.aircraftFor(name)) modelNames.add(model.name);
+            label(row, R.id.manufacturer_models, android.text.TextUtils.join(" · ", modelNames));
+            View button = row.findViewById(R.id.open_manufacturer);
+            button.setContentDescription(getString(R.string.open_manufacturer_description, name));
+            button.setOnClickListener(v -> { manufacturer = name; render(); });
             rows.addView(row);
         }
     }
 
     private void renderChecklists() {
         inflateScreen(R.layout.screen_checklists);
-        label(screen, R.id.model_eyebrow, getString(R.string.model_eyebrow, aircraft.operator.toUpperCase(Locale.ROOT)));
+        label(screen, R.id.model_eyebrow, getString(showExtended ? R.string.model_eyebrow_extended : R.string.model_eyebrow, aircraft.operator.toUpperCase(Locale.ROOT)));
         label(screen, R.id.model_title, aircraft.name);
-        int done = completedCount(aircraft);
-        label(screen, R.id.model_status, getString(R.string.fraction, done, aircraft.checklists.size()));
-        bindProgress(screen, R.id.model_progress, done, aircraft.checklists.size());
+        List<Checklist> lists = activeChecklists();
+        TextView modeLabel = screen.findViewById(R.id.checklist_mode_label);
+        modeLabel.setVisibility(aircraft.extendedChecklists.isEmpty() ? View.GONE : View.VISIBLE);
+        modeLabel.setText(showExtended ? R.string.extended_mode_label : R.string.normal_mode_label);
+        View referenceInfo = screen.findViewById(R.id.extended_reference_info);
+        boolean hasReferenceInfo = showExtended && !aircraft.extendedReferenceNote.isEmpty();
+        referenceInfo.setVisibility(hasReferenceInfo ? View.VISIBLE : View.GONE);
+        if (hasReferenceInfo) {
+            label(screen, R.id.extended_reference_note, aircraft.extendedReferenceNote);
+            screen.findViewById(R.id.extended_reference_button).setOnClickListener(v -> openReference(aircraft.extendedReferencePage - 1));
+        }
         LinearLayout rows = screen.findViewById(R.id.phase_rows);
-        for (int i = 0; i < aircraft.checklists.size(); i++) {
-            Checklist list = aircraft.checklists.get(i);
+        for (int i = 0; i < lists.size(); i++) {
+            Checklist list = lists.get(i);
             View row = getLayoutInflater().inflate(R.layout.row_phase, rows, false);
+            row.setTag(list.id);
             boolean complete = isComplete(list);
             row.setSelected(complete);
             label(row, R.id.phase_number, complete ? "✓" : String.format(Locale.ROOT, "%02d", i + 1));
             label(row, R.id.phase_name, list.name);
             label(row, R.id.phase_description, list.description);
-            label(row, R.id.phase_status, getString(R.string.phase_status, status(list), checkedCount(list), list.items.size()));
+            label(row, R.id.phase_status, list.items.isEmpty() ? getString(R.string.reference_notes)
+                    : getString(R.string.phase_status, status(list), checkedCount(list), list.items.size()));
             row.setOnClickListener(v -> { checklist = list; render(); });
             rows.addView(row);
         }
@@ -166,11 +211,32 @@ public class MainActivity extends AppCompatActivity {
     private void renderItems() {
         inflateScreen(R.layout.screen_checklist);
         label(screen, R.id.checklist_aircraft, getString(R.string.checklist_aircraft,
-                aircraft.name.toUpperCase(Locale.ROOT), aircraft.checklists.indexOf(checklist) + 1, aircraft.checklists.size()));
+                aircraft.name.toUpperCase(Locale.ROOT), activeChecklists().indexOf(checklist) + 1, activeChecklists().size()));
+        TextView legend = screen.findViewById(R.id.checklist_legend);
+        legend.setText(aircraft.legend);
+        legend.setVisibility(aircraft.legend.isEmpty() ? View.GONE : View.VISIBLE);
+        TextView note = screen.findViewById(R.id.checklist_note);
+        note.setText(checklist.note);
+        note.setVisibility(checklist.note.isEmpty() ? View.GONE : View.VISIBLE);
         label(screen, R.id.checklist_title, checklist.name);
         screen.setAccessibilityPaneTitle(checklist.name);
         LinearLayout rows = screen.findViewById(R.id.item_rows);
-        for (Item item : checklist.items) {
+        for (ChecklistRow definition : checklist.rows) {
+            if (definition.item == null) {
+                TextView text = (TextView) getLayoutInflater().inflate(R.layout.row_checklist_text, rows, false);
+                text.setTag(definition.id);
+                text.setText(definition.text);
+                int style = definition.bold ? (definition.italic ? Typeface.BOLD_ITALIC : Typeface.BOLD)
+                        : (definition.italic ? Typeface.ITALIC : Typeface.NORMAL);
+                text.setTypeface(Typeface.create("sans-serif", style));
+                int textStart = checklist.items.isEmpty() ? 8 : 48;
+                text.setPaddingRelative(dp(textStart + definition.indent), dp(6), dp(8), dp(6));
+                text.setGravity(definition.alignment.equals("end") ? Gravity.END : Gravity.START);
+                text.setAccessibilityHeading(definition.type.equals("heading"));
+                rows.addView(text);
+                continue;
+            }
+            Item item = definition.item;
             if (!item.group.isEmpty()) {
                 TextView group = (TextView) getLayoutInflater().inflate(R.layout.row_checklist_group, rows, false);
                 group.setText(item.group.toUpperCase(Locale.ROOT));
@@ -180,11 +246,11 @@ public class MainActivity extends AppCompatActivity {
             row.setTag(item.id);
             TextView challenge = row.findViewById(R.id.item_challenge);
             TextView response = row.findViewById(R.id.item_response);
-            TextView note = row.findViewById(R.id.item_note);
+            TextView itemNote = row.findViewById(R.id.item_note);
             String marker = item.note.equals("Through flights (*)") ? " *" : item.note.equals("If applicable (**)") ? " **" : "";
             challenge.setText(getString(R.string.item_challenge_with_marker, item.challenge, marker));
             response.setText(item.response);
-            if (marker.isEmpty() && !item.note.isEmpty()) { note.setText(item.note); note.setVisibility(View.VISIBLE); }
+            if (marker.isEmpty() && !item.note.isEmpty()) { itemNote.setText(item.note); itemNote.setVisibility(View.VISIBLE); }
             row.setTooltipText(item.challenge + ": " + item.response + (item.note.isEmpty() ? "" : "\n" + item.note));
             CheckBox box = row.findViewById(R.id.item_checkbox);
             box.setSaveEnabled(false); // Repeated row IDs must not overwrite the model on rotation.
@@ -195,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
             row.findViewById(R.id.item_line_content).addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> {
                 if (r - l != or - ol) {
                     int max = Math.max(1, (r - l - dp(16)) / 2);
-                    challenge.setMaxWidth(max); response.setMaxWidth(max); note.setMaxWidth(max);
+                    challenge.setMaxWidth(max); response.setMaxWidth(max); itemNote.setMaxWidth(max);
                 }
             });
             itemViews.put(item.id, row);
@@ -204,7 +270,8 @@ public class MainActivity extends AppCompatActivity {
         }
         action = screen.findViewById(R.id.checklist_action);
         action.setOnClickListener(v -> {
-            if (checkedCount(checklist) == checklist.items.size()) completeChecklist();
+            if (checklist.items.isEmpty()) openNextChecklist();
+            else if (checkedCount(checklist) == checklist.items.size()) completeChecklist();
             else markNext();
         });
         updateChecklistStatus();
@@ -224,6 +291,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateChecklistStatus() {
+        if (checklist.items.isEmpty()) {
+            label(screen, R.id.checklist_status, getString(R.string.reference_notes));
+            action.setText(R.string.continue_checklist);
+            action.setEnabled(activeChecklists().indexOf(checklist) + 1 < activeChecklists().size());
+            return;
+        }
         int count = checkedCount(checklist);
         label(screen, R.id.checklist_status, getString(R.string.checklist_status, status(checklist), count, checklist.items.size()));
         boolean complete = isComplete(checklist);
@@ -283,11 +356,17 @@ public class MainActivity extends AppCompatActivity {
         for (Item item : checklist.items) ids.add(item.id);
         if (!progress.complete(aircraft.id, checklist.id, ids)) return;
         store.save(progress);
-        int index = aircraft.checklists.indexOf(checklist);
-        if (index + 1 < aircraft.checklists.size()) {
-            checklist = aircraft.checklists.get(index + 1);
+        if (!openNextChecklist()) updateChecklistStatus();
+    }
+    private boolean openNextChecklist() {
+        List<Checklist> lists = activeChecklists();
+        int index = lists.indexOf(checklist);
+        if (index + 1 < lists.size()) {
+            checklist = lists.get(index + 1);
             render();
-        } else updateChecklistStatus(); // The final checklist remains open; never wrap to the first.
+            return true;
+        }
+        return false; // The final checklist remains open; never wrap to the first.
     }
 
     private void confirmReset() {
@@ -300,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSource(Aircraft model) {
         new MaterialAlertDialogBuilder(this).setTitle(R.string.source_notes)
-                .setMessage(getString(R.string.source_message, model.source, model.notice))
+                .setMessage(getString(R.string.source_message, model.source, model.notice, model.legend))
                 .setPositiveButton(R.string.got_it, null).show();
     }
     private String status(Checklist list) {
@@ -315,19 +394,12 @@ public class MainActivity extends AppCompatActivity {
     private boolean isComplete(Checklist list) {
         return progress.isComplete(aircraft.id, list.id) && checkedCount(list) == list.items.size();
     }
-    private int completedCount(Aircraft model) {
-        int count = 0;
-        for (Checklist list : model.checklists) {
-            boolean checked = true;
-            for (Item item : list.items) if (!progress.isChecked(model.id, list.id, item.id)) checked = false;
-            if (checked && progress.isComplete(model.id, list.id)) count++;
-        }
-        return count;
+    private List<Checklist> activeChecklists() { return aircraft.checklistsFor(showExtended); }
+    private void openReference(int page) {
+        startActivity(new Intent(this, DocumentReaderActivity.class)
+                .putExtra(DocumentReaderActivity.EXTRA_AIRCRAFT_ID, aircraft.id)
+                .putExtra(DocumentReaderActivity.EXTRA_INITIAL_PAGE, Math.max(0, page)));
     }
     private void label(View parent, int id, String value) { ((TextView) parent.findViewById(id)).setText(value); }
-    private void bindProgress(View parent, int id, int value, int total) {
-        ProgressBar bar = parent.findViewById(id); bar.setMax(total); bar.setProgress(value);
-        bar.setContentDescription(getResources().getQuantityString(R.plurals.aircraft_status, total, value, total));
-    }
     private int dp(int value) { return Math.round(value * getResources().getDisplayMetrics().density); }
 }

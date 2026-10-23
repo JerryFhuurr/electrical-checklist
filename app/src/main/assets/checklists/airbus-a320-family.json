@@ -1,0 +1,2295 @@
+{
+  "id": "airbus-a320-family",
+  "manufacturer": "Airbus",
+  "name": "Airbus A320 Family",
+  "operator": "A319 / A320 / A321",
+  "source": "A320 family - Normal - Extended Checklist v26.pdf",
+  "notice": "For Flight Simulator Use Only. Page 1 is the Normal checklist view. Pages 2-4 contain Extended Items. The source uses bold text for Normal checklist items and flow patterns; crew-role markers are retained in the responses. Page 4 also contains reference charts and limits.",
+  "legend": "(B): PM reads; PF replies first, then PM.\nPF: Pilot Flying. PM: Pilot Monitoring.\nBlank responses (___) are values to verify in the aircraft.",
+  "extendedReferencePage": 4,
+  "extendedReferenceNote": "Page 4 includes the A320 CG/trim chart, maximum altitudes, wind and speed limits, CFM/IAE weight limits, and oil temperatures. View the original reference data below.",
+  "checklists": [
+    {
+      "id": "cockpit-preparation",
+      "name": "Cockpit Preparation",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "gear-pins-and-covers",
+          "challenge": "Gear PINS and COVERS",
+          "response": "REMOVED",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-quantity",
+          "challenge": "Fuel Quantity",
+          "response": "___KG",
+          "sourcePage": 1
+        },
+        {
+          "id": "signs",
+          "challenge": "Signs",
+          "response": "ON/AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "NAV",
+          "sourcePage": 1
+        },
+        {
+          "id": "barometric-reference",
+          "challenge": "Barometric Reference",
+          "response": "SET (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "mobile-phone",
+          "challenge": "Mobile Phone",
+          "response": "OFF (B)",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Departure briefing completed"
+    },
+    {
+      "id": "before-start",
+      "name": "Before Start",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "v1-vr-v2-flx-temp",
+          "challenge": "V1, VR, V2/FLX TEMP",
+          "response": "CHECK (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "windows",
+          "challenge": "Windows",
+          "response": "CLOSED (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "beacon-light",
+          "challenge": "Beacon Light",
+          "response": "ON",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Pushback or start clearance received"
+    },
+    {
+      "id": "after-start",
+      "name": "After Start",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-status",
+          "challenge": "ECAM Status",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "pitch-trim",
+          "challenge": "Pitch Trim",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "rud-trim",
+          "challenge": "RUD TRIM",
+          "response": "NEUTRAL",
+          "sourcePage": 1
+        },
+        {
+          "id": "transponder",
+          "challenge": "Transponder",
+          "response": "AS REQ",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Hand signal from ground personnel"
+    },
+    {
+      "id": "taxi",
+      "name": "Taxi",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "flight-controls",
+          "challenge": "Flight Controls",
+          "response": "CHECK (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "SET (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "radar-pws",
+          "challenge": "Radar/PWS",
+          "response": "ON/AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM Memo",
+          "response": "NO BLUE",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-2",
+          "challenge": "ECAM Memo",
+          "response": "AUTO BRK MAX",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-3",
+          "challenge": "ECAM Memo",
+          "response": "SIGNS ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-4",
+          "challenge": "ECAM Memo",
+          "response": "CABIN READY",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-5",
+          "challenge": "ECAM Memo",
+          "response": "SPLRS ARM",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-6",
+          "challenge": "ECAM Memo",
+          "response": "FLAPS T.O",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-7",
+          "challenge": "ECAM Memo",
+          "response": "T.O CONFIG NORMAL",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Takeoff config test, cabin report received"
+    },
+    {
+      "id": "line-up",
+      "name": "Line up",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "t-o-runway",
+          "challenge": "T.O Runway",
+          "response": "CHECK (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "TA + RA (ABV)",
+          "sourcePage": 1
+        },
+        {
+          "id": "packs-1-2",
+          "challenge": "Packs 1+2",
+          "response": "AS REQ",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Lineup clearance, Flow Patterns completed"
+    },
+    {
+      "id": "departure-change",
+      "name": "Departure Change",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "rwy-sid",
+          "challenge": "RWY & SID",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "v1-vr-v2-flx-temp",
+          "challenge": "V1, VR, V2/FLX TEMP",
+          "response": "CHECK (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "fcu-altitude",
+          "challenge": "FCU Altitude",
+          "response": "CHECK & SET",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Revised departure briefing completed"
+    },
+    {
+      "id": "approach",
+      "name": "Approach",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "barometric-reference-tl",
+          "challenge": "Barometric Reference (TL)",
+          "response": "SET (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "seat-belt-signs",
+          "challenge": "Seat Belt Signs",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "mda-dh",
+          "challenge": "MDA/DH",
+          "response": "SET (B)",
+          "sourcePage": 1
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "Auto Brake",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "AS REQ",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Below 10.000 ft, Barometric Reference set"
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM Memo",
+          "response": "NO BLUE",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-2",
+          "challenge": "ECAM Memo",
+          "response": "LDG GEAR DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-3",
+          "challenge": "ECAM Memo",
+          "response": "SIGNS ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-4",
+          "challenge": "ECAM Memo",
+          "response": "CABIN READY",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-5",
+          "challenge": "ECAM Memo",
+          "response": "SPLRS ARM",
+          "sourcePage": 1
+        },
+        {
+          "id": "ecam-memo-6",
+          "challenge": "ECAM Memo",
+          "response": "FLAPS SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "Cabin Crew",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "go-around-altitude",
+          "challenge": "Go Around Altitude",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "autopilot",
+          "challenge": "Autopilot",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "a-thr",
+          "challenge": "A/THR",
+          "response": "AS REQ",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Landing config set, cabin report received"
+    },
+    {
+      "id": "after-landing",
+      "name": "After Landing",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "radar-pws",
+          "challenge": "Radar/PWS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "RETRACT",
+          "sourcePage": 1
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "RETRACT",
+          "sourcePage": 1
+        },
+        {
+          "id": "strobe-lights",
+          "challenge": "Strobe Lights",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "landing-lights-l-r",
+          "challenge": "Landing Lights L/R",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "TAXI",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "OFF",
+          "sourcePage": 1
+        }
+      ],
+      "note": "After landing Flow Patterns completed"
+    },
+    {
+      "id": "parking",
+      "name": "Parking",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "parking-brake-chocks",
+          "challenge": "Parking Brake & CHOCKS",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-master-1-2",
+          "challenge": "Engine Master 1+2",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "ext-lights",
+          "challenge": "EXT Lights",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "Fuel Pumps",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "transponder-squawk",
+          "challenge": "Transponder/Squawk",
+          "response": "STBY/2000",
+          "sourcePage": 1
+        },
+        {
+          "id": "mobile-phone",
+          "challenge": "Mobile Phone",
+          "response": "AS REQ",
+          "sourcePage": 1
+        },
+        {
+          "id": "extract",
+          "challenge": "EXTRACT",
+          "response": "OVRD",
+          "sourcePage": 1,
+          "note": "Consider HEAVY RAIN"
+        }
+      ],
+      "note": "Seat Belt Signs Off\nConsider HEAVY RAIN"
+    },
+    {
+      "id": "securing-the-aircraft",
+      "name": "Securing the aircraft",
+      "description": "Normal checklist - page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "oxygen",
+          "challenge": "OXYGEN",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "emer-ext-lt",
+          "challenge": "EMER EXT LT",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "efbs",
+          "challenge": "EFBs",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-battery-master-1-2",
+          "challenge": "APU & Battery Master 1+2",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "OFF 1-2-3",
+          "sourcePage": 1
+        },
+        {
+          "id": "signs",
+          "challenge": "Signs",
+          "response": "OFF/OFF",
+          "sourcePage": 1
+        }
+      ],
+      "note": "Last passenger out, securing is intended\nConsider COLD WEATHER"
+    }
+  ],
+  "extendedChecklists": [
+    {
+      "id": "extended-flight-deck-preparation",
+      "name": "Flight Deck Preparation",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "radar-pws",
+          "challenge": "Radar/PWS",
+          "response": "OFF/OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "RETRACTED",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-masters",
+          "challenge": "Engine Masters",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "NORM",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "RETRACTED",
+          "sourcePage": 2
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing Gear",
+          "response": "DOWN",
+          "sourcePage": 2
+        },
+        {
+          "id": "wipers",
+          "challenge": "Wipers",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "circuit-breakers",
+          "challenge": "Circuit Breakers",
+          "response": "CHECK",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-cockpit-preparation",
+      "name": "Cockpit Preparation",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "battery-master-1-2",
+          "challenge": "Battery Master 1+2",
+          "response": "CHECK & ON 1-2",
+          "sourcePage": 2
+        },
+        {
+          "id": "ext-power",
+          "challenge": "EXT Power",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "strobe-light",
+          "challenge": "Strobe Light",
+          "response": "AUTO",
+          "sourcePage": 2
+        },
+        {
+          "id": "wing-light",
+          "challenge": "WING Light",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "nav-logo-light",
+          "challenge": "NAV & Logo Light",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-master",
+          "challenge": "APU Master",
+          "response": "AS REQ (OFF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "seat-belt-signs",
+          "challenge": "Seat Belt Signs",
+          "response": "AS REQ (REFUEL)",
+          "sourcePage": 2
+        },
+        {
+          "id": "no-smoking",
+          "challenge": "No Smoking",
+          "response": "AUTO",
+          "sourcePage": 2
+        },
+        {
+          "id": "emer-ext-lt",
+          "challenge": "EMER EXT LT",
+          "response": "ARM",
+          "sourcePage": 2
+        },
+        {
+          "id": "ovhd-integ-lt",
+          "challenge": "OVHD INTEG LT",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "dome-lt",
+          "challenge": "DOME LT",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "annunciator-lights",
+          "challenge": "Annunciator Lights",
+          "response": "TEST",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "OFF (AS REQ)",
+          "sourcePage": 2
+        },
+        {
+          "id": "probe-window-heat",
+          "challenge": "Probe/Window Heat",
+          "response": "AUTO (AS REQ)",
+          "sourcePage": 2
+        },
+        {
+          "id": "air-conditioning",
+          "challenge": "Air Conditioning",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "Fuel Pumps",
+          "response": "AS REQ (REFUEL)",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-fire-test",
+          "challenge": "APU Fire Test",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "eng-fire-tests",
+          "challenge": "ENG Fire Tests",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "crew-supply",
+          "challenge": "CREW SUPPLY",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "gnd-ctl",
+          "challenge": "GND CTL",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "cvr-test",
+          "challenge": "CVR Test",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "ALIGN 1-2-3",
+          "sourcePage": 2
+        },
+        {
+          "id": "cargo-smoke-fire-tests",
+          "challenge": "Cargo Smoke & Fire Tests",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-skid",
+          "challenge": "Anti-Skid",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "isis",
+          "challenge": "ISIS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-status",
+          "challenge": "ECAM Status",
+          "response": "RCL & ALL CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "safety-equip-mel-cdl-qrh",
+          "challenge": "Safety (Equip/MEL/CDL/QRH)",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "oxy",
+          "challenge": "OXY",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "pa-cab-vhf",
+          "challenge": "PA/CAB VHF",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "cockpit-door",
+          "challenge": "Cockpit Door",
+          "response": "LOCK",
+          "sourcePage": 2
+        },
+        {
+          "id": "instruments-displays-brightness",
+          "challenge": "Instruments & Displays Brightness",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "boarding",
+          "challenge": "Boarding",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "weight-balance",
+          "challenge": "Weight & Balance",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "preliminary-performance-calculation",
+          "challenge": "Preliminary Performance Calculation",
+          "response": "CHECK",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-mcdu-preparation",
+      "name": "MCDU Preparation",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "ifr-clearance",
+          "challenge": "IFR Clearance",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "data",
+          "challenge": "DATA",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "init-a",
+          "challenge": "INIT A",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "f-pln",
+          "challenge": "F-PLN",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "f-pln-sec",
+          "challenge": "F-PLN SEC",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "rad-nav",
+          "challenge": "RAD/NAV",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "init-b",
+          "challenge": "INIT B",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "perf",
+          "challenge": "PERF",
+          "response": "CHECK",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-flight-preparation",
+      "name": "Flight Preparation",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "pm-walk-around",
+          "challenge": "PM walk around",
+          "response": "COMPLETED (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "cockpit-checks-briefing",
+          "challenge": "Cockpit checks & Briefing",
+          "response": "COMPLETED (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "barometric-reference",
+          "challenge": "Barometric Reference",
+          "response": "SET (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "transponder-squawk",
+          "challenge": "Transponder Squawk",
+          "response": "SET (1000)",
+          "sourcePage": 2
+        },
+        {
+          "id": "irs-alignment",
+          "challenge": "IRS Alignment",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "NAV",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-directors",
+          "challenge": "Flight Directors",
+          "response": "BOTH ON (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "fcu-altitude",
+          "challenge": "FCU Altitude",
+          "response": "INIT ALT",
+          "sourcePage": 2
+        },
+        {
+          "id": "fcu-speed",
+          "challenge": "FCU Speed",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "fcu-heading",
+          "challenge": "FCU Heading",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "nd-mode",
+          "challenge": "ND Mode",
+          "response": "NAV (NO FLAG)",
+          "sourcePage": 2
+        },
+        {
+          "id": "efis",
+          "challenge": "EFIS",
+          "response": "ARC/10NM",
+          "sourcePage": 2
+        },
+        {
+          "id": "vor-adf",
+          "challenge": "VOR/ADF",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "fuel-quantity",
+          "challenge": "Fuel Quantity",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "Fuel Pumps",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "mobile-phone",
+          "challenge": "Mobile Phone",
+          "response": "OFF (B)",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-before-start",
+      "name": "Before Start",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "apu-master",
+          "challenge": "APU Master",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-starter",
+          "challenge": "APU Starter",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "ext-power",
+          "challenge": "EXT Power",
+          "response": "OFF (APU AVAIL)",
+          "sourcePage": 2
+        },
+        {
+          "id": "gnd-services",
+          "challenge": "GND Services",
+          "response": "DISCONNECT",
+          "sourcePage": 2
+        },
+        {
+          "id": "beacon-light",
+          "challenge": "Beacon Light",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "transponder",
+          "challenge": "Transponder",
+          "response": "SET (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "windows",
+          "challenge": "Windows",
+          "response": "CLOSED (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "doors-slides",
+          "challenge": "Doors/Slides",
+          "response": "CLOSED/ARMED (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "Thrust Levers",
+          "response": "CHECK IDLE (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-startup",
+      "name": "Startup",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "atc-startup-push-clearance",
+          "challenge": "ATC Startup (Push) Clearance",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "pushback",
+          "challenge": "Pushback",
+          "response": "AS REQ",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "IGN/START (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-1",
+          "challenge": "Engine 1",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-2",
+          "challenge": "Engine 2",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "chrono-3-min",
+          "challenge": "CHRONO (> 3 min.)",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-after-start",
+      "name": "After Start",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "NORM (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "OFF (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "apu-master",
+          "challenge": "APU Master",
+          "response": "AS REQ (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "ARM (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "rud-trim",
+          "challenge": "RUD TRIM",
+          "response": "NEUTRAL (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "AS REQ (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "pitch-trim",
+          "challenge": "Pitch Trim",
+          "response": "SET (PM)",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-status",
+          "challenge": "ECAM Status",
+          "response": "CHECK (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "ecam-nw-strg-disc",
+          "challenge": "ECAM NW STRG DISC",
+          "response": "CHECK (PF)",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "extended-taxi",
+      "name": "Taxi",
+      "description": "Extended items - page 2",
+      "sourcePages": [
+        2,
+        3
+      ],
+      "items": [
+        {
+          "id": "atc-taxi-clearance",
+          "challenge": "ATC Taxi Clearance",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "OFF (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "exterior",
+          "challenge": "Exterior",
+          "response": "CHECK (B)",
+          "sourcePage": 2
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "ON (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "TAXI (PF)",
+          "sourcePage": 2
+        },
+        {
+          "id": "brakes",
+          "challenge": "Brakes",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "group": "Continued (page 3)"
+        },
+        {
+          "id": "brake-pressure-zero",
+          "challenge": "Brake Pressure Zero",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "flight-controls-rudder",
+          "challenge": "Flight Controls+Rudder",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "efis-option-pf-cstr-pm-apt",
+          "challenge": "EFIS Option (PF: CSTR; PM: APT)",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "Auto Brake",
+          "response": "MAX (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "terr-on-nd",
+          "challenge": "TERR ON ND",
+          "response": "AS REQ (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "transponder-squawk",
+          "challenge": "Transponder Squawk",
+          "response": "CONFIRM (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "radar-pws",
+          "challenge": "Radar/PWS",
+          "response": "ON/AUTO (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "t-o-config",
+          "challenge": "T.O Config",
+          "response": "TEST (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "t-o-memo",
+          "challenge": "T.O Memo",
+          "response": "CHECK NO BLUE (PM)",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-line-up-takeoff",
+      "name": "Line-up / Takeoff",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "atc-clearance",
+          "challenge": "ATC Clearance",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "ABV & TA + RA (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "t-o-runway",
+          "challenge": "T.O Runway",
+          "response": "CONFIRM (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "approach-path",
+          "challenge": "Approach Path",
+          "response": "CLEAR (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "strobe-lights",
+          "challenge": "Strobe Lights",
+          "response": "ON (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-lights-l-r",
+          "challenge": "Landing Lights L/R",
+          "response": "ON (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "T.O (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "packs-1-2",
+          "challenge": "Packs 1+2",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "Cabin Crew",
+          "response": "ADVISE (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "chrono",
+          "challenge": "Chrono",
+          "response": "START",
+          "sourcePage": 3
+        },
+        {
+          "id": "flight-instruments",
+          "challenge": "Flight Instruments",
+          "response": "CHECK (B)",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-acceleration-after-takeoff",
+      "name": "Acceleration / After Takeoff",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "thrust-acc-alt",
+          "challenge": "Thrust (ACC ALT)",
+          "response": "CLIMB",
+          "sourcePage": 3
+        },
+        {
+          "id": "packs-1-2",
+          "challenge": "Packs 1+2",
+          "response": "ON (10 sec.)",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "RETRACT (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "DISARM (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing Gear",
+          "response": "CHECK RETRACT (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "Auto Brake",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "autopilot",
+          "challenge": "Autopilot",
+          "response": "AS REQ (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "barometric-reference-ta",
+          "challenge": "Barometric Reference (TA)",
+          "response": "STD (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "cabin-altitude",
+          "challenge": "Cabin Altitude",
+          "response": "CHECK",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-climb-10-000-ft",
+      "name": "Climb / 10.000 ft",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "landing-lights-l-r",
+          "challenge": "Landing Lights L/R",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "seat-belt-signs",
+          "challenge": "Seat Belt Signs",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "efis-nd-mode",
+          "challenge": "EFIS, ND MODE",
+          "response": "AS REQ (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "mcdu-rad-nav-sec-perf",
+          "challenge": "MCDU RAD/NAV, SEC, PERF",
+          "response": "CHECK (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM Memo",
+          "response": "CHECK (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "BLW & TA + RA",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-cruise-approach-briefing",
+      "name": "Cruise / Approach Briefing",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "CHECK (OFF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "mcdu-perf-page",
+          "challenge": "MCDU PERF PAGE",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "destination-information",
+          "challenge": "Destination Information",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "destination-atis-metar",
+          "challenge": "Destination ATIS/METAR",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "ldg-distance",
+          "challenge": "LDG Distance",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "constraints",
+          "challenge": "Constraints",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "Auto Brake",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "mda-dh",
+          "challenge": "MDA/DH",
+          "response": "SET (B)",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-descent-10-000-ft-or-tl",
+      "name": "Descent / 10.000 ft or TL",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "landing-lights-l-r",
+          "challenge": "Landing Lights L/R",
+          "response": "ON (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "seat-belt-signs",
+          "challenge": "Seat Belt Signs",
+          "response": "ON (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "efis-option-pf-cstr-pm-apt",
+          "challenge": "EFIS Option (PF: CSTR; PM: APT)",
+          "response": "SET (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "ls-pb",
+          "challenge": "LS Pb",
+          "response": "AS REQ (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nav-accur",
+          "challenge": "NAV ACCUR",
+          "response": "CHECK (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "radio-nav",
+          "challenge": "RADIO/NAV",
+          "response": "SELECT/IDENT (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "company-msg",
+          "challenge": "Company MSG",
+          "response": "CHECK",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-approach",
+      "name": "Approach",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "approach-briefing",
+          "challenge": "Approach Briefing",
+          "response": "CHECK (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "barometric-reference-tl",
+          "challenge": "Barometric Reference (TL)",
+          "response": "SET (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-landing",
+      "name": "Landing",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "cabin-crew",
+          "challenge": "Cabin Crew",
+          "response": "ADVISE",
+          "sourcePage": 3
+        },
+        {
+          "id": "go-around-altitude-gs",
+          "challenge": "Go Around Altitude (GS*)",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing Gear",
+          "response": "DOWN (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "ON (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "T.O (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "ARM (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "autopilot-ap1-ap2",
+          "challenge": "Autopilot (AP1/AP2)",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "CHECK/SET (B)",
+          "sourcePage": 3
+        },
+        {
+          "id": "rud-trim",
+          "challenge": "RUD TRIM",
+          "response": "AS REQ",
+          "sourcePage": 3
+        },
+        {
+          "id": "ecam-memo",
+          "challenge": "ECAM Memo",
+          "response": "CHECK NO BLUE",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-after-landing",
+      "name": "After Landing",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "RETRACT (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "strobe-lights",
+          "challenge": "Strobe Lights",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "landing-lights-l-r",
+          "challenge": "Landing Lights L/R",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "TAXI (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "radar-pws",
+          "challenge": "Radar/PWS",
+          "response": "OFF/OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-mode-selector",
+          "challenge": "Engine Mode Selector",
+          "response": "NORM (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "RETRACT (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "transponder",
+          "challenge": "Transponder",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "tcas",
+          "challenge": "TCAS",
+          "response": "STBY (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "ON (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "brake-fans-5-min",
+          "challenge": "Brake Fans (> 5 min.)",
+          "response": "AS REQ",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-parking",
+      "name": "Parking",
+      "description": "Extended items - page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "accu-press",
+          "challenge": "ACCU PRESS",
+          "response": "CHECK (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "ON (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "engine-master-2-1-3-min",
+          "challenge": "Engine Master 2+1 (> 3 min.)",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "beacon-light",
+          "challenge": "Beacon Light",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "slides",
+          "challenge": "Slides",
+          "response": "CHECK DISARMED (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "seat-belt-signs",
+          "challenge": "Seat Belt Signs",
+          "response": "OFF (PF)",
+          "sourcePage": 3
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "AS REQ (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "fuel-pumps",
+          "challenge": "Fuel Pumps",
+          "response": "OFF (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "transponder",
+          "challenge": "Transponder",
+          "response": "STBY/2000 (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "irs-performance",
+          "challenge": "IRS Performance",
+          "response": "CHECK (PM)",
+          "sourcePage": 3
+        },
+        {
+          "id": "fuel-quantity",
+          "challenge": "Fuel Quantity",
+          "response": "CHECK (PM)",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "extended-after-parking",
+      "name": "After Parking",
+      "description": "Extended items - page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "id": "wipers",
+          "challenge": "Wipers",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "brake-fans",
+          "challenge": "Brake Fans",
+          "response": "AS REQ",
+          "sourcePage": 4
+        }
+      ]
+    },
+    {
+      "id": "extended-deboarding",
+      "name": "Deboarding",
+      "description": "Extended items - page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "id": "cockpit-door",
+          "challenge": "Cockpit Door",
+          "response": "UNLOCK",
+          "sourcePage": 4
+        },
+        {
+          "id": "gnd-services",
+          "challenge": "GND Services",
+          "response": "CONNECT",
+          "sourcePage": 4
+        },
+        {
+          "id": "ext-pwr-avail",
+          "challenge": "EXT PWR AVAIL",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "apu-master",
+          "challenge": "APU Master",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "windows-doors",
+          "challenge": "Windows/Doors",
+          "response": "AS REQ",
+          "sourcePage": 4
+        },
+        {
+          "id": "company-msg",
+          "challenge": "Company MSG",
+          "response": "CHECK",
+          "sourcePage": 4
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "Cabin Crew",
+          "response": "CHECK",
+          "sourcePage": 4
+        },
+        {
+          "id": "deboarding",
+          "challenge": "Deboarding",
+          "response": "CHECK",
+          "sourcePage": 4
+        },
+        {
+          "id": "mobile-phone",
+          "challenge": "Mobile Phone",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "consider-heavy-rain",
+          "challenge": "Consider Heavy Rain",
+          "response": "EXTRACT OVRD",
+          "sourcePage": 4
+        }
+      ]
+    },
+    {
+      "id": "extended-securing-shutdown",
+      "name": "Securing / Shutdown",
+      "description": "Extended items - page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "id": "windows",
+          "challenge": "Windows",
+          "response": "CLOSED (B)",
+          "sourcePage": 4
+        },
+        {
+          "id": "efis",
+          "challenge": "EFIS",
+          "response": "ARC/10NM",
+          "sourcePage": 4
+        },
+        {
+          "id": "thrust-levers",
+          "challenge": "Thrust Levers",
+          "response": "IDLE",
+          "sourcePage": 4
+        },
+        {
+          "id": "pa-cab-vhf",
+          "challenge": "PA/CAB VHF",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "adirs",
+          "challenge": "ADIRS",
+          "response": "OFF 1-2-3",
+          "sourcePage": 4
+        },
+        {
+          "id": "crew-supply",
+          "challenge": "CREW SUPPLY",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "wing-light",
+          "challenge": "WING Light",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "nav-logo-light",
+          "challenge": "NAV & Logo Light",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "no-smoking",
+          "challenge": "No Smoking",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "emer-ext-lt",
+          "challenge": "EMER EXT LT",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "ovhd-integ-lt",
+          "challenge": "OVHD INTEG LT",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "dome-lt",
+          "challenge": "DOME LT",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "battery-master-2-1",
+          "challenge": "Battery Master 2+1",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "ext-pwr",
+          "challenge": "EXT PWR",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "gnd-services",
+          "challenge": "GND Services",
+          "response": "DISCONNECT",
+          "sourcePage": 4
+        }
+      ],
+      "note": "Consider COLD WEATHER"
+    },
+    {
+      "id": "extended-special-procedure-go-around",
+      "name": "Special procedure: Go Around",
+      "description": "Extended items - page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "id": "thrust-levers",
+          "challenge": "Thrust Levers",
+          "response": "T.O/GA (Flaps one step up)",
+          "sourcePage": 4
+        },
+        {
+          "id": "flight-instruments",
+          "challenge": "Flight Instruments",
+          "response": "CHECK (B)",
+          "sourcePage": 4
+        },
+        {
+          "id": "atc",
+          "challenge": "ATC",
+          "response": "ADVISE",
+          "sourcePage": 4
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-Ice",
+          "response": "AS REQ",
+          "sourcePage": 4
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "RETRACT (PM)",
+          "sourcePage": 4
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "DISARM (PM)",
+          "sourcePage": 4
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing Gear",
+          "response": "CHECK RETRACT (PM)",
+          "sourcePage": 4
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "OFF (PM)",
+          "sourcePage": 4
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "OFF (PM)",
+          "sourcePage": 4
+        },
+        {
+          "id": "autopilot-pf",
+          "challenge": "Autopilot (PF)",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "cabin-crew",
+          "challenge": "Cabin Crew",
+          "response": "ADVISE",
+          "sourcePage": 4
+        },
+        {
+          "id": "auto-brake",
+          "challenge": "Auto Brake",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "approach-briefing",
+          "challenge": "Approach Briefing",
+          "response": "CHECK (B)",
+          "sourcePage": 4
+        }
+      ],
+      "note": "Flow Patterns as per Acceleration flow"
+    },
+    {
+      "id": "extended-special-procedure-de-ice-anti-ice",
+      "name": "Special procedure: De-Ice/Anti-Ice",
+      "description": "Extended items - page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "id": "thrust-levers",
+          "challenge": "Thrust Levers",
+          "response": "IDLE",
+          "sourcePage": 4
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking Brake",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "rwy-turn-off-light",
+          "challenge": "RWY Turn Off Light",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "nose-light",
+          "challenge": "Nose Light",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "cab-press-mode-sel",
+          "challenge": "CAB Press Mode Sel",
+          "response": "CHECK AUTO",
+          "sourcePage": 4
+        },
+        {
+          "id": "engine-bleed-1-2",
+          "challenge": "Engine Bleed 1+2",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "apu-bleed",
+          "challenge": "APU Bleed",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "ditching",
+          "challenge": "DITCHING",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "gnd-services",
+          "challenge": "GND Services",
+          "response": "INFORM",
+          "sourcePage": 4
+        },
+        {
+          "id": "gnd-services-2",
+          "challenge": "GND Services",
+          "response": "DISCONNECT",
+          "sourcePage": 4,
+          "group": "Below the line"
+        },
+        {
+          "id": "gnd-report-incl-pitots-statics",
+          "challenge": "GND Report (incl. Pitots+Statics)",
+          "response": "CHECK",
+          "sourcePage": 4
+        },
+        {
+          "id": "ditching-2",
+          "challenge": "DITCHING",
+          "response": "OFF",
+          "sourcePage": 4
+        },
+        {
+          "id": "outflow-valve",
+          "challenge": "Outflow Valve",
+          "response": "CHECK OPEN",
+          "sourcePage": 4
+        },
+        {
+          "id": "engine-bleed-1-2-2",
+          "challenge": "Engine Bleed 1+2",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "apu-bleed-2",
+          "challenge": "APU Bleed",
+          "response": "AS REQ (> 60 sec.)",
+          "sourcePage": 4
+        },
+        {
+          "id": "rwy-turn-off-light-2",
+          "challenge": "RWY Turn Off Light",
+          "response": "ON",
+          "sourcePage": 4
+        },
+        {
+          "id": "nose-light-2",
+          "challenge": "Nose Light",
+          "response": "TAXI",
+          "sourcePage": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "normal-extended-v26",
+      "title": "A320 Family - Normal & Extended v26",
+      "path": "references/airbus-a320-family/normal-extended-v26.pdf"
+    }
+  ]
+}

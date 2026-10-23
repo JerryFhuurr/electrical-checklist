@@ -1,5 +1,6 @@
 {
   "id": "ryanair-737-ng",
+  "manufacturer": "Boeing",
   "name": "Boeing 737-NG",
   "operator": "Ryanair",
   "source": "RYANAIR BOEING 737.pdf",
@@ -538,5 +539,6 @@
       "title": "Ryanair 737-NG Normal Checklist",
       "path": "references/ryanair-737-ng/normal-checklist.pdf"
     }
-  ]
+  ],
+  "legend": "* Through flights   ·   ** If applicable\nBlank responses (___) are values to verify in the aircraft."
 }

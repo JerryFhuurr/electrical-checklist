@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Locale;
@@ -18,9 +19,19 @@ import java.util.Locale;
 /** Aircraft and checklist definitions are bundled data, independent of progress and UI. */
 public final class ChecklistCatalog {
     public final List<Aircraft> aircraft;
+    public final List<String> manufacturers;
 
     private ChecklistCatalog(List<Aircraft> aircraft) {
         this.aircraft = Collections.unmodifiableList(aircraft);
+        Set<String> names = new LinkedHashSet<>();
+        for (Aircraft model : aircraft) names.add(model.manufacturer);
+        this.manufacturers = Collections.unmodifiableList(new ArrayList<>(names));
+    }
+
+    public List<Aircraft> aircraftFor(String manufacturer) {
+        List<Aircraft> models = new ArrayList<>();
+        for (Aircraft model : aircraft) if (model.manufacturer.equals(manufacturer)) models.add(model);
+        return Collections.unmodifiableList(models);
     }
 
     public static ChecklistCatalog load(Context context) throws IOException, JSONException {
@@ -34,6 +45,8 @@ public final class ChecklistCatalog {
             if (!filename.matches("[a-z0-9-]+\\.json")) throw new JSONException("Invalid aircraft filename");
             JSONObject model = readJson(context, "checklists/" + filename);
             String aircraftId = uniqueId(model, keys);
+            String manufacturer = model.getString("manufacturer").trim();
+            if (manufacturer.isEmpty()) throw new JSONException("Aircraft has no manufacturer: " + aircraftId);
             List<ReferenceDocument> references = new ArrayList<>();
             Set<String> referenceIds = new HashSet<>();
             JSONArray documents = model.optJSONArray("references");
@@ -42,9 +55,13 @@ public final class ChecklistCatalog {
                 references.add(new ReferenceDocument(uniqueId(document, referenceIds),
                         document.getString("title"), document.getString("path")));
             }
-            List<Checklist> checklists = parseChecklists(model);
-            aircraft.add(new Aircraft(aircraftId, model.getString("name"), model.getString("operator"),
-                    model.getString("source"), model.getString("notice"), checklists, references));
+            Set<String> checklistIds = new HashSet<>();
+            List<Checklist> checklists = parseChecklists(model, "checklists", checklistIds);
+            List<Checklist> extended = parseChecklists(model, "extendedChecklists", checklistIds);
+            aircraft.add(new Aircraft(aircraftId, manufacturer, model.getString("name"), model.getString("operator"),
+                    model.getString("source"), model.getString("notice"), model.optString("legend"),
+                    checklists, extended, references, model.optString("extendedReferenceNote"),
+                    model.optInt("extendedReferencePage", 0)));
         }
         if (aircraft.isEmpty()) throw new JSONException("No aircraft in catalog");
         return new ChecklistCatalog(aircraft);
@@ -60,26 +77,41 @@ public final class ChecklistCatalog {
         }
     }
 
-    private static List<Checklist> parseChecklists(JSONObject model) throws JSONException {
+    private static List<Checklist> parseChecklists(JSONObject model, String field, Set<String> checklistIds) throws JSONException {
         List<Checklist> checklists = new ArrayList<>();
-        Set<String> checklistIds = new HashSet<>();
-        JSONArray lists = model.getJSONArray("checklists");
+        JSONArray lists = model.optJSONArray(field);
+        if (lists == null && field.equals("extendedChecklists")) return checklists;
+        if (lists == null) throw new JSONException("Aircraft has no checklists");
         for (int c = 0; c < lists.length(); c++) {
             JSONObject list = lists.getJSONObject(c);
             String checklistId = uniqueId(list, checklistIds);
             List<Item> items = new ArrayList<>();
+            List<ChecklistRow> displayRows = new ArrayList<>();
             Set<String> itemIds = new HashSet<>();
             JSONArray rows = list.getJSONArray("items");
             for (int i = 0; i < rows.length(); i++) {
                 JSONObject row = rows.getJSONObject(i);
-                items.add(new Item(uniqueId(row, itemIds), row.getString("challenge"),
-                        row.getString("response"), row.optString("note"), row.optString("group")));
+                String rowId = uniqueId(row, itemIds);
+                String type = row.optString("type", "item");
+                if (type.equals("item")) {
+                    Item item = new Item(rowId, row.getString("challenge"), row.getString("response"),
+                            row.optString("note"), row.optString("group"));
+                    items.add(item);
+                    displayRows.add(new ChecklistRow(item));
+                } else if (type.equals("heading") || type.equals("note")) {
+                    String text = row.getString("text");
+                    if (text.trim().isEmpty()) throw new JSONException("Empty text row: " + rowId);
+                    displayRows.add(new ChecklistRow(rowId, type, text,
+                            row.optBoolean("bold", type.equals("heading")), row.optBoolean("italic"),
+                            Math.max(0, Math.min(128, row.optInt("indent"))), row.optString("alignment", "start")));
+                } else throw new JSONException("Unknown checklist row type: " + type);
             }
-            if (items.isEmpty()) throw new JSONException("Empty checklist: " + checklistId);
+            if (displayRows.isEmpty()) throw new JSONException("Empty checklist: " + checklistId);
             checklists.add(new Checklist(checklistId, list.getString("name"),
-                    list.getString("description"), items));
+                    list.getString("description"), list.optString("note"), items, displayRows));
         }
-        if (checklists.isEmpty()) throw new JSONException("Aircraft has no checklists: " + model.getString("id"));
+        if (checklists.isEmpty() && field.equals("checklists"))
+            throw new JSONException("Aircraft has no checklists: " + model.getString("id"));
         return checklists;
     }
 
@@ -90,14 +122,24 @@ public final class ChecklistCatalog {
     }
 
     public static final class Aircraft {
-        public final String id, name, operator, source, notice;
-        public final List<Checklist> checklists;
+        public final String id, manufacturer, name, operator, source, notice, legend, extendedReferenceNote;
+        public final int extendedReferencePage;
+        public final List<Checklist> checklists, extendedChecklists;
         public final List<ReferenceDocument> references;
-        public Aircraft(String id, String name, String operator, String source, String notice,
-                        List<Checklist> checklists, List<ReferenceDocument> references) {
+        public Aircraft(String id, String manufacturer, String name, String operator, String source, String notice, String legend,
+                        List<Checklist> checklists, List<Checklist> extended, List<ReferenceDocument> references,
+                        String extendedReferenceNote, int extendedReferencePage) {
             this.id = id; this.name = name; this.operator = operator; this.source = source; this.notice = notice;
+            this.manufacturer = manufacturer;
             this.checklists = Collections.unmodifiableList(checklists);
             this.references = Collections.unmodifiableList(references);
+            this.legend = legend;
+            this.extendedChecklists = Collections.unmodifiableList(extended);
+            this.extendedReferenceNote = extendedReferenceNote;
+            this.extendedReferencePage = extendedReferencePage;
+        }
+        public List<Checklist> checklistsFor(boolean extended) {
+            return extended && !extendedChecklists.isEmpty() ? extendedChecklists : checklists;
         }
         public int itemCount() {
             int count = 0;
@@ -117,11 +159,30 @@ public final class ChecklistCatalog {
     }
 
     public static final class Checklist {
-        public final String id, name, description;
+        public final String id, name, description, note;
         public final List<Item> items;
-        public Checklist(String id, String name, String description, List<Item> items) {
+        public final List<ChecklistRow> rows;
+        public Checklist(String id, String name, String description, String note, List<Item> items, List<ChecklistRow> rows) {
             this.id = id; this.name = name; this.description = description;
             this.items = Collections.unmodifiableList(items);
+            this.rows = Collections.unmodifiableList(rows);
+            this.note = note;
+        }
+    }
+
+    /** Text rows keep source formatting and ordering but never enter the checkable item list. */
+    public static final class ChecklistRow {
+        public final String id, type, text, alignment;
+        public final Item item;
+        public final boolean bold, italic;
+        public final int indent;
+        private ChecklistRow(Item item) {
+            this.id = item.id; this.type = "item"; this.item = item;
+            this.text = ""; this.alignment = "start"; this.bold = false; this.italic = false; this.indent = 0;
+        }
+        private ChecklistRow(String id, String type, String text, boolean bold, boolean italic, int indent, String alignment) {
+            this.id = id; this.type = type; this.text = text; this.bold = bold; this.italic = italic;
+            this.indent = indent; this.alignment = alignment; this.item = null;
         }
     }
 
