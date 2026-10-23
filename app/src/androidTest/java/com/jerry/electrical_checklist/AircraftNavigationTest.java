@@ -82,6 +82,12 @@ public class AircraftNavigationTest {
     private void assertHome() {
         onView(withId(R.id.manufacturer_rows)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
         onView(withId(R.id.home_button)).check(matches(withEffectiveVisibility(Visibility.GONE)));
+        onView(withId(R.id.favorite_aircraft_rows)).check(doesNotExist());
+        onView(withId(R.id.recent_aircraft_rows)).check(doesNotExist());
+    }
+    private void collection(int section) {
+        onView(withId(section == R.id.favorite_aircraft_rows ? R.id.open_favorites_button : R.id.open_recent_button))
+                .perform(scrollTo(), click());
     }
     private void open(String manufacturer, String aircraft) {
         onView(withContentDescription("Choose aircraft from " + manufacturer)).perform(scrollTo(), click());
@@ -92,6 +98,7 @@ public class AircraftNavigationTest {
         onView(allOf(withContentDescription("Open " + aircraft + " checklists"), isDescendantOfA(withId(section)))).perform(scrollTo(), click());
     }
     private void unstar(String aircraft) {
+        collection(R.id.favorite_aircraft_rows);
         onView(allOf(withContentDescription("Remove " + aircraft + " from favorites"),
                 isDescendantOfA(withId(R.id.favorite_aircraft_rows)))).perform(scrollTo(), click());
     }
@@ -113,6 +120,7 @@ public class AircraftNavigationTest {
         onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(scrollTo(), click());
         phase("safety-inspection"); onView(withContentDescription("BATTERY, ON")).perform(click());
         home(); assertHome();
+        collection(R.id.favorite_aircraft_rows);
         onView(withId(R.id.favorites_empty)).check(matches(withEffectiveVisibility(Visibility.GONE)));
         shortcut("Boeing 737-NG", R.id.favorite_aircraft_rows); phase("safety-inspection");
         onView(withContentDescription("BATTERY, ON")).check(matches(isChecked()));
@@ -121,11 +129,12 @@ public class AircraftNavigationTest {
         assertTrue(navigation.isFavorite("ryanair-737-ng")); assertEquals("ryanair-737-ng", recentIds().get(0));
         assertEquals("safety-inspection", navigation.lastChecklist().checklistId);
         assertTrue(new ProgressStore(context).load().checkedSnapshot().isEmpty());
-        restart(); shortcut("Boeing 737-NG", R.id.recent_aircraft_rows); phase("safety-inspection");
+        restart(); collection(R.id.recent_aircraft_rows); shortcut("Boeing 737-NG", R.id.recent_aircraft_rows); phase("safety-inspection");
         onView(withContentDescription("BATTERY, ON")).check(matches(isNotChecked()));
         home(); unstar("Boeing 737-NG");
         onView(withId(R.id.favorites_empty)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
         assertFalse(navigation.isFavorite("ryanair-737-ng"));
+        pressBack(); collection(R.id.recent_aircraft_rows);
         shortcut("Boeing 737-NG", R.id.recent_aircraft_rows);
         onView(withId(R.id.model_title)).check(matches(withText("Boeing 737-NG")));
     }
@@ -136,13 +145,46 @@ public class AircraftNavigationTest {
         navigation.recordAircraft(models.get(1).id);
         assertEquals(Arrays.asList(models.get(1).id, models.get(5).id, models.get(4).id, models.get(3).id, models.get(2).id), recentIds());
         restart();
+        collection(R.id.recent_aircraft_rows);
         onView(withId(R.id.recent_aircraft_rows)).check((view,error) -> {
             if (error != null) throw error; assertEquals(5, ((ViewGroup) view).getChildCount());
         });
         shortcut(models.get(2).name, R.id.recent_aircraft_rows);
         assertEquals(models.get(2).id, recentIds().get(0)); assertEquals(5, recentIds().size());
-        home(); shortcut(models.get(2).name, R.id.recent_aircraft_rows);
+        home(); collection(R.id.recent_aircraft_rows); shortcut(models.get(2).name, R.id.recent_aircraft_rows);
         assertEquals(5, recentIds().size());
+    }
+
+    @Test public void collectionPagesHaveEmptyStatesAndRestoreTheirBackDestinationAfterRotation() {
+        assertHome();
+        assertEquals("E-Checklist", context.getApplicationInfo().loadLabel(context.getPackageManager()).toString());
+        onView(withId(R.id.brand_label)).check(matches(withText("E-Checklist")));
+        onView(withText("Every check.\nA little clearer.")).check(doesNotExist());
+        onView(withText("YOUR FLIGHT COMPANION")).check(doesNotExist());
+        collection(R.id.favorite_aircraft_rows);
+        onView(withId(R.id.favorites_empty)).check(matches(isDisplayed()));
+        onView(withId(R.id.recent_aircraft_rows)).check(matches(withEffectiveVisibility(Visibility.GONE)));
+        pressBack(); assertHome(); collection(R.id.recent_aircraft_rows);
+        onView(withId(R.id.recent_aircraft_empty)).check(matches(isDisplayed()));
+        rotate(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        onView(withId(R.id.shortcuts_title)).check(matches(withText("Recent aircraft")));
+        rotate(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        onView(withId(R.id.recent_aircraft_empty)).check(matches(isDisplayed()));
+        home(); assertHome();
+        navigation.setFavorite("ryanair-737-ng", true);
+        collection(R.id.favorite_aircraft_rows); shortcut("Boeing 737-NG", R.id.favorite_aircraft_rows);
+        phase("safety-inspection"); onView(withContentDescription("BATTERY, ON")).perform(click());
+        rotate(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        onView(withId(R.id.checklist_title)).check(matches(withText("Safety Inspection")));
+        pressBack(); onView(withContentDescription("Back to favorites")).perform(click());
+        onView(withId(R.id.shortcuts_title)).check(matches(withText("Favorites")));
+        rotate(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        shortcut("Boeing 737-NG", R.id.favorite_aircraft_rows); phase("safety-inspection");
+        onView(withContentDescription("BATTERY, ON")).check(matches(isChecked()));
+        home(); collection(R.id.recent_aircraft_rows); shortcut("Boeing 737-NG", R.id.recent_aircraft_rows);
+        onView(withContentDescription("Back to recent aircraft")).perform(click());
+        onView(withId(R.id.shortcuts_title)).check(matches(withText("Recent aircraft")));
+        onView(withContentDescription("Back to manufacturers")).perform(click()); assertHome();
     }
 
     @Test public void favoriteStartupChoosesConfiguredPlaneAndRotationKeepsCurrentNavigation() {

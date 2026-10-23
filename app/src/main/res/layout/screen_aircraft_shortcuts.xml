@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page_scroll" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+        <TextView android:id="@+id/shortcuts_title" style="@style/PageTitle" android:layout_marginTop="0dp"/>
+        <TextView android:id="@+id/favorites_empty" style="@style/BodyText" android:text="@string/favorites_empty"/>
+        <LinearLayout android:id="@+id/favorite_aircraft_rows" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical"/>
+        <TextView android:id="@+id/recent_aircraft_empty" style="@style/BodyText" android:text="@string/recent_aircraft_empty"/>
+        <LinearLayout android:id="@+id/recent_aircraft_rows" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical"/>
+    </LinearLayout>
+</ScrollView>

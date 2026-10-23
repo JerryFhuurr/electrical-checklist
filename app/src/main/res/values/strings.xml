@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Flight Check</string>
-    <string name="brand">FLIGHT / CHECK</string>
+    <string name="app_name">E-Checklist</string>
+    <string name="brand">E-Checklist</string>
     <string name="reset_all">Reset all</string>
     <string name="reset_all_description">Reset all checklists for all aircraft</string>
     <string name="back_checklists">Back to checklists</string>
@@ -11,8 +11,6 @@
     <string name="choose_manufacturer">Choose a manufacturer, then your aircraft model to open its checklists.</string>
     <string name="select_aircraft">Choose aircraft  →</string>
     <string name="open_manufacturer_description">Choose aircraft from %1$s</string>
-    <string name="flight_companion">YOUR FLIGHT COMPANION</string>
-    <string name="home_title">Every check.\nA little clearer.</string>
     <string name="choose_aircraft">Choose your aircraft to start a checklist or pick up where you left off.</string>
     <string name="aircraft_library">AIRCRAFT LIBRARY</string>
     <string name="simple_routine">A SIMPLE ROUTINE</string>
@@ -136,10 +134,12 @@
     <string name="sidebar_phase_description">%1$s, %2$s</string>
     <string name="sidebar_completed_phase">✓ %1$s</string>
     <string name="home">Home</string>
-    <string name="browse_manufacturers">Browse manufacturers ↓</string>
-    <string name="favorites_title">FAVORITE AIRCRAFT</string>
+    <string name="favorites_title">Favorites</string>
     <string name="favorites_empty">Tap the star on an aircraft card to add it here.</string>
-    <string name="recent_aircraft_title">RECENT AIRCRAFT</string>
+    <string name="recent_aircraft_title">Recent aircraft</string>
+    <string name="recent_aircraft_empty">Aircraft you open will appear here.</string>
+    <string name="back_favorites">Back to favorites</string>
+    <string name="back_recent_aircraft">Back to recent aircraft</string>
     <string name="add_favorite">Add %1$s to favorites</string>
     <string name="remove_favorite">Remove %1$s from favorites</string>
     <string name="open_aircraft_shortcut">Open %1$s checklists</string>

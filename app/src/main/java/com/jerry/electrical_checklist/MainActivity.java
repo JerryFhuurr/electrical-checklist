@@ -39,11 +39,13 @@ import com.jerry.electrical_checklist.ChecklistCatalog.ChecklistSet;
 
 /** XML layouts own presentation; this activity binds the catalog and manual checklist state. */
 public class MainActivity extends AppCompatActivity {
+    private static final String FAVORITES = "favorites", RECENT = "recent";
     private ChecklistCatalog catalog;
     private ChecklistProgress progress;
     private ProgressStore store;
     private NavigationPreferences navigation;
     private String manufacturer;
+    private String aircraftCollection;
     private Aircraft aircraft;
     private Checklist checklist;
     private boolean showExtended;
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.reset_button).setOnClickListener(v -> confirmReset());
         findViewById(R.id.settings_button).setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
         findViewById(R.id.home_button).setOnClickListener(v -> {
-            manufacturer = null; aircraft = null; checklist = null; checklistSet = null; showExtended = false; render(true);
+            manufacturer = null; aircraftCollection = null; aircraft = null; checklist = null; checklistSet = null; showExtended = false; render(true);
         });
         checklistFontScale = new DisplaySettings(this).fontScale();
         store = new ProgressStore(this);
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (state != null) {
+            String savedCollection = state.getString("aircraft_collection");
+            if (FAVORITES.equals(savedCollection) || RECENT.equals(savedCollection)) aircraftCollection = savedCollection;
             String savedManufacturer = state.getString("manufacturer");
             if (catalog.manufacturers.contains(savedManufacturer)) manufacturer = savedManufacturer;
             showExtended = state.getBoolean("extended");
@@ -112,8 +116,9 @@ public class MainActivity extends AppCompatActivity {
             @Override public void handleOnBackPressed() {
                 if (checklist != null) { checklist = null; if (checklistSet != null && checklistSet.directOpen) checklistSet = null; render(true); }
                 else if (checklistSet != null) { checklistSet = null; render(true); }
-                else if (aircraft != null) { aircraft = null; showExtended = false; render(true); }
+                else if (aircraft != null) { aircraft = null; showExtended = false; if (aircraftCollection != null) manufacturer = null; render(true); }
                 else if (manufacturer != null) { manufacturer = null; render(true); }
+                else if (aircraftCollection != null) { aircraftCollection = null; render(true); }
                 else { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); }
             }
         });
@@ -137,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onSaveInstanceState(@NonNull Bundle state) {
         super.onSaveInstanceState(state);
         if (manufacturer != null) state.putString("manufacturer", manufacturer);
+        if (aircraftCollection != null) state.putString("aircraft_collection", aircraftCollection);
         if (aircraft != null) state.putString("aircraft", aircraft.id);
         if (checklist != null) state.putString("checklist", checklist.id);
         state.putBoolean("extended", showExtended);
@@ -156,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         pageTransitions.clear();
         String aircraftId = aircraft == null ? "" : aircraft.id;
         String context = sidebarContext();
-        String page = manufacturer + "/" + aircraftId + "/" + context + "/" + (checklist == null ? "" : checklist.id);
+        String page = aircraftCollection + "/" + manufacturer + "/" + aircraftId + "/" + context + "/" + (checklist == null ? "" : checklist.id);
         int checklistIndex = checklist == null ? -1 : activeChecklists().indexOf(checklist);
         boolean changedPage = renderedPage != null && !renderedPage.equals(page);
         boolean sameAircraft = !aircraftId.isEmpty() && aircraftId.equals(renderedAircraft);
@@ -173,13 +179,17 @@ public class MainActivity extends AppCompatActivity {
         sidebarButtons.clear();
         container.removeAllViews();
         itemViews.clear();
-        root.findViewById(R.id.back_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
-        root.findViewById(R.id.home_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
+        boolean atHome = manufacturer == null && aircraftCollection == null;
+        root.findViewById(R.id.back_button).setVisibility(atHome ? View.GONE : View.VISIBLE);
+        root.findViewById(R.id.home_button).setVisibility(atHome ? View.GONE : View.VISIBLE);
         root.findViewById(R.id.back_button).setContentDescription(getString(checklist != null ? R.string.back_checklists
-                : checklistSet != null ? R.string.back_normal_checklists : aircraft != null ? R.string.back_aircraft : R.string.back_manufacturers));
+                : checklistSet != null ? R.string.back_normal_checklists : aircraft != null
+                ? aircraftCollection == null ? R.string.back_aircraft : FAVORITES.equals(aircraftCollection) ? R.string.back_favorites : R.string.back_recent_aircraft
+                : R.string.back_manufacturers));
         int background = getColor(checklist == null ? R.color.app_background : R.color.checklist_background);
         getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(background));
-        if (manufacturer == null) renderManufacturers();
+        if (manufacturer == null && aircraftCollection != null) renderAircraftCollection();
+        else if (manufacturer == null) renderManufacturers();
         else if (aircraft == null) renderAircraft();
         else if (getResources().getBoolean(R.bool.checklist_two_pane)) renderWorkspace();
         else if (checklist == null) renderChecklists();
@@ -387,13 +397,8 @@ public class MainActivity extends AppCompatActivity {
     private void renderManufacturers() {
         inflateScreen(R.layout.screen_manufacturers);
         screen.setAccessibilityPaneTitle(getString(R.string.manufacturers_title));
-        screen.findViewById(R.id.browse_manufacturers_button).setOnClickListener(v ->
-                scroll.smoothScrollTo(0, screen.findViewById(R.id.manufacturers_heading).getTop()));
-        List<Aircraft> favorites = navigation.favorites(catalog), recent = navigation.recentAircraft(catalog);
-        screen.findViewById(R.id.favorites_empty).setVisibility(favorites.isEmpty() ? View.VISIBLE : View.GONE);
-        bindHomeAircraft(screen.findViewById(R.id.favorite_aircraft_rows), favorites);
-        screen.findViewById(R.id.recent_aircraft_section).setVisibility(recent.isEmpty() ? View.GONE : View.VISIBLE);
-        bindHomeAircraft(screen.findViewById(R.id.recent_aircraft_rows), recent);
+        screen.findViewById(R.id.open_favorites_button).setOnClickListener(v -> { aircraftCollection = FAVORITES; render(); });
+        screen.findViewById(R.id.open_recent_button).setOnClickListener(v -> { aircraftCollection = RECENT; render(); });
         LinearLayout rows = screen.findViewById(R.id.manufacturer_rows);
         for (String name : catalog.manufacturers) {
             View row = getLayoutInflater().inflate(R.layout.row_manufacturer, rows, false);
@@ -407,6 +412,21 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(v -> { manufacturer = name; render(); });
             rows.addView(row);
         }
+    }
+
+    private void renderAircraftCollection() {
+        inflateScreen(R.layout.screen_aircraft_shortcuts);
+        boolean favorite = FAVORITES.equals(aircraftCollection);
+        String title = getString(favorite ? R.string.favorites_title : R.string.recent_aircraft_title);
+        label(screen, R.id.shortcuts_title, title);
+        screen.setAccessibilityPaneTitle(title);
+        List<Aircraft> models = favorite ? navigation.favorites(catalog) : navigation.recentAircraft(catalog);
+        screen.findViewById(R.id.favorites_empty).setVisibility(favorite && models.isEmpty() ? View.VISIBLE : View.GONE);
+        screen.findViewById(R.id.recent_aircraft_empty).setVisibility(!favorite && models.isEmpty() ? View.VISIBLE : View.GONE);
+        LinearLayout favorites = screen.findViewById(R.id.favorite_aircraft_rows), recent = screen.findViewById(R.id.recent_aircraft_rows);
+        favorites.setVisibility(favorite ? View.VISIBLE : View.GONE);
+        recent.setVisibility(favorite ? View.GONE : View.VISIBLE);
+        bindHomeAircraft(favorite ? favorites : recent, models);
     }
 
     private void renderChecklists() {
