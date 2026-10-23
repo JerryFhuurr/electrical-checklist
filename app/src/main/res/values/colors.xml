@@ -10,4 +10,5 @@
     <color name="checklist_ink">#D0D6DB</color>
     <color name="checklist_green">#96C83A</color>
     <color name="checklist_line">#859095</color>
+    <color name="checklist_manual_background">#242A32</color>
 </resources>

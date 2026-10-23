@@ -52,4 +52,29 @@ public class ChecklistProgressTest {
     @Test public void emptyChecklistCannotBeCompleted() {
         assertFalse(empty().complete("737", "start", Collections.emptyList()));
     }
+    @Test public void optionalChecksDoNotSatisfyRequirementsOrReopenCompletedChecklist() {
+        ChecklistProgress progress = empty();
+        progress.setChecked("md11", "takeoff", "hyd-manual", true, false);
+        assertFalse(progress.complete("md11", "takeoff", Collections.singletonList("flaps")));
+        progress.setChecked("md11", "takeoff", "flaps", true);
+        progress.setChecked("md11", "takeoff", "hyd-manual", false, false);
+        assertTrue(progress.complete("md11", "takeoff", Collections.singletonList("flaps")));
+        progress.setChecked("md11", "takeoff", "hyd-manual", true, false);
+        progress.setChecked("md11", "takeoff", "hyd-manual", false, false);
+        assertTrue(progress.isComplete("md11", "takeoff"));
+        assertFalse(progress.isChecked("md11", "takeoff", "hyd-manual"));
+        progress.setChecked("md11", "takeoff", "flaps", false);
+        assertFalse(progress.isComplete("md11", "takeoff"));
+    }
+    @Test public void optionalOnlyChecklistStillNeedsExplicitAcknowledgementAndRealRows() {
+        ChecklistProgress progress = empty();
+        assertFalse(progress.isComplete("md11", "manual"));
+        assertFalse(progress.complete("md11", "manual", Collections.emptyList(), false));
+        assertTrue(progress.complete("md11", "manual", Collections.emptyList(), true));
+        progress.setChecked("md11", "manual", "pump", true, false);
+        progress.setChecked("md11", "manual", "pump", false, false);
+        assertTrue(progress.isComplete("md11", "manual"));
+        progress.resetAll();
+        assertFalse(progress.isComplete("md11", "manual"));
+    }
 }

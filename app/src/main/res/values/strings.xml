@@ -85,4 +85,8 @@
     <string name="open_aircraft_description">Open checklists for %1$s</string>
     <string name="reference_notes">Reference notes</string>
     <string name="continue_checklist">Continue to next checklist</string>
+    <string name="manual_only">Manual only</string>
+    <string name="manual_only_note">Manual only · %1$s</string>
+    <string name="manual_only_description">%1$s, %2$s, manual only, optional</string>
+    <string name="required_manual_status" tools:ignore="PluralsCandidate">%1$s · %2$d / %3$d required checked · %4$d / %5$d manual only</string>
 </resources>

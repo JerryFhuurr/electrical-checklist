@@ -4,6 +4,8 @@
     "ryanair-737-ng.json",
     "airbus-a320-family.json",
     "ini-a350.json",
-    "ryanair-737-max.json"
+    "ryanair-737-max.json",
+    "mcdonnell-douglas-md11.json",
+    "fbw-a380x.json"
   ]
 }

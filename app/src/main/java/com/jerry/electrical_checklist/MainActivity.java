@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
             label(row, R.id.phase_name, list.name);
             label(row, R.id.phase_description, list.description);
             label(row, R.id.phase_status, list.items.isEmpty() ? getString(R.string.reference_notes)
-                    : getString(R.string.phase_status, status(list), checkedCount(list), list.items.size()));
+                    : progressStatus(list, R.string.phase_status));
             row.setOnClickListener(v -> { checklist = list; render(); });
             rows.addView(row);
         }
@@ -244,17 +244,22 @@ public class MainActivity extends AppCompatActivity {
             }
             View row = getLayoutInflater().inflate(R.layout.row_checklist_item, rows, false);
             row.setTag(item.id);
+            if (item.manualOnly) row.setBackgroundResource(R.drawable.manual_item_background);
             TextView challenge = row.findViewById(R.id.item_challenge);
             TextView response = row.findViewById(R.id.item_response);
             TextView itemNote = row.findViewById(R.id.item_note);
             String marker = item.note.equals("Through flights (*)") ? " *" : item.note.equals("If applicable (**)") ? " **" : "";
             challenge.setText(getString(R.string.item_challenge_with_marker, item.challenge, marker));
             response.setText(item.response);
-            if (marker.isEmpty() && !item.note.isEmpty()) { itemNote.setText(item.note); itemNote.setVisibility(View.VISIBLE); }
+            String rowNote = marker.isEmpty() ? item.note : "";
+            if (item.manualOnly) rowNote = rowNote.isEmpty() ? getString(R.string.manual_only)
+                    : getString(R.string.manual_only_note, rowNote);
+            if (!rowNote.isEmpty()) { itemNote.setText(rowNote); itemNote.setVisibility(View.VISIBLE); }
             row.setTooltipText(item.challenge + ": " + item.response + (item.note.isEmpty() ? "" : "\n" + item.note));
             CheckBox box = row.findViewById(R.id.item_checkbox);
             box.setSaveEnabled(false); // Repeated row IDs must not overwrite the model on rotation.
-            box.setContentDescription(item.challenge + ", " + item.response);
+            box.setContentDescription(item.manualOnly ? getString(R.string.manual_only_description, item.challenge, item.response)
+                    : item.challenge + ", " + item.response);
             row.setOnClickListener(v -> box.setChecked(!box.isChecked()));
             // Keep both text columns readable on narrow phones, large fonts and landscape.
             // The XML leader takes all remaining space between the natural text widths.
@@ -271,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
         action = screen.findViewById(R.id.checklist_action);
         action.setOnClickListener(v -> {
             if (checklist.items.isEmpty()) openNextChecklist();
-            else if (checkedCount(checklist) == checklist.items.size()) completeChecklist();
+            else if (checkedCount(checklist) == checklist.requiredItems.size()) completeChecklist();
             else markNext();
         });
         updateChecklistStatus();
@@ -298,17 +303,17 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         int count = checkedCount(checklist);
-        label(screen, R.id.checklist_status, getString(R.string.checklist_status, status(checklist), count, checklist.items.size()));
+        label(screen, R.id.checklist_status, progressStatus(checklist, R.string.checklist_status));
         boolean complete = isComplete(checklist);
         action.setEnabled(!complete);
         action.setAlpha(complete ? 0.55f : 1f);
-        action.setText(complete ? R.string.checklist_done : count == checklist.items.size() ? R.string.mark_checklist : R.string.mark_item);
+        action.setText(complete ? R.string.checklist_done : count == checklist.requiredItems.size() ? R.string.mark_checklist : R.string.mark_item);
     }
 
     private void toggle(Item item, boolean checked, boolean fromAction) {
         View row = itemViews.get(item.id);
         boolean reveal = checked && (fromAction || isBottomVisibleItem(row));
-        progress.setChecked(aircraft.id, checklist.id, item.id, checked);
+        progress.setChecked(aircraft.id, checklist.id, item.id, checked, !item.manualOnly);
         store.save(progress);
         bindItem(item);
         updateChecklistStatus();
@@ -329,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
         int index = checklist.items.indexOf(checkedItem);
         for (int i = index + 1; i < checklist.items.size(); i++) {
             Item next = checklist.items.get(i);
-            if (!progress.isChecked(aircraft.id, checklist.id, next.id)) {
+            if (!next.manualOnly && !progress.isChecked(aircraft.id, checklist.id, next.id)) {
                 View target = itemViews.get(next.id);
                 Checklist current = checklist;
                 scroll.post(() -> {
@@ -346,15 +351,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void markNext() {
-        for (Item item : checklist.items) {
+        for (Item item : checklist.requiredItems) {
             if (!progress.isChecked(aircraft.id, checklist.id, item.id)) { toggle(item, true, true); return; }
         }
     }
 
     private void completeChecklist() {
         List<String> ids = new ArrayList<>();
-        for (Item item : checklist.items) ids.add(item.id);
-        if (!progress.complete(aircraft.id, checklist.id, ids)) return;
+        for (Item item : checklist.requiredItems) ids.add(item.id);
+        if (!progress.complete(aircraft.id, checklist.id, ids, !checklist.items.isEmpty())) return;
         store.save(progress);
         if (!openNextChecklist()) updateChecklistStatus();
     }
@@ -384,15 +389,23 @@ public class MainActivity extends AppCompatActivity {
     }
     private String status(Checklist list) {
         int count = checkedCount(list);
-        return getString(isComplete(list) ? R.string.complete : count == list.items.size() ? R.string.ready : count > 0 ? R.string.in_progress : R.string.not_started);
+        return getString(isComplete(list) ? R.string.complete : count == list.requiredItems.size() ? R.string.ready : count > 0 ? R.string.in_progress : R.string.not_started);
     }
     private int checkedCount(Checklist list) {
         int count = 0;
-        for (Item item : list.items) if (progress.isChecked(aircraft.id, list.id, item.id)) count++;
+        for (Item item : list.requiredItems) if (progress.isChecked(aircraft.id, list.id, item.id)) count++;
         return count;
     }
     private boolean isComplete(Checklist list) {
-        return progress.isComplete(aircraft.id, list.id) && checkedCount(list) == list.items.size();
+        return progress.isComplete(aircraft.id, list.id) && checkedCount(list) == list.requiredItems.size();
+    }
+    private String progressStatus(Checklist list, int standardFormat) {
+        int optionalCount = list.items.size() - list.requiredItems.size();
+        if (optionalCount == 0) return getString(standardFormat, status(list), checkedCount(list), list.requiredItems.size());
+        int optionalChecked = 0;
+        for (Item item : list.items)
+            if (item.manualOnly && progress.isChecked(aircraft.id, list.id, item.id)) optionalChecked++;
+        return getString(R.string.required_manual_status, status(list), checkedCount(list), list.requiredItems.size(), optionalChecked, optionalCount);
     }
     private List<Checklist> activeChecklists() { return aircraft.checklistsFor(showExtended); }
     private void openReference(int page) {

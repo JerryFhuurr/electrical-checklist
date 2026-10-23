@@ -95,7 +95,7 @@ public final class ChecklistCatalog {
                 String type = row.optString("type", "item");
                 if (type.equals("item")) {
                     Item item = new Item(rowId, row.getString("challenge"), row.getString("response"),
-                            row.optString("note"), row.optString("group"));
+                            row.optString("note"), row.optString("group"), row.optBoolean("manualOnly"));
                     items.add(item);
                     displayRows.add(new ChecklistRow(item));
                 } else if (type.equals("heading") || type.equals("note")) {
@@ -160,11 +160,14 @@ public final class ChecklistCatalog {
 
     public static final class Checklist {
         public final String id, name, description, note;
-        public final List<Item> items;
+        public final List<Item> items, requiredItems;
         public final List<ChecklistRow> rows;
         public Checklist(String id, String name, String description, String note, List<Item> items, List<ChecklistRow> rows) {
             this.id = id; this.name = name; this.description = description;
             this.items = Collections.unmodifiableList(items);
+            List<Item> required = new ArrayList<>();
+            for (Item item : items) if (!item.manualOnly) required.add(item);
+            this.requiredItems = Collections.unmodifiableList(required);
             this.rows = Collections.unmodifiableList(rows);
             this.note = note;
         }
@@ -188,8 +191,10 @@ public final class ChecklistCatalog {
 
     public static final class Item {
         public final String id, challenge, response, note, group;
-        public Item(String id, String challenge, String response, String note, String group) {
+        public final boolean manualOnly;
+        public Item(String id, String challenge, String response, String note, String group, boolean manualOnly) {
             this.id = id; this.challenge = challenge; this.response = response; this.note = note; this.group = group;
+            this.manualOnly = manualOnly;
         }
     }
 }

@@ -24,20 +24,27 @@ public final class ChecklistProgress {
         return completed.contains(key(aircraftId, checklistId));
     }
     public void setChecked(String aircraftId, String checklistId, String itemId, boolean value) {
+        setChecked(aircraftId, checklistId, itemId, value, true);
+    }
+    public void setChecked(String aircraftId, String checklistId, String itemId, boolean value, boolean requiredForCompletion) {
         String key = key(aircraftId, checklistId, itemId);
         if (value) checked.add(key);
         else {
             checked.remove(key);
-            completed.remove(key(aircraftId, checklistId));
+            if (requiredForCompletion) completed.remove(key(aircraftId, checklistId));
         }
     }
     public boolean complete(String aircraftId, String checklistId, Iterable<String> itemIds) {
+        return complete(aircraftId, checklistId, itemIds, false);
+    }
+    /** Only required IDs gate completion; an optional-only checklist may still be acknowledged. */
+    public boolean complete(String aircraftId, String checklistId, Iterable<String> itemIds, boolean hasCheckableItems) {
         boolean hasItems = false;
         for (String itemId : itemIds) {
             hasItems = true;
             if (!isChecked(aircraftId, checklistId, itemId)) return false;
         }
-        if (!hasItems) return false;
+        if (!hasItems && !hasCheckableItems) return false;
         completed.add(key(aircraftId, checklistId));
         return true;
     }

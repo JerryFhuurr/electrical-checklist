@@ -1,0 +1,822 @@
+{
+  "id": "mcdonnell-douglas-md11",
+  "manufacturer": "McDonnell Douglas",
+  "name": "MD-11",
+  "operator": "FedEx / MD-11F",
+  "source": "CHECKLIST MD11.pdf",
+  "notice": "Transcribed from the supplied FedEx MD-11F Normal Procedures, Version 0824V1. Grey manual-only rows are optional for checklist completion. Source crew roles, silent-item markers, thru-flight reminders, and fill-in prompts are retained. Administrative approval/date fields remain in the original PDF.",
+  "legend": "Grey rows: Manual only - tick if needed; not required for completion.\n+ Complete silently. Thru-flight amplified-procedure reminders appear on the affected rows.\nCrew roles are shown as printed: C, F, CF, PF, PNF, All. Blank responses (___) remain prompts to verify.",
+  "checklists": [
+    {
+      "id": "before-start",
+      "name": "Before Start",
+      "description": "Normal procedures / F / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "aircraft-log",
+          "challenge": "Aircraft log",
+          "response": "Reviewed",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "fuel-quantity",
+          "challenge": "Fuel quantity",
+          "response": "F: ___\nC: Released with ___",
+          "sourcePage": 1
+        },
+        {
+          "id": "oxygen",
+          "challenge": "Oxygen",
+          "response": "C: Checked\nF: Checked, Pressure ___ / ___",
+          "sourcePage": 1,
+          "note": "Amplified procedure on thru flights"
+        },
+        {
+          "id": "irs",
+          "challenge": "IRS",
+          "response": "Aligned",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "altimeters",
+          "challenge": "Altimeters",
+          "response": "___",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "status-page",
+          "challenge": "Status page",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "takeoff-warning",
+          "challenge": "Takeoff warning",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "C / Amplified procedure on thru flights"
+        },
+        {
+          "id": "radar",
+          "challenge": "Radar",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "C / Amplified procedure on thru flights"
+        },
+        {
+          "id": "customs-forms",
+          "challenge": "Customs forms",
+          "response": "On board (if required)",
+          "sourcePage": 1,
+          "note": "F / Complete silently (+)",
+          "group": "Below the line"
+        },
+        {
+          "id": "aux-pump",
+          "challenge": "Aux pump",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "takeoff-data",
+          "challenge": "Takeoff data",
+          "response": "Briefed",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "Parking brake",
+          "response": "Set/Released",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "windows",
+          "challenge": "Windows",
+          "response": "Closed & locked",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "doors",
+          "challenge": "Doors",
+          "response": "Closed",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "beacon",
+          "challenge": "Beacon",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "ignition",
+          "challenge": "Ignition",
+          "response": "A/B",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "iso-valves",
+          "challenge": "Iso valves",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Air Manual"
+        },
+        {
+          "id": "packs",
+          "challenge": "Packs",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "bleeds",
+          "challenge": "Bleeds",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "1-2-3-pumps",
+          "challenge": "1, 2 & 3 pumps",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Fuel Manual"
+        },
+        {
+          "id": "lwr-aux-tank-pumps",
+          "challenge": "Lwr aux tank pumps",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "tail-tank-trans-pumps",
+          "challenge": "Tail tank trans pumps",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        }
+      ]
+    },
+    {
+      "id": "after-start",
+      "name": "After Start",
+      "description": "Normal procedures / F / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-ice",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "elec-panel",
+          "challenge": "Elec Panel",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "aux-pumps",
+          "challenge": "Aux pumps",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Hyd Manual"
+        },
+        {
+          "id": "1-2-3-l-pumps",
+          "challenge": "1, 2, & 3 L pumps",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "1-2-3-r-pumps",
+          "challenge": "1, 2, & 3 R pumps",
+          "response": "Chk On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "1-2-3-l-pumps-2",
+          "challenge": "1, 2, & 3 L pumps",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "iso-valves",
+          "challenge": "Iso valves",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Air Manual"
+        },
+        {
+          "id": "bleed-air-all",
+          "challenge": "Bleed air (all)",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        },
+        {
+          "id": "packs-all",
+          "challenge": "Packs (all)",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff",
+      "name": "Before Takeoff",
+      "description": "Normal procedures / F / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "F: ___\nC: Checked",
+          "sourcePage": 1
+        },
+        {
+          "id": "spoilers",
+          "challenge": "Spoilers",
+          "response": "Armed",
+          "sourcePage": 1,
+          "note": "F"
+        },
+        {
+          "id": "flight-controls",
+          "challenge": "Flight controls",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "trim",
+          "challenge": "Trim",
+          "response": "F: Zero, Zero, ___\nC: Checked",
+          "sourcePage": 1
+        },
+        {
+          "id": "briefing",
+          "challenge": "Briefing",
+          "response": "Complete/Runway ___",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "seat-belt-harness",
+          "challenge": "Seat belt & harness",
+          "response": "Fastened",
+          "sourcePage": 1,
+          "note": "All / Complete silently (+)"
+        },
+        {
+          "id": "1-3-2-3-rmp-s",
+          "challenge": "1-3, 2-3 RMP's",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Below the line / Hyd Manual"
+        },
+        {
+          "id": "packs-all",
+          "challenge": "Packs (all)",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "F",
+          "manualOnly": true,
+          "group": "Air Manual"
+        },
+        {
+          "id": "v-speeds",
+          "challenge": "V Speeds",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "ead",
+          "challenge": "EAD",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "radar",
+          "challenge": "Radar",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "C"
+        },
+        {
+          "id": "fcp",
+          "challenge": "FCP",
+          "response": "Set",
+          "sourcePage": 1,
+          "note": "CF"
+        },
+        {
+          "id": "lights",
+          "challenge": "Lights",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "F / Complete silently (+)"
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff",
+      "name": "After Takeoff",
+      "description": "Normal procedures / PNF / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "landing-gear",
+          "challenge": "Landing gear",
+          "response": "Up & lights out",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "flaps-slats",
+          "challenge": "Flaps & slats",
+          "response": "Up & retract",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "spoiler",
+          "challenge": "Spoiler",
+          "response": "Disarm",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "autobrakes",
+          "challenge": "Autobrakes",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "flap-takeoff-selector",
+          "challenge": "Flap takeoff selector",
+          "response": "15",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "ead",
+          "challenge": "EAD",
+          "response": "Checked",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "1-3-2-3-rmp-s",
+          "challenge": "1-3, 2-3 RMP's",
+          "response": "Off",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Hyd Manual"
+        },
+        {
+          "id": "packs-all",
+          "challenge": "Packs (all)",
+          "response": "On",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Air Manual"
+        },
+        {
+          "id": "l-r-aux-fuel-pmps",
+          "challenge": "L/R aux fuel pmps",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "PNF / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Fuel Manual"
+        },
+        {
+          "id": "tail-trans-pump",
+          "challenge": "Tail trans pump",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "PNF",
+          "manualOnly": true
+        },
+        {
+          "id": "fill-valves-all",
+          "challenge": "Fill valves (all)",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "PNF",
+          "manualOnly": true
+        },
+        {
+          "id": "2-tank-trans-pmp",
+          "challenge": "#2 tank trans pmp",
+          "response": "Off/On",
+          "sourcePage": 1,
+          "note": "PNF",
+          "manualOnly": true
+        }
+      ]
+    },
+    {
+      "id": "in-range",
+      "name": "In Range",
+      "description": "Normal procedures / PNF / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "altimeters",
+          "challenge": "Altimeters",
+          "response": "___",
+          "sourcePage": 2,
+          "note": "CF"
+        },
+        {
+          "id": "windshield-anti-ice",
+          "challenge": "Windshield anti-ice",
+          "response": "On",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "seatbelt-sign",
+          "challenge": "Seatbelt sign",
+          "response": "On",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "lights",
+          "challenge": "Lights",
+          "response": "As required",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "status-page",
+          "challenge": "Status page",
+          "response": "Checked",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "seatbelt-harness",
+          "challenge": "Seatbelt & harness",
+          "response": "Fastened",
+          "sourcePage": 2,
+          "note": "ALL / Complete silently (+)"
+        },
+        {
+          "id": "1-3-2-3-rmp-s",
+          "challenge": "1-3, 2-3 RMP's",
+          "response": "On",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Hyd Manual"
+        },
+        {
+          "id": "lwr-aux-tank-pmps",
+          "challenge": "Lwr aux tank pmps",
+          "response": "Off/On",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Fuel Manual"
+        },
+        {
+          "id": "tail-transfer-pump",
+          "challenge": "Tail transfer pump",
+          "response": "Off/On",
+          "sourcePage": 2,
+          "note": "PNF",
+          "manualOnly": true
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "name": "Approach",
+      "description": "Normal procedures / PNF / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "briefing",
+          "challenge": "Briefing",
+          "response": "Complete",
+          "sourcePage": 2,
+          "note": "C"
+        },
+        {
+          "id": "altimeters",
+          "challenge": "Altimeters",
+          "response": "___",
+          "sourcePage": 2,
+          "note": "CF"
+        },
+        {
+          "id": "minimums",
+          "challenge": "Minimums",
+          "response": "___",
+          "sourcePage": 2,
+          "note": "CF"
+        },
+        {
+          "id": "radios",
+          "challenge": "Radios",
+          "response": "Tuned & identified",
+          "sourcePage": 2,
+          "note": "PNF"
+        }
+      ]
+    },
+    {
+      "id": "before-landing",
+      "name": "Before Landing",
+      "description": "Normal procedures / PNF / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "lights",
+          "challenge": "Lights",
+          "response": "As required",
+          "sourcePage": 2,
+          "note": "PNF / Complete silently (+)"
+        },
+        {
+          "id": "spoiler",
+          "challenge": "Spoiler",
+          "response": "Armed",
+          "sourcePage": 2,
+          "note": "PNF"
+        },
+        {
+          "id": "auto-brakes",
+          "challenge": "Auto-brakes",
+          "response": "Off/Min/Med/Max",
+          "sourcePage": 2,
+          "note": "PF"
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing gear",
+          "response": "PNF: Down/4 green\nPF: Checked",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "PNF: ___\nPF: Checked",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "after-landing",
+      "name": "After Landing",
+      "description": "Normal procedures / F / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "apu",
+          "challenge": "APU",
+          "response": "Off/On",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "lights",
+          "challenge": "Lights",
+          "response": "As required",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "stabilizer-trim",
+          "challenge": "Stabilizer trim",
+          "response": "3° ANU",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "flaps-slats",
+          "challenge": "Flaps & slats",
+          "response": "Up & retract",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "auto-brakes",
+          "challenge": "Auto-brakes",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "spoiler",
+          "challenge": "Spoiler",
+          "response": "Retract & detent",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "radar",
+          "challenge": "Radar",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "oxygen-pressure",
+          "challenge": "Oxygen pressure",
+          "response": "Checked",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)"
+        },
+        {
+          "id": "1-3-2-3-rmp-s",
+          "challenge": "1-3, 2-3 RMP's",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "F / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Hyd Manual"
+        }
+      ]
+    },
+    {
+      "id": "shut-down",
+      "name": "Shut Down",
+      "description": "Normal procedures / C / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "irs",
+          "challenge": "IRS",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "emergency-power",
+          "challenge": "Emergency power",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "anti-ice",
+          "challenge": "Anti-ice",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "windshield-anti-ice",
+          "challenge": "Windshield anti-ice",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "defog",
+          "challenge": "Defog",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "ignition-override",
+          "challenge": "Ignition override",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "emergency-lights",
+          "challenge": "Emergency lights",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "no-smoking-sign",
+          "challenge": "No smoking sign",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "seat-belt-sign",
+          "challenge": "Seat belt sign",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "beacon",
+          "challenge": "Beacon",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "start-levers",
+          "challenge": "Start levers",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "status-page",
+          "challenge": "Status page",
+          "response": "Checked",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)"
+        },
+        {
+          "id": "1-2-3-pumps",
+          "challenge": "1, 2 & 3 pumps",
+          "response": "Off",
+          "sourcePage": 2,
+          "note": "C / Complete silently (+)",
+          "manualOnly": true,
+          "group": "Fuel Manual"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "normal-procedures",
+      "title": "MD-11F Normal Procedures - Version 0824V1",
+      "path": "references/mcdonnell-douglas-md11/normal-procedures.pdf"
+    }
+  ]
+}
