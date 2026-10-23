@@ -4,6 +4,7 @@
         <TextView android:id="@+id/back_button" android:layout_width="48dp" android:layout_height="48dp" android:text="@string/back_symbol" android:textSize="32sp" android:textColor="@color/ink" android:gravity="center" android:background="?attr/selectableItemBackgroundBorderless" android:focusable="true"/>
         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/brand" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/ink" android:letterSpacing="0.12"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/reset_button" style="@style/TextAction" android:text="@string/reset_all" android:contentDescription="@string/reset_all_description"/>
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/settings_button" android:layout_width="48dp" android:layout_height="48dp" android:padding="12dp" android:src="@drawable/ic_settings" app:tint="@color/ink" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="@string/settings"/>
     </LinearLayout>
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
     <FrameLayout android:id="@+id/screen_container" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>

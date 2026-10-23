@@ -46,8 +46,7 @@ public final class DocumentReaderActivity extends AppCompatActivity {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom); return insets;
         });
-        ViewCompat.getWindowInsetsController(root).setAppearanceLightStatusBars(false);
-        ViewCompat.getWindowInsetsController(root).setAppearanceLightNavigationBars(false);
+        DisplaySettings.styleSystemBars(this, root);
         findViewById(R.id.reader_back).setOnClickListener(v -> finish());
         pageView = findViewById(R.id.document_page);
         findViewById(R.id.reader_zoom_in).setOnClickListener(v -> pageView.zoomBy(1.5f));

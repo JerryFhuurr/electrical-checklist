@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/settings_root" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="8dp">
+        <TextView android:id="@+id/settings_back" android:layout_width="48dp" android:layout_height="48dp" android:text="@string/back_symbol" android:textSize="32sp" android:textColor="@color/ink" android:gravity="center" android:background="?attr/selectableItemBackgroundBorderless" android:focusable="true" android:contentDescription="@string/back_from_settings"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/settings" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/ink" android:accessibilityHeading="true" android:paddingHorizontal="12dp"/>
+    </LinearLayout>
+    <ScrollView android:id="@+id/settings_scroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+            <TextView style="@style/Eyebrow" android:text="@string/checklist_text"/>
+            <TextView android:id="@+id/font_size_label" style="@style/BodyText" android:text="@string/checklist_font_size" android:labelFor="@id/font_size_selector"/>
+            <Spinner android:id="@+id/font_size_selector" android:layout_width="match_parent" android:layout_height="48dp" android:spinnerMode="dropdown" android:contentDescription="@string/checklist_font_size"/>
+            <TextView style="@style/BodyText" android:text="@string/font_size_hint"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="16dp" android:background="@drawable/panel_background">
+                <TextView style="@style/Eyebrow" android:text="@string/font_preview_label"/>
+                <TextView android:id="@+id/font_preview" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="8dp" android:text="@string/font_preview_text" android:textSize="12sp" android:textColor="@color/checklist_ink"/>
+            </LinearLayout>
+            <TextView style="@style/Eyebrow" android:text="@string/appearance" android:layout_marginTop="32dp"/>
+            <RadioGroup android:id="@+id/theme_choices" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical">
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/theme_day" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/theme_day" android:textColor="@color/ink"/>
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/theme_night" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/theme_night" android:textColor="@color/ink"/>
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/theme_system" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/theme_system" android:textColor="@color/ink"/>
+            </RadioGroup>
+            <TextView style="@style/BodyText" android:text="@string/display_settings_saved"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/about_button" style="@style/PrimaryAction" android:layout_marginTop="28dp" android:text="@string/about"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout container;
     private ScrollView scroll;
     private MaterialButton action;
+    private float checklistFontScale;
     private final Map<String, View> itemViews = new LinkedHashMap<>();
 
     @Override public void onCreate(Bundle state) {
@@ -62,10 +63,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return insets;
         });
-        ViewCompat.getWindowInsetsController(root).setAppearanceLightStatusBars(false);
-        ViewCompat.getWindowInsetsController(root).setAppearanceLightNavigationBars(false);
+        DisplaySettings.styleSystemBars(this, root);
         findViewById(R.id.back_button).setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         findViewById(R.id.reset_button).setOnClickListener(v -> confirmReset());
+        findViewById(R.id.settings_button).setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
+        checklistFontScale = new DisplaySettings(this).fontScale();
         store = new ProgressStore(this);
         progress = store.load();
         try { catalog = ChecklistCatalog.load(this); }
@@ -95,6 +97,19 @@ public class MainActivity extends AppCompatActivity {
         });
         render();
         if (state != null) scroll.post(() -> scroll.scrollTo(0, state.getInt("scroll")));
+    }
+
+    @Override protected void onResume() {
+        super.onResume();
+        float selected = new DisplaySettings(this).fontScale();
+        if (Float.compare(selected, checklistFontScale) != 0) {
+            checklistFontScale = selected;
+            if (catalog != null && checklist != null) {
+                int position = scroll.getScrollY();
+                render();
+                scroll.post(() -> scroll.scrollTo(0, position));
+            }
+        }
     }
 
     @Override protected void onSaveInstanceState(@NonNull Bundle state) {
@@ -225,9 +240,11 @@ public class MainActivity extends AppCompatActivity {
                 aircraft.name.toUpperCase(Locale.ROOT), activeChecklists().indexOf(checklist) + 1, activeChecklists().size()));
         TextView legend = screen.findViewById(R.id.checklist_legend);
         legend.setText(aircraft.legend);
+        legend.setTextSize(11 * checklistFontScale);
         legend.setVisibility(aircraft.legend.isEmpty() ? View.GONE : View.VISIBLE);
         TextView note = screen.findViewById(R.id.checklist_note);
         note.setText(checklist.note);
+        note.setTextSize(12 * checklistFontScale);
         note.setVisibility(checklist.note.isEmpty() ? View.GONE : View.VISIBLE);
         label(screen, R.id.checklist_title, checklist.name);
         screen.setAccessibilityPaneTitle(checklist.name);
@@ -238,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView text = (TextView) getLayoutInflater().inflate(R.layout.row_checklist_text, rows, false);
                 text.setTag(definition.id);
                 text.setText(definition.text);
+                text.setTextSize(12 * checklistFontScale);
                 int style = definition.bold ? (definition.italic ? Typeface.BOLD_ITALIC : Typeface.BOLD)
                         : (definition.italic ? Typeface.ITALIC : Typeface.NORMAL);
                 text.setTypeface(Typeface.create("sans-serif", style));
@@ -252,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
             if (!item.group.isEmpty()) {
                 TextView group = (TextView) getLayoutInflater().inflate(R.layout.row_checklist_group, rows, false);
                 group.setText(item.group.toUpperCase(Locale.ROOT));
+                group.setTextSize(11 * checklistFontScale);
                 rows.addView(group);
             }
             View row = getLayoutInflater().inflate(R.layout.row_checklist_item, rows, false);
@@ -260,6 +279,9 @@ public class MainActivity extends AppCompatActivity {
             TextView challenge = row.findViewById(R.id.item_challenge);
             TextView response = row.findViewById(R.id.item_response);
             TextView itemNote = row.findViewById(R.id.item_note);
+            challenge.setTextSize(12 * checklistFontScale);
+            response.setTextSize(12 * checklistFontScale);
+            itemNote.setTextSize(11 * checklistFontScale);
             String marker = item.note.equals("Through flights (*)") ? " *" : item.note.equals("If applicable (**)") ? " **" : "";
             challenge.setText(getString(R.string.item_challenge_with_marker, item.challenge, marker));
             response.setText(item.response);

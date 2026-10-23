@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<resources>
+    <color name="app_background">#0B1220</color>
+    <color name="panel">#141F30</color>
+    <color name="border">#27364B</color>
+    <color name="ink">#F0F5FC</color>
+    <color name="muted">#A3B3C7</color>
+    <color name="accent">#6CE3CB</color>
+    <color name="checklist_background">#0E131B</color>
+    <color name="checklist_ink">#D0D6DB</color>
+    <color name="checklist_green">#96C83A</color>
+    <color name="checklist_line">#859095</color>
+    <color name="checklist_manual_background">#242A32</color>
+    <color name="selected_panel">#152D2D</color>
+    <color name="selected_border">#2B665A</color>
+    <color name="on_accent">#0B1220</color>
+</resources>

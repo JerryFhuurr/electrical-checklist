@@ -12,8 +12,8 @@ android {
         applicationId = "com.jerry.electrical_checklist"
         minSdk = 28
         targetSdk = 37
-        versionCode = 12
-        versionName = "1.10"
+        versionCode = 14
+        versionName = "1.12"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

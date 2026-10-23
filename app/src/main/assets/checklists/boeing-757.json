@@ -1,0 +1,1438 @@
+{
+  "id": "boeing-757",
+  "manufacturer": "Boeing",
+  "name": "Boeing 757",
+  "operator": "Normal procedures",
+  "source": "B757-767 Checklist.pdf",
+  "notice": "Shared checklist supplied for the Boeing 757 and Boeing 767. Preparation blocks and formal checklist boxes are separate phases. The source headings and performance charts retain their original Boeing 757 labels. Tables on pages 3-4 remain in the original PDF reference. Source wording and fill-in prompts are preserved. Engine Start repeats the seven source actions for each engine, using separate First engine and Second engine groups. Explicitly conditional APU rows are optional; Fuel Balancing is a selectable alternate procedure.",
+  "legend": "Conditional APU checks are optional. Complete both engine-start groups. Source headings and notes are informational; fill-in responses are prompts to verify.",
+  "checklists": [
+    {
+      "id": "power-up-preliminary-preflight",
+      "name": "Power Up & Preliminary Preflight",
+      "description": "Shared 757/767 checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "battery-switch",
+          "challenge": "BATTERY Switch",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "standby-power-selector",
+          "challenge": "STANDBY POWER Selector",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "landing-gear-lever",
+          "challenge": "LANDING GEAR LEVER",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "electrical-power",
+          "challenge": "ELECTRICAL POWER",
+          "response": "ESTABLISH",
+          "sourcePage": 1
+        },
+        {
+          "id": "bus-tie-switches",
+          "challenge": "BUS TIE Switches",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "irs-mode-selectors",
+          "challenge": "IRS MODE Selectors",
+          "response": "Off -> NAV",
+          "sourcePage": 1
+        },
+        {
+          "id": "on-dc-lights-extinguish-align-lights-on",
+          "challenge": "ON DC Lights extinguish / ALIGN LIGHTS ON",
+          "response": "",
+          "sourcePage": 1
+        },
+        {
+          "id": "status-display",
+          "challenge": "STATUS DISPLAY",
+          "response": "Oxy pres, Hyd qty & oil qty",
+          "sourcePage": 1
+        },
+        {
+          "id": "f-deck-as-power-trs-unit",
+          "challenge": "F.DECK AS & POWER TRS. UNIT",
+          "response": "GUARD CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "documents-emergency-equip",
+          "challenge": "DOCUMENTS & EMERGENCY EQUIP.",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "cdu",
+          "challenge": "CDU",
+          "response": "Pos INIT, RTE, DEP, PERF INIT, T/O REF",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "preflight-preparation",
+      "name": "Preflight Preparation",
+      "description": "Shared 757/767 checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "yaw-damper-switches",
+          "challenge": "YAW DAMPER Switches",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "electronic-engine-control",
+          "challenge": "ELECTRONIC ENGINE CONTROL",
+          "response": "ON-> OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "hydraulic-l-r-pump",
+          "challenge": "HYDRAULIC L & R PUMP",
+          "response": "ON-> OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "elt-switches",
+          "challenge": "ELT Switches",
+          "response": "ARMED",
+          "sourcePage": 1
+        },
+        {
+          "id": "hf-radio",
+          "challenge": "HF RADIO",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-generator-swtich",
+          "challenge": "APU GENERATOR Swtich",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "bus-tie-switches",
+          "challenge": "BUS TIE Switches",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "utility-bus-switches",
+          "challenge": "UTILITY BUS Switches",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "generator-control",
+          "challenge": "GENERATOR CONTROL",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-selector-if-no-gpu",
+          "challenge": "APU SELECTOR (if no GPU)",
+          "response": "START -> ON",
+          "sourcePage": 1,
+          "optional": true
+        },
+        {
+          "id": "runway-turnoff-light",
+          "challenge": "RUNWAY TURNOFF LIGHT",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "emergency-lights-swtich",
+          "challenge": "EMERGENCY LIGHTS Swtich",
+          "response": "GUARD CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-limiter-switches",
+          "challenge": "ENGINE LIMITER Switches",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-ignition-selector",
+          "challenge": "ENGINE IGNITION Selector",
+          "response": "1 or 2",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-start-seletors",
+          "challenge": "ENGINE START Seletors",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "crossfeed-swtiches",
+          "challenge": "CROSSFEED Swtiches",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-pump-switches",
+          "challenge": "FUEL PUMP Switches",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "anti-ice-wing-engine",
+          "challenge": "ANTI ICE WING/ENGINE",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "position-lights-switch",
+          "challenge": "POSITION LIGHTS Switch",
+          "response": "AS NEEDED",
+          "sourcePage": 1
+        },
+        {
+          "id": "anti-collision-lights",
+          "challenge": "ANTI-COLLISION LIGHTS",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "wing-lights-swtich",
+          "challenge": "WING LIGHTS Swtich",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "landing-lights-swtiches",
+          "challenge": "LANDING LIGHTS Swtiches",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "windows-heat-switches",
+          "challenge": "WINDOWS HEAT Switches",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "passenger-sign-selectors",
+          "challenge": "PASSENGER SIGN Selectors",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "cabin-auto-rate-landing-altitude",
+          "challenge": "CABIN AUTO RATE & LANDING ALTITUDE",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "selector",
+          "challenge": "Selector",
+          "response": "AUTO / EQUIPMENT COOLING OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "cabin-temp-selectors",
+          "challenge": "CABIN TEMP Selectors",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "trim-air-switches",
+          "challenge": "TRIM AIR Switches",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "recirculation-fan-switch",
+          "challenge": "RECIRCULATION FAN Switch",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "pack-control-selectors",
+          "challenge": "PACK CONTROL Selectors",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "isolation-switch",
+          "challenge": "ISOLATION Switch",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-bleed-air-switch",
+          "challenge": "ENGINE BLEED AIR Switch",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "apu-bleed-air-if-apu-on",
+          "challenge": "APU BLEED AIR (if APU On)",
+          "response": "ON",
+          "sourcePage": 1,
+          "optional": true
+        },
+        {
+          "id": "flight-director-l-r-switch",
+          "challenge": "FLIGHT DIRECTOR L & R Switch",
+          "response": "ON",
+          "sourcePage": 1
+        },
+        {
+          "id": "vor-dme-switch",
+          "challenge": "VOR/DME Switch",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "oxygen-test-and-mask-stowed",
+          "challenge": "OXYGEN TEST AND MASK STOWED",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "crew-oxygen",
+          "challenge": "CREW OXYGEN",
+          "response": "CHECK EICAS",
+          "sourcePage": 1
+        },
+        {
+          "id": "flight-director-source",
+          "type": "heading",
+          "text": "FLIGHT DIRECTOR SOURCE Selector:",
+          "sourcePage": 1
+        },
+        {
+          "id": "first-officer",
+          "challenge": "First Officer",
+          "response": "R",
+          "sourcePage": 1
+        },
+        {
+          "id": "captain",
+          "challenge": "Captain",
+          "response": "L",
+          "sourcePage": 1
+        },
+        {
+          "id": "navigation-instruments-source",
+          "type": "heading",
+          "text": "NAVIGATION INSTRUMENTS SOURCE SELCTOR:",
+          "sourcePage": 1
+        },
+        {
+          "id": "first-officer-2",
+          "challenge": "First Officer",
+          "response": "FMC R",
+          "sourcePage": 1
+        },
+        {
+          "id": "captain-2",
+          "challenge": "Captain",
+          "response": "FMC L",
+          "sourcePage": 1
+        },
+        {
+          "id": "e-f-i-s-irs-air-data-switches",
+          "challenge": "E F I S, IRS & AIR DATA Switches",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "altimeters",
+          "challenge": "ALTIMETERS",
+          "response": "SET QNH",
+          "sourcePage": 1
+        },
+        {
+          "id": "instrum-tcas-v1-inop-rdmi-flags",
+          "challenge": "INSTRUM.: TCAS, V1, INOP, RDMI FLAGS",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "fma-modes",
+          "type": "note",
+          "text": "MODE: A/T Blank, Roll TO, Pitch To, AFDS FD",
+          "sourcePage": 1
+        },
+        {
+          "id": "landing-gear-lever",
+          "challenge": "LANDING GEAR LEVER",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "alternate-flaps-selector",
+          "challenge": "ALTERNATE FLAPS Selector",
+          "response": "NORM",
+          "sourcePage": 1
+        },
+        {
+          "id": "alternate-flaps-switches",
+          "challenge": "ALTERNATE FLAPS Switches",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "eicas-display",
+          "challenge": "EICAS Display",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "computer-selector",
+          "challenge": "COMPUTER Selector",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "trust-reference-set-selector",
+          "challenge": "TRUST REFERENCE SET Selector",
+          "response": "BOTH",
+          "sourcePage": 1
+        },
+        {
+          "id": "dh",
+          "challenge": "DH",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "terrain-hsi-wx",
+          "challenge": "TERRAIN, HSI & WX",
+          "response": "AS NEEDED",
+          "sourcePage": 1
+        },
+        {
+          "id": "radio-vhf-adf",
+          "challenge": "RADIO VHF & ADF",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "engine-cargo-apu-fire-test",
+          "challenge": "ENGINE, CARGO, APU FIRE TEST",
+          "response": "TEST",
+          "sourcePage": 1
+        },
+        {
+          "id": "transponder-stby",
+          "challenge": "TRANSPONDER STBY",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "seat-rudder-seat-belts",
+          "challenge": "SEAT, RUDDER, SEAT BELTS",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "autothrottle-arm",
+          "challenge": "AUTOTHROTTLE ARM",
+          "response": "ARM",
+          "sourcePage": 1
+        },
+        {
+          "id": "bank-limit-selector",
+          "challenge": "BANK LIMIT Selector",
+          "response": "AS NEEDED",
+          "sourcePage": 1
+        },
+        {
+          "id": "reverse-brakes",
+          "challenge": "REVERSE BRAKES",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "ils-selector",
+          "challenge": "ILS Selector",
+          "response": "OFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "standby-engine-indicator-sel",
+          "challenge": "STANDBY ENGINE INDICATOR Sel.",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "alternate-stabilizer-trim",
+          "challenge": "ALTERNATE STABILIZER TRIM",
+          "response": "NEUTRAL",
+          "sourcePage": 1
+        },
+        {
+          "id": "speedbrake-lever",
+          "challenge": "SPEEDBRAKE Lever",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "reverse-thrust-levers",
+          "challenge": "REVERSE THRUST Levers",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "forward-thrust-levers",
+          "challenge": "FORWARD THRUST Levers",
+          "response": "DOWN",
+          "sourcePage": 1
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "stabilizer-trim",
+          "challenge": "STABILIZER TRIM",
+          "response": "GUARDS CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-control-switches",
+          "challenge": "FUEL CONTROL Switches",
+          "response": "CUTOFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-control-fire-warning-lights",
+          "challenge": "FUEL CONTROL FIRE Warning Lights",
+          "response": "EXTINGUISHED",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "preflight-checklist",
+      "name": "Preflight Checklist",
+      "description": "Shared 757/767 checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "id": "oxygen",
+          "challenge": "OXYGEN",
+          "response": "TEST",
+          "sourcePage": 1
+        },
+        {
+          "id": "pressurizz-mode-selector",
+          "challenge": "PRESSURIZZ. MODE SELECTOR",
+          "response": "AUTO",
+          "sourcePage": 1
+        },
+        {
+          "id": "flight-instruments",
+          "challenge": "FLIGHT INSTRUMENTS",
+          "response": "TEST",
+          "sourcePage": 1
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 1
+        },
+        {
+          "id": "fuel-control-switches",
+          "challenge": "FUEL CONTROL Switches",
+          "response": "CUTOFF",
+          "sourcePage": 1
+        },
+        {
+          "id": "gear-pin",
+          "challenge": "GEAR PIN",
+          "response": "REMOVE",
+          "sourcePage": 1
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "PREFLIGHT COMPLETE",
+          "sourcePage": 1
+        }
+      ]
+    },
+    {
+      "id": "before-start-preparation",
+      "name": "Before Start Preparation",
+      "description": "Shared 757/767 checklist / pages 1-2",
+      "sourcePages": [
+        1,
+        2
+      ],
+      "items": [
+        {
+          "id": "flight-deck-door",
+          "challenge": "FLIGHT DECK DOOR",
+          "response": "CLOSED & LKD",
+          "sourcePage": 1
+        },
+        {
+          "id": "cdu-check-data",
+          "challenge": "CDU CHECK DATA",
+          "response": "CHECK",
+          "sourcePage": 1
+        },
+        {
+          "id": "taxi-takeoff-briefing",
+          "challenge": "TAXI & TAKEOFF BRIEFING",
+          "response": "COMPLETE",
+          "sourcePage": 1
+        },
+        {
+          "id": "exterior-doors",
+          "challenge": "EXTERIOR DOORS",
+          "response": "CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "flight-deck-windows",
+          "challenge": "FLIGHT DECK WINDOWS",
+          "response": "CLOSED",
+          "sourcePage": 1
+        },
+        {
+          "id": "obtain-clearance",
+          "challenge": "OBTAIN CLEARANCE",
+          "response": "REQUEST CLEARANCE",
+          "sourcePage": 2
+        },
+        {
+          "id": "pushback",
+          "challenge": "PUSHBACK",
+          "response": "REQUEST CLEARANCE",
+          "sourcePage": 2
+        },
+        {
+          "id": "right-electric-pump-switch",
+          "challenge": "RIGHT ELECTRIC PUMP Switch",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "center-1-2-electric-pump",
+          "challenge": "CENTER 1 & 2 ELECTRIC PUMP",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "left-electric-pump-switch",
+          "challenge": "LEFT ELECTRIC PUMP Switch",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "l-r-fuel-pump-switches",
+          "challenge": "L & R FUEL PUMP Switches",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "center-fuel-pump-switches",
+          "challenge": "CENTER FUEL PUMP Switches",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "red-anti-collision-lights",
+          "challenge": "RED ANTI-COLLISION LIGHTS",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "recall-button",
+          "challenge": "RECALL Button",
+          "response": "PUSH",
+          "sourcePage": 2
+        },
+        {
+          "id": "stabilizer-trim-green-band",
+          "challenge": "STABILIZER TRIM (Green Band)",
+          "response": "SET",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "before-start-checklist",
+      "name": "Before Start Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "fuel",
+          "challenge": "FUEL",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "passenger-signs",
+          "challenge": "PASSENGER SIGNS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "windows",
+          "challenge": "WINDOWS",
+          "response": "LOCKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "mcp",
+          "challenge": "MCP",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "takeoff-thrust",
+          "challenge": "TAKEOFF THRUST",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "takeoff-speeds",
+          "challenge": "TAKEOFF SPEEDS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "cdu-preflight",
+          "challenge": "CDU PREFLIGHT",
+          "response": "COMPLETE",
+          "sourcePage": 2
+        },
+        {
+          "id": "rudder-and-aileron-trim",
+          "challenge": "RUDDER AND AILERON TRIM",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "taxi-and-takeoff-briefing",
+          "challenge": "TAXI AND TAKEOFF BRIEFING",
+          "response": "COMPLETE",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-deck-door",
+          "challenge": "FLIGHT DECK DOOR",
+          "response": "LOCKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "red-anti-collision-light",
+          "challenge": "RED ANTI COLLISION LIGHT",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "BEFORE START COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "engine-start",
+      "name": "Engine Start",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "first-pack-control-selectors",
+          "challenge": "PACK CONTROL Selectors",
+          "response": "OFF",
+          "sourcePage": 2,
+          "group": "First engine"
+        },
+        {
+          "id": "first-call",
+          "challenge": "CALL",
+          "response": "START ENGINE ___",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "first-engine-start-selector",
+          "challenge": "ENGINE ____ START SELECTOR",
+          "response": "GND",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "first-oil-pressure-increase",
+          "challenge": "OIL PRESSURE INCREASE",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "first-n2-rotation-min-18",
+          "challenge": "N2 ROTATION (min 18%)",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "first-fuel-control-switches",
+          "challenge": "FUEL CONTROL Switches",
+          "response": "RUN",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "first-egt-increase",
+          "challenge": "EGT INCREASE",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-pack-control-selectors",
+          "challenge": "PACK CONTROL Selectors",
+          "response": "OFF",
+          "sourcePage": 2,
+          "group": "Second engine"
+        },
+        {
+          "id": "second-call",
+          "challenge": "CALL",
+          "response": "START ENGINE ___",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-engine-start-selector",
+          "challenge": "ENGINE ____ START SELECTOR",
+          "response": "GND",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-oil-pressure-increase",
+          "challenge": "OIL PRESSURE INCREASE",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-n2-rotation-min-18",
+          "challenge": "N2 ROTATION (min 18%)",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-fuel-control-switches",
+          "challenge": "FUEL CONTROL Switches",
+          "response": "RUN",
+          "sourcePage": 2,
+          "group": ""
+        },
+        {
+          "id": "second-egt-increase",
+          "challenge": "EGT INCREASE",
+          "response": "VERIFY",
+          "sourcePage": 2,
+          "group": ""
+        }
+      ],
+      "note": "Source: ENGINE START - REPEAT FOR EACH ENGINE. Complete one group for each engine in your chosen start order."
+    },
+    {
+      "id": "before-taxi-preparation",
+      "name": "Before Taxi Preparation",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "apu-selector",
+          "challenge": "APU Selector",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "engine-anti-ice-switches",
+          "challenge": "ENGINE ANTI-ICE Switches",
+          "response": "AS NEEDED",
+          "sourcePage": 2
+        },
+        {
+          "id": "pack-selector",
+          "challenge": "PACK Selector",
+          "response": "AUTO",
+          "sourcePage": 2
+        },
+        {
+          "id": "isolation-switch",
+          "challenge": "ISOLATION Switch",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "ground-equipment",
+          "challenge": "GROUND EQUIPMENT",
+          "response": "CLEAR",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps-takeoff",
+          "challenge": "FLAPS TAKEOFF",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-controls",
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "status-eicas-display",
+          "challenge": "STATUS & EICAS Display",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "transponder",
+          "challenge": "TRANSPONDER",
+          "response": "CHECK",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "before-taxi-checklist",
+      "name": "Before Taxi Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "anti-ice",
+          "challenge": "ANTI-ICE",
+          "response": "AS REQUIRED",
+          "sourcePage": 2
+        },
+        {
+          "id": "isolation-switch",
+          "challenge": "ISOLATION SWITCH",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "recall",
+          "challenge": "RECALL",
+          "response": "CHECKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "autobrake-selector",
+          "challenge": "AUTOBRAKE Selector",
+          "response": "RTO",
+          "sourcePage": 2
+        },
+        {
+          "id": "ground-equipment",
+          "challenge": "GROUND EQUIPMENT",
+          "response": "CLEAR",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "BEFORE TAXI COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff-checklist",
+      "name": "Before Takeoff Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "takeoff-briefing",
+          "challenge": "TAKEOFF BRIEFING",
+          "response": "REVIEWED",
+          "sourcePage": 2
+        },
+        {
+          "id": "packs-selectors",
+          "challenge": "PACKS Selectors",
+          "response": "AUTO/OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps-takeoff",
+          "challenge": "FLAPS TAKEOFF",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "stabilizer-trim",
+          "challenge": "STABILIZER TRIM",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "flight-controls",
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "cabin-secured-pa",
+          "challenge": "CABIN SECURED & PA",
+          "response": "PREPARE FOR TAKEOFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "taxi-rwy-turnoff-lights",
+          "challenge": "TAXI (RWY TURNOFF) LIGHTS",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "BEFORE TAKEOFF COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "takeoff",
+      "name": "Takeoff",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "obtain-clearance",
+          "challenge": "OBTAIN CLEARANCE",
+          "response": "CLEARED TO TAKEOFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "wx-radar-terrain-display",
+          "challenge": "WX RADAR & TERRAIN DISPLAY",
+          "response": "AS NEEDED",
+          "sourcePage": 2
+        },
+        {
+          "id": "white-anti-collision-lights",
+          "challenge": "WHITE ANTI COLLISION LIGHTS",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-lights-switches",
+          "challenge": "LANDING LIGHTS Switches",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "transponder",
+          "challenge": "TRANSPONDER",
+          "response": "TA/RA",
+          "sourcePage": 2
+        },
+        {
+          "id": "rnwy-allignment",
+          "challenge": "RNWY & ALLIGNMENT",
+          "response": "VERIFY",
+          "sourcePage": 2
+        },
+        {
+          "id": "trust-takeoff-set",
+          "challenge": "TRUST TAKEOFF SET",
+          "response": "SET & VERIFY",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "80 kts - V1, VR, AND ROTATE",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-gear-lever",
+          "challenge": "LANDING GEAR LEVER",
+          "response": "UP",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "RETRACT",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff-checklist",
+      "name": "After Takeoff Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "packs-selector",
+          "challenge": "PACKS Selector",
+          "response": "AUTO",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "LANDING GEAR",
+          "response": "UP",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "UP",
+          "sourcePage": 2
+        },
+        {
+          "id": "above-fl100-landing-lights",
+          "challenge": "ABOVE FL100 LANDING LIGHTS",
+          "response": "OFF",
+          "sourcePage": 2
+        },
+        {
+          "id": "altimeters",
+          "challenge": "ALTIMETERS",
+          "response": "SET & CROSSCHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "AFTER TAKEOFF COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "fuel-balancing",
+      "name": "Fuel Balancing (Fuel leak)",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "crossfeed-switches",
+          "challenge": "CROSSFEED Switches",
+          "response": "ON",
+          "sourcePage": 2
+        },
+        {
+          "id": "fuel-pumps-switches",
+          "challenge": "FUEL PUMPS Switches",
+          "response": "OFF",
+          "sourcePage": 2
+        }
+      ],
+      "alternate": true,
+      "note": "Conditional procedure from the source; select when applicable. Automatic normal-checklist progression skips this section."
+    },
+    {
+      "id": "descend-checklist",
+      "name": "Descend Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "pressurization",
+          "challenge": "PRESSURIZATION",
+          "response": "LDG",
+          "sourcePage": 2
+        },
+        {
+          "id": "recall",
+          "challenge": "RECALL",
+          "response": "CHECKED",
+          "sourcePage": 2
+        },
+        {
+          "id": "autobrake-selector",
+          "challenge": "AUTOBRAKE Selector",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-data",
+          "challenge": "LANDING DATA",
+          "response": "VREF",
+          "sourcePage": 2
+        },
+        {
+          "id": "approach-briefing",
+          "challenge": "APPROACH BRIEFING",
+          "response": "COMPLETED",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "DESCEND COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "approach-checklist",
+      "name": "Approach Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "altimeters",
+          "challenge": "ALTIMETERS",
+          "response": "CHECK",
+          "sourcePage": 2
+        },
+        {
+          "id": "nav-aids",
+          "challenge": "NAV AIDS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "APPROACH COMPLETE",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "landing-checklist",
+      "name": "Landing Checklist",
+      "description": "Shared 757/767 checklist / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "id": "cabin",
+          "challenge": "CABIN",
+          "response": "SECURED",
+          "sourcePage": 2
+        },
+        {
+          "id": "speedbrake",
+          "challenge": "SPEEDBRAKE",
+          "response": "ARMED",
+          "sourcePage": 2
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "LANDING GEAR",
+          "response": "DOWN",
+          "sourcePage": 2
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "SET",
+          "sourcePage": 2
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "LANDING COMPLETE",
+          "sourcePage": 2
+        },
+        {
+          "id": "obtain-clearance",
+          "challenge": "OBTAIN CLEARANCE",
+          "response": "CLEARED TO LAND",
+          "sourcePage": 2
+        }
+      ]
+    },
+    {
+      "id": "shutdown",
+      "name": "Shutdown",
+      "description": "Shared 757/767 checklist / page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "hydraulic-panel-set",
+          "challenge": "HYDRAULIC PANEL SET",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "fuel-pumps-off-switches",
+          "challenge": "FUEL PUMPS OFF Switches",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "flaps",
+          "challenge": "FLAPS",
+          "response": "UP",
+          "sourcePage": 3
+        },
+        {
+          "id": "parking-brake",
+          "challenge": "PARKING BRAKE",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "fuel-control-switches",
+          "challenge": "FUEL CONTROL Switches",
+          "response": "CUTOFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "weather-radar",
+          "challenge": "WEATHER RADAR",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "call",
+          "challenge": "CALL",
+          "response": "SHUTDOWN COMPLETE",
+          "sourcePage": 3
+        }
+      ]
+    },
+    {
+      "id": "secure",
+      "name": "Secure",
+      "description": "Shared 757/767 checklist / page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "id": "irs-selectors-off",
+          "challenge": "IRS Selectors OFF",
+          "response": "CHECK",
+          "sourcePage": 3
+        },
+        {
+          "id": "emergency-lights-switch",
+          "challenge": "EMERGENCY LIGHTS Switch",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "windows-heat-left-switch",
+          "challenge": "WINDOWS HEAT LEFT Switch",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "windows-heat-right-switch",
+          "challenge": "WINDOWS HEAT RIGHT Switch",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "packs-selectors",
+          "challenge": "PACKS Selectors",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "external-power",
+          "challenge": "EXTERNAL POWER",
+          "response": "SET",
+          "sourcePage": 3
+        },
+        {
+          "id": "apu-selectors",
+          "challenge": "APU Selectors",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "standby-power-selectors",
+          "challenge": "STANDBY POWER Selectors",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "battery-switch",
+          "challenge": "BATTERY Switch",
+          "response": "OFF",
+          "sourcePage": 3
+        },
+        {
+          "id": "ground-services-bus",
+          "challenge": "GROUND SERVICES BUS",
+          "response": "CHECK",
+          "sourcePage": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "original",
+      "title": "B757/767 Normal Checklist and Boeing 757 Performance",
+      "path": "references/boeing-757-767/normal-checklist.pdf"
+    }
+  ]
+}

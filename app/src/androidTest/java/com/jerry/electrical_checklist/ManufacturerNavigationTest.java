@@ -49,7 +49,7 @@ public class ManufacturerNavigationTest {
     @Test public void manufacturerSelectionFiltersModelsAndBackReturnsThroughEachLevel() throws Exception {
         ChecklistCatalog catalog = ChecklistCatalog.load(context);
         assertEquals(Arrays.asList("Boeing", "Airbus", "McDonnell Douglas", "ATR"), catalog.manufacturers);
-        assertEquals(3, catalog.aircraftFor("Boeing").size());
+        assertEquals(5, catalog.aircraftFor("Boeing").size());
         assertEquals(4, catalog.aircraftFor("Airbus").size());
         onView(withId(R.id.aircraft_rows)).check(doesNotExist());
         onView(withId(R.id.back_button)).check(matches(withEffectiveVisibility(Visibility.GONE)));
