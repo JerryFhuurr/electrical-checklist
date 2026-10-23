@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:paddingVertical="3dp" android:background="?attr/selectableItemBackground" android:clickable="true">
+    <androidx.appcompat.widget.AppCompatCheckBox android:id="@+id/item_checkbox" android:layout_width="48dp" android:layout_height="48dp" android:minWidth="0dp" android:padding="0dp" app:buttonTint="@color/checklist_checkbox" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout android:id="@+id/item_line_content" android:layout_width="0dp" android:layout_height="wrap_content" app:layout_constraintStart_toEndOf="@id/item_checkbox" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="horizontal" android:gravity="center_vertical">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/item_challenge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="120dp" android:textSize="12sp" android:textColor="@color/checklist_ink"/>
+            <TextView android:id="@+id/item_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="120dp" android:textSize="11sp" android:textColor="@color/muted" android:visibility="gone"/>
+        </LinearLayout>
+        <View android:id="@+id/item_leader" android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:layout_marginHorizontal="8dp" android:background="@color/checklist_line" android:importantForAccessibility="no"/>
+        <TextView android:id="@+id/item_response" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="120dp" android:textSize="12sp" android:textColor="@color/checklist_ink" android:gravity="end"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

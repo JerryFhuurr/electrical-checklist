@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Electricalchecklist" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#6CE3CB</item>
+        <item name="colorOnPrimary">#0B1220</item>
+        <item name="colorSurface">#141F30</item>
+        <item name="colorOnSurface">#F0F5FC</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">#0B1220</item>
+    </style>
+
+    <style name="Theme.Electricalchecklist" parent="Base.Theme.Electricalchecklist" />
+</resources>

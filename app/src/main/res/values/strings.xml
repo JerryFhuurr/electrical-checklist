@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Flight Check</string>
+    <string name="brand">FLIGHT / CHECK</string>
+    <string name="reset_all">Reset all</string>
+    <string name="reset_all_description">Reset all checklists for all aircraft</string>
+    <string name="back_checklists">Back to checklists</string>
+    <string name="back_aircraft">Back to aircraft</string>
+    <string name="flight_companion">YOUR FLIGHT COMPANION</string>
+    <string name="home_title">Every check.\nA little clearer.</string>
+    <string name="choose_aircraft">Choose your aircraft to start a checklist or pick up where you left off.</string>
+    <string name="aircraft_library">AIRCRAFT LIBRARY</string>
+    <string name="simple_routine">A SIMPLE ROUTINE</string>
+    <string name="routine">01   Choose a checklist\n02   Check each item\n03   Mark the checklist complete</string>
+    <string name="autosaved">OFFLINE &amp; AUTO-SAVED\nYour progress stays on this device between sessions.</string>
+    <string name="source_notes">Checklist source &amp; notes</string>
+    <string name="source_notes_short">Source notes</string>
+    <string name="normal_checklists">NORMAL CHECKLISTS</string>
+    <string name="open_checklists">Open checklists  →</string>
+    <string name="choose_phase">Choose a flight phase. Progress is saved as you check.</string>
+    <string name="checklists_complete">CHECKLISTS COMPLETE</string>
+    <string name="flight_phases">FLIGHT PHASES</string>
+    <string name="aircraft_description">%1$s / %2$s / %3$s</string>
+    <plurals name="aircraft_status">
+        <item quantity="one">%1$d of %2$d checklist complete</item>
+        <item quantity="other">%1$d of %2$d checklists complete</item>
+    </plurals>
+    <plurals name="checklist_count">
+        <item quantity="one">%d checklist</item>
+        <item quantity="other">%d checklists</item>
+    </plurals>
+    <plurals name="item_count">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <string name="fraction">%1$d / %2$d</string>
+    <string name="model_eyebrow">%1$s / NORMAL CHECKLISTS</string>
+    <string name="phase_status" tools:ignore="PluralsCandidate">%1$s  ·  %2$d / %3$d checked</string>
+    <string name="complete">Complete</string>
+    <string name="ready">Ready to complete</string>
+    <string name="in_progress">In progress</string>
+    <string name="not_started">Not started</string>
+    <string name="checklist_aircraft">%1$s / %2$d OF %3$d</string>
+    <string name="checklist_status" tools:ignore="PluralsCandidate">%1$s  ·  %2$d / %3$d checked</string>
+    <string name="mark_item">Mark item as complete</string>
+    <string name="mark_checklist">Mark checklist as complete</string>
+    <string name="checklist_done">Checklist complete</string>
+    <string name="checklist_legend">* Through flights   ·   ** If applicable\nBlank responses (___) are values to verify in the aircraft.</string>
+    <string name="reset_title">Reset all checklists?</string>
+    <string name="reset_message">Clear every checked item and completed checklist for all aircraft. This starts a new session.</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset_success">All checklist progress reset</string>
+    <string name="source_message">%1$s\n\n%2$s\n\nSource markers\n* Through flights\n** If applicable\n\nAll items remain visible; these markers do not skip items automatically. Blank responses are retained from the PDF.\n\nFlight simulation use. This transcription has not been approved for aircraft operation.</string>
+    <string name="got_it">Got it</string>
+    <string name="load_error_title">Unable to open checklists</string>
+    <string name="load_error_message">The bundled checklist data could not be read. Please reinstall the app.</string>
+    <string name="close">Close</string>
+    <string name="back_symbol" translatable="false">‹</string>
+    <string name="aircraft_symbol" translatable="false">✈</string>
+    <string name="forward_symbol" translatable="false">›</string>
+    <string name="item_challenge_with_marker" translatable="false">%1$s%2$s</string>
+    <string name="view_checklist">View checklist</string>
+    <string name="reader_title">Original checklist</string>
+    <string name="reader_back">Back to interactive checklists</string>
+    <string name="reader_choose_document">Choose reference document</string>
+    <string name="reader_page">Reference checklist page</string>
+    <string name="reader_loading">Loading checklist</string>
+    <string name="reader_error_message">Unable to open this checklist. The reference file may be missing or unsupported.</string>
+    <string name="reader_retry">Try again</string>
+    <string name="reader_unavailable">Unavailable</string>
+    <string name="reader_hint">Pinch or double-tap to zoom. Drag to move around the page.</string>
+    <string name="reader_minus">−</string>
+    <string name="reader_plus">+</string>
+    <string name="reader_zoom_out">Zoom out</string>
+    <string name="reader_zoom_in">Zoom in</string>
+    <string name="reader_fit">Fit page</string>
+    <string name="reader_previous">Previous</string>
+    <string name="reader_next">Next</string>
+    <string name="reader_page_count">Page %1$d / %2$d</string>
+    <string name="reader_page_description">%1$s, page %2$d of %3$d</string>
+</resources>
