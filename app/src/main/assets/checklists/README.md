@@ -3,7 +3,7 @@
 Keep one JSON file per aircraft (for example `ryanair-737-ng.json`). Add its filename to the ordered `aircraft` array in `index.json`.
 
 Aircraft fields: `id`, `manufacturer`, `name`, `operator`, `source`, `notice`, `checklists`, optional `references`.
-Use a consistent manufacturer name such as `Boeing` or `Airbus`. The app generates manufacturer groups from the catalog in first-appearance order and shows only that manufacturer's models after selection. Future models and manufacturers need no navigation code changes.
+Use a consistent manufacturer name such as `Boeing` or `Airbus`. The app generates manufacturer groups from the catalog in first-appearance order and shows only that manufacturer's models after selection, sorted by model name. Future models and manufacturers need no navigation code changes.
 Checklist fields: `id`, `name`, `description`, `items`.
 Item fields: `id`, `challenge`, `response`, optional `note`, `group`, `manualOnly`.
 
@@ -36,3 +36,7 @@ A380 Full SOP example: `fbw-a380x.json`. All three source pages are represented 
 A320 Normal/Extended example: `airbus-a320-family.json`. `checklists` is the default Normal set; optional `extendedChecklists` adds a toggleable Extended set. Checklist IDs must be unique across both sets (prefix Extended IDs with `extended-`). Optional `note` on a checklist holds its phase prerequisite. The aircraft `legend` holds aircraft-specific source markers. `extendedReferenceNote` and the one-based `extendedReferencePage` add a link to reference charts in the PDF. Source-page metadata in the A320 JSON supports review against the supplied four-page document.
 
 Boeing 757/767 example: `boeing-757.json` and `boeing-767.json` contain identical checklist definitions with distinct aircraft IDs for independent progress. Both point to the shared `references/boeing-757-767/normal-checklist.pdf`; do not duplicate the binary. Each has 17 sections and 202 check rows, including independent groups for the two engine-start repetitions. Preparations and formal checklist boxes have distinct IDs even when their source headers match.
+
+Additional category example: `airbus-a340-300.json`. Optional `extraSets` entries contain unique `id`, `name`, `buttonLabel`, `initialPage`, `description`, and `checklists`. Checklist IDs must be unique across Normal, Extended and all extra sets. `directOpen: true` requires exactly one checklist and opens it directly; `autoAdvance: false` keeps completion on the selected procedure. Each checklist may specify one-based `referencePage` to override its set’s starting PDF page. Normal remains the default on aircraft entry. Set/checklist selection is restored on rotation.
+
+An option may specify `checklistIds` to scope its selector to those item screens; omitting this field preserves the global options behavior used by the A330 and 777. Scoped controls are hidden on phase pickers and unrelated procedures. All scope references and row conditions are validated at load time. Applying a scoped dialog preserves all other option values. `when` conditions are ANDed, including conditions on headings/notes; use separate rows for mutually exclusive paths. Category descriptions can state source coverage, such as selected memory items rather than a complete non-normal collection.

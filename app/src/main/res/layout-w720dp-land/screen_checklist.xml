@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <LinearLayout android:id="@+id/checklist_header" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingHorizontal="16dp" android:paddingTop="12dp" android:paddingBottom="8dp">
+        <TextView android:id="@+id/checklist_aircraft" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="11sp" android:textColor="@color/muted" android:letterSpacing="0.1"/>
+        <TextView android:id="@+id/checklist_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="20sp" android:textStyle="bold" android:textColor="@color/ink" android:accessibilityHeading="true"/>
+        <TextView android:id="@+id/checklist_status" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="11sp" android:textColor="@color/muted" android:accessibilityLiveRegion="polite"/>
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+    <ScrollView android:id="@+id/page_scroll" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false"
+        android:paddingStart="8dp" android:paddingEnd="16dp" android:paddingBottom="12dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/checklist_note" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" android:layout_marginVertical="8dp" android:textSize="12sp" android:textColor="@color/muted" android:visibility="gone"/>
+            <LinearLayout android:id="@+id/item_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+            <TextView android:id="@+id/checklist_legend" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginStart="8dp" android:layout_marginTop="20dp" android:textSize="11sp" android:lineSpacingExtra="4dp" android:textColor="@color/muted"/>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:id="@+id/checklist_footer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+        <com.google.android.material.button.MaterialButton android:id="@+id/checklist_action" style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:insetTop="0dp" android:insetBottom="0dp"
+            android:textAllCaps="false" android:textSize="12sp" android:textColor="@color/checklist_green" app:strokeColor="@color/checklist_green"
+            app:strokeWidth="1dp" app:cornerRadius="3dp" app:backgroundTint="@android:color/transparent"/>
+    </LinearLayout>
+</LinearLayout>

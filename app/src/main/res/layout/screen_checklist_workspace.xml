@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/checklist_workspace" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal" android:padding="12dp" android:background="@color/app_background"
+    android:baselineAligned="false">
+    <LinearLayout android:id="@+id/checklist_sidebar" android:layout_width="240dp" android:layout_height="match_parent"
+        android:layout_marginEnd="12dp" android:orientation="vertical">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/sidebar_checklists" android:textColor="@color/ink" android:textSize="20sp"
+            android:textStyle="bold" android:accessibilityHeading="true"/>
+        <TextView android:id="@+id/sidebar_aircraft" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/muted" android:textSize="12sp" android:layout_marginTop="4dp" android:layout_marginBottom="10dp"/>
+        <ScrollView android:id="@+id/sidebar_scroll" android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:fillViewport="true" android:clipToPadding="false" android:paddingStart="0dp" android:paddingEnd="4dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:id="@+id/sidebar_mode_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/accent" android:textSize="11sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+                <LinearLayout android:id="@+id/sidebar_phase_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+                <TextView android:id="@+id/sidebar_set_description" style="@style/BodyText" android:textSize="12sp" android:visibility="gone"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="12dp" android:background="@color/border"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/checklist_mode_button" style="@style/TextAction" android:layout_width="match_parent" android:visibility="gone"/>
+                <LinearLayout android:id="@+id/checklist_categories" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+                <LinearLayout android:id="@+id/extended_reference_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                    <TextView android:id="@+id/extended_reference_note" style="@style/BodyText" android:textSize="12sp"/>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/extended_reference_button" style="@style/TextAction" android:layout_width="match_parent" android:text="@string/view_reference_data"/>
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton android:id="@+id/checklist_options_button" style="@style/TextAction" android:layout_width="match_parent" android:text="@string/checklist_options" android:visibility="gone"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/source_button" style="@style/TextAction" android:layout_width="match_parent" android:text="@string/source_notes"/>
+            </LinearLayout>
+        </ScrollView>
+        <com.google.android.material.button.MaterialButton android:id="@+id/view_checklist_button" style="@style/TextAction"
+            android:layout_width="match_parent" android:text="@string/view_checklist" android:textColor="@color/checklist_green"/>
+    </LinearLayout>
+    <FrameLayout android:id="@+id/checklist_detail_container" android:layout_width="0dp" android:layout_height="match_parent"
+        android:layout_weight="1" android:background="@drawable/checklist_detail_background"/>
+</LinearLayout>

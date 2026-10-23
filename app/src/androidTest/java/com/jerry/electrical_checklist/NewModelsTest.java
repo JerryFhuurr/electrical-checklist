@@ -58,7 +58,7 @@ public class NewModelsTest {
     private void apply() { onView(withText("Apply")).inRoot(androidx.test.espresso.matcher.RootMatchers.isDialog()).perform(click()); }
 
     @Test public void catalogsAndOriginalReferencesMatchAllThreeSources() throws Exception {
-        assertEquals(11, catalog.aircraft.size());
+        assertEquals(12, catalog.aircraft.size());
         ChecklistCatalog.Aircraft a = aircraft("inibuilds-a330-300"), b = aircraft("pmdg-777"), atr = aircraft("atr-42-72");
         assertEquals(26, a.checklists.size()); assertEquals(280, a.itemCount()); assertEquals(3, a.options.size());
         Map<String,String> defaults = new ProgressStore(context).loadOptions(a);

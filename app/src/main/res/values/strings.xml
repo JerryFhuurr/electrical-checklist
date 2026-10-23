@@ -124,4 +124,15 @@
         <item>Extra large (150%)</item>
         <item>Largest (175%)</item>
     </string-array>
+    <string name="checklist_categories">Checklist categories</string>
+    <string name="back_normal_checklists">Back to normal checklists</string>
+    <string name="model_eyebrow_set">%1$s / %2$s</string>
+    <string name="no_applicable_items">No items apply to the selected options</string>
+    <string name="choose_procedure">Choose a checklist or procedure. Progress is saved as you check.</string>
+    <string name="procedures_heading">CHECKLISTS</string>
+    <string name="sidebar_checklists">Checklists</string>
+    <string name="select_checklist">Select a checklist</string>
+    <string name="select_checklist_hint">Choose a checklist on the left to begin. Your progress is saved as you check.</string>
+    <string name="sidebar_phase_description">%1$s, %2$s</string>
+    <string name="sidebar_completed_phase">✓ %1$s</string>
 </resources>

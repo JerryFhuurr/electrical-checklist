@@ -1,0 +1,2999 @@
+{
+  "id": "airbus-a340-300",
+  "manufacturer": "Airbus",
+  "name": "Airbus A340-300",
+  "operator": "Normal procedures",
+  "source": "A340-300 Normal Checklist.pdf",
+  "notice": "Imported from the supplied ten-page A340-300 source. Normal checklists are the default. Emergency evacuation, engine-start procedures and the takeoff trim reference are separate. Non-normal checklists contain only the selected memory items in the source, not a complete non-normal checklist collection. Source conditions, cautions, notes and engine-monitoring indications are retained. Checklist options select the applicable branches; choices are saved and scoped to each procedure.",
+  "legend": "Source headings and notes are informational. Fill-in fields remain verification prompts.",
+  "options": [
+    {
+      "id": "evac-man-cab",
+      "label": "MAN CAB PR used",
+      "default": "used",
+      "values": [
+        {
+          "id": "used",
+          "label": "Used"
+        },
+        {
+          "id": "not-used",
+          "label": "Not used"
+        }
+      ],
+      "checklistIds": [
+        "evacuation"
+      ]
+    },
+    {
+      "id": "evac-pressure",
+      "label": "Cabin differential pressure",
+      "default": "zero",
+      "values": [
+        {
+          "id": "zero",
+          "label": "Zero"
+        },
+        {
+          "id": "not-zero",
+          "label": "Not zero"
+        }
+      ],
+      "checklistIds": [
+        "evacuation"
+      ]
+    },
+    {
+      "id": "evac-decision",
+      "label": "Evacuation required",
+      "default": "required",
+      "values": [
+        {
+          "id": "required",
+          "label": "Required"
+        },
+        {
+          "id": "not-required",
+          "label": "Not required"
+        }
+      ],
+      "checklistIds": [
+        "evacuation"
+      ]
+    },
+    {
+      "id": "brake-autobrake",
+      "label": "Autobrake selected",
+      "default": "selected",
+      "values": [
+        {
+          "id": "selected",
+          "label": "Selected"
+        },
+        {
+          "id": "not-selected",
+          "label": "Not selected"
+        }
+      ],
+      "checklistIds": [
+        "memory-loss-of-braking"
+      ]
+    },
+    {
+      "id": "brake-unavailable",
+      "label": "No braking after pedal application",
+      "default": "yes",
+      "values": [
+        {
+          "id": "yes",
+          "label": "Yes"
+        },
+        {
+          "id": "no",
+          "label": "No"
+        }
+      ],
+      "checklistIds": [
+        "memory-loss-of-braking"
+      ]
+    },
+    {
+      "id": "brake-still-unavailable",
+      "label": "Still no braking after alternate braking",
+      "default": "yes",
+      "values": [
+        {
+          "id": "yes",
+          "label": "Yes"
+        },
+        {
+          "id": "no",
+          "label": "No"
+        }
+      ],
+      "checklistIds": [
+        "memory-loss-of-braking"
+      ]
+    },
+    {
+      "id": "descent-athr",
+      "label": "A/THR active",
+      "default": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": "Active"
+        },
+        {
+          "id": "off",
+          "label": "Not active"
+        }
+      ],
+      "checklistIds": [
+        "memory-emer-descent"
+      ]
+    },
+    {
+      "id": "descent-damage",
+      "label": "Structural damage suspected",
+      "default": "no",
+      "values": [
+        {
+          "id": "no",
+          "label": "Not suspected"
+        },
+        {
+          "id": "yes",
+          "label": "Suspected"
+        }
+      ],
+      "checklistIds": [
+        "memory-emer-descent"
+      ]
+    },
+    {
+      "id": "descent-cabin-high",
+      "label": "CAB ALT above 14 000 ft",
+      "default": "no",
+      "values": [
+        {
+          "id": "no",
+          "label": "No"
+        },
+        {
+          "id": "yes",
+          "label": "Yes"
+        }
+      ],
+      "checklistIds": [
+        "memory-emer-descent"
+      ]
+    },
+    {
+      "id": "stall-clean-low",
+      "label": "Clean configuration and below 20 000 ft",
+      "default": "no",
+      "values": [
+        {
+          "id": "no",
+          "label": "No"
+        },
+        {
+          "id": "yes",
+          "label": "Yes"
+        }
+      ],
+      "checklistIds": [
+        "memory-stall-recovery"
+      ]
+    },
+    {
+      "id": "tcas-mode",
+      "label": "AP/FD TCAS mode",
+      "default": "available",
+      "values": [
+        {
+          "id": "available",
+          "label": "Available"
+        },
+        {
+          "id": "unavailable",
+          "label": "Not available"
+        }
+      ],
+      "checklistIds": [
+        "memory-tcas-warning-resolution-advisory"
+      ]
+    },
+    {
+      "id": "tcas-ra",
+      "label": "Resolution advisory situation",
+      "default": "other",
+      "values": [
+        {
+          "id": "other",
+          "label": "All RA except approach CLIMB RA"
+        },
+        {
+          "id": "climb",
+          "label": "CLIMB RA in approach CONF 3 or FULL"
+        }
+      ],
+      "checklistIds": [
+        "memory-tcas-warning-resolution-advisory"
+      ]
+    },
+    {
+      "id": "ap-state",
+      "label": "Autopilot",
+      "default": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": "Engaged"
+        },
+        {
+          "id": "off",
+          "label": "Off"
+        }
+      ],
+      "checklistIds": [
+        "memory-tcas-warning-resolution-advisory",
+        "memory-windshear-warning-reactive-windshear"
+      ]
+    },
+    {
+      "id": "windshear-phase",
+      "label": "Windshear phase",
+      "default": "airborne",
+      "values": [
+        {
+          "id": "before-v1",
+          "label": "Takeoff before V1"
+        },
+        {
+          "id": "after-v1",
+          "label": "Takeoff after V1"
+        },
+        {
+          "id": "airborne",
+          "label": "Airborne, initial climb or landing"
+        }
+      ],
+      "checklistIds": [
+        "memory-windshear-warning-reactive-windshear"
+      ]
+    }
+  ],
+  "checklists": [
+    {
+      "id": "before-start",
+      "name": "BEFORE START",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "COCKPIT PREP",
+          "response": "COMPLETED (BOTH)",
+          "sourcePage": 1,
+          "id": "cockpit-prep"
+        },
+        {
+          "challenge": "GEAR PINS and COVERS",
+          "response": "REMOVED",
+          "sourcePage": 1,
+          "id": "gear-pins-and-covers"
+        },
+        {
+          "challenge": "SIGNS",
+          "response": "ON / AUTO",
+          "sourcePage": 1,
+          "id": "signs"
+        },
+        {
+          "challenge": "ADIRS",
+          "response": "NAV",
+          "sourcePage": 1,
+          "id": "adirs"
+        },
+        {
+          "challenge": "FUEL QUANTITY",
+          "response": "____ KG.LB",
+          "sourcePage": 1,
+          "id": "fuel-quantity"
+        },
+        {
+          "challenge": "TO DATA",
+          "response": "____ SET",
+          "sourcePage": 1,
+          "id": "to-data"
+        },
+        {
+          "challenge": "BARO REF",
+          "response": "____ SET (BOTH)",
+          "sourcePage": 1,
+          "id": "baro-ref"
+        },
+        {
+          "challenge": "WINDOWS/DOORS",
+          "response": "CLOSED/ARMED (BOTH)",
+          "sourcePage": 1,
+          "group": "Below the line",
+          "id": "windows-doors"
+        },
+        {
+          "challenge": "BEACON",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "beacon"
+        },
+        {
+          "challenge": "THR LEVERS",
+          "response": "IDLE",
+          "sourcePage": 1,
+          "id": "thr-levers"
+        },
+        {
+          "challenge": "PARKING BRAKE",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "parking-brake"
+        }
+      ]
+    },
+    {
+      "id": "after-start",
+      "name": "AFTER START",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "ANTI-ICE",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "ECAM STATUS",
+          "response": "CHECKED",
+          "sourcePage": 1,
+          "id": "ecam-status"
+        },
+        {
+          "challenge": "PITCH TRIM",
+          "response": "____ SET",
+          "sourcePage": 1,
+          "id": "pitch-trim"
+        },
+        {
+          "challenge": "RUDDER TRIM",
+          "response": "NEUTRAL",
+          "sourcePage": 1,
+          "id": "rudder-trim"
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff",
+      "name": "BEFORE TAKEOFF",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "FLT CTRL",
+          "response": "CHECKED (BOTH)",
+          "sourcePage": 1,
+          "id": "flt-ctrl"
+        },
+        {
+          "challenge": "FLT INST",
+          "response": "CHECKED (BOTH)",
+          "sourcePage": 1,
+          "id": "flt-inst"
+        },
+        {
+          "challenge": "BRIEFING",
+          "response": "CONFIRMED",
+          "sourcePage": 1,
+          "id": "briefing"
+        },
+        {
+          "challenge": "FLAP SETTING",
+          "response": "CONF____ (BOTH)",
+          "sourcePage": 1,
+          "id": "flap-setting"
+        },
+        {
+          "challenge": "V1.VR.V2/FLX TEMP",
+          "response": "____ (BOTH)",
+          "sourcePage": 1,
+          "id": "v1-vr-v2-flx-temp"
+        },
+        {
+          "challenge": "ATC",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "atc"
+        },
+        {
+          "challenge": "ECAM MEMO",
+          "response": "TO NO BLUE",
+          "sourcePage": 1,
+          "id": "ecam-memo"
+        },
+        {
+          "type": "note",
+          "text": "- AUTO BRK MAX",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "auto-brk-max"
+        },
+        {
+          "type": "note",
+          "text": "- SIGNS ON",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "signs-on"
+        },
+        {
+          "type": "note",
+          "text": "- SPLRS ARM",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "splrs-arm"
+        },
+        {
+          "type": "note",
+          "text": "- FLAPS T.O",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "flaps-t-o"
+        },
+        {
+          "type": "note",
+          "text": "- T.O CONFIG NORMAL",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "t-o-config-normal"
+        },
+        {
+          "challenge": "CABIN CREW",
+          "response": "ADVISED",
+          "sourcePage": 1,
+          "group": "Below the line",
+          "id": "cabin-crew"
+        },
+        {
+          "challenge": "LIGHTS",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "lights"
+        },
+        {
+          "challenge": "ENG MODE SEL",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "eng-mode-sel"
+        },
+        {
+          "challenge": "PACKS",
+          "response": "ON APU/OFF",
+          "sourcePage": 1,
+          "id": "packs"
+        },
+        {
+          "challenge": "RADAR/TCAS/PWS",
+          "response": "AS RQRD/SET/AUTO",
+          "sourcePage": 1,
+          "id": "radar-tcas-pws"
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff-climb",
+      "name": "AFTER TAKEOFF / CLIMB",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "LDG GEAR",
+          "response": "UP",
+          "sourcePage": 1,
+          "id": "ldg-gear"
+        },
+        {
+          "challenge": "FLAPS",
+          "response": "RETRACTED",
+          "sourcePage": 1,
+          "id": "flaps"
+        },
+        {
+          "challenge": "PACKS / APU",
+          "response": "ON/OFF",
+          "sourcePage": 1,
+          "id": "packs-apu"
+        },
+        {
+          "challenge": "BARO REF",
+          "response": "____ SET (BOTH)",
+          "sourcePage": 1,
+          "id": "baro-ref"
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "name": "APPROACH",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "BRIEFING",
+          "response": "CONFIRMED",
+          "sourcePage": 1,
+          "id": "briefing"
+        },
+        {
+          "challenge": "ECAM STATUS",
+          "response": "CHECKED",
+          "sourcePage": 1,
+          "id": "ecam-status"
+        },
+        {
+          "challenge": "SEAT BELTS",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "seat-belts"
+        },
+        {
+          "challenge": "MDA/DH",
+          "response": "____ (BOTH)",
+          "sourcePage": 1,
+          "id": "mda-dh"
+        },
+        {
+          "challenge": "ENG MODE SEL",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "eng-mode-sel"
+        },
+        {
+          "challenge": "BARO REF",
+          "response": "____ (BOTH)",
+          "sourcePage": 1,
+          "id": "baro-ref"
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "LANDING",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "CABIN CREW",
+          "response": "ADVISED",
+          "sourcePage": 1,
+          "id": "cabin-crew"
+        },
+        {
+          "challenge": "A/THR",
+          "response": "SPEED/OFF",
+          "sourcePage": 1,
+          "id": "a-thr"
+        },
+        {
+          "challenge": "ECAM MEMO",
+          "response": "LDG NO BLUE",
+          "sourcePage": 1,
+          "id": "ecam-memo"
+        },
+        {
+          "type": "note",
+          "text": "- SIGNS ON",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "signs-on"
+        },
+        {
+          "type": "note",
+          "text": "- CABIN CHECK",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "cabin-check"
+        },
+        {
+          "type": "note",
+          "text": "- LDG GEAR DN",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "ldg-gear-dn"
+        },
+        {
+          "type": "note",
+          "text": "- FLAPS LDG",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "flaps-ldg"
+        },
+        {
+          "type": "note",
+          "text": "- SPLRS ARM",
+          "sourcePage": 1,
+          "italic": true,
+          "indent": 12,
+          "id": "splrs-arm"
+        }
+      ]
+    },
+    {
+      "id": "after-landing",
+      "name": "AFTER LANDING",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "SPOILERS",
+          "response": "DISARMED",
+          "sourcePage": 1,
+          "id": "spoilers"
+        },
+        {
+          "challenge": "FLAPS",
+          "response": "RETRACTED",
+          "sourcePage": 1,
+          "id": "flaps"
+        },
+        {
+          "challenge": "RADAR",
+          "response": "OFF/STBY",
+          "sourcePage": 1,
+          "id": "radar"
+        },
+        {
+          "challenge": "APU",
+          "response": "START",
+          "sourcePage": 1,
+          "id": "apu"
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "name": "PARKING",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "APU BLEED",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "apu-bleed"
+        },
+        {
+          "challenge": "ENGINES",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "engines"
+        },
+        {
+          "challenge": "SEAT BELTS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "seat-belts"
+        },
+        {
+          "challenge": "EXT LT",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "ext-lt"
+        },
+        {
+          "challenge": "FUEL PUMPS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "PARK BRK and CHOCKS",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "park-brk-and-chocks"
+        }
+      ]
+    },
+    {
+      "id": "securing-the-aircraft",
+      "name": "SECURING THE AIRCRAFT",
+      "description": "Normal checklist / page 1",
+      "sourcePages": [
+        1
+      ],
+      "referencePage": 1,
+      "items": [
+        {
+          "challenge": "TCAS",
+          "response": "STBY",
+          "sourcePage": 1,
+          "id": "tcas"
+        },
+        {
+          "challenge": "ADIRS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "adirs"
+        },
+        {
+          "challenge": "OXYGEN",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "oxygen"
+        },
+        {
+          "challenge": "APU BLEED",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "apu-bleed"
+        },
+        {
+          "challenge": "EMER EXIT LT",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "emer-exit-lt"
+        },
+        {
+          "challenge": "NO SMOKING",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "no-smoking"
+        },
+        {
+          "challenge": "EXT PWR",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "ext-pwr"
+        },
+        {
+          "challenge": "BATT 1 + 2 + APU BAT",
+          "response": "AS RQRD",
+          "sourcePage": 1,
+          "id": "batt-1-2-apu-bat"
+        },
+        {
+          "challenge": "APU AND BAT",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "apu-and-bat"
+        }
+      ]
+    }
+  ],
+  "extraSets": [
+    {
+      "id": "emergency-evacuation",
+      "name": "Emergency evacuation",
+      "buttonLabel": "Emergency evacuation",
+      "initialPage": 2,
+      "autoAdvance": false,
+      "directOpen": true,
+      "checklists": [
+        {
+          "id": "evacuation",
+          "name": "EMERGENCY EVACUATION",
+          "description": "A340-300 / page 2",
+          "sourcePages": [
+            2
+          ],
+          "referencePage": 2,
+          "items": [
+            {
+              "challenge": "AIRCRAFT/PARKING BRAKE",
+              "response": "STOP / ON",
+              "sourcePage": 2,
+              "id": "aircraft-parking-brake"
+            },
+            {
+              "challenge": "ATC (VHF 1)",
+              "response": "NOTIFY",
+              "sourcePage": 2,
+              "id": "atc-vhf-1"
+            },
+            {
+              "challenge": "CABIN CREW (PA)",
+              "response": "ALERT",
+              "sourcePage": 2,
+              "id": "cabin-crew-pa"
+            },
+            {
+              "challenge": "ΔP (Only is MAN CAB PR has been used)",
+              "response": "CHECK ZERO",
+              "sourcePage": 2,
+              "when": {
+                "evac-man-cab": "used"
+              },
+              "id": "p-only-is-man-cab-pr-has-been-used"
+            },
+            {
+              "type": "heading",
+              "text": "If ΔP not at zero:",
+              "sourcePage": 2,
+              "indent": 12,
+              "when": {
+                "evac-man-cab": "used",
+                "evac-pressure": "not-zero"
+              },
+              "id": "if-p-not-at-zero"
+            },
+            {
+              "challenge": "CAB PR MODE SEL",
+              "response": "MAN",
+              "sourcePage": 2,
+              "when": {
+                "evac-man-cab": "used",
+                "evac-pressure": "not-zero"
+              },
+              "id": "cab-pr-mode-sel"
+            },
+            {
+              "challenge": "V/S CTL",
+              "response": "FULL UP",
+              "sourcePage": 2,
+              "when": {
+                "evac-man-cab": "used",
+                "evac-pressure": "not-zero"
+              },
+              "id": "v-s-ctl"
+            },
+            {
+              "challenge": "ALL ENG MASTERS",
+              "response": "OFF",
+              "sourcePage": 2,
+              "id": "all-eng-masters"
+            },
+            {
+              "challenge": "ALL FIRE pb (ENGs & APU)",
+              "response": "PUSH",
+              "sourcePage": 2,
+              "id": "all-fire-pb-engs-apu"
+            },
+            {
+              "challenge": "ALL AGENTS (ENGs & APU)",
+              "response": "AS RQRD",
+              "sourcePage": 2,
+              "id": "all-agents-engs-apu"
+            },
+            {
+              "type": "heading",
+              "text": "If evacuation required:",
+              "sourcePage": 2,
+              "indent": 12,
+              "when": {
+                "evac-decision": "required"
+              },
+              "id": "if-evacuation-required"
+            },
+            {
+              "challenge": "EVACUATION",
+              "response": "INITIATE",
+              "sourcePage": 2,
+              "when": {
+                "evac-decision": "required"
+              },
+              "id": "evacuation"
+            },
+            {
+              "challenge": "ALL BATs",
+              "response": "OFF",
+              "sourcePage": 2,
+              "when": {
+                "evac-decision": "required"
+              },
+              "id": "all-bats"
+            },
+            {
+              "type": "heading",
+              "text": "If evacuation NOT required:",
+              "sourcePage": 2,
+              "indent": 12,
+              "when": {
+                "evac-decision": "not-required"
+              },
+              "id": "if-evacuation-not-required"
+            },
+            {
+              "challenge": "CABIN CREW AND PASSENGERS (PA)",
+              "response": "NOTIFY",
+              "sourcePage": 2,
+              "when": {
+                "evac-decision": "not-required"
+              },
+              "id": "cabin-crew-and-passengers-pa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-procedures",
+      "name": "Other procedures",
+      "buttonLabel": "Other procedures",
+      "initialPage": 3,
+      "autoAdvance": false,
+      "description": "Automatic and manual engine-start procedures, plus the takeoff CG/trim reference. Select the procedure you need.",
+      "checklists": [
+        {
+          "id": "procedure-automatic-start",
+          "name": "AUTOMATIC ENGINE START",
+          "description": "A340-300 / page 3",
+          "sourcePages": [
+            3
+          ],
+          "referencePage": 3,
+          "items": [
+            {
+              "challenge": "ENG START selector",
+              "response": "IGN/START",
+              "sourcePage": 3,
+              "id": "eng-start-selector"
+            },
+            {
+              "type": "note",
+              "text": "The lower ECAM display shows ENG page",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "the-lower-ecam-display-shows-eng-page"
+            },
+            {
+              "challenge": "ANNOUNCE",
+              "response": "“STARTING ENGINES 1 and 2”",
+              "sourcePage": 3,
+              "id": "announce"
+            },
+            {
+              "type": "note",
+              "text": "Engines 1 and 2 are usually started first (Engine 2 powers blue hydraulic system, which pressurizes the parking brake).",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "engines-1-and-2-are-usually-started-first-engine-2-powers-blue-hydraulic-system-which-pressurizes-the-parking-brake"
+            },
+            {
+              "type": "note",
+              "text": "Do not turn MASTER switch ON before all amber crosses and messages have disappeared on the engine parameters (upper ECAM display).",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "do-not-turn-master-switch-on-before-all-amber-crosses-and-messages-have-disappeared-on-the-engine-parameters-upper-ecam-display"
+            },
+            {
+              "challenge": "MASTER switch 1 then 2",
+              "response": "ON",
+              "sourcePage": 3,
+              "id": "master-switch-1-then-2"
+            },
+            {
+              "type": "note",
+              "text": "Wait until the ENG 1 N2 is at about 10 % before switching the ENG 2 MASTER switch at ON (to permit correct operation of the No Break Power Transfer).",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "wait-until-the-eng-1-n2-is-at-about-10-before-switching-the-eng-2-master-switch-at-on-to-permit-correct-operation-of-the-no-break-power-transfer"
+            },
+            {
+              "challenge": "Monitor start of both engines",
+              "response": "",
+              "sourcePage": 3,
+              "id": "monitor-start-of-both-engines"
+            },
+            {
+              "type": "heading",
+              "text": "ON ECAM UPPER DISPLAY | ON ECAM LOWER DISPLAY",
+              "sourcePage": 3,
+              "id": "on-ecam-upper-display-on-ecam-lower-display"
+            },
+            {
+              "type": "note",
+              "text": "N2 increases | Corresponding start valve in line\n | Bleed pressure indication green\n | Oil pressure increases",
+              "sourcePage": 3,
+              "id": "n2-increases-corresponding-start-valve-in-line-bleed-pressure-indication-green-oil-pressure-increases"
+            },
+            {
+              "type": "note",
+              "text": "At 16 % N2: | Indication of active igniter (A or B) appears",
+              "sourcePage": 3,
+              "id": "at-16-n2-indication-of-active-igniter-a-or-b-appears"
+            },
+            {
+              "type": "note",
+              "text": "At 22 % N2:\n- FF increases\n10 seconds (maximum) after fuel is on:\n- EGT increases\n- N1 increases",
+              "sourcePage": 3,
+              "id": "at-22-n2-ff-increases-10-seconds-maximum-after-fuel-is-on-egt-increases-n1-increases"
+            },
+            {
+              "type": "note",
+              "text": "At 50 % N2: | Start valve crossline\n | Igniter is turned OFF",
+              "sourcePage": 3,
+              "id": "at-50-n2-start-valve-crossline-igniter-is-turned-off"
+            },
+            {
+              "challenge": "ENG. IDLE PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 3,
+              "id": "eng-idle-parameters"
+            },
+            {
+              "type": "note",
+              "text": "At ISA sea level: N1 about 20% N2 about 60% EGT about 400°C FF 300 kg/h (660 lb/h)",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "at-isa-sea-level-n1-about-20-n2-about-60-egt-about-400-c-ff-300-kg-h-660-lb-h"
+            },
+            {
+              "challenge": "ANNOUNCE",
+              "response": "“STARTING ENGINES 3 and 4”",
+              "sourcePage": 3,
+              "id": "announce-2"
+            },
+            {
+              "challenge": "ENG MASTER 3 then 4 (ENG 4, when ENG 3’s N2 is at about 10 %)",
+              "response": "ON",
+              "sourcePage": 3,
+              "id": "eng-master-3-then-4-eng-4-when-eng-3-s-n2-is-at-about-10"
+            },
+            {
+              "type": "note",
+              "text": "Same procedure as for Engines 1 & 2",
+              "sourcePage": 3,
+              "italic": true,
+              "bold": false,
+              "id": "same-procedure-as-for-engines-1-2"
+            }
+          ]
+        },
+        {
+          "id": "procedure-manual-start-engine-1",
+          "name": "MANUAL ENGINE START - ENGINE 1",
+          "description": "A340-300 / page 4",
+          "sourcePages": [
+            4
+          ],
+          "referencePage": 4,
+          "items": [
+            {
+              "challenge": "THR LEVERS",
+              "response": "IDLE",
+              "sourcePage": 4,
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "ENG MODE selector",
+              "response": "NORM THEN IGN/START",
+              "sourcePage": 4,
+              "id": "eng-mode-selector"
+            },
+            {
+              "type": "note",
+              "text": "The lower ECAM displays engine page",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-lower-ecam-displays-engine-page"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: If all engines are started manually, the following procedure applies one engine at a time.",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "note-if-all-engines-are-started-manually-the-following-procedure-applies-one-engine-at-a-time"
+            },
+            {
+              "type": "heading",
+              "text": "When all engines parameters are available on the upper ECAM display (no amber crosses displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-all-engines-parameters-are-available-on-the-upper-ecam-display-no-amber-crosses-displayed"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK IN-LINE",
+              "sourcePage": 4,
+              "id": "start-valve"
+            },
+            {
+              "challenge": "OIL PRESSURE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "oil-pressure"
+            },
+            {
+              "challenge": "N2 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n2-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When N2 reaches maximum motoring speed (minimum 20 %):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-n2-reaches-maximum-motoring-speed-minimum-20"
+            },
+            {
+              "challenge": "MASTER Switch",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "master-switch"
+            },
+            {
+              "challenge": "CHRONO",
+              "response": "START",
+              "sourcePage": 4,
+              "id": "chrono"
+            },
+            {
+              "type": "note",
+              "text": "The PM starts the timing in order to monitor the light-up delay",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-pm-starts-the-timing-in-order-to-monitor-the-light-up-delay"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK ON",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b"
+            },
+            {
+              "challenge": "FUEL FLOW INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "fuel-flow-increase"
+            },
+            {
+              "challenge": "EGT INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "egt-increase"
+            },
+            {
+              "challenge": "N1 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n1-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When idle is reached (AVAIL indication is displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-idle-is-reached-avail-indication-is-displayed"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK CROSS LINE",
+              "sourcePage": 4,
+              "id": "start-valve-2"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK OFF",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b-2"
+            },
+            {
+              "challenge": "MAIN ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "main-eng-parameters"
+            },
+            {
+              "challenge": "SECONDARY ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "secondary-eng-parameters"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "OFF",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw-2"
+            },
+            {
+              "challenge": "ENG START selector",
+              "response": "NORM",
+              "sourcePage": 4,
+              "id": "eng-start-selector"
+            }
+          ],
+          "note": "Engine 1. Source procedure applies one engine at a time; select each engine you start manually."
+        },
+        {
+          "id": "procedure-manual-start-engine-2",
+          "name": "MANUAL ENGINE START - ENGINE 2",
+          "description": "A340-300 / page 4",
+          "sourcePages": [
+            4
+          ],
+          "referencePage": 4,
+          "items": [
+            {
+              "challenge": "THR LEVERS",
+              "response": "IDLE",
+              "sourcePage": 4,
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "ENG MODE selector",
+              "response": "NORM THEN IGN/START",
+              "sourcePage": 4,
+              "id": "eng-mode-selector"
+            },
+            {
+              "type": "note",
+              "text": "The lower ECAM displays engine page",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-lower-ecam-displays-engine-page"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: If all engines are started manually, the following procedure applies one engine at a time.",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "note-if-all-engines-are-started-manually-the-following-procedure-applies-one-engine-at-a-time"
+            },
+            {
+              "type": "heading",
+              "text": "When all engines parameters are available on the upper ECAM display (no amber crosses displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-all-engines-parameters-are-available-on-the-upper-ecam-display-no-amber-crosses-displayed"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK IN-LINE",
+              "sourcePage": 4,
+              "id": "start-valve"
+            },
+            {
+              "challenge": "OIL PRESSURE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "oil-pressure"
+            },
+            {
+              "challenge": "N2 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n2-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When N2 reaches maximum motoring speed (minimum 20 %):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-n2-reaches-maximum-motoring-speed-minimum-20"
+            },
+            {
+              "challenge": "MASTER Switch",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "master-switch"
+            },
+            {
+              "challenge": "CHRONO",
+              "response": "START",
+              "sourcePage": 4,
+              "id": "chrono"
+            },
+            {
+              "type": "note",
+              "text": "The PM starts the timing in order to monitor the light-up delay",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-pm-starts-the-timing-in-order-to-monitor-the-light-up-delay"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK ON",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b"
+            },
+            {
+              "challenge": "FUEL FLOW INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "fuel-flow-increase"
+            },
+            {
+              "challenge": "EGT INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "egt-increase"
+            },
+            {
+              "challenge": "N1 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n1-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When idle is reached (AVAIL indication is displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-idle-is-reached-avail-indication-is-displayed"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK CROSS LINE",
+              "sourcePage": 4,
+              "id": "start-valve-2"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK OFF",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b-2"
+            },
+            {
+              "challenge": "MAIN ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "main-eng-parameters"
+            },
+            {
+              "challenge": "SECONDARY ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "secondary-eng-parameters"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "OFF",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw-2"
+            },
+            {
+              "challenge": "ENG START selector",
+              "response": "NORM",
+              "sourcePage": 4,
+              "id": "eng-start-selector"
+            }
+          ],
+          "note": "Engine 2. Source procedure applies one engine at a time; select each engine you start manually."
+        },
+        {
+          "id": "procedure-manual-start-engine-3",
+          "name": "MANUAL ENGINE START - ENGINE 3",
+          "description": "A340-300 / page 4",
+          "sourcePages": [
+            4
+          ],
+          "referencePage": 4,
+          "items": [
+            {
+              "challenge": "THR LEVERS",
+              "response": "IDLE",
+              "sourcePage": 4,
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "ENG MODE selector",
+              "response": "NORM THEN IGN/START",
+              "sourcePage": 4,
+              "id": "eng-mode-selector"
+            },
+            {
+              "type": "note",
+              "text": "The lower ECAM displays engine page",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-lower-ecam-displays-engine-page"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: If all engines are started manually, the following procedure applies one engine at a time.",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "note-if-all-engines-are-started-manually-the-following-procedure-applies-one-engine-at-a-time"
+            },
+            {
+              "type": "heading",
+              "text": "When all engines parameters are available on the upper ECAM display (no amber crosses displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-all-engines-parameters-are-available-on-the-upper-ecam-display-no-amber-crosses-displayed"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK IN-LINE",
+              "sourcePage": 4,
+              "id": "start-valve"
+            },
+            {
+              "challenge": "OIL PRESSURE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "oil-pressure"
+            },
+            {
+              "challenge": "N2 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n2-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When N2 reaches maximum motoring speed (minimum 20 %):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-n2-reaches-maximum-motoring-speed-minimum-20"
+            },
+            {
+              "challenge": "MASTER Switch",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "master-switch"
+            },
+            {
+              "challenge": "CHRONO",
+              "response": "START",
+              "sourcePage": 4,
+              "id": "chrono"
+            },
+            {
+              "type": "note",
+              "text": "The PM starts the timing in order to monitor the light-up delay",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-pm-starts-the-timing-in-order-to-monitor-the-light-up-delay"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK ON",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b"
+            },
+            {
+              "challenge": "FUEL FLOW INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "fuel-flow-increase"
+            },
+            {
+              "challenge": "EGT INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "egt-increase"
+            },
+            {
+              "challenge": "N1 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n1-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When idle is reached (AVAIL indication is displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-idle-is-reached-avail-indication-is-displayed"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK CROSS LINE",
+              "sourcePage": 4,
+              "id": "start-valve-2"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK OFF",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b-2"
+            },
+            {
+              "challenge": "MAIN ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "main-eng-parameters"
+            },
+            {
+              "challenge": "SECONDARY ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "secondary-eng-parameters"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "OFF",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw-2"
+            },
+            {
+              "challenge": "ENG START selector",
+              "response": "NORM",
+              "sourcePage": 4,
+              "id": "eng-start-selector"
+            }
+          ],
+          "note": "Engine 3. Source procedure applies one engine at a time; select each engine you start manually."
+        },
+        {
+          "id": "procedure-manual-start-engine-4",
+          "name": "MANUAL ENGINE START - ENGINE 4",
+          "description": "A340-300 / page 4",
+          "sourcePages": [
+            4
+          ],
+          "referencePage": 4,
+          "items": [
+            {
+              "challenge": "THR LEVERS",
+              "response": "IDLE",
+              "sourcePage": 4,
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "ENG MODE selector",
+              "response": "NORM THEN IGN/START",
+              "sourcePage": 4,
+              "id": "eng-mode-selector"
+            },
+            {
+              "type": "note",
+              "text": "The lower ECAM displays engine page",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-lower-ecam-displays-engine-page"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: If all engines are started manually, the following procedure applies one engine at a time.",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "note-if-all-engines-are-started-manually-the-following-procedure-applies-one-engine-at-a-time"
+            },
+            {
+              "type": "heading",
+              "text": "When all engines parameters are available on the upper ECAM display (no amber crosses displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-all-engines-parameters-are-available-on-the-upper-ecam-display-no-amber-crosses-displayed"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK IN-LINE",
+              "sourcePage": 4,
+              "id": "start-valve"
+            },
+            {
+              "challenge": "OIL PRESSURE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "oil-pressure"
+            },
+            {
+              "challenge": "N2 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n2-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When N2 reaches maximum motoring speed (minimum 20 %):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-n2-reaches-maximum-motoring-speed-minimum-20"
+            },
+            {
+              "challenge": "MASTER Switch",
+              "response": "ON",
+              "sourcePage": 4,
+              "id": "master-switch"
+            },
+            {
+              "challenge": "CHRONO",
+              "response": "START",
+              "sourcePage": 4,
+              "id": "chrono"
+            },
+            {
+              "type": "note",
+              "text": "The PM starts the timing in order to monitor the light-up delay",
+              "sourcePage": 4,
+              "italic": true,
+              "bold": false,
+              "id": "the-pm-starts-the-timing-in-order-to-monitor-the-light-up-delay"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK ON",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b"
+            },
+            {
+              "challenge": "FUEL FLOW INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "fuel-flow-increase"
+            },
+            {
+              "challenge": "EGT INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "egt-increase"
+            },
+            {
+              "challenge": "N1 INCREASE",
+              "response": "CHECK",
+              "sourcePage": 4,
+              "id": "n1-increase"
+            },
+            {
+              "type": "heading",
+              "text": "When idle is reached (AVAIL indication is displayed):",
+              "sourcePage": 4,
+              "indent": 12,
+              "id": "when-idle-is-reached-avail-indication-is-displayed"
+            },
+            {
+              "challenge": "START VALVE",
+              "response": "CHECK CROSS LINE",
+              "sourcePage": 4,
+              "id": "start-valve-2"
+            },
+            {
+              "challenge": "IGNITERS A AND B",
+              "response": "CHECK OFF",
+              "sourcePage": 4,
+              "id": "igniters-a-and-b-2"
+            },
+            {
+              "challenge": "MAIN ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "main-eng-parameters"
+            },
+            {
+              "challenge": "SECONDARY ENG PARAMETERS",
+              "response": "CHECK NORMAL",
+              "sourcePage": 4,
+              "id": "secondary-eng-parameters"
+            },
+            {
+              "challenge": "ENG MAN START pb-sw",
+              "response": "OFF",
+              "sourcePage": 4,
+              "id": "eng-man-start-pb-sw-2"
+            },
+            {
+              "challenge": "ENG START selector",
+              "response": "NORM",
+              "sourcePage": 4,
+              "id": "eng-start-selector"
+            }
+          ],
+          "note": "Engine 4. Source procedure applies one engine at a time; select each engine you start manually."
+        },
+        {
+          "id": "procedure-takeoff-trim",
+          "name": "TAKEOFF CG/TRIM",
+          "description": "A340-300 / page 2",
+          "sourcePages": [
+            2
+          ],
+          "referencePage": 2,
+          "items": [
+            {
+              "type": "note",
+              "text": "TAKEOFF CG/TRIM chart: select View checklist to open page 2 of the original PDF.",
+              "sourcePage": 2,
+              "id": "takeoff-cg-trim-chart-select-view-checklist-to-open-page-2-of-the-original-pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memory-items",
+      "name": "Non-normal checklists (memory items only)",
+      "buttonLabel": "Non-normal checklists (memory items only)",
+      "initialPage": 5,
+      "autoAdvance": false,
+      "description": "Selected memory items from pages 5-10 of the supplied source. This is not the full non-normal checklist collection. Select the procedure and applicable conditions.",
+      "checklists": [
+        {
+          "id": "memory-loss-of-braking",
+          "name": "LOSS OF BRAKING",
+          "description": "A340-300 / page 5",
+          "sourcePages": [
+            5
+          ],
+          "referencePage": 5,
+          "items": [
+            {
+              "type": "heading",
+              "text": "If Autobrake is selected:",
+              "sourcePage": 5,
+              "indent": 12,
+              "when": {
+                "brake-autobrake": "selected"
+              },
+              "id": "if-autobrake-is-selected"
+            },
+            {
+              "challenge": "BRAKE PEDALS",
+              "response": "PRESS",
+              "sourcePage": 5,
+              "when": {
+                "brake-autobrake": "selected"
+              },
+              "id": "brake-pedals"
+            },
+            {
+              "type": "heading",
+              "text": "If no braking:",
+              "sourcePage": 5,
+              "indent": 12,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "if-no-braking"
+            },
+            {
+              "challenge": "REV",
+              "response": "MAX",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "rev"
+            },
+            {
+              "type": "note",
+              "text": "If needed, the flight crew may keep maximum reverse thrust until full aircraft stop",
+              "sourcePage": 5,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "if-needed-the-flight-crew-may-keep-maximum-reverse-thrust-until-full-aircraft-stop"
+            },
+            {
+              "challenge": "BRAKE PEDALS",
+              "response": "RELEASE",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "brake-pedals-2"
+            },
+            {
+              "challenge": "A/SKID & N/W STRG",
+              "response": "OFF",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "a-skid-n-w-strg"
+            },
+            {
+              "challenge": "BRAKE PEDALS",
+              "response": "PRESS",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "brake-pedals-3"
+            },
+            {
+              "challenge": "MAX BRK PR",
+              "response": "1000 PSI",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "max-brk-pr"
+            },
+            {
+              "type": "note",
+              "text": "Limit brake pressure to approximately 1 000 PSI. Monitor brake pressure on the BRAKES PRESS indicator",
+              "sourcePage": 5,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "brake-unavailable": "yes"
+              },
+              "id": "limit-brake-pressure-to-approximately-1-000-psi-monitor-brake-pressure-on-the-brakes-press-indicator"
+            },
+            {
+              "type": "heading",
+              "text": "If still no braking:",
+              "sourcePage": 5,
+              "indent": 12,
+              "when": {
+                "brake-unavailable": "yes",
+                "brake-still-unavailable": "yes"
+              },
+              "id": "if-still-no-braking"
+            },
+            {
+              "challenge": "PARK BRAKE",
+              "response": "USE",
+              "sourcePage": 5,
+              "when": {
+                "brake-unavailable": "yes",
+                "brake-still-unavailable": "yes"
+              },
+              "id": "park-brake"
+            },
+            {
+              "type": "note",
+              "text": "Use short successive parking brake applications to stop the aircraft.",
+              "sourcePage": 5,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "brake-unavailable": "yes",
+                "brake-still-unavailable": "yes"
+              },
+              "id": "use-short-successive-parking-brake-applications-to-stop-the-aircraft"
+            }
+          ]
+        },
+        {
+          "id": "memory-emer-descent",
+          "name": "EMER DESCENT",
+          "description": "A340-300 / pages 5-6",
+          "sourcePages": [
+            5,
+            6
+          ],
+          "referencePage": 5,
+          "items": [
+            {
+              "challenge": "CREW OXY MASKS",
+              "response": "USE",
+              "sourcePage": 5,
+              "id": "crew-oxy-masks"
+            },
+            {
+              "challenge": "SIGNS",
+              "response": "ON",
+              "sourcePage": 5,
+              "id": "signs"
+            },
+            {
+              "challenge": "EMER DESCENT",
+              "response": "INITIATE",
+              "sourcePage": 5,
+              "id": "emer-descent"
+            },
+            {
+              "type": "heading",
+              "text": "If A/THR not active:",
+              "sourcePage": 5,
+              "indent": 12,
+              "when": {
+                "descent-athr": "off"
+              },
+              "id": "if-a-thr-not-active"
+            },
+            {
+              "challenge": "THR LEVERS",
+              "response": "IDLE",
+              "sourcePage": 5,
+              "when": {
+                "descent-athr": "off"
+              },
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "SPEED BRAKES",
+              "response": "FULL",
+              "sourcePage": 5,
+              "id": "speed-brakes"
+            },
+            {
+              "type": "heading",
+              "text": "When descent established:",
+              "sourcePage": 5,
+              "indent": 12,
+              "id": "when-descent-established"
+            },
+            {
+              "challenge": "SPEED",
+              "response": "MAX / APPROPRIATE",
+              "sourcePage": 5,
+              "id": "speed"
+            },
+            {
+              "challenge": "MAX FL",
+              "response": "100/MEA-MORA",
+              "sourcePage": 5,
+              "id": "max-fl"
+            },
+            {
+              "type": "heading",
+              "text": "If structural damage suspected:",
+              "sourcePage": 5,
+              "indent": 12,
+              "when": {
+                "descent-damage": "yes"
+              },
+              "id": "if-structural-damage-suspected"
+            },
+            {
+              "challenge": "MANEUVER WITH CARE",
+              "response": "",
+              "sourcePage": 5,
+              "when": {
+                "descent-damage": "yes"
+              },
+              "id": "maneuver-with-care"
+            },
+            {
+              "challenge": "CONSIDER L/G EXTENSION",
+              "response": "",
+              "sourcePage": 5,
+              "when": {
+                "descent-damage": "yes"
+              },
+              "id": "consider-l-g-extension"
+            },
+            {
+              "challenge": "SIGNS",
+              "response": "ON",
+              "sourcePage": 5,
+              "id": "signs-2"
+            },
+            {
+              "challenge": "ENG START selector",
+              "response": "IGN",
+              "sourcePage": 5,
+              "id": "eng-start-selector"
+            },
+            {
+              "challenge": "ATC",
+              "response": "NOTIFY",
+              "sourcePage": 5,
+              "id": "atc"
+            },
+            {
+              "challenge": "EMER DESCENT (PA)",
+              "response": "ANNOUNCE",
+              "sourcePage": 6,
+              "id": "emer-descent-pa"
+            },
+            {
+              "challenge": "ATC XPDR 7700",
+              "response": "CONSIDER",
+              "sourcePage": 6,
+              "id": "atc-xpdr-7700"
+            },
+            {
+              "type": "heading",
+              "text": "If CAB ALT above 14 000 ft:",
+              "sourcePage": 6,
+              "indent": 12,
+              "when": {
+                "descent-cabin-high": "yes"
+              },
+              "id": "if-cab-alt-above-14-000-ft"
+            },
+            {
+              "challenge": "OXYGEN PAX MASK MAN ON",
+              "response": "PRESS",
+              "sourcePage": 6,
+              "when": {
+                "descent-cabin-high": "yes"
+              },
+              "id": "oxygen-pax-mask-man-on"
+            }
+          ]
+        },
+        {
+          "id": "memory-stall-recovery",
+          "name": "STALL RECOVERY",
+          "description": "A340-300 / page 6",
+          "sourcePages": [
+            6
+          ],
+          "referencePage": 6,
+          "items": [
+            {
+              "challenge": "NOSE DOWN PITCH CONTROL",
+              "response": "APPLY",
+              "sourcePage": 6,
+              "id": "nose-down-pitch-control"
+            },
+            {
+              "type": "note",
+              "text": "In case of lack of pitch down authority, reducing thrust may be necessary",
+              "sourcePage": 6,
+              "italic": true,
+              "bold": false,
+              "id": "in-case-of-lack-of-pitch-down-authority-reducing-thrust-may-be-necessary"
+            },
+            {
+              "challenge": "BANK",
+              "response": "WINGS LEVEL",
+              "sourcePage": 6,
+              "id": "bank"
+            },
+            {
+              "type": "heading",
+              "text": "When out of stall (no longer stall indications):",
+              "sourcePage": 6,
+              "indent": 12,
+              "id": "when-out-of-stall-no-longer-stall-indications"
+            },
+            {
+              "challenge": "THRUST",
+              "response": "INCREASE SMOOTHLY AS NEEDED",
+              "sourcePage": 6,
+              "id": "thrust"
+            },
+            {
+              "challenge": "SPEED BRAKES",
+              "response": "CHECK RETRACTED",
+              "sourcePage": 6,
+              "id": "speed-brakes"
+            },
+            {
+              "challenge": "FLIGHT PATH",
+              "response": "RECOVER SMOOTHLY",
+              "sourcePage": 6,
+              "id": "flight-path"
+            },
+            {
+              "type": "heading",
+              "text": "If in clean configuration and below 20 000 ft:",
+              "sourcePage": 6,
+              "indent": 12,
+              "when": {
+                "stall-clean-low": "yes"
+              },
+              "id": "if-in-clean-configuration-and-below-20-000-ft"
+            },
+            {
+              "challenge": "FLAP 1",
+              "response": "SELECT",
+              "sourcePage": 6,
+              "when": {
+                "stall-clean-low": "yes"
+              },
+              "id": "flap-1"
+            }
+          ]
+        },
+        {
+          "id": "memory-stall-warning-at-liftoff",
+          "name": "STALL WARNING AT LIFTOFF",
+          "description": "A340-300 / page 6",
+          "sourcePages": [
+            6
+          ],
+          "referencePage": 6,
+          "items": [
+            {
+              "challenge": "THRUST",
+              "response": "TOGA",
+              "sourcePage": 6,
+              "id": "thrust"
+            },
+            {
+              "type": "note",
+              "text": "At the same time:",
+              "sourcePage": 6,
+              "italic": false,
+              "bold": false,
+              "id": "at-the-same-time"
+            },
+            {
+              "challenge": "PITCH ATTITUDE",
+              "response": "12.5 °",
+              "sourcePage": 6,
+              "id": "pitch-attitude"
+            },
+            {
+              "challenge": "BANK",
+              "response": "WINGS LEVEL",
+              "sourcePage": 6,
+              "id": "bank"
+            }
+          ]
+        },
+        {
+          "id": "memory-gpws-egpws-warnings",
+          "name": "GPWS/EGPWS Warnings",
+          "description": "A340-300 / page 7",
+          "sourcePages": [
+            7
+          ],
+          "referencePage": 7,
+          "items": [
+            {
+              "type": "heading",
+              "text": "“PULL UP” – “TERRAIN AHEAD PULL UP” – “OBSTACLE AHEAD PULL UP” – “AVOID TERRAIN” – “AVOID OBSTACLE”",
+              "sourcePage": 7,
+              "indent": 12,
+              "id": "pull-up-terrain-ahead-pull-up-obstacle-ahead-pull-up-avoid-terrain-avoid-obstacle"
+            },
+            {
+              "type": "note",
+              "text": "Simultaneously:",
+              "sourcePage": 7,
+              "italic": false,
+              "bold": false,
+              "id": "simultaneously"
+            },
+            {
+              "challenge": "AP",
+              "response": "OFF",
+              "sourcePage": 7,
+              "id": "ap"
+            },
+            {
+              "challenge": "PITCH",
+              "response": "PULL UP",
+              "sourcePage": 7,
+              "id": "pitch"
+            },
+            {
+              "type": "note",
+              "text": "Pull to full backstick and maintain in that position",
+              "sourcePage": 7,
+              "italic": false,
+              "bold": false,
+              "id": "pull-to-full-backstick-and-maintain-in-that-position"
+            },
+            {
+              "challenge": "THRUST LEVERS",
+              "response": "TOGA",
+              "sourcePage": 7,
+              "id": "thrust-levers"
+            },
+            {
+              "challenge": "SPEED BRAKES lever",
+              "response": "CHECK RETRACTED",
+              "sourcePage": 7,
+              "id": "speed-brakes-lever"
+            },
+            {
+              "challenge": "BANK",
+              "response": "WINGS LEVEL or ADJUST",
+              "sourcePage": 7,
+              "id": "bank"
+            },
+            {
+              "type": "note",
+              "text": "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE.",
+              "sourcePage": 7,
+              "italic": false,
+              "bold": false,
+              "id": "do-not-change-configuration-slats-flaps-gear-until-clear-of-obstacle"
+            }
+          ]
+        },
+        {
+          "id": "memory-tcas-warning-resolution-advisory",
+          "name": "TCAS WARNING – RESOLUTION ADVISORY",
+          "description": "A340-300 / pages 8-10",
+          "sourcePages": [
+            8,
+            9,
+            10
+          ],
+          "referencePage": 8,
+          "items": [
+            {
+              "type": "note",
+              "text": "Always follow RA orders, even if this results in crossing the intruder altitude, because these orders ensure the best altitude separation.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "id": "always-follow-ra-orders-even-if-this-results-in-crossing-the-intruder-altitude-because-these-orders-ensure-the-best-altitude-separation"
+            },
+            {
+              "type": "note",
+              "text": "CAUTION Be aware that the intruder may have a TCAS, and may maneuver in response to a coordinated RA order. Therefore, not following an RA order could compromise safe separation.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": true,
+              "id": "caution-be-aware-that-the-intruder-may-have-a-tcas-and-may-maneuver-in-response-to-a"
+            },
+            {
+              "type": "heading",
+              "text": "If the AP/FD TCAS mode is available:",
+              "sourcePage": 8,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "if-the-ap-fd-tcas-mode-is-available"
+            },
+            {
+              "type": "note",
+              "text": "The flight crew applies this procedure, when a RA triggered, and the AP/FD TCAS mode is engaged. The AP/FD TCAS mode follows the RA orders.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "the-flight-crew-applies-this-procedure-when-a-ra-triggered-and-the-ap-fd-tcas-mode-is-engaged-the-ap-fd-tcas-mode-follows-the-ra-orders"
+            },
+            {
+              "type": "heading",
+              "text": "All RA, except any CLIMB RA during approach in CONF 3 or FULL:",
+              "sourcePage": 8,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other"
+              },
+              "id": "all-ra-except-any-climb-ra-during-approach-in-conf-3-or-full"
+            },
+            {
+              "type": "heading",
+              "text": "If the AP is OFF:",
+              "sourcePage": 8,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other",
+                "ap-state": "off"
+              },
+              "id": "if-the-ap-is-off"
+            },
+            {
+              "challenge": "FD ORDERs",
+              "response": "FOLLOW",
+              "sourcePage": 8,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other",
+                "ap-state": "off"
+              },
+              "id": "fd-orders"
+            },
+            {
+              "type": "note",
+              "text": "The AP can be engaged",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other",
+                "ap-state": "off"
+              },
+              "id": "the-ap-can-be-engaged"
+            },
+            {
+              "challenge": "VERTICAL SPEED",
+              "response": "MONITOR",
+              "sourcePage": 8,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other"
+              },
+              "id": "vertical-speed"
+            },
+            {
+              "type": "note",
+              "text": "If a preventative RA was triggered: Check that the vertical speed remains out of the red areas of the vertical speed scale.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other"
+              },
+              "id": "if-a-preventative-ra-was-triggered-check-that-the-vertical-speed-remains-out-of-the-red-areas-of-the-vertical-speed-scale"
+            },
+            {
+              "type": "note",
+              "text": "If a corrective RA was triggered: Check that the vertical speed remains out of the red area, and remains in the green area of the vertical speed scale.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other"
+              },
+              "id": "if-a-corrective-ra-was-triggered-check-that-the-vertical-speed-remains-out-of-the-red-area-and-remains-in-the-green-area-of-the-vertical-speed-scale"
+            },
+            {
+              "type": "note",
+              "text": "CAUTION If for any reason during a RA, the aircraft vertical speed does not reach the green area of the vertical speed scale, the Pilot Flying (PF) should disconnect the AP, and override the FD orders, in order to lead the aircraft vertical speed out of the red area of the vertical speed scale. If necessary, the PF must use the full speed range between Vαmax and Vmax.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": true,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "other"
+              },
+              "id": "caution-if-for-any-reason-during-a-ra-the-aircraft-vertical-speed-does-not-reach-the"
+            },
+            {
+              "type": "heading",
+              "text": "Any CLIMB RA during approach in CONF 3 or FULL:",
+              "sourcePage": 8,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "any-climb-ra-during-approach-in-conf-3-or-full"
+            },
+            {
+              "challenge": "GO-AROUND",
+              "response": "PERFORM",
+              "sourcePage": 8,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "go-around"
+            },
+            {
+              "type": "note",
+              "text": "The AP/FD TCAS mode disengages (the AP/FD no longer follows the RA orders). Follow the SRS GA mode.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "the-ap-fd-tcas-mode-disengages-the-ap-fd-no-longer-follows-the-ra-orders-follow-the-srs-ga-mode"
+            },
+            {
+              "challenge": "VERTICAL SPEED",
+              "response": "MONITOR",
+              "sourcePage": 8,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "vertical-speed-2"
+            },
+            {
+              "type": "note",
+              "text": "Check that the vertical speed remains out of the red area of the vertical speed scale and take over if necessary.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "check-that-the-vertical-speed-remains-out-of-the-red-area-of-the-vertical-speed-scale-and-take-over-if-necessary"
+            },
+            {
+              "type": "note",
+              "text": "Respect stall, GPWS or windshear warnings.",
+              "sourcePage": 8,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "respect-stall-gpws-or-windshear-warnings"
+            },
+            {
+              "challenge": "ATC",
+              "response": "NOTIFY",
+              "sourcePage": 8,
+              "when": {
+                "tcas-mode": "available",
+                "tcas-ra": "climb"
+              },
+              "id": "atc"
+            },
+            {
+              "type": "heading",
+              "text": "When the “CLEAR OF CONFLICT” aural alert sounds:",
+              "sourcePage": 9,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "when-the-clear-of-conflict-aural-alert-sounds"
+            },
+            {
+              "type": "note",
+              "text": "The AP/FD TCAS mode, if engaged, disengages",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "the-ap-fd-tcas-mode-if-engaged-disengages"
+            },
+            {
+              "challenge": "AP/FD",
+              "response": "MONITOR/FOLLOW",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "ap-fd"
+            },
+            {
+              "challenge": "ATC",
+              "response": "NOTIFY",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "atc-2"
+            },
+            {
+              "challenge": "LATERAL AND VERTICAL GUIDANCE",
+              "response": "ADJUST",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "lateral-and-vertical-guidance"
+            },
+            {
+              "type": "note",
+              "text": "The flight crew should engage and appropriate vertical mode, or adjust the vertical speed target, in accordance with the latest ATC clearance.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "the-flight-crew-should-engage-and-appropriate-vertical-mode-or-adjust-the-vertical-speed-target-in-accordance-with-the-latest-atc-clearance"
+            },
+            {
+              "challenge": "SPEED",
+              "response": "ADJUST",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "speed"
+            },
+            {
+              "type": "note",
+              "text": "The flight crew should adjust the speed target, and revert to managed speed, as appropriate.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "available"
+              },
+              "id": "the-flight-crew-should-adjust-the-speed-target-and-revert-to-managed-speed-as-appropriate"
+            },
+            {
+              "type": "heading",
+              "text": "If the AP/FD TCAS mode is not available:",
+              "sourcePage": 9,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "if-the-ap-fd-tcas-mode-is-not-available"
+            },
+            {
+              "type": "note",
+              "text": "The flight crew must apply this procedure, when a RA is triggered and the AP/FD TCAS mode does not engage.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "the-flight-crew-must-apply-this-procedure-when-a-ra-is-triggered-and-the-ap-fd-tcas-mode-does-not-engage"
+            },
+            {
+              "type": "heading",
+              "text": "All RA, except CLIMB RA during approach in CONF 3 or FULL:",
+              "sourcePage": 9,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "all-ra-except-climb-ra-during-approach-in-conf-3-or-full"
+            },
+            {
+              "challenge": "AP (if engaged)",
+              "response": "OFF",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other",
+                "ap-state": "on"
+              },
+              "id": "ap-if-engaged"
+            },
+            {
+              "challenge": "BOTH FDs",
+              "response": "OFF",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "both-fds"
+            },
+            {
+              "type": "note",
+              "text": "Respond promptly and smoothly.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "respond-promptly-and-smoothly"
+            },
+            {
+              "challenge": "VERTICAL SPEED",
+              "response": "ADJUST or MAINTAIN",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "vertical-speed-3"
+            },
+            {
+              "type": "note",
+              "text": "Adjusting or maintain the vertical speed as required, to reach the green area and/or avoid the red area of the vertical speed scale.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "adjusting-or-maintain-the-vertical-speed-as-required-to-reach-the-green-area-and-or-avoid-the-red-area-of-the-vertical-speed-scale"
+            },
+            {
+              "type": "note",
+              "text": "Note: Avoid excessive maneuvers while attempting to maintain the vertical speed just outside the red area of the vertical speed scale, and within the green area. If necessary, use the full speed range between Vαmax and Vmax.",
+              "sourcePage": 9,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "other"
+              },
+              "id": "note-avoid-excessive-maneuvers-while-attempting-to-maintain-the-vertical-speed-just-outside-the-red-area-of-the-vertical-speed-scale-and-within-the-green-area-if-necessary-use-the-full-speed-range-between-v-max-and-vmax"
+            },
+            {
+              "type": "heading",
+              "text": "Any CLIMB RA during approach in CONF 3 or FULL:",
+              "sourcePage": 9,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "any-climb-ra-during-approach-in-conf-3-or-full-2"
+            },
+            {
+              "challenge": "GO-AROUND",
+              "response": "PERFORM",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "go-around-2"
+            },
+            {
+              "type": "note",
+              "text": "Follow the SRS GA mode.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "follow-the-srs-ga-mode"
+            },
+            {
+              "challenge": "VERTICAL SPEED",
+              "response": "MONITOR",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "vertical-speed-4"
+            },
+            {
+              "type": "note",
+              "text": "Check that the vertical speed remains out of the red area of the vertical speed scale and take over if necessary.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "check-that-the-vertical-speed-remains-out-of-the-red-area-of-the-vertical-speed-scale-and-take-over-if-necessary-2"
+            },
+            {
+              "type": "note",
+              "text": "Respect stall, GPWS or windshear warnings.",
+              "sourcePage": 9,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "respect-stall-gpws-or-windshear-warnings-2"
+            },
+            {
+              "challenge": "ATC",
+              "response": "NOTIFY",
+              "sourcePage": 9,
+              "when": {
+                "tcas-mode": "unavailable",
+                "tcas-ra": "climb"
+              },
+              "id": "atc-3"
+            },
+            {
+              "type": "heading",
+              "text": "When the “CLEAR OF CONFLICT” aural alert sounds:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "when-the-clear-of-conflict-aural-alert-sounds-2"
+            },
+            {
+              "challenge": "ATC",
+              "response": "NOTIFY",
+              "sourcePage": 10,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "atc-4"
+            },
+            {
+              "challenge": "LATERAL AND VERTICAL GUIDANCE",
+              "response": "ADJUST",
+              "sourcePage": 10,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "lateral-and-vertical-guidance-2"
+            },
+            {
+              "type": "note",
+              "text": "Adjust the lateral and vertical guidance to resume normal navigation, in accordance with ATC clearance.",
+              "sourcePage": 10,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "adjust-the-lateral-and-vertical-guidance-to-resume-normal-navigation-in-accordance-with-atc-clearance"
+            },
+            {
+              "challenge": "AP/FD",
+              "response": "AS RQRD",
+              "sourcePage": 10,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "ap-fd-2"
+            },
+            {
+              "type": "note",
+              "text": "If necessary, reengage the AP/FD.",
+              "sourcePage": 10,
+              "italic": false,
+              "bold": false,
+              "when": {
+                "tcas-mode": "unavailable"
+              },
+              "id": "if-necessary-reengage-the-ap-fd"
+            }
+          ]
+        },
+        {
+          "id": "memory-windshear-warning-reactive-windshear",
+          "name": "WINDSHEAR WARNING – REACTIVE WINDSHEAR",
+          "description": "A340-300 / page 10",
+          "sourcePages": [
+            10
+          ],
+          "referencePage": 10,
+          "items": [
+            {
+              "type": "note",
+              "text": "If windshear is detected, both PFDs display a WINDSHEAR message. An associated aural WINDSHEAR alert sounds three times.",
+              "sourcePage": 10,
+              "italic": false,
+              "bold": false,
+              "id": "if-windshear-is-detected-both-pfds-display-a-windshear-message-an-associated-aural-windshear-alert-sounds-three-times"
+            },
+            {
+              "type": "note",
+              "text": "If the flight crew detects WINDSHEAR, apply the following recovery technique:",
+              "sourcePage": 10,
+              "italic": false,
+              "bold": false,
+              "id": "if-the-flight-crew-detects-windshear-apply-the-following-recovery-technique"
+            },
+            {
+              "type": "heading",
+              "text": "Takeoff:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "windshear-phase": "before-v1"
+              },
+              "id": "takeoff"
+            },
+            {
+              "type": "heading",
+              "text": "Takeoff:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "takeoff-2"
+            },
+            {
+              "type": "heading",
+              "text": "If before V1:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "windshear-phase": "before-v1"
+              },
+              "id": "if-before-v1"
+            },
+            {
+              "challenge": "If there are significant variations in airspeed, and in airspeed trend below the indicated V1, reject the takeoff.",
+              "response": "",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "before-v1"
+              },
+              "id": "if-there-are-significant-variations-in-airspeed-and-in-airspeed-trend-below-the-indicated-v-reject-the-takeoff"
+            },
+            {
+              "type": "note",
+              "text": "If windshear occurs during the takeoff roll, the aircraft may reach V1 later (or sooner) than expected. The flight crew should ensure that there is sufficient runway remaining to stop the aircraft, if necessary.",
+              "sourcePage": 10,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "windshear-phase": "before-v1"
+              },
+              "id": "if-windshear-occurs-during-the-takeoff-roll-the-aircraft-may-reach-v1-later-or-sooner-than-expected-the-flight-crew-should-ensure-that-there-is-sufficient-runway-remaining-to-stop-the-aircraft-if-necessary"
+            },
+            {
+              "type": "heading",
+              "text": "If after V1:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "if-after-v1"
+            },
+            {
+              "challenge": "THR LEVERS",
+              "response": "TOGA",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "thr-levers"
+            },
+            {
+              "challenge": "REACHING VR",
+              "response": "ROTATE",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "reaching-vr"
+            },
+            {
+              "challenge": "SRS ORDERS",
+              "response": "FOLLOW",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "srs-orders"
+            },
+            {
+              "type": "note",
+              "text": "If necessary, the flight crew may pull the sidestick fully back.",
+              "sourcePage": 10,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "if-necessary-the-flight-crew-may-pull-the-sidestick-fully-back"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: If the FD bars are not displayed, move toward an initial pitch attitude of 17.5 °. Then, if necessary, to prevent a loss in altitude, increase the pitch attitude.",
+              "sourcePage": 10,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "windshear-phase": "after-v1"
+              },
+              "id": "note-if-the-fd-bars-are-not-displayed-move-toward-an-initial-pitch-attitude-of-17-5-then-if-necessary-to-prevent-a-loss-in-altitude-increase-the-pitch-attitude"
+            },
+            {
+              "type": "heading",
+              "text": "Airborne, initial climb or landing:",
+              "sourcePage": 10,
+              "indent": 12,
+              "when": {
+                "windshear-phase": "airborne"
+              },
+              "id": "airborne-initial-climb-or-landing"
+            },
+            {
+              "challenge": "THR LEVERS AT TOGA",
+              "response": "SET OR CONFIRM",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "airborne"
+              },
+              "id": "thr-levers-at-toga"
+            },
+            {
+              "challenge": "AP (if engaged)",
+              "response": "KEEP ON",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "airborne",
+                "ap-state": "on"
+              },
+              "id": "ap-if-engaged"
+            },
+            {
+              "challenge": "SRS ORDERS",
+              "response": "FOLLOW",
+              "sourcePage": 10,
+              "when": {
+                "windshear-phase": "airborne"
+              },
+              "id": "srs-orders-2"
+            },
+            {
+              "type": "note",
+              "text": "If necessary the flight crew may pull the sidestick fully back.",
+              "sourcePage": 10,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "windshear-phase": "airborne"
+              },
+              "id": "if-necessary-the-flight-crew-may-pull-the-sidestick-fully-back-2"
+            },
+            {
+              "type": "note",
+              "text": "NOTE: 1. Autopilot disengages if the angle of attack value goes above alpha prot. 2. If the FD bars are not displayed, move toward an initial pitch attitude of 17.5 °. Then, if necessary, to prevent a loss in altitude, increase the pitch attitude.",
+              "sourcePage": 10,
+              "italic": true,
+              "bold": false,
+              "when": {
+                "windshear-phase": "airborne"
+              },
+              "id": "note-1-autopilot-disengages-if-the-angle-of-attack-value-goes-above-alpha-prot-2-if-the-fd-bars-are-not-displayed-move-toward-an-initial-pitch-attitude-of-17-5-then-if-necessary-to-prevent-a-loss-in-altitude-increase-the-pitch-attitude"
+            },
+            {
+              "type": "note",
+              "text": "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL OUT OF WINDSHEAR. CLOSELY MONITOR FLIGHT PATH AND SPEED. RECOVER SMOOTHLY TO NORMAL CLIMB OUT OF WINDSHEAR.",
+              "sourcePage": 10,
+              "italic": false,
+              "bold": false,
+              "id": "do-not-change-configuration-slats-flaps-gear-until-out-of-windshear-closely-monitor-flight-path-and-speed-recover-smoothly-to-normal-climb-out-of-windshear"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "original",
+      "title": "A340-300 Normal Checklist, Procedures and Memory Items",
+      "path": "references/airbus-a340-300/normal-checklist.pdf"
+    }
+  ]
+}

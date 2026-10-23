@@ -33,6 +33,7 @@ public final class ChecklistCatalog {
     public List<Aircraft> aircraftFor(String manufacturer) {
         List<Aircraft> models = new ArrayList<>();
         for (Aircraft model : aircraft) if (model.manufacturer.equals(manufacturer)) models.add(model);
+        models.sort((left, right) -> left.name.compareToIgnoreCase(right.name));
         return Collections.unmodifiableList(models);
     }
 
@@ -112,7 +113,7 @@ public final class ChecklistCatalog {
             }
             if (displayRows.isEmpty()) throw new JSONException("Empty checklist: " + checklistId);
             checklists.add(new Checklist(checklistId, list.getString("name"),
-                    list.getString("description"), list.optString("note"), items, displayRows, condition(list), list.optBoolean("alternate")));
+                    list.getString("description"), list.optString("note"), items, displayRows, condition(list), list.optBoolean("alternate"), Math.max(0, list.optInt("referencePage"))));
         }
         if (checklists.isEmpty() && field.equals("checklists"))
             throw new JSONException("Aircraft has no checklists: " + model.getString("id"));
@@ -142,9 +143,13 @@ public final class ChecklistCatalog {
 
     public static final class ChecklistOption {
         public final String id, label, defaultValue;
-        public final List<String> values, labels;
+        public final List<String> values, labels, checklistIds;
         private ChecklistOption(JSONObject source, Set<String> ids) throws JSONException {
             id = uniqueId(source, ids); label = source.getString("label");
+            List<String> scope = new ArrayList<>();
+            JSONArray scopes = source.optJSONArray("checklistIds");
+            if (scopes != null) for (int i = 0; i < scopes.length(); i++) scope.add(scopes.getString(i));
+            checklistIds = Collections.unmodifiableList(scope);
             List<String> keys = new ArrayList<>(), names = new ArrayList<>();
             Set<String> seen = new HashSet<>();
             JSONArray choices = source.getJSONArray("values");
@@ -158,12 +163,28 @@ public final class ChecklistCatalog {
         }
     }
 
+    public static final class ChecklistSet {
+        public final String id, name, buttonLabel, description;
+        public final int initialPage;
+        public final boolean autoAdvance, directOpen;
+        public final List<Checklist> checklists;
+        private ChecklistSet(JSONObject source, Set<String> setIds, Set<String> checklistIds) throws JSONException {
+            id = uniqueId(source, setIds); name = source.getString("name");
+            buttonLabel = source.optString("buttonLabel", name); description = source.optString("description");
+            initialPage = Math.max(1, source.optInt("initialPage", 1));
+            autoAdvance = source.optBoolean("autoAdvance", true); directOpen = source.optBoolean("directOpen");
+            checklists = Collections.unmodifiableList(parseChecklists(source, "checklists", checklistIds));
+            if (directOpen && checklists.size() != 1) throw new JSONException("Direct set must have one checklist: " + id);
+        }
+    }
+
     public static final class Aircraft {
         public final String id, manufacturer, name, operator, source, notice, legend, extendedReferenceNote;
         public final int extendedReferencePage;
         public final List<Checklist> checklists, extendedChecklists;
         public final List<ReferenceDocument> references;
         public final List<ChecklistOption> options;
+        public final List<ChecklistSet> extraSets;
         public final String showExtendedLabel, showNormalLabel, normalModeLabel, extendedModeLabel;
         public final int normalInitialPage, extendedInitialPage;
         public Aircraft(String id, String manufacturer, String name, String operator, String source, String notice, String legend,
@@ -181,6 +202,15 @@ public final class ChecklistCatalog {
             normalModeLabel = settings.optString("normalModeLabel"); extendedModeLabel = settings.optString("extendedModeLabel");
             normalInitialPage = Math.max(1, settings.optInt("normalInitialPage", 1));
             extendedInitialPage = Math.max(1, settings.optInt("extendedInitialPage", 2));
+            Set<String> allIds = new HashSet<>();
+            for (Checklist list : checklists) allIds.add(list.id);
+            for (Checklist list : extended) allIds.add(list.id);
+            List<ChecklistSet> sets = new ArrayList<>();
+            Set<String> setIds = new HashSet<>();
+            JSONArray additional = settings.optJSONArray("extraSets");
+            if (additional != null) for (int i = 0; i < additional.length(); i++)
+                sets.add(new ChecklistSet(additional.getJSONObject(i), setIds, allIds));
+            extraSets = Collections.unmodifiableList(sets);
             List<ChecklistOption> controls = new ArrayList<>();
             JSONArray definitions = settings.optJSONArray("options");
             Set<String> seen = new HashSet<>();
@@ -189,7 +219,11 @@ public final class ChecklistCatalog {
             options = Collections.unmodifiableList(controls);
         }
         private void validateConditions() throws JSONException {
-            List<Checklist> lists = new ArrayList<>(checklists); lists.addAll(extendedChecklists);
+            List<Checklist> lists = allChecklists();
+            Set<String> ids = new HashSet<>();
+            for (Checklist list : lists) ids.add(list.id);
+            for (ChecklistOption option : options) for (String id : option.checklistIds)
+                if (!ids.contains(id)) throw new JSONException("Unknown option checklist: " + id);
             for (Checklist list : lists) {
                 validateCondition(list.when);
                 for (ChecklistRow row : list.rows) validateCondition(row.when);
@@ -202,6 +236,15 @@ public final class ChecklistCatalog {
                     if (option.id.equals(entry.getKey()) && option.values.contains(entry.getValue())) valid = true;
                 if (!valid) throw new JSONException("Unknown checklist option: " + entry.getKey());
             }
+        }
+        public List<Checklist> allChecklists() {
+            List<Checklist> lists = new ArrayList<>(checklists); lists.addAll(extendedChecklists);
+            for (ChecklistSet set : extraSets) lists.addAll(set.checklists);
+            return lists;
+        }
+        public ChecklistSet extraSet(String id) {
+            for (ChecklistSet set : extraSets) if (set.id.equals(id)) return set;
+            return null;
         }
         public List<Checklist> checklistsFor(boolean extended) {
             return extended && !extendedChecklists.isEmpty() ? extendedChecklists : checklists;
@@ -229,8 +272,9 @@ public final class ChecklistCatalog {
         public final List<ChecklistRow> rows;
         public final Map<String, String> when;
         public final boolean alternate;
+        public final int referencePage;
         public Checklist(String id, String name, String description, String note, List<Item> items, List<ChecklistRow> rows,
-                         Map<String, String> when, boolean alternate) {
+                         Map<String, String> when, boolean alternate, int referencePage) {
             this.id = id; this.name = name; this.description = description;
             this.items = Collections.unmodifiableList(items);
             List<Item> required = new ArrayList<>();
@@ -238,7 +282,7 @@ public final class ChecklistCatalog {
             this.requiredItems = Collections.unmodifiableList(required);
             this.rows = Collections.unmodifiableList(rows);
             this.note = note;
-            this.when = when; this.alternate = alternate;
+            this.when = when; this.alternate = alternate; this.referencePage = referencePage;
         }
         public List<Item> itemsFor(Map<String, String> selected, boolean requiredOnly) {
             List<Item> visible = new ArrayList<>();

@@ -4,13 +4,15 @@ Native Java / Material Android app for offline, manual flight-simulator checklis
 
 ## Use
 
-Choose a manufacturer, choose an aircraft model, choose a checklist, and tap the item or its checkbox to check/uncheck it. Boeing contains the 737-NG, 737 MAX Family (Ryanair 737-8200 source), 777, 757, and 767; Airbus contains the A320 Family, A330-300, A350, and A380; McDonnell Douglas contains the MD-11; ATR contains the ATR 42 / 72. Back moves through checklist, phases, aircraft models, and manufacturers. Rotation restores the selected manufacturer and model. The bottom **Mark item as complete** button checks the first unchecked required item. When every required item is checked, **Mark checklist as complete** becomes available. Pressing it saves completion and immediately opens the next checklist. Completing the final checklist leaves it open with a disabled **Checklist complete** button. Unchecking a required item in a completed checklist reopens it.
+Choose a manufacturer, choose an aircraft model, choose a checklist, and tap the item or its checkbox to check/uncheck it. Boeing contains the 737-NG, 737 MAX Family (Ryanair 737-8200 source), 777, 757, and 767; Airbus contains the A320 Family, A330-300, A340-300, A350, and A380; McDonnell Douglas contains the MD-11; ATR contains the ATR 42 / 72. Back moves through checklist, phases, aircraft models, and manufacturers. Rotation restores the selected manufacturer and model. The bottom **Mark item as complete** button checks the first unchecked required item. When every required item is checked, **Mark checklist as complete** becomes available. Pressing it saves completion and immediately opens the next checklist. Completing the final checklist leaves it open with a disabled **Checklist complete** button. Unchecking a required item in a completed checklist reopens it.
 
 Grey **Manual only** rows are tickable and saved independently, but do not block completion. The bottom action skips them. Their checked count is shown separately from required checks. Ticking or unticking them after completion keeps the checklist complete. **Reset all** clears both kinds of ticks across every aircraft.
 
 Rows explicitly marked **Optional** work the same way. **Checklist options**, available for aircraft with alternate paths, selects which rows and procedures apply. Apply saves the choices; Cancel leaves them unchanged. Ticks are retained when changing paths, while affected completed checklists reopen for explicit acknowledgement. Reset all clears ticks and completion, retaining the selected options. Alternate go-around procedures and reference schedules remain selectable in the phase list; automatic advancement skips them.
 
 Checklist rows follow a compact challenge/response layout: checkbox, challenge, connecting line, and right-aligned response. Long text wraps without truncation. Source markers stay alongside challenges; other applicability notes remain visible underneath. Checking the bottom visible row scrolls the next unchecked item into view. The bottom action also reveals the next unchecked item. Other row taps and unchecking items preserve the reading position.
+
+Landscape windows at least 720dp wide use a full-width workspace: checklist buttons on the left, selected checklist items on the right, and a completion button fixed below the items. The two panes scroll independently. The active checklist is highlighted; completed checklists show a checkmark. The sidebar includes Normal/Extended mode, additional categories, applicable checklist options, source notes, and the original document reader. Portrait and narrower windows retain the existing layout. Switching phases or rotating preserves checks, completion, the selected category, and the active checklist.
 
 Progress is saved automatically on the device across restarts and rotations. **Reset all**, available on interactive checklist screens, asks for confirmation and clears items and completion status across all aircraft. Cancel leaves progress intact. The screen stays awake while the app is in use.
 
@@ -33,6 +35,7 @@ app/src/main/assets/
     atr-42-72.json               # BritishAvgeek ATR 42/72 checklist
     boeing-757.json              # Shared 757/767 source, independent 757 progress
     boeing-767.json              # Shared 757/767 source, independent 767 progress
+    airbus-a340-300.json         # Normal, evacuation, engine procedures, memory items
   references/
     ryanair-737-ng/
       normal-checklist.pdf      # Original supplied PDF, unchanged
@@ -55,6 +58,8 @@ app/src/main/assets/
       normal-checklist.pdf      # Original two-page BritishAvgeek source
     boeing-757-767/
       normal-checklist.pdf      # Shared original four-page 757/767 PDF
+    airbus-a340-300/
+      normal-checklist.pdf      # Original ten-page A340-300 source
 ```
 
 The Ryanair 737-NG includes Safety Inspection (6), Before Start (38), Before Taxi (12), Shutdown (22), and Secure (7): 85 items transcribed from the supplied `RYANAIR BOEING 737.pdf`. The supplemental cockpit placard adds Before Takeoff (2), After Takeoff (4), Descent (5), Approach (1), and Landing (4) between Before Taxi and Shutdown, for 10 phases and 101 items total. Blank responses, applicability markers, and the Before Start divider are retained. Existing aircraft/checklist/item IDs remain unchanged, preserving saved progress when updating from v1.1.
@@ -69,8 +74,8 @@ The mode button is available above the phase list and in a checklist header. Swi
 
 To add an aircraft:
 
-1. Add `checklists/<model-id>.json` following `ryanair-737-ng.json`. Include `id`, `manufacturer` (for example `Boeing` or `Airbus`), `name`, `operator`, `source`, `notice`, `checklists`, and optionally `references`, `legend`, `extendedChecklists`, `extendedReferenceNote`, and `extendedReferencePage`. Manufacturer groups are generated from this field, in first-appearance order; models retain catalog order. Use the same manufacturer spelling for all its models. Adding a new manufacturer requires no UI changes.
-2. Append that filename to the `aircraft` array in `checklists/index.json`. This controls aircraft order.
+1. Add `checklists/<model-id>.json` following `ryanair-737-ng.json`. Include `id`, `manufacturer` (for example `Boeing` or `Airbus`), `name`, `operator`, `source`, `notice`, `checklists`, and optionally `references`, `legend`, `extendedChecklists`, `extendedReferenceNote`, and `extendedReferencePage`. Manufacturer groups are generated from this field, in first-appearance order; models are sorted by name within each manufacturer. Use the same manufacturer spelling for all its models. Adding a new manufacturer requires no UI changes.
+2. Append that filename to the `aircraft` array in `checklists/index.json`. Manufacturer order follows first appearance; model display order is determined by name.
 3. Add original documents under `references/<model-id>/` and list them in the aircraft definition:
 
 ```json
@@ -106,6 +111,10 @@ An `items` entry may instead use `type: "heading"` or `type: "note"`, with `id`,
 
 Boeing 757 and Boeing 767 are separate Boeing model entries, imported from the same supplied `B757-767 Checklist.pdf`. Each contains 17 sections and 202 tickable rows (200 required, 2 explicitly conditional APU rows optional). Grey preparation blocks and black formal checklist boxes are distinct phases. Source selector subheadings and the FMA mode line remain informational. Engine Start has independent First engine and Second engine groups, each repeating all seven source actions in the user’s chosen start order. Fuel Balancing (Fuel leak) remains manually selectable and is skipped during automatic normal progression. The final checklist is Secure. All checks, completion, and reset behavior are scoped independently for the two aircraft. Both entries reference one unchanged shared four-page PDF; the Boeing 757-labelled charts on pages 3-4 remain in the reader.
 
+Airbus A340-300 opens the nine normal checklists from page 1 by default (59 required checks). Three separate category buttons provide **Emergency evacuation** (opens its checklist directly), **Other procedures** (automatic start, independent manual-start checklists for engines 1-4, and the takeoff CG/trim reference), and **Non-normal checklists (memory items only)** (seven procedures from pages 5-10). The memory-items label and description make clear that this is a selected subset. Extra procedures stay on the chosen checklist when completed, rather than advancing to a different emergency or engine-start method. Normal completion still advances through the normal phases and stays on the final phase.
+
+Source ECAM memo bullets, monitoring tables, headings, conditions, notes, and cautions remain non-interactive. Procedure-scoped **Checklist options** select evacuation/pressure branches, braking outcomes, emergency-descent conditions, stall configuration, TCAS availability/RA/AP state, and windshear phase/AP state. Only matching rows are shown and required. Changing options retains ticks, preserves other procedures’ choices, and reopens affected completed checklists. With no applicable items, the action is disabled and the screen says so. Reset all clears ticks and completion across every category. Category/checklist selection survives rotation, and re-entering the aircraft starts in Normal. The unchanged ten-page PDF opens on the relevant source page for each procedure, including the trim chart on page 2.
+
 ## Settings and About
 
 The gear in the app toolbar opens **Settings** from any manufacturer, model, phase, or interactive checklist screen. Checklist text sizes are Small (85%), Default (100%), Large (125%), Extra large (150%), and Largest (175%), with an immediate preview. The size applies to item challenges/responses, item notes, source headings, groups, phase notes, and the checklist legend. It combines with the device text size. Returning to the checklist applies the change while retaining the selected phase, ticks, and scroll position.
@@ -138,11 +147,13 @@ Debug APK: `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Layouts and UI code
 
-All screens and reusable rows are XML resources in `app/src/main/res/layout/`:
+Screens and reusable rows are XML resources in `app/src/main/res/layout/`, with the compact landscape checklist body in `res/layout-w720dp-land/`:
 
 - `activity_main.xml`: app toolbar, back/reset buttons and screen container.
 - `screen_manufacturers.xml`, `row_manufacturer.xml`: manufacturer selection.
 - `screen_aircraft.xml`, `row_aircraft.xml`: models belonging to the selected manufacturer.
+- `screen_checklist_workspace.xml`, `row_sidebar_phase.xml`, `screen_checklist_empty.xml`: landscape sidebar, phase buttons and selection prompt.
+- `layout-w720dp-land/screen_checklist.xml`: landscape item pane with a compact header and fixed completion action. `values-w720dp-land/bools.xml` enables the workspace for wide landscape windows.
 - `screen_checklists.xml`, `row_phase.xml`: checklist selection and per-phase status.
 - `screen_checklist.xml`: compact checklist header, scrolling rows and pinned outlined action.
 - `row_checklist_item.xml`, `row_checklist_group.xml`: challenge/response rows and section dividers.
@@ -154,7 +165,7 @@ Shared styles, colors and user-facing strings are in `res/values/`. `MainActivit
 
 The state tests cover completion gating, reopening, isolation between aircraft/phases, restoring snapshots, and global reset. Device tests cover the bundled catalog, persistence, automatic next-checklist navigation, staying on the final checklist, bottom-row automatic scrolling, rotation, and reset cancellation/confirmation.
 
-Version 1.12 (version code 14). The packaged debug build is copied to `output/flight-check-debug.apk`, with screenshots in `output/screens/`.
+Version 1.14 (version code 16). The packaged debug build is copied to `output/flight-check-debug.apk`, with screenshots in `output/screens/`.
 
 The Settings build was verified on 2026-10-23: all 53 device tests passed on Android 12 / API 31, including the 737 supplement and Settings update. The 8 state unit tests also passed with the aircraft-options update; the state engine is unchanged in the Settings update. New aircraft tests cover source counts and native PDF pages, A330 selected paths and completion reopening, option persistence/rotation/cancellation, reset retaining selections, alternate go-around skipping, B777 normal/full procedures and FMC route filtering, optional F/O checks, and ATR required rows and timing notes. A380 tests cover every section count, four-engine checks, non-clickable formatted notes, text-only sections, completion advancing past IN FMS, rotation and model-specific progress, all three original PDF pages, and global reset. MD-11 tests verify grey-row classification (71 required / 26 optional), clickable optional rows, required-only bottom actions, all nine phases completing with every optional row unchecked, optional ticks surviving rotation, optional unchecking preserving completion, required unchecking reopening it, global reset, and two-page PDF navigation. Existing aircraft tests also pass. MAX tests cover all five source section counts, variant-specific ELT checks and wording, the Before Start divider, progress isolation from the NG, advancement and staying on the final checklist, global reset, and returning from the original PDF without losing checks. Manufacturer navigation tests cover model filtering, toolbar/system back navigation through all levels, restoration after rotation, preserving checks across manufacturer switches, and global reset from the home screen. A350 tests cover the imported catalog, non-clickable formatted subheadings, progress and advancement excluding text rows, text-only sections, rotation, and original PDF navigation. Existing Ryanair NG, A320 Normal/Extended, and PDF/image reader tests pass. Lint: 0 errors (6 existing dependency update warnings and 1 range-typography suggestion). The MAX and A380 transcriptions were reviewed against every source page; JSON `sourcePage`/`sourcePages` fields preserve traceability.
 
@@ -172,3 +183,9 @@ Version 1.3.1 removes the aircraft-card completion bar/count and the aggregate c
 Settings verified on 2026-10-23: the full 53-test device suite passes. Settings tests cover live font preview, saved size and appearance, recreation/restart, checklist ticks and reset isolation, day/night switching in the checklist and native reader, following the device theme, large text wrapping without truncation, non-clickable source notes, and the About author/version/GitHub action. Lint: 0 errors and 7 existing warnings.
 
 757/767 update verified on 2026-10-23: 7 targeted device tests passed (3 new 757/767 flow/reference/isolation tests, 3 manufacturer navigation tests, and the expanded catalog/reference test). The three checklist pages were visually reviewed and all body text matched the transcription in source reading order after ignoring spacing/punctuation. Both JSON definitions contain identical rows under separate aircraft IDs. The shared original PDF matches the supplied bytes. Lint: 0 errors and 7 existing warnings.
+
+A340 update verified on 2026-10-23: all 62 device tests verified through the full regression run and focused reruns of the updated MD-11 catalog assertion and six A340 tests. The MD-11 assertion checks its manual-only subtype while allowing generic conditional rows on other aircraft. A340 tests cover default Normal mode, all three category buttons, per-procedure source pages, normal advancement, staying on a selected memory/engine procedure, category restoration, independent manual-engine progress, evacuation and TCAS/windshear branches, preserving unrelated option choices, conditional memory items, zero applicable items, reset, and the ten-page PDF. Source body text was audited across all ten pages against the transcription. Lint: 0 errors and 7 existing warnings.
+
+Long checklist option values wrap across lines. The A340 TCAS/windshear and existing A330 approach/autothrust selector tests pass after this layout change; both A340 option dialogs were visually checked. The packaged APK matches the final build and retains the supplied PDF byte-for-byte.
+
+Landscape update verified on 2026-10-23: the full 66-test device regression passed 65 checks; one new sidebar-scroll assertion ran before its scroll animation finished. After making the scrolling check deterministic, all four landscape tests passed against the unchanged app build. Coverage includes phase switching, checks and selection across portrait/landscape rotation, independent pane scrolling and automatic item reveal, normal advancement and final-checklist behavior, reset, A340 categories/options/source pages, A320 Normal/Extended charts, and day mode with 175% checklist text. Tablet screenshots at 1920×1200 and 1200×1920 were visually reviewed; the emulator's original display settings were restored. Lint: 0 errors and 7 existing warnings. APK v1.14 matches the final build, with all 12 aircraft and all 11 referenced original documents verified.

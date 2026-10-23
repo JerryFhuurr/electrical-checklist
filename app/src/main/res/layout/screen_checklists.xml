@@ -3,12 +3,14 @@
     <LinearLayout android:id="@+id/page_body" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
         <TextView android:id="@+id/model_eyebrow" style="@style/Eyebrow"/>
         <TextView android:id="@+id/model_title" style="@style/PageTitle"/>
-        <TextView style="@style/BodyText" android:text="@string/choose_phase"/>
-        <TextView style="@style/Eyebrow" android:layout_marginTop="24dp" android:text="@string/flight_phases"/>
+        <TextView android:id="@+id/checklist_picker_hint" style="@style/BodyText" android:text="@string/choose_phase"/>
+        <TextView android:id="@+id/checklist_picker_heading" style="@style/Eyebrow" android:layout_marginTop="24dp" android:text="@string/flight_phases"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/view_checklist_button" style="@style/PrimaryAction" android:layout_marginTop="12dp" android:layout_marginBottom="6dp" android:text="@string/view_checklist"/>
         <TextView android:id="@+id/checklist_mode_label" style="@style/BodyText" android:textSize="12sp" android:visibility="gone"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/checklist_mode_button" style="@style/TextAction" android:layout_width="match_parent" android:visibility="gone"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/checklist_options_button" style="@style/TextAction" android:text="@string/checklist_options" android:visibility="gone"/>
+        <TextView android:id="@+id/checklist_set_description" style="@style/BodyText" android:visibility="gone"/>
+        <LinearLayout android:id="@+id/checklist_categories" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
         <LinearLayout android:id="@+id/phase_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
         <LinearLayout android:id="@+id/extended_reference_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <TextView android:id="@+id/extended_reference_note" style="@style/BodyText" android:textSize="13sp"/>

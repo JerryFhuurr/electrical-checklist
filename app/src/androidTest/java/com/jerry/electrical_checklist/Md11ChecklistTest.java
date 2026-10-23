@@ -64,9 +64,10 @@ public class Md11ChecklistTest {
         assertTrue(takeoff.items.get(5).note.contains("Complete silently"));
         assertEquals("F: ___\nC: Checked", takeoff.items.get(0).response);
         assertTrue(md.checklists.get(0).items.get(2).note.contains("Amplified procedure"));
+        // The MD-11 manual-only subtype is distinct from generic conditional/optional rows.
         for (ChecklistCatalog.Aircraft a : catalog.aircraft) if (!a.id.equals(MODEL))
-            for (ChecklistCatalog.Checklist c : a.checklists)
-                assertEquals(c.items.size(), c.requiredItems.size());
+            for (ChecklistCatalog.Checklist c : a.allChecklists())
+                for (ChecklistCatalog.Item item : c.items) assertFalse(item.manualOnly);
         try (ReferenceSource source = ReferenceSource.openAsset(context, md.references.get(0))) {
             assertEquals(2, source.pageCount());
         }

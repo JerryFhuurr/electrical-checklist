@@ -3,6 +3,7 @@ package com.jerry.electrical_checklist;
 import android.os.Bundle;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.Rect;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,6 +34,7 @@ import com.jerry.electrical_checklist.ChecklistCatalog.Checklist;
 import com.jerry.electrical_checklist.ChecklistCatalog.Item;
 import com.jerry.electrical_checklist.ChecklistCatalog.ChecklistRow;
 import com.jerry.electrical_checklist.ChecklistCatalog.ChecklistOption;
+import com.jerry.electrical_checklist.ChecklistCatalog.ChecklistSet;
 
 /** XML layouts own presentation; this activity binds the catalog and manual checklist state. */
 public class MainActivity extends AppCompatActivity {
@@ -43,10 +45,16 @@ public class MainActivity extends AppCompatActivity {
     private Aircraft aircraft;
     private Checklist checklist;
     private boolean showExtended;
+    private ChecklistSet checklistSet;
     private Map<String, String> selectedOptions = new LinkedHashMap<>();
     private View root, screen;
+    private View workspace;
     private FrameLayout container;
     private ScrollView scroll;
+    private ScrollView sidebarScroll;
+    private String sidebarKey = "";
+    private int sidebarPosition;
+    private final Map<String, MaterialButton> sidebarButtons = new LinkedHashMap<>();
     private MaterialButton action;
     private float checklistFontScale;
     private final Map<String, View> itemViews = new LinkedHashMap<>();
@@ -83,13 +91,16 @@ public class MainActivity extends AppCompatActivity {
             showExtended = state.getBoolean("extended");
             for (Aircraft model : catalog.aircraft)
                 if (model.id.equals(state.getString("aircraft"))) aircraft = model;
-            if (aircraft != null) { manufacturer = aircraft.manufacturer; selectedOptions = store.loadOptions(aircraft); }
+            if (aircraft != null) { manufacturer = aircraft.manufacturer; selectedOptions = store.loadOptions(aircraft); checklistSet = aircraft.extraSet(state.getString("checklist_set")); }
             if (aircraft != null) for (Checklist list : activeChecklists())
                 if (list.id.equals(state.getString("checklist"))) checklist = list;
+            sidebarPosition = state.getInt("sidebar_scroll");
+            sidebarKey = sidebarContext();
         }
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override public void handleOnBackPressed() {
-                if (checklist != null) { checklist = null; render(); }
+                if (checklist != null) { checklist = null; if (checklistSet != null && checklistSet.directOpen) checklistSet = null; render(); }
+                else if (checklistSet != null) { checklistSet = null; render(); }
                 else if (aircraft != null) { aircraft = null; showExtended = false; render(); }
                 else if (manufacturer != null) { manufacturer = null; render(); }
                 else { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); }
@@ -118,42 +129,53 @@ public class MainActivity extends AppCompatActivity {
         if (aircraft != null) state.putString("aircraft", aircraft.id);
         if (checklist != null) state.putString("checklist", checklist.id);
         state.putBoolean("extended", showExtended);
+        if (checklistSet != null) state.putString("checklist_set", checklistSet.id);
         if (scroll != null) state.putInt("scroll", scroll.getScrollY());
+        if (sidebarScroll != null) state.putInt("sidebar_scroll", sidebarScroll.getScrollY());
     }
 
     private void render() {
+        String nextSidebarKey = sidebarContext();
+        if (!sidebarKey.equals(nextSidebarKey)) sidebarPosition = 0;
+        else if (sidebarScroll != null) sidebarPosition = sidebarScroll.getScrollY();
+        sidebarKey = nextSidebarKey;
+        sidebarScroll = null;
+        workspace = null;
+        sidebarButtons.clear();
         container.removeAllViews();
         itemViews.clear();
         root.findViewById(R.id.back_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
         root.findViewById(R.id.back_button).setContentDescription(getString(checklist != null ? R.string.back_checklists
-                : aircraft != null ? R.string.back_aircraft : R.string.back_manufacturers));
+                : checklistSet != null ? R.string.back_normal_checklists : aircraft != null ? R.string.back_aircraft : R.string.back_manufacturers));
         int background = getColor(checklist == null ? R.color.app_background : R.color.checklist_background);
         getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(background));
         if (manufacturer == null) renderManufacturers();
         else if (aircraft == null) renderAircraft();
+        else if (getResources().getBoolean(R.bool.checklist_two_pane)) renderWorkspace();
         else if (checklist == null) renderChecklists();
         else renderItems();
         ViewCompat.requestApplyInsets(root);
     }
 
     private void inflateScreen(int layout) {
-        screen = getLayoutInflater().inflate(layout, container, false);
+        FrameLayout host = workspace == null ? container : workspace.findViewById(R.id.checklist_detail_container);
+        screen = getLayoutInflater().inflate(layout, host, false);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) screen.getLayoutParams();
-        if (getResources().getConfiguration().screenWidthDp > 800) params.width = dp(800);
+        if (workspace == null && layout != R.layout.screen_checklist_workspace && getResources().getConfiguration().screenWidthDp > 800) params.width = dp(800);
         params.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-        container.addView(screen, params);
+        host.addView(screen, params);
         scroll = screen.findViewById(R.id.page_scroll);
-        scroll.setSaveEnabled(false); // Navigation and scroll restoration are scoped to the selected screen.
+        if (scroll != null) scroll.setSaveEnabled(false); // Navigation and scroll restoration are scoped to the selected screen.
         View source = screen.findViewById(R.id.source_button);
         if (source != null) source.setOnClickListener(v -> showSource(aircraft == null ? catalog.aircraft.get(0) : aircraft));
         View reference = screen.findViewById(R.id.view_checklist_button);
         if (reference != null) {
             reference.setVisibility(aircraft == null || aircraft.references.isEmpty() ? View.GONE : View.VISIBLE);
-            reference.setOnClickListener(v -> openReference((showExtended ? aircraft.extendedInitialPage : aircraft.normalInitialPage) - 1));
+            reference.setOnClickListener(v -> openReference(referencePage() - 1));
         }
         View optionsButton = screen.findViewById(R.id.checklist_options_button);
         if (optionsButton != null) {
-            optionsButton.setVisibility(aircraft == null || aircraft.options.isEmpty() ? View.GONE : View.VISIBLE);
+            optionsButton.setVisibility(aircraft == null || visibleOptions().isEmpty() ? View.GONE : View.VISIBLE);
             optionsButton.setOnClickListener(v -> showChecklistOptions());
         }
         MaterialButton mode = screen.findViewById(R.id.checklist_mode_button);
@@ -161,7 +183,92 @@ public class MainActivity extends AppCompatActivity {
             mode.setVisibility(aircraft == null || aircraft.extendedChecklists.isEmpty() ? View.GONE : View.VISIBLE);
             String customMode = aircraft == null ? "" : showExtended ? aircraft.showNormalLabel : aircraft.showExtendedLabel;
             mode.setText(customMode.isEmpty() ? getString(showExtended ? R.string.show_normal : R.string.show_extended) : customMode);
-            mode.setOnClickListener(v -> { showExtended = !showExtended; checklist = null; render(); });
+            mode.setOnClickListener(v -> { showExtended = !showExtended; checklistSet = null; checklist = null; render(); });
+        }
+    }
+
+    private String sidebarContext() {
+        return aircraft == null ? "" : aircraft.id + "/" + showExtended + "/" + (checklistSet == null ? "normal" : checklistSet.id);
+    }
+
+    private void renderWorkspace() {
+        inflateScreen(R.layout.screen_checklist_workspace);
+        workspace = screen;
+        label(workspace, R.id.sidebar_aircraft, aircraft.name);
+        String mode = checklistSet != null ? checklistSet.name : showExtended ? aircraft.extendedModeLabel : aircraft.normalModeLabel;
+        label(workspace, R.id.sidebar_mode_label, mode.isEmpty() ? getString(aircraft.extendedChecklists.isEmpty()
+                ? R.string.normal_checklists : showExtended ? R.string.extended_mode_label : R.string.normal_mode_label) : mode);
+        TextView description = workspace.findViewById(R.id.sidebar_set_description);
+        description.setVisibility(checklistSet != null && !checklistSet.description.isEmpty() ? View.VISIBLE : View.GONE);
+        if (checklistSet != null) description.setText(checklistSet.description);
+        bindCategoryButtons(workspace.findViewById(R.id.checklist_categories));
+        bindExtendedReferenceInfo(workspace);
+        LinearLayout rows = workspace.findViewById(R.id.sidebar_phase_rows);
+        for (Checklist list : activeChecklists()) {
+            MaterialButton button = (MaterialButton) getLayoutInflater().inflate(R.layout.row_sidebar_phase, rows, false);
+            button.setTag(list.id);
+            button.setTooltipText(list.description);
+            button.setOnClickListener(v -> { checklist = list; render(); });
+            sidebarButtons.put(list.id, button);
+            rows.addView(button);
+        }
+        sidebarScroll = workspace.findViewById(R.id.sidebar_scroll);
+        sidebarScroll.setSaveEnabled(false);
+        if (checklist == null) inflateScreen(R.layout.screen_checklist_empty);
+        else renderItems();
+        updateSidebarStatus();
+        ScrollView navigation = sidebarScroll;
+        MaterialButton selected = checklist == null ? null : sidebarButtons.get(checklist.id);
+        int position = sidebarPosition;
+        navigation.post(() -> {
+            navigation.scrollTo(0, position);
+            if (selected == null) return;
+            Rect bounds = new Rect();
+            selected.getDrawingRect(bounds);
+            navigation.offsetDescendantRectToMyCoords(selected, bounds);
+            if (bounds.top < navigation.getScrollY()) navigation.scrollTo(0, bounds.top);
+            else if (bounds.bottom > navigation.getScrollY() + navigation.getHeight())
+                navigation.scrollTo(0, bounds.bottom - navigation.getHeight());
+        });
+    }
+
+    private void updateSidebarStatus() {
+        if (workspace == null) return;
+        for (Checklist list : activeChecklists()) {
+            MaterialButton button = sidebarButtons.get(list.id);
+            if (button == null) continue;
+            button.setSelected(list == checklist);
+            button.setText(isComplete(list) ? getString(R.string.sidebar_completed_phase, list.name) : list.name);
+            String summary = visibleItems(list).isEmpty() ? getString(list.items.isEmpty() ? R.string.reference_notes : R.string.no_applicable_items)
+                    : progressStatus(list, R.string.phase_status);
+            button.setContentDescription(getString(R.string.sidebar_phase_description, list.name, summary));
+        }
+    }
+
+    private void bindExtendedReferenceInfo(View parent) {
+        View info = parent.findViewById(R.id.extended_reference_info);
+        if (info == null) return;
+        boolean visible = showExtended && !aircraft.extendedReferenceNote.isEmpty();
+        info.setVisibility(visible ? View.VISIBLE : View.GONE);
+        if (visible) {
+            label(parent, R.id.extended_reference_note, aircraft.extendedReferenceNote);
+            parent.findViewById(R.id.extended_reference_button).setOnClickListener(v -> openReference(aircraft.extendedReferencePage - 1));
+        }
+    }
+
+    private void bindCategoryButtons(LinearLayout categories) {
+        if (checklistSet != null) {
+            MaterialButton normal = (MaterialButton) getLayoutInflater().inflate(R.layout.row_checklist_category, categories, false);
+            normal.setText(R.string.show_normal); normal.setTag("normal-checklists");
+            normal.setOnClickListener(v -> { checklistSet = null; checklist = null; showExtended = false; render(); });
+            categories.addView(normal);
+        }
+        for (ChecklistSet set : aircraft.extraSets) {
+            if (set == checklistSet) continue;
+            MaterialButton button = (MaterialButton) getLayoutInflater().inflate(R.layout.row_checklist_category, categories, false);
+            button.setText(set.buttonLabel); button.setTag(set.id);
+            button.setOnClickListener(v -> { checklistSet = set; showExtended = false; checklist = set.directOpen ? set.checklists.get(0) : null; render(); });
+            categories.addView(button);
         }
     }
 
@@ -178,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
                     getResources().getQuantityString(R.plurals.checklist_count, model.checklists.size(), model.checklists.size()),
                     getResources().getQuantityString(R.plurals.item_count, model.itemCount(), model.itemCount())));
             row.findViewById(R.id.open_aircraft).setContentDescription(getString(R.string.open_aircraft_description, model.name));
-            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { aircraft = model; selectedOptions = store.loadOptions(model); showExtended = false; render(); });
+            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { aircraft = model; selectedOptions = store.loadOptions(model); showExtended = false; checklistSet = null; render(); });
             rows.addView(row);
         }
     }
@@ -203,20 +310,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void renderChecklists() {
         inflateScreen(R.layout.screen_checklists);
-        label(screen, R.id.model_eyebrow, getString(showExtended ? R.string.model_eyebrow_extended : R.string.model_eyebrow, aircraft.operator.toUpperCase(Locale.ROOT)));
+        label(screen, R.id.model_eyebrow, checklistSet == null ? getString(showExtended ? R.string.model_eyebrow_extended : R.string.model_eyebrow, aircraft.operator.toUpperCase(Locale.ROOT))
+                : getString(R.string.model_eyebrow_set, aircraft.operator.toUpperCase(Locale.ROOT), checklistSet.name.toUpperCase(Locale.ROOT)));
         label(screen, R.id.model_title, aircraft.name);
+        label(screen, R.id.checklist_picker_hint, getString(checklistSet == null ? R.string.choose_phase : R.string.choose_procedure));
+        label(screen, R.id.checklist_picker_heading, getString(checklistSet == null ? R.string.flight_phases : R.string.procedures_heading));
         List<Checklist> lists = activeChecklists();
         TextView modeLabel = screen.findViewById(R.id.checklist_mode_label);
-        modeLabel.setVisibility(aircraft.extendedChecklists.isEmpty() ? View.GONE : View.VISIBLE);
-        String customLabel = showExtended ? aircraft.extendedModeLabel : aircraft.normalModeLabel;
+        modeLabel.setVisibility(checklistSet != null || !aircraft.extendedChecklists.isEmpty() ? View.VISIBLE : View.GONE);
+        String customLabel = checklistSet != null ? checklistSet.name : showExtended ? aircraft.extendedModeLabel : aircraft.normalModeLabel;
         modeLabel.setText(customLabel.isEmpty() ? getString(showExtended ? R.string.extended_mode_label : R.string.normal_mode_label) : customLabel);
-        View referenceInfo = screen.findViewById(R.id.extended_reference_info);
-        boolean hasReferenceInfo = showExtended && !aircraft.extendedReferenceNote.isEmpty();
-        referenceInfo.setVisibility(hasReferenceInfo ? View.VISIBLE : View.GONE);
-        if (hasReferenceInfo) {
-            label(screen, R.id.extended_reference_note, aircraft.extendedReferenceNote);
-            screen.findViewById(R.id.extended_reference_button).setOnClickListener(v -> openReference(aircraft.extendedReferencePage - 1));
-        }
+        bindExtendedReferenceInfo(screen);
+        TextView setDescription = screen.findViewById(R.id.checklist_set_description);
+        setDescription.setVisibility(checklistSet != null && !checklistSet.description.isEmpty() ? View.VISIBLE : View.GONE);
+        if (checklistSet != null) setDescription.setText(checklistSet.description);
+        bindCategoryButtons(screen.findViewById(R.id.checklist_categories));
         LinearLayout rows = screen.findViewById(R.id.phase_rows);
         for (int i = 0; i < lists.size(); i++) {
             Checklist list = lists.get(i);
@@ -227,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
             label(row, R.id.phase_number, complete ? "✓" : String.format(Locale.ROOT, "%02d", i + 1));
             label(row, R.id.phase_name, list.name);
             label(row, R.id.phase_description, list.alternate ? getString(R.string.alternate_phase_description, list.description) : list.description);
-            label(row, R.id.phase_status, visibleItems(list).isEmpty() ? getString(R.string.reference_notes)
+            label(row, R.id.phase_status, visibleItems(list).isEmpty() ? getString(list.items.isEmpty() ? R.string.reference_notes : R.string.no_applicable_items)
                     : progressStatus(list, R.string.phase_status));
             row.setOnClickListener(v -> { checklist = list; render(); });
             rows.addView(row);
@@ -246,6 +354,11 @@ public class MainActivity extends AppCompatActivity {
         note.setText(checklist.note);
         note.setTextSize(12 * checklistFontScale);
         note.setVisibility(checklist.note.isEmpty() ? View.GONE : View.VISIBLE);
+        View categoriesButton = screen.findViewById(R.id.checklist_categories_button);
+        if (categoriesButton != null) {
+            categoriesButton.setVisibility(aircraft.extraSets.isEmpty() ? View.GONE : View.VISIBLE);
+            categoriesButton.setOnClickListener(v -> { checklistSet = null; checklist = null; showExtended = false; render(); });
+        }
         label(screen, R.id.checklist_title, checklist.name);
         screen.setAccessibilityPaneTitle(checklist.name);
         LinearLayout rows = screen.findViewById(R.id.item_rows);
@@ -332,10 +445,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateChecklistStatus() {
+        updateSidebarStatus();
         if (visibleItems(checklist).isEmpty()) {
+            if (!checklist.items.isEmpty()) {
+                label(screen, R.id.checklist_status, getString(R.string.no_applicable_items));
+                action.setText(R.string.no_applicable_items); action.setEnabled(false); return;
+            }
             label(screen, R.id.checklist_status, getString(R.string.reference_notes));
             action.setText(R.string.continue_checklist);
-            action.setEnabled(activeChecklists().indexOf(checklist) + 1 < activeChecklists().size());
+            action.setEnabled((checklistSet == null || checklistSet.autoAdvance) && activeChecklists().indexOf(checklist) + 1 < activeChecklists().size());
             return;
         }
         int count = checkedCount(checklist);
@@ -361,9 +479,16 @@ public class MainActivity extends AppCompatActivity {
         boolean afterClicked = false;
         for (View row : itemViews.values()) {
             if (row == clicked) { afterClicked = true; continue; }
-            if (afterClicked && row.getBottom() <= viewportBottom) return false;
+            if (afterClicked && itemBounds(row).bottom <= viewportBottom) return false;
         }
         return true;
+    }
+
+    private Rect itemBounds(View row) {
+        Rect bounds = new Rect();
+        row.getDrawingRect(bounds);
+        scroll.offsetDescendantRectToMyCoords(row, bounds);
+        return bounds;
     }
 
     private void revealNextUnchecked(Item checkedItem) {
@@ -375,7 +500,8 @@ public class MainActivity extends AppCompatActivity {
                 Checklist current = checklist;
                 scroll.post(() -> {
                     if (checklist != current || itemViews.get(next.id) != target) return;
-                    int top = target.getTop(), bottom = target.getBottom();
+                    Rect bounds = itemBounds(target);
+                    int top = bounds.top, bottom = bounds.bottom;
                     int visibleBottom = scroll.getScrollY() + scroll.getHeight() - scroll.getPaddingBottom();
                     if (top < scroll.getScrollY()) scroll.smoothScrollTo(0, Math.max(0, top - dp(8)));
                     else if (bottom + dp(12) > visibleBottom)
@@ -400,6 +526,7 @@ public class MainActivity extends AppCompatActivity {
         if (!openNextChecklist()) updateChecklistStatus();
     }
     private boolean openNextChecklist() {
+        if (checklistSet != null && !checklistSet.autoAdvance) return false;
         List<Checklist> lists = activeChecklists();
         int index = lists.indexOf(checklist);
         int next = index + 1;
@@ -451,32 +578,42 @@ public class MainActivity extends AppCompatActivity {
     private List<Item> requiredItems(Checklist list) { return list.itemsFor(selectedOptions, true); }
     private List<Checklist> activeChecklists() {
         List<Checklist> lists = new ArrayList<>();
-        for (Checklist list : aircraft.checklistsFor(showExtended))
+        for (Checklist list : checklistSet == null ? aircraft.checklistsFor(showExtended) : checklistSet.checklists)
             if (ChecklistCatalog.matches(list.when, selectedOptions)) lists.add(list);
         return lists;
+    }
+    private int referencePage() {
+        if (checklist != null && checklist.referencePage > 0) return checklist.referencePage;
+        return checklistSet != null ? checklistSet.initialPage : showExtended ? aircraft.extendedInitialPage : aircraft.normalInitialPage;
+    }
+    private List<ChecklistOption> visibleOptions() {
+        List<ChecklistOption> options = new ArrayList<>();
+        for (ChecklistOption option : aircraft.options)
+            if (option.checklistIds.isEmpty() || (checklist != null && option.checklistIds.contains(checklist.id))) options.add(option);
+        return options;
     }
     private void showChecklistOptions() {
         View dialog = getLayoutInflater().inflate(R.layout.dialog_checklist_options, null);
         LinearLayout rows = dialog.findViewById(R.id.option_rows);
         Map<ChecklistOption, Spinner> controls = new LinkedHashMap<>();
-        for (ChecklistOption option : aircraft.options) {
+        for (ChecklistOption option : visibleOptions()) {
             View row = getLayoutInflater().inflate(R.layout.row_checklist_option, rows, false);
             label(row, R.id.option_label, option.label);
             Spinner selector = row.findViewById(R.id.option_selector);
             selector.setContentDescription(option.label);
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, option.labels);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row_checklist_option_value, option.labels);
+            adapter.setDropDownViewResource(R.layout.row_checklist_option_value);
             selector.setAdapter(adapter);
             selector.setSelection(option.values.indexOf(selectedOptions.get(option.id)));
             controls.put(option, selector); rows.addView(row);
         }
         new MaterialAlertDialogBuilder(this).setTitle(R.string.checklist_options).setView(dialog)
                 .setNegativeButton(R.string.cancel, null).setPositiveButton(R.string.apply_options, (d, w) -> {
-                    Map<String, String> next = new LinkedHashMap<>();
+                    Map<String, String> next = new LinkedHashMap<>(selectedOptions);
                     for (Map.Entry<ChecklistOption, Spinner> entry : controls.entrySet())
                         next.put(entry.getKey().id, entry.getKey().values.get(entry.getValue().getSelectedItemPosition()));
                     if (next.equals(selectedOptions)) return;
-                    List<Checklist> lists = new ArrayList<>(aircraft.checklists); lists.addAll(aircraft.extendedChecklists);
+                    List<Checklist> lists = aircraft.allChecklists();
                     for (Checklist list : lists) {
                         List<Item> before = list.itemsFor(selectedOptions, true), after = list.itemsFor(next, true);
                         if (!before.equals(after) || ChecklistCatalog.matches(list.when, selectedOptions) != ChecklistCatalog.matches(list.when, next))
