@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import java.util.ArrayList;
+import java.util.List;
+import com.jerry.electrical_checklist.ChecklistCatalog.Aircraft;
 
 public final class SettingsActivity extends AppCompatActivity {
     @Override protected void onCreate(Bundle state) {
@@ -49,6 +52,51 @@ public final class SettingsActivity extends AppCompatActivity {
             if (next != settings.nightMode()) settings.setNightMode(next);
         });
         findViewById(R.id.about_button).setOnClickListener(v -> startActivity(new Intent(this, AboutActivity.class)));
+        bindStartupSettings();
+    }
+    private void bindStartupSettings() {
+        NavigationPreferences navigation = new NavigationPreferences(this);
+        List<Aircraft> favorites = new ArrayList<>();
+        Aircraft preferred = null;
+        try {
+            ChecklistCatalog catalog = ChecklistCatalog.load(this);
+            favorites.addAll(navigation.favorites(catalog)); preferred = navigation.startupFavorite(catalog);
+        } catch (Exception error) {
+            ((TextView) findViewById(R.id.startup_favorites_empty)).setText(R.string.load_error_message);
+        }
+        Spinner selector = findViewById(R.id.startup_favorite_selector);
+        selector.setSaveEnabled(false);
+        List<String> names = new ArrayList<>();
+        int selection = 0;
+        for (int i = 0; i < favorites.size(); i++) {
+            names.add(favorites.get(i).name);
+            if (favorites.get(i) == preferred) selection = i;
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row_checklist_option_value, names);
+        adapter.setDropDownViewResource(R.layout.row_checklist_option_value);
+        selector.setAdapter(adapter);
+        if (!favorites.isEmpty()) selector.setSelection(selection);
+        selector.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                navigation.setStartupFavorite(favorites.get(position).id);
+            }
+            @Override public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        RadioGroup choices = findViewById(R.id.startup_choices);
+        String mode = navigation.startupMode();
+        choices.check(mode.equals(NavigationPreferences.FAVORITE) ? R.id.startup_favorite
+                : mode.equals(NavigationPreferences.LAST_CHECKLIST) ? R.id.startup_last_checklist : R.id.startup_manufacturers);
+        showStartupFavorite(mode, !favorites.isEmpty());
+        choices.setOnCheckedChangeListener((group, checked) -> {
+            String next = checked == R.id.startup_favorite ? NavigationPreferences.FAVORITE
+                    : checked == R.id.startup_last_checklist ? NavigationPreferences.LAST_CHECKLIST : NavigationPreferences.MANUFACTURERS;
+            navigation.setStartupMode(next); showStartupFavorite(next, !favorites.isEmpty());
+        });
+    }
+    private void showStartupFavorite(String mode, boolean hasFavorites) {
+        boolean favorite = mode.equals(NavigationPreferences.FAVORITE);
+        findViewById(R.id.startup_favorite_choice).setVisibility(favorite && hasFavorites ? View.VISIBLE : View.GONE);
+        findViewById(R.id.startup_favorites_empty).setVisibility(favorite && !hasFavorites ? View.VISIBLE : View.GONE);
     }
     static void preparePage(AppCompatActivity activity, View root) {
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {

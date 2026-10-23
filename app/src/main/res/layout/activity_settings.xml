@@ -21,6 +21,19 @@
                 <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/theme_system" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/theme_system" android:textColor="@color/ink"/>
             </RadioGroup>
             <TextView style="@style/BodyText" android:text="@string/display_settings_saved"/>
+            <TextView style="@style/Eyebrow" android:text="@string/startup_heading" android:layout_marginTop="32dp"/>
+            <TextView style="@style/BodyText" android:text="@string/startup_hint"/>
+            <RadioGroup android:id="@+id/startup_choices" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="vertical">
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/startup_manufacturers" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/startup_manufacturers" android:textColor="@color/ink"/>
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/startup_favorite" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/startup_favorite" android:textColor="@color/ink"/>
+                <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/startup_last_checklist" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="@string/startup_last_checklist" android:textColor="@color/ink"/>
+            </RadioGroup>
+            <LinearLayout android:id="@+id/startup_favorite_choice" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                <TextView android:id="@+id/startup_favorite_label" style="@style/BodyText" android:text="@string/startup_favorite_choice" android:labelFor="@id/startup_favorite_selector"/>
+                <Spinner android:id="@+id/startup_favorite_selector" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:spinnerMode="dropdown" android:contentDescription="@string/startup_favorite_choice"/>
+            </LinearLayout>
+            <TextView android:id="@+id/startup_favorites_empty" style="@style/BodyText" android:text="@string/startup_favorites_empty" android:visibility="gone"/>
+            <TextView style="@style/BodyText" android:text="@string/startup_fallback_hint" android:textSize="12sp"/>
             <com.google.android.material.button.MaterialButton android:id="@+id/about_button" style="@style/PrimaryAction" android:layout_marginTop="28dp" android:text="@string/about"/>
         </LinearLayout>
     </ScrollView>

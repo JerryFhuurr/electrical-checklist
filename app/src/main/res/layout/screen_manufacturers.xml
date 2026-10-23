@@ -7,7 +7,15 @@
         <TextView style="@style/Eyebrow" android:text="@string/flight_companion"/>
         <TextView style="@style/PageTitle" android:text="@string/home_title"/>
         <TextView style="@style/BodyText" android:text="@string/choose_manufacturer"/>
-        <TextView style="@style/Eyebrow" android:layout_marginTop="28dp" android:text="@string/manufacturers_title"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/browse_manufacturers_button" style="@style/TextAction" android:text="@string/browse_manufacturers" android:layout_marginTop="8dp"/>
+        <TextView style="@style/Eyebrow" android:layout_marginTop="28dp" android:text="@string/favorites_title"/>
+        <TextView android:id="@+id/favorites_empty" style="@style/BodyText" android:text="@string/favorites_empty" android:textSize="13sp"/>
+        <LinearLayout android:id="@+id/favorite_aircraft_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+        <LinearLayout android:id="@+id/recent_aircraft_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <TextView style="@style/Eyebrow" android:layout_marginTop="28dp" android:text="@string/recent_aircraft_title"/>
+            <LinearLayout android:id="@+id/recent_aircraft_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+        </LinearLayout>
+        <TextView android:id="@+id/manufacturers_heading" style="@style/Eyebrow" android:layout_marginTop="28dp" android:text="@string/manufacturers_title"/>
         <LinearLayout android:id="@+id/manufacturer_rows" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical"/>
         <TextView style="@style/BodyText" android:layout_marginTop="28dp" android:text="@string/autosaved"/>

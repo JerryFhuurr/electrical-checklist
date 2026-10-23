@@ -14,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private ChecklistCatalog catalog;
     private ChecklistProgress progress;
     private ProgressStore store;
+    private NavigationPreferences navigation;
     private String manufacturer;
     private Aircraft aircraft;
     private Checklist checklist;
@@ -58,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton action;
     private float checklistFontScale;
     private final Map<String, View> itemViews = new LinkedHashMap<>();
+    private final PageTransitions pageTransitions = new PageTransitions();
+    private String renderedPage;
+    private String renderedAircraft;
+    private String renderedSidebarContext;
+    private int renderedChecklistIndex;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -75,8 +82,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.back_button).setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         findViewById(R.id.reset_button).setOnClickListener(v -> confirmReset());
         findViewById(R.id.settings_button).setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
+        findViewById(R.id.home_button).setOnClickListener(v -> {
+            manufacturer = null; aircraft = null; checklist = null; checklistSet = null; showExtended = false; render(true);
+        });
         checklistFontScale = new DisplaySettings(this).fontScale();
         store = new ProgressStore(this);
+        navigation = new NavigationPreferences(this);
         progress = store.load();
         try { catalog = ChecklistCatalog.load(this); }
         catch (Exception error) {
@@ -96,13 +107,13 @@ public class MainActivity extends AppCompatActivity {
                 if (list.id.equals(state.getString("checklist"))) checklist = list;
             sidebarPosition = state.getInt("sidebar_scroll");
             sidebarKey = sidebarContext();
-        }
+        } else restoreStartup();
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override public void handleOnBackPressed() {
-                if (checklist != null) { checklist = null; if (checklistSet != null && checklistSet.directOpen) checklistSet = null; render(); }
-                else if (checklistSet != null) { checklistSet = null; render(); }
-                else if (aircraft != null) { aircraft = null; showExtended = false; render(); }
-                else if (manufacturer != null) { manufacturer = null; render(); }
+                if (checklist != null) { checklist = null; if (checklistSet != null && checklistSet.directOpen) checklistSet = null; render(true); }
+                else if (checklistSet != null) { checklistSet = null; render(true); }
+                else if (aircraft != null) { aircraft = null; showExtended = false; render(true); }
+                else if (manufacturer != null) { manufacturer = null; render(true); }
                 else { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); }
             }
         });
@@ -134,7 +145,25 @@ public class MainActivity extends AppCompatActivity {
         if (sidebarScroll != null) state.putInt("sidebar_scroll", sidebarScroll.getScrollY());
     }
 
-    private void render() {
+    @Override protected void onStop() {
+        pageTransitions.clear();
+        super.onStop();
+    }
+
+    private void render() { render(false); }
+
+    private void render(boolean backward) {
+        pageTransitions.clear();
+        String aircraftId = aircraft == null ? "" : aircraft.id;
+        String context = sidebarContext();
+        String page = manufacturer + "/" + aircraftId + "/" + context + "/" + (checklist == null ? "" : checklist.id);
+        int checklistIndex = checklist == null ? -1 : activeChecklists().indexOf(checklist);
+        boolean changedPage = renderedPage != null && !renderedPage.equals(page);
+        boolean sameAircraft = !aircraftId.isEmpty() && aircraftId.equals(renderedAircraft);
+        if (context.equals(renderedSidebarContext) && checklistIndex >= 0 && renderedChecklistIndex >= 0)
+            backward = checklistIndex < renderedChecklistIndex;
+        if (checklist != null) navigation.saveLastChecklist(aircraft.id, showExtended,
+                checklistSet == null ? "" : checklistSet.id, checklist.id);
         String nextSidebarKey = sidebarContext();
         if (!sidebarKey.equals(nextSidebarKey)) sidebarPosition = 0;
         else if (sidebarScroll != null) sidebarPosition = sidebarScroll.getScrollY();
@@ -145,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
         container.removeAllViews();
         itemViews.clear();
         root.findViewById(R.id.back_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
+        root.findViewById(R.id.home_button).setVisibility(manufacturer == null ? View.GONE : View.VISIBLE);
         root.findViewById(R.id.back_button).setContentDescription(getString(checklist != null ? R.string.back_checklists
                 : checklistSet != null ? R.string.back_normal_checklists : aircraft != null ? R.string.back_aircraft : R.string.back_manufacturers));
         int background = getColor(checklist == null ? R.color.app_background : R.color.checklist_background);
@@ -155,6 +185,69 @@ public class MainActivity extends AppCompatActivity {
         else if (checklist == null) renderChecklists();
         else renderItems();
         ViewCompat.requestApplyInsets(root);
+        if (changedPage) {
+            View target = workspace != null && sameAircraft
+                    ? workspace.findViewById(R.id.checklist_detail_container) : screen;
+            pageTransitions.enter(target, backward);
+        }
+        renderedPage = page;
+        renderedAircraft = aircraftId;
+        renderedSidebarContext = context;
+        renderedChecklistIndex = checklistIndex;
+    }
+
+    private void restoreStartup() {
+        if (navigation.startupMode().equals(NavigationPreferences.FAVORITE)) {
+            Aircraft favorite = navigation.startupFavorite(catalog);
+            if (favorite != null) selectAircraft(favorite);
+        } else if (navigation.startupMode().equals(NavigationPreferences.LAST_CHECKLIST)) {
+            NavigationPreferences.LastChecklist saved = navigation.lastChecklist();
+            if (saved == null) return;
+            for (Aircraft model : catalog.aircraft) {
+                if (!model.id.equals(saved.aircraftId)) continue;
+                ChecklistSet category = model.extraSet(saved.categoryId);
+                if (!saved.categoryId.isEmpty() && category == null) return;
+                Map<String, String> options = store.loadOptions(model);
+                boolean extended = category == null && saved.extended && !model.extendedChecklists.isEmpty();
+                List<Checklist> lists = category == null ? model.checklistsFor(extended) : category.checklists;
+                for (Checklist list : lists) if (list.id.equals(saved.checklistId) && ChecklistCatalog.matches(list.when, options)) {
+                    selectAircraft(model); checklistSet = category; showExtended = extended; checklist = list;
+                    return;
+                }
+            }
+        }
+    }
+
+    private void selectAircraft(Aircraft model) {
+        manufacturer = model.manufacturer; aircraft = model; selectedOptions = store.loadOptions(model);
+        showExtended = false; checklistSet = null; checklist = null;
+        navigation.recordAircraft(model.id);
+    }
+
+    private void bindFavorite(AppCompatImageButton button, Aircraft model) {
+        boolean favorite = navigation.isFavorite(model.id);
+        button.setImageResource(favorite ? R.drawable.ic_star_filled : R.drawable.ic_star_outline);
+        button.setImageTintList(android.content.res.ColorStateList.valueOf(getColor(favorite ? R.color.accent : R.color.muted)));
+        button.setContentDescription(getString(favorite ? R.string.remove_favorite : R.string.add_favorite, model.name));
+        button.setOnClickListener(v -> {
+            navigation.setFavorite(model.id, !favorite);
+            int position = scroll.getScrollY();
+            render(); scroll.post(() -> scroll.scrollTo(0, position));
+        });
+    }
+
+    private void bindHomeAircraft(LinearLayout rows, List<Aircraft> models) {
+        for (Aircraft model : models) {
+            View row = getLayoutInflater().inflate(R.layout.row_home_aircraft, rows, false);
+            row.setTag(model.id);
+            label(row, R.id.shortcut_aircraft_name, model.name);
+            label(row, R.id.shortcut_aircraft_detail, getString(R.string.shortcut_aircraft_detail, model.manufacturer, model.operator));
+            View open = row.findViewById(R.id.open_shortcut);
+            open.setContentDescription(getString(R.string.open_aircraft_shortcut, model.name));
+            open.setOnClickListener(v -> { selectAircraft(model); render(); });
+            bindFavorite(row.findViewById(R.id.shortcut_favorite), model);
+            rows.addView(row);
+        }
     }
 
     private void inflateScreen(int layout) {
@@ -285,7 +378,8 @@ public class MainActivity extends AppCompatActivity {
                     getResources().getQuantityString(R.plurals.checklist_count, model.checklists.size(), model.checklists.size()),
                     getResources().getQuantityString(R.plurals.item_count, model.itemCount(), model.itemCount())));
             row.findViewById(R.id.open_aircraft).setContentDescription(getString(R.string.open_aircraft_description, model.name));
-            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { aircraft = model; selectedOptions = store.loadOptions(model); showExtended = false; checklistSet = null; render(); });
+            row.findViewById(R.id.open_aircraft).setOnClickListener(v -> { selectAircraft(model); render(); });
+            bindFavorite(row.findViewById(R.id.aircraft_favorite), model);
             rows.addView(row);
         }
     }
@@ -293,6 +387,13 @@ public class MainActivity extends AppCompatActivity {
     private void renderManufacturers() {
         inflateScreen(R.layout.screen_manufacturers);
         screen.setAccessibilityPaneTitle(getString(R.string.manufacturers_title));
+        screen.findViewById(R.id.browse_manufacturers_button).setOnClickListener(v ->
+                scroll.smoothScrollTo(0, screen.findViewById(R.id.manufacturers_heading).getTop()));
+        List<Aircraft> favorites = navigation.favorites(catalog), recent = navigation.recentAircraft(catalog);
+        screen.findViewById(R.id.favorites_empty).setVisibility(favorites.isEmpty() ? View.VISIBLE : View.GONE);
+        bindHomeAircraft(screen.findViewById(R.id.favorite_aircraft_rows), favorites);
+        screen.findViewById(R.id.recent_aircraft_section).setVisibility(recent.isEmpty() ? View.GONE : View.VISIBLE);
+        bindHomeAircraft(screen.findViewById(R.id.recent_aircraft_rows), recent);
         LinearLayout rows = screen.findViewById(R.id.manufacturer_rows);
         for (String name : catalog.manufacturers) {
             View row = getLayoutInflater().inflate(R.layout.row_manufacturer, rows, false);

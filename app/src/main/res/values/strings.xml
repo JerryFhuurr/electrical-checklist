@@ -135,4 +135,21 @@
     <string name="select_checklist_hint">Choose a checklist on the left to begin. Your progress is saved as you check.</string>
     <string name="sidebar_phase_description">%1$s, %2$s</string>
     <string name="sidebar_completed_phase">✓ %1$s</string>
+    <string name="home">Home</string>
+    <string name="browse_manufacturers">Browse manufacturers ↓</string>
+    <string name="favorites_title">FAVORITE AIRCRAFT</string>
+    <string name="favorites_empty">Tap the star on an aircraft card to add it here.</string>
+    <string name="recent_aircraft_title">RECENT AIRCRAFT</string>
+    <string name="add_favorite">Add %1$s to favorites</string>
+    <string name="remove_favorite">Remove %1$s from favorites</string>
+    <string name="open_aircraft_shortcut">Open %1$s checklists</string>
+    <string name="shortcut_aircraft_detail">%1$s · %2$s</string>
+    <string name="startup_heading">STARTUP</string>
+    <string name="startup_hint">Choose what opens when the app starts fresh. Returning from Settings keeps your current page.</string>
+    <string name="startup_manufacturers">Manufacturer list</string>
+    <string name="startup_favorite">Favorite aircraft</string>
+    <string name="startup_last_checklist">Last-used checklist</string>
+    <string name="startup_favorite_choice">Aircraft to open</string>
+    <string name="startup_favorites_empty">Star an aircraft on its model card first, then choose it here.</string>
+    <string name="startup_fallback_hint">The manufacturer list opens if no favorite or saved checklist is available.</string>
 </resources>

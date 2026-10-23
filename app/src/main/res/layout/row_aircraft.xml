@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" android:padding="20dp" android:background="@drawable/panel_background">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" android:padding="20dp" android:background="@drawable/panel_background">
     <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:gravity="center_vertical" android:orientation="horizontal">
         <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/aircraft_symbol" android:textSize="36sp" android:textColor="@color/accent" android:importantForAccessibility="no"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/normal_checklists" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.1" android:textColor="@color/accent"/>
+        <androidx.appcompat.widget.AppCompatImageButton android:id="@+id/aircraft_favorite" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="8dp" android:padding="12dp" android:src="@drawable/ic_star_outline" app:tint="@color/muted" android:background="?attr/selectableItemBackgroundBorderless"/>
     </LinearLayout>
     <TextView android:id="@+id/aircraft_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textSize="27sp" android:textStyle="bold" android:textColor="@color/ink"/>
     <TextView android:id="@+id/aircraft_description" style="@style/BodyText" android:layout_marginTop="8dp" android:textSize="13sp"/>

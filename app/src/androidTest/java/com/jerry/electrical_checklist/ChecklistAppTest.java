@@ -42,8 +42,8 @@ public class ChecklistAppTest {
         InstrumentationRegistry.getInstrumentation().runOnMainSync(() -> activity.finish());
     }
     private void openSafety() {
-        onView(withContentDescription("Choose aircraft from Boeing")).perform(click());
-        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(click());
+        onView(withContentDescription("Choose aircraft from Boeing")).perform(scrollTo(), click());
+        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(scrollTo(), click());
         onView(withText("Safety Inspection")).perform(click());
     }
     @Test public void bundledCatalogHasAllSourceSectionsAndItems() throws Exception {
@@ -90,8 +90,8 @@ public class ChecklistAppTest {
     }
 
     @Test public void completingLastChecklistStaysOnLastAndCanBeReopened() {
-        onView(withContentDescription("Choose aircraft from Boeing")).perform(click());
-        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(click());
+        onView(withContentDescription("Choose aircraft from Boeing")).perform(scrollTo(), click());
+        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(scrollTo(), click());
         onView(withText("Secure")).perform(scrollTo(), click());
         for (int i = 0; i < 7; i++) onView(withId(R.id.checklist_action)).perform(click());
         onView(withId(R.id.checklist_action)).perform(click());
@@ -105,8 +105,8 @@ public class ChecklistAppTest {
     }
 
     @Test public void checkingBottomVisibleRowRevealsNextWithoutScrollingForTopRow() {
-        onView(withContentDescription("Choose aircraft from Boeing")).perform(click());
-        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(click());
+        onView(withContentDescription("Choose aircraft from Boeing")).perform(scrollTo(), click());
+        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(scrollTo(), click());
         onView(withText("Before Start")).perform(click());
         onView(withContentDescription("IRS MODE SELECTORS, NAV")).perform(click());
         AtomicReference<String> bottomDescription = new AtomicReference<>();

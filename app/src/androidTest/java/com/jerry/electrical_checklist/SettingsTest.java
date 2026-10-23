@@ -55,8 +55,8 @@ public class SettingsTest {
         defaults();
     }
     private void openSafety() {
-        onView(withContentDescription("Choose aircraft from Boeing")).perform(click());
-        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(click());
+        onView(withContentDescription("Choose aircraft from Boeing")).perform(scrollTo(), click());
+        onView(withContentDescription("Open checklists for Boeing 737-NG")).perform(scrollTo(), click());
         onView(withText("Safety Inspection")).perform(click());
     }
     private void settings() { onView(withId(R.id.settings_button)).perform(click()); }
@@ -142,7 +142,7 @@ public class SettingsTest {
     @Test public void aboutShowsAuthorVersionAndOpensRepositoryLink() {
         settings(); onView(withId(R.id.about_button)).perform(scrollTo(), click());
         onView(withId(R.id.about_author)).check(matches(withText("Jerry Cao (JerryFhuurr)")));
-        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.14"))));
+        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.16"))));
         AtomicReference<Intent> launched = new AtomicReference<>();
         Instrumentation.ActivityMonitor monitor = new Instrumentation.ActivityMonitor() {
             @Override public Instrumentation.ActivityResult onStartActivity(Intent intent) {
@@ -158,7 +158,7 @@ public class SettingsTest {
         assertNotNull(launched.get());
         assertEquals("https://github.com/JerryFhuurr/electrical-checklist", launched.get().getDataString());
         recreate(); onView(withId(R.id.about_author)).check(matches(isDisplayed()));
-        pressBack(); onView(withId(R.id.font_size_selector)).check(matches(isDisplayed()));
-        pressBack(); onView(withContentDescription("Choose aircraft from Boeing")).check(matches(isDisplayed()));
+        pressBack(); onView(withId(R.id.font_size_selector)).perform(scrollTo()).check(matches(isDisplayed()));
+        pressBack(); onView(withContentDescription("Choose aircraft from Boeing")).perform(scrollTo()).check(matches(isDisplayed()));
     }
 }

@@ -74,7 +74,7 @@ public class ManufacturerNavigationTest {
 
     @Test public void rotationRestoresManufacturerAndBackFromRestoredChecklistKeepsItsGroup() {
         recreate();
-        onView(withId(R.id.manufacturer_rows)).check(matches(isDisplayed()));
+        onView(withId(R.id.manufacturer_rows)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
         manufacturer("Airbus");
         recreate();
         onView(withId(R.id.aircraft_title)).check(matches(withText("Airbus")));
@@ -86,7 +86,7 @@ public class ManufacturerNavigationTest {
         pressBack(); pressBack();
         onView(withId(R.id.aircraft_title)).check(matches(withText("Airbus")));
         pressBack();
-        onView(withId(R.id.manufacturer_rows)).check(matches(isDisplayed()));
+        onView(withId(R.id.manufacturer_rows)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
     }
 
     @Test public void switchingManufacturersPreservesChecksAndHomeResetClearsEveryGroup() {
@@ -105,7 +105,7 @@ public class ManufacturerNavigationTest {
         pressBack(); pressBack(); pressBack();
         onView(withId(R.id.reset_button)).perform(click());
         onView(withText("Reset all")).inRoot(androidx.test.espresso.matcher.RootMatchers.isDialog()).perform(click());
-        onView(withId(R.id.manufacturer_rows)).check(matches(isDisplayed()));
+        onView(withId(R.id.manufacturer_rows)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)));
         assertTrue(new ProgressStore(context).load().checkedSnapshot().isEmpty());
     }
 }
