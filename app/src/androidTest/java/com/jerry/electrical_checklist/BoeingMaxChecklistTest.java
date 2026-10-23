@@ -39,9 +39,9 @@ public class BoeingMaxChecklistTest {
                 .filter(a -> a.id.equals("ryanair-737-max")).findFirst().get();
         assertEquals("Boeing", max.manufacturer);
         assertEquals("Ryanair / 737-8200", max.operator);
-        assertEquals(5, max.checklists.size());
-        assertEquals(88, max.itemCount());
-        int[] counts = {6, 39, 12, 23, 8};
+        assertEquals(10, max.checklists.size());
+        assertEquals(104, max.itemCount());
+        int[] counts = {6, 39, 12, 2, 4, 5, 1, 4, 23, 8};
         for (int i = 0; i < counts.length; i++) assertEquals(counts[i], max.checklists.get(i).items.size());
         ChecklistCatalog.Checklist start = max.checklists.get(1);
         assertEquals("PROBE COVERS", start.items.get(2).challenge);
@@ -51,14 +51,14 @@ public class BoeingMaxChecklistTest {
         assertEquals("Through flights (*)", start.items.get(3).note);
         assertEquals("Below the line", start.items.get(35).group);
         assertEquals("IDLE DETENT", max.checklists.get(2).items.get(9).response);
-        assertEquals("ELECTRIC HYDRAULIC PUMPS", max.checklists.get(3).items.get(6).challenge);
-        assertEquals("*ON/AUTO", max.checklists.get(3).items.get(7).response);
-        assertEquals("ELT", max.checklists.get(3).items.get(22).challenge);
-        assertEquals("ELT", max.checklists.get(4).items.get(2).challenge);
-        assertEquals("EMERGENCY EXIT LIGHTS", max.checklists.get(4).items.get(3).challenge);
-        assertTrue(max.checklists.get(4).items.get(5).note.isEmpty());
+        assertEquals("ELECTRIC HYDRAULIC PUMPS", max.checklists.get(8).items.get(6).challenge);
+        assertEquals("*ON/AUTO", max.checklists.get(8).items.get(7).response);
+        assertEquals("ELT", max.checklists.get(8).items.get(22).challenge);
+        assertEquals("ELT", max.checklists.get(9).items.get(2).challenge);
+        assertEquals("EMERGENCY EXIT LIGHTS", max.checklists.get(9).items.get(3).challenge);
+        assertTrue(max.checklists.get(9).items.get(5).note.isEmpty());
         assertTrue(max.extendedChecklists.isEmpty());
-        assertEquals(85, catalog.aircraft.get(0).itemCount());
+        assertEquals(101, catalog.aircraft.get(0).itemCount());
         try (ReferenceSource source = ReferenceSource.openAsset(context, max.references.get(0))) {
             assertEquals(1, source.pageCount());
         }
@@ -86,6 +86,31 @@ public class BoeingMaxChecklistTest {
         onView(withText("Reset all")).inRoot(androidx.test.espresso.matcher.RootMatchers.isDialog()).perform(click());
         assertTrue(new ProgressStore(context).load().checkedSnapshot().isEmpty());
         assertTrue(new ProgressStore(context).load().completedSnapshot().isEmpty());
+    }
+
+
+    @Test public void supplementalFlightPhasesAdvanceInOrderAndKeepNgMaxProgressSeparate() {
+        String[] models = {"Boeing 737 MAX Family", "Boeing 737-NG"};
+        String[] ids = {"ryanair-737-max", "ryanair-737-ng"};
+        String[] phases = {"Before Taxi", "Before Takeoff", "After Takeoff", "Descent", "Approach", "Landing", "Shutdown"};
+        int[] counts = {12, 2, 4, 5, 1, 4};
+        for (int model = 0; model < models.length; model++) {
+            if (model > 0) {
+                pressBack(); pressBack();
+                onView(withContentDescription("Open checklists for " + models[model])).perform(scrollTo(), click());
+            }
+            onView(withText("Before Taxi")).perform(scrollTo(), click());
+            for (int phase = 0; phase < counts.length; phase++) {
+                onView(withId(R.id.checklist_title)).check(matches(withText(phases[phase])));
+                onView(withId(R.id.checklist_action)).check(matches(withText("Mark item as complete")));
+                if (phase == 3) onView(withContentDescription("Landing data, VREF ___, Minimums ___")).check(matches(isNotChecked()));
+                for (int item = 0; item < counts[phase]; item++) onView(withId(R.id.checklist_action)).perform(click());
+                onView(withId(R.id.checklist_action)).check(matches(withText("Mark checklist as complete"))).perform(click());
+                onView(withId(R.id.checklist_title)).check(matches(withText(phases[phase + 1])));
+            }
+            assertTrue(new ProgressStore(context).load().isComplete(ids[model], "landing"));
+            if (model == 0) assertFalse(new ProgressStore(context).load().isComplete(ids[1], "landing"));
+        }
     }
 
     @Test public void original8200PdfReturnsToSameMaxChecklistAndChecks() {

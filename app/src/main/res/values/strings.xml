@@ -86,7 +86,13 @@
     <string name="reference_notes">Reference notes</string>
     <string name="continue_checklist">Continue to next checklist</string>
     <string name="manual_only">Manual only</string>
-    <string name="manual_only_note">Manual only · %1$s</string>
+    <string name="optional_item">Optional</string>
+    <string name="optional_item_note">%1$s · %2$s</string>
+    <string name="optional_item_description">%1$s, %2$s, optional</string>
+    <string name="checklist_options">Checklist options</string>
+    <string name="apply_options">Apply</string>
+    <string name="alternate_phase_description">%1$s · Alternate procedure</string>
+    <string name="required_optional_status" tools:ignore="PluralsCandidate">%1$s · %2$d / %3$d required checked · %4$d / %5$d optional</string>
     <string name="manual_only_description">%1$s, %2$s, manual only, optional</string>
     <string name="required_manual_status" tools:ignore="PluralsCandidate">%1$s · %2$d / %3$d required checked · %4$d / %5$d manual only</string>
 </resources>

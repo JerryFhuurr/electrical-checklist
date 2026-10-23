@@ -6,6 +6,9 @@
     "ini-a350.json",
     "ryanair-737-max.json",
     "mcdonnell-douglas-md11.json",
-    "fbw-a380x.json"
+    "fbw-a380x.json",
+    "inibuilds-a330-300.json",
+    "pmdg-777.json",
+    "atr-42-72.json"
   ]
 }

@@ -7,6 +7,10 @@ Use a consistent manufacturer name such as `Boeing` or `Airbus`. The app generat
 Checklist fields: `id`, `name`, `description`, `items`.
 Item fields: `id`, `challenge`, `response`, optional `note`, `group`, `manualOnly`.
 
+`optional: true` creates a tickable **Optional** row excluded from completion, alongside the existing manual-only subtype. Aircraft `options` define stable IDs, labels, defaults, and value/label pairs. A row or checklist `when` map matches option IDs to selected value IDs; only matching content is shown. See the A330 JSON for power, autothrust, and approach branches, and the 777 JSON for route setup. Unknown option IDs/values are rejected when loading the catalog. Choices are saved per aircraft; changing requirements reopens only affected completions and retains checked items.
+
+`alternate: true` on a checklist keeps it selectable but skips it during automatic next-checklist navigation. Use it for go-around procedures and reference schedules. Optional aircraft `showExtendedLabel`, `showNormalLabel`, `normalModeLabel`, and `extendedModeLabel` customize the two checklist views. `normalInitialPage`/`extendedInitialPage` set the reader's starting page (one-based, default 1/2). These are separate from `extendedReferencePage`, which links a reference chart page.
+
 `manualOnly: true` retains a clickable checkbox but excludes it from completion requirements and the bottom button's automatic checking. Such rows have grey backgrounds and a **Manual only** label. Their checked state is saved and reset normally. Unticking an optional row does not reopen a completed checklist; unticking a required row does. Default `manualOnly` is false, preserving existing aircraft behavior. See the MD-11 JSON for manual-system groups and the distinction between grey manual-only rows and '+' complete-silently markers.
 
 The `items` array also supports non-interactive text rows in source order. These rows do not enter progress counts, saved checks, or completion requirements:

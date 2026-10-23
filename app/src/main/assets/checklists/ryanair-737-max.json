@@ -3,8 +3,8 @@
   "manufacturer": "Boeing",
   "name": "Boeing 737 MAX Family",
   "operator": "Ryanair / 737-8200",
-  "source": "RYANAIR BOEING 737-8200.pdf",
-  "notice": "Flight Crews must complete both Safety Inspection and Before Start Checklists in their entirety if Engineering have performed any maintenance actions (with the exception of Weight Change) with the aircraft during a turnaround or during a crew change. This entry uses the supplied Ryanair 737-8200 source checklist.",
+  "source": "RYANAIR BOEING 737-8200.pdf + user-supplied cockpit checklist placard",
+  "notice": "Flight Crews must complete both Safety Inspection and Before Start Checklists in their entirety if Engineering have performed any maintenance actions (with the exception of Weight Change) with the aircraft during a turnaround or during a crew change. This entry uses the supplied Ryanair 737-8200 source checklist. Before Takeoff, After Takeoff, Descent, Approach, and Landing are supplemented from the user-supplied cockpit checklist placard. Blank fields remain verification prompts. These added phases are not included in the original PDF reference.",
   "checklists": [
     {
       "id": "safety-inspection",
@@ -421,6 +421,126 @@
           "response": "CHECKED",
           "sourcePage": 1,
           "note": "Through flights (*)"
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff",
+      "name": "Before Takeoff",
+      "description": "Supplemental cockpit checklist",
+      "source": "User-supplied cockpit checklist placard BAC27DCC3573",
+      "items": [
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "___, Green light"
+        },
+        {
+          "id": "stabilizer-trim",
+          "challenge": "Stabilizer trim",
+          "response": "___ Units"
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff",
+      "name": "After Takeoff",
+      "description": "Supplemental cockpit checklist",
+      "source": "User-supplied cockpit checklist placard BAC27DCC3573",
+      "items": [
+        {
+          "id": "engine-bleeds",
+          "challenge": "Engine bleeds",
+          "response": "ON"
+        },
+        {
+          "id": "packs",
+          "challenge": "Packs",
+          "response": "AUTO"
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing gear",
+          "response": "UP and OFF"
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "UP, No lights"
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "name": "Descent",
+      "description": "Supplemental cockpit checklist",
+      "source": "User-supplied cockpit checklist placard BAC27DCC3573",
+      "items": [
+        {
+          "id": "pressurization",
+          "challenge": "Pressurization",
+          "response": "LAND ALT ___"
+        },
+        {
+          "id": "recall",
+          "challenge": "Recall",
+          "response": "Checked"
+        },
+        {
+          "id": "autobrake",
+          "challenge": "Autobrake",
+          "response": "___"
+        },
+        {
+          "id": "landing-data",
+          "challenge": "Landing data",
+          "response": "VREF ___, Minimums ___"
+        },
+        {
+          "id": "approach-briefing",
+          "challenge": "Approach briefing",
+          "response": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "name": "Approach",
+      "description": "Supplemental cockpit checklist",
+      "source": "User-supplied cockpit checklist placard BAC27DCC3573",
+      "items": [
+        {
+          "id": "altimeters",
+          "challenge": "Altimeters",
+          "response": "___"
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "description": "Supplemental cockpit checklist",
+      "source": "User-supplied cockpit checklist placard BAC27DCC3573",
+      "items": [
+        {
+          "id": "engine-start-switches",
+          "challenge": "Engine start switches",
+          "response": "CONT"
+        },
+        {
+          "id": "speedbrake",
+          "challenge": "Speedbrake",
+          "response": "ARMED"
+        },
+        {
+          "id": "landing-gear",
+          "challenge": "Landing gear",
+          "response": "Down"
+        },
+        {
+          "id": "flaps",
+          "challenge": "Flaps",
+          "response": "___, Green light"
         }
       ]
     },

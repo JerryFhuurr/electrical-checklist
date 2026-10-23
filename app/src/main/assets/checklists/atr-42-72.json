@@ -1,0 +1,1034 @@
+{
+  "id": "atr-42-72",
+  "manufacturer": "ATR",
+  "name": "ATR 42 / 72",
+  "operator": "BritishAvgeek / Osprey Airways",
+  "source": "ATR42-72-Checklist-BritishAvgeek-v1.pdf",
+  "notice": "Transcribed from the supplied ATR42/72 Summarised Checklist, BritishAvgeek v1. Alternating grey source rows are ordinary checklist rows, not manual-only items. Timing, altitude, clearance, and arrival reminders remain informational text. Source wording is retained.",
+  "legend": "Headings and reminders are informational. All checkbox rows count toward completion.",
+  "checklists": [
+    {
+      "id": "pre-flight",
+      "name": "Pre-flight",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "Cockpit Preparations",
+          "response": "Completed",
+          "sourcePage": 1,
+          "id": "cockpit-preparations"
+        },
+        {
+          "challenge": "Gear Lever",
+          "response": "Down",
+          "sourcePage": 1,
+          "id": "gear-lever"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Battery",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "battery"
+        },
+        {
+          "challenge": "Ext Power",
+          "response": "AVAIL & SET ON",
+          "sourcePage": 1,
+          "id": "ext-power"
+        },
+        {
+          "challenge": "NAV Lights",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "nav-lights"
+        },
+        {
+          "challenge": "Warning Systems (FIRE etc)",
+          "response": "Tested",
+          "sourcePage": 1,
+          "id": "warning-systems-fire-etc"
+        },
+        {
+          "challenge": "Gust Lock",
+          "response": "Engaged",
+          "sourcePage": 1,
+          "id": "gust-lock"
+        },
+        {
+          "challenge": "Prop Brake",
+          "response": "ON & GUARDED",
+          "sourcePage": 1,
+          "id": "prop-brake"
+        },
+        {
+          "challenge": "No Smoking Signs",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "no-smoking-signs"
+        },
+        {
+          "challenge": "Seatbelt Signs",
+          "response": "As Required",
+          "sourcePage": 1,
+          "id": "seatbelt-signs"
+        },
+        {
+          "challenge": "Emergency Exit Lights",
+          "response": "ARM",
+          "sourcePage": 1,
+          "id": "emergency-exit-lights"
+        },
+        {
+          "challenge": "Windshield Anti-Ice",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "windshield-anti-ice"
+        },
+        {
+          "type": "note",
+          "text": "SET FMC & Obtain Clearance",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "set-fmc-obtain-clearance"
+        },
+        {
+          "challenge": "Altimeter",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "altimeter"
+        },
+        {
+          "challenge": "Beacon Lights",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "beacon-lights"
+        },
+        {
+          "challenge": "Fuel Pump 2",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "fuel-pump-2"
+        },
+        {
+          "challenge": "Engine 2 Hotel Mode",
+          "response": "Start & Perform",
+          "sourcePage": 1,
+          "id": "engine-2-hotel-mode"
+        },
+        {
+          "challenge": "Hydraulic Power",
+          "response": "Blue + Green LO PR",
+          "sourcePage": 1,
+          "id": "hydraulic-power"
+        },
+        {
+          "challenge": "Oxygen",
+          "response": "Check ON",
+          "sourcePage": 1,
+          "id": "oxygen"
+        },
+        {
+          "type": "note",
+          "text": "DEPARTURE – BRIEFED & CHECKED",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "departure-briefed-checked"
+        },
+        {
+          "challenge": "Takeoff Data",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "takeoff-data"
+        },
+        {
+          "challenge": "FCP",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "fcp"
+        },
+        {
+          "challenge": "Fuel Pump 1",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "fuel-pump-1"
+        },
+        {
+          "challenge": "Fuel Quantities",
+          "response": "Checked",
+          "sourcePage": 1,
+          "id": "fuel-quantities"
+        },
+        {
+          "challenge": "Landing Elevation",
+          "response": "SET/AUTO",
+          "sourcePage": 1,
+          "id": "landing-elevation"
+        },
+        {
+          "challenge": "Seatbelt Signs",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "seatbelt-signs-2"
+        },
+        {
+          "challenge": "Fuel Used",
+          "response": "RESET",
+          "sourcePage": 1,
+          "id": "fuel-used"
+        },
+        {
+          "challenge": "Probes / De-Ice",
+          "response": "No White Lights",
+          "sourcePage": 1,
+          "id": "probes-de-ice"
+        }
+      ]
+    },
+    {
+      "id": "before-start",
+      "name": "Before Start",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "Power Management",
+          "response": "Set TO",
+          "sourcePage": 1,
+          "id": "power-management"
+        },
+        {
+          "challenge": "Flight Directors",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "flight-directors"
+        },
+        {
+          "challenge": "Radios",
+          "response": "Frequencies SET",
+          "sourcePage": 1,
+          "id": "radios"
+        },
+        {
+          "challenge": "Trims",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "trims"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "transponder"
+        },
+        {
+          "challenge": "Gust Lock",
+          "response": "RELEASE",
+          "sourcePage": 1,
+          "id": "gust-lock"
+        },
+        {
+          "type": "heading",
+          "text": "Check:",
+          "italic": false,
+          "sourcePage": 1,
+          "id": "check"
+        },
+        {
+          "challenge": "Doors Closed / Equipment Clear",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "doors-closed-equipment-clear"
+        },
+        {
+          "challenge": "Chocks Removed",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "chocks-removed"
+        },
+        {
+          "type": "note",
+          "text": "REQUEST PUSH & START CLEARANCE",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "request-push-start-clearance"
+        }
+      ]
+    },
+    {
+      "id": "engine-start",
+      "name": "Engine Start",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "type": "note",
+          "text": "CHECK CLEAR BOTH SIDES",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "check-clear-both-sides"
+        },
+        {
+          "challenge": "DC External Power",
+          "response": "OFF & Disconnected",
+          "sourcePage": 1,
+          "id": "dc-external-power"
+        },
+        {
+          "challenge": "Beacon Light",
+          "response": "Confirm ON",
+          "sourcePage": 1,
+          "id": "beacon-light"
+        },
+        {
+          "type": "note",
+          "text": "BEGIN PUSHBACK & ENGINE START",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "begin-pushback-engine-start"
+        },
+        {
+          "challenge": "Fuel Pumps",
+          "response": "Confirm ON",
+          "sourcePage": 1,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "ENG Prop Brake",
+          "response": "OFF & GUARDED",
+          "sourcePage": 1,
+          "id": "eng-prop-brake"
+        },
+        {
+          "challenge": "Start Selector Mode",
+          "response": "START A & B",
+          "sourcePage": 1,
+          "id": "start-selector-mode"
+        },
+        {
+          "challenge": "ENG 2",
+          "response": "ROTATE",
+          "sourcePage": 1,
+          "id": "eng-2"
+        },
+        {
+          "challenge": "ENG 2 Condition",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "eng-2-condition"
+        },
+        {
+          "challenge": "GEN 2",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "gen-2"
+        },
+        {
+          "challenge": "Hydraulic Power",
+          "response": "No Lights",
+          "sourcePage": 1,
+          "id": "hydraulic-power"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "SET for Takeoff",
+          "sourcePage": 1,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Anti-Skid",
+          "response": "TEST",
+          "sourcePage": 1,
+          "id": "anti-skid"
+        },
+        {
+          "challenge": "Flight Controls",
+          "response": "Full & Free",
+          "sourcePage": 1,
+          "id": "flight-controls"
+        },
+        {
+          "challenge": "Autopilot",
+          "response": "SET & OFF",
+          "sourcePage": 1,
+          "id": "autopilot"
+        },
+        {
+          "type": "note",
+          "text": "REQUEST TAXI",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "request-taxi"
+        }
+      ]
+    },
+    {
+      "id": "taxi",
+      "name": "Taxi",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "Taxi & NAV Lights",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "taxi-nav-lights"
+        },
+        {
+          "challenge": "Wing/Logo Lights",
+          "response": "As Required",
+          "sourcePage": 1,
+          "id": "wing-logo-lights"
+        },
+        {
+          "challenge": "De/Anti-Ice",
+          "response": "As Required",
+          "sourcePage": 1,
+          "id": "de-anti-ice"
+        },
+        {
+          "challenge": "ENG 1",
+          "response": "START",
+          "sourcePage": 1,
+          "id": "eng-1"
+        },
+        {
+          "challenge": "ENG1 Condition",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "eng1-condition"
+        },
+        {
+          "challenge": "Bleeds",
+          "response": "As Required",
+          "sourcePage": 1,
+          "id": "bleeds"
+        },
+        {
+          "challenge": "AC Wild ELEC Pwr",
+          "response": "No White Lights",
+          "sourcePage": 1,
+          "id": "ac-wild-elec-pwr"
+        },
+        {
+          "challenge": "Engine Instruments",
+          "response": "Checked",
+          "sourcePage": 1,
+          "id": "engine-instruments"
+        },
+        {
+          "challenge": "Pitot Heat",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "pitot-heat"
+        },
+        {
+          "challenge": "Start Selector Mode",
+          "response": "OFF & ABORT",
+          "sourcePage": 1,
+          "id": "start-selector-mode"
+        }
+      ]
+    },
+    {
+      "id": "pre-departure-at-the-hold",
+      "name": "Pre-departure at the Hold",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "Takeoff Config",
+          "response": "Checked",
+          "sourcePage": 1,
+          "id": "takeoff-config"
+        },
+        {
+          "challenge": "Power Management",
+          "response": "Confirm SET TO",
+          "sourcePage": 1,
+          "id": "power-management"
+        },
+        {
+          "challenge": "Speeds",
+          "response": "Checked & Set",
+          "sourcePage": 1,
+          "id": "speeds"
+        },
+        {
+          "challenge": "FCP/Nav Data/Radios",
+          "response": "Checked & Set",
+          "sourcePage": 1,
+          "id": "fcp-nav-data-radios"
+        },
+        {
+          "challenge": "Fuel Quantities",
+          "response": "Checked",
+          "sourcePage": 1,
+          "id": "fuel-quantities"
+        },
+        {
+          "challenge": "Annunciator Lights",
+          "response": "Checked",
+          "sourcePage": 1,
+          "id": "annunciator-lights"
+        },
+        {
+          "challenge": "Idle Gate",
+          "response": "Push to FLIGHT",
+          "sourcePage": 1,
+          "id": "idle-gate"
+        },
+        {
+          "type": "note",
+          "text": "OBTAIN TAKE-OFF CLEARANCE – ALERT CABIN CREW",
+          "italic": true,
+          "sourcePage": 1,
+          "id": "obtain-take-off-clearance-alert-cabin-crew"
+        }
+      ]
+    },
+    {
+      "id": "takeoff",
+      "name": "Takeoff",
+      "description": "BritishAvgeek / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "Strobes",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "strobes"
+        },
+        {
+          "challenge": "Taxi Lights",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "taxi-lights"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "Set ALT",
+          "sourcePage": 1,
+          "id": "transponder"
+        },
+        {
+          "challenge": "Clock",
+          "response": "START",
+          "sourcePage": 1,
+          "id": "clock"
+        },
+        {
+          "challenge": "Runway",
+          "response": "Confirm",
+          "sourcePage": 1,
+          "id": "runway"
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff",
+      "name": "After Takeoff",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "Positive Rate",
+          "response": "Touch Brakes & Set Gear UP",
+          "sourcePage": 2,
+          "id": "positive-rate"
+        },
+        {
+          "challenge": "Gear",
+          "response": "Up – Lights OUT",
+          "sourcePage": 2,
+          "id": "gear"
+        },
+        {
+          "challenge": "Flaps/Slats",
+          "response": "Retract as Appropriate",
+          "sourcePage": 2,
+          "id": "flaps-slats"
+        },
+        {
+          "challenge": "Power Management",
+          "response": "Set CLB",
+          "sourcePage": 2,
+          "id": "power-management"
+        },
+        {
+          "challenge": "Yaw Damper",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "yaw-damper"
+        },
+        {
+          "challenge": "Autopilot",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "autopilot"
+        },
+        {
+          "challenge": "Annunciator Lights",
+          "response": "Checked",
+          "sourcePage": 2,
+          "id": "annunciator-lights"
+        },
+        {
+          "type": "note",
+          "text": "PASSING TRANSITION ALTITUDE",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "passing-transition-altitude"
+        },
+        {
+          "challenge": "Altimeter",
+          "response": "Set STD",
+          "sourcePage": 2,
+          "id": "altimeter"
+        },
+        {
+          "type": "note",
+          "text": "PASSING 10,000ft",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "passing-10-000ft"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Seatbelt Signs",
+          "response": "As Required",
+          "sourcePage": 2,
+          "id": "seatbelt-signs"
+        }
+      ]
+    },
+    {
+      "id": "cruise",
+      "name": "Cruise",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "Power Management",
+          "response": "Set CRZ",
+          "sourcePage": 2,
+          "id": "power-management"
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "name": "Descent",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "Destination Weather",
+          "response": "Obtained",
+          "sourcePage": 2,
+          "id": "destination-weather"
+        },
+        {
+          "challenge": "Arrival Data",
+          "response": "Set & Checked",
+          "sourcePage": 2,
+          "id": "arrival-data"
+        },
+        {
+          "type": "note",
+          "text": "ENSURE NAV DATA MATCHES STAR/APPR EXPECTED",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "ensure-nav-data-matches-star-appr-expected"
+        },
+        {
+          "challenge": "Radios",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "radios"
+        },
+        {
+          "challenge": "Wing / Engine Anti-Ice",
+          "response": "As Required",
+          "sourcePage": 2,
+          "id": "wing-engine-anti-ice"
+        },
+        {
+          "challenge": "FCP",
+          "response": "As Required",
+          "sourcePage": 2,
+          "id": "fcp"
+        },
+        {
+          "challenge": "Landing Elevation",
+          "response": "SET/AUTO",
+          "sourcePage": 2,
+          "id": "landing-elevation"
+        },
+        {
+          "challenge": "Minimums",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "minimums"
+        },
+        {
+          "challenge": "Approach & Missed Approach",
+          "response": "Briefed",
+          "sourcePage": 2,
+          "id": "approach-missed-approach"
+        },
+        {
+          "type": "note",
+          "text": "BELOW TRANSITION LEVEL",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "below-transition-level"
+        },
+        {
+          "challenge": "Altimeter",
+          "response": "Set Local QNH/QFE",
+          "sourcePage": 2,
+          "id": "altimeter"
+        },
+        {
+          "type": "note",
+          "text": "BELOW 10,000ft",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "below-10-000ft"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Seatbelt Signs",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "seatbelt-signs"
+        },
+        {
+          "type": "note",
+          "text": "CONFIRM ATIS / APPROACH IN USE",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "confirm-atis-approach-in-use"
+        },
+        {
+          "type": "note",
+          "text": "During the Arrival Brief, plan a suitable runway exit to\nfacilitate minimum runway occupancy where appropriate",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "during-the-arrival-brief-plan-a-suitable-runway-exit-to"
+        },
+        {
+          "type": "note",
+          "text": "Be prepared to enter any\nHolding Pattern if advised by ATC",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "be-prepared-to-enter-any"
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "name": "Approach",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "ILS/VOR/NDB Frequencies",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "ils-vor-ndb-frequencies"
+        },
+        {
+          "challenge": "Power Management",
+          "response": "Set TO",
+          "sourcePage": 2,
+          "id": "power-management"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "Extend As Required",
+          "sourcePage": 2,
+          "id": "flaps"
+        },
+        {
+          "challenge": "APP Mode",
+          "response": "ARM",
+          "sourcePage": 2,
+          "id": "app-mode"
+        },
+        {
+          "challenge": "Glideslope Alive",
+          "response": "GEAR DOWN",
+          "sourcePage": 2,
+          "id": "glideslope-alive"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "Confirm SET for Landing",
+          "sourcePage": 2,
+          "id": "flaps-2"
+        },
+        {
+          "challenge": "Go Around Altitude",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "go-around-altitude"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "Check OFF",
+          "sourcePage": 2,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Autopilot",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "autopilot"
+        },
+        {
+          "challenge": "Yaw Damper",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "yaw-damper"
+        },
+        {
+          "type": "note",
+          "text": "MONITOR – BE PREPARED TO GO AROUND",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "monitor-be-prepared-to-go-around"
+        }
+      ]
+    },
+    {
+      "id": "after-landing",
+      "name": "After Landing",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "Flaps",
+          "response": "UP",
+          "sourcePage": 2,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "As Required",
+          "sourcePage": 2,
+          "id": "transponder"
+        },
+        {
+          "challenge": "Strobe Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "strobe-lights"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Taxi Lights",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "taxi-lights"
+        },
+        {
+          "challenge": "Anti-Ice",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "Trims",
+          "response": "RESET",
+          "sourcePage": 2,
+          "id": "trims"
+        },
+        {
+          "challenge": "Pitot Heat",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "pitot-heat"
+        },
+        {
+          "challenge": "Idle Gate",
+          "response": "Pull to Ground",
+          "sourcePage": 2,
+          "id": "idle-gate"
+        },
+        {
+          "type": "note",
+          "text": "AFTER MIN. 1 MINUTE",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "after-min-1-minute"
+        },
+        {
+          "challenge": "ENG1 Condition",
+          "response": "FTR",
+          "sourcePage": 2,
+          "id": "eng1-condition"
+        },
+        {
+          "challenge": "After 30 Seconds, ENG1 Condition",
+          "response": "SHUT OFF",
+          "sourcePage": 2,
+          "id": "after-30-seconds-eng1-condition"
+        },
+        {
+          "type": "note",
+          "text": "UPON ARRIVAL AT STAND/PARKING",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "upon-arrival-at-stand-parking"
+        },
+        {
+          "challenge": "Taxi Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "taxi-lights-2"
+        },
+        {
+          "challenge": "When Parked – Parking Brake",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "when-parked-parking-brake"
+        }
+      ]
+    },
+    {
+      "id": "shutdown",
+      "name": "Shutdown",
+      "description": "BritishAvgeek / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "Gust Lock",
+          "response": "ENGAGE",
+          "sourcePage": 2,
+          "id": "gust-lock"
+        },
+        {
+          "challenge": "ENG2 Condition",
+          "response": "FTR",
+          "sourcePage": 2,
+          "id": "eng2-condition"
+        },
+        {
+          "challenge": "PROP Brake",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "prop-brake"
+        },
+        {
+          "challenge": "Beacon Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "beacon-lights"
+        },
+        {
+          "challenge": "DC External Power",
+          "response": "Connected & ON",
+          "sourcePage": 2,
+          "id": "dc-external-power"
+        },
+        {
+          "challenge": "Seatbelt Signs",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "seatbelt-signs"
+        },
+        {
+          "challenge": "ENG2 Condition",
+          "response": "SHUT OFF",
+          "sourcePage": 2,
+          "id": "eng2-condition-2"
+        },
+        {
+          "challenge": "Fuel Pumps",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "Oxygen",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "oxygen"
+        },
+        {
+          "challenge": "Flight Directors",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "flight-directors"
+        },
+        {
+          "type": "note",
+          "text": "MONITOR DISEMBARKATION",
+          "italic": true,
+          "sourcePage": 2,
+          "id": "monitor-disembarkation"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "normal-checklist",
+      "title": "ATR42/72 Summarised Checklist - BritishAvgeek v1",
+      "path": "references/atr-42-72/normal-checklist.pdf"
+    }
+  ]
+}

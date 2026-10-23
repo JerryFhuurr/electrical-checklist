@@ -8,6 +8,7 @@
         <com.google.android.material.button.MaterialButton android:id="@+id/view_checklist_button" style="@style/PrimaryAction" android:layout_marginTop="12dp" android:layout_marginBottom="6dp" android:text="@string/view_checklist"/>
         <TextView android:id="@+id/checklist_mode_label" style="@style/BodyText" android:textSize="12sp" android:visibility="gone"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/checklist_mode_button" style="@style/TextAction" android:layout_width="match_parent" android:visibility="gone"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/checklist_options_button" style="@style/TextAction" android:text="@string/checklist_options" android:visibility="gone"/>
         <LinearLayout android:id="@+id/phase_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
         <LinearLayout android:id="@+id/extended_reference_info" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <TextView android:id="@+id/extended_reference_note" style="@style/BodyText" android:textSize="13sp"/>

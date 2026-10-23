@@ -49,12 +49,12 @@ public class ChecklistAppTest {
     @Test public void bundledCatalogHasAllSourceSectionsAndItems() throws Exception {
         ChecklistCatalog catalog = ChecklistCatalog.load(context);
         ChecklistCatalog.Aircraft model = catalog.aircraft.get(0);
-        assertEquals(5, model.checklists.size());
-        assertEquals(85, model.itemCount());
+        assertEquals(10, model.checklists.size());
+        assertEquals(101, model.itemCount());
         assertEquals(38, model.checklists.get(1).items.size());
         assertEquals("Below the line", model.checklists.get(1).items.get(34).group);
         assertEquals("If applicable (**)", model.checklists.get(1).items.get(2).note);
-        assertEquals("BATTERY", model.checklists.get(4).items.get(6).challenge);
+        assertEquals("BATTERY", model.checklists.get(9).items.get(6).challenge);
         assertEquals(1, model.references.size());
         assertEquals("references/ryanair-737-ng/normal-checklist.pdf", model.references.get(0).path);
     }

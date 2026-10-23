@@ -52,6 +52,17 @@ public class ChecklistProgressTest {
     @Test public void emptyChecklistCannotBeCompleted() {
         assertFalse(empty().complete("737", "start", Collections.emptyList()));
     }
+    @Test public void reopeningAfterOptionChangePreservesTicksAndOtherAircraftCompletion() {
+        ChecklistProgress progress = empty();
+        for (String aircraft : Arrays.asList("a330", "777")) {
+            progress.setChecked(aircraft, "start", "apu", true);
+            assertTrue(progress.complete(aircraft, "start", Collections.singletonList("apu")));
+        }
+        progress.reopen("a330", "start");
+        assertFalse(progress.isComplete("a330", "start"));
+        assertTrue(progress.isChecked("a330", "start", "apu"));
+        assertTrue(progress.isComplete("777", "start"));
+    }
     @Test public void optionalChecksDoNotSatisfyRequirementsOrReopenCompletedChecklist() {
         ChecklistProgress progress = empty();
         progress.setChecked("md11", "takeoff", "hyd-manual", true, false);

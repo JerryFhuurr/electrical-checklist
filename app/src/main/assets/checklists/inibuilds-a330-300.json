@@ -1,0 +1,2159 @@
+{
+  "id": "inibuilds-a330-300",
+  "manufacturer": "Airbus",
+  "name": "Airbus A330-300",
+  "operator": "iniBuilds / Maverick1994",
+  "source": "Checklist_Airbus_A330.html / companion PDF",
+  "notice": "Imported from the supplied A333 HTML checklist by Maverick1994, based on iniBuilds A330 MSFS Manual v1.0.1. Select the applicable autothrust, power, and approach options. The go-around section is an alternate procedure. The supplied companion PDF is unchanged; the original HTML is also bundled for traceability.",
+  "legend": "AT = autothrust on; NO AT = without autothrust; A = GPU only. Only the selected options are shown and required. OPTION headings are informational.",
+  "options": [
+    {
+      "id": "autothrust",
+      "label": "Autothrust",
+      "default": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": "On (AT)"
+        },
+        {
+          "id": "off",
+          "label": "Off (manual thrust)"
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "label": "Air and power",
+      "default": "apu",
+      "values": [
+        {
+          "id": "apu",
+          "label": "APU now"
+        },
+        {
+          "id": "gpu",
+          "label": "GPU, APU later"
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "label": "Approach type",
+      "default": "ils",
+      "values": [
+        {
+          "id": "ils",
+          "label": "ILS (LOC/GS)"
+        },
+        {
+          "id": "rnav",
+          "label": "RNAV (GNSS)"
+        },
+        {
+          "id": "npa",
+          "label": "NPA (TRK/FPA)"
+        }
+      ]
+    }
+  ],
+  "checklists": [
+    {
+      "id": "preliminary-cockpit-prep",
+      "name": "PRELIMINARY COCKPIT PREP",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "ENG MASTERS 1 & 2",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "eng-masters-1-2"
+        },
+        {
+          "challenge": "ENG START SELECTOR",
+          "response": "NORM",
+          "sourcePage": 1,
+          "id": "eng-start-selector"
+        },
+        {
+          "challenge": "WX RADAR · PWS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "wx-radar-pws"
+        },
+        {
+          "challenge": "GAIN · MODE",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "gain-mode"
+        },
+        {
+          "challenge": "LANDING GEAR LEVER",
+          "response": "DOWN",
+          "sourcePage": 1,
+          "id": "landing-gear-lever"
+        },
+        {
+          "challenge": "WIPERS",
+          "response": "BOTH OFF",
+          "sourcePage": 1,
+          "id": "wipers"
+        },
+        {
+          "challenge": "BAT 1 · 2 · APU",
+          "response": "CHECK VOLTAGE",
+          "sourcePage": 1,
+          "id": "bat-1-2-apu"
+        },
+        {
+          "challenge": "EXT PWR A & B",
+          "response": "ON & AUTO",
+          "sourcePage": 1,
+          "note": "GPU only (A)",
+          "when": {
+            "power": "gpu"
+          },
+          "id": "ext-pwr-a-b"
+        },
+        {
+          "challenge": "APU FIRE · AGENT LT",
+          "response": "CHECK · OFF",
+          "sourcePage": 1,
+          "id": "apu-fire-agent-lt"
+        },
+        {
+          "challenge": "APU FIRE TEST",
+          "response": "PRESS & HOLD",
+          "sourcePage": 1,
+          "id": "apu-fire-test"
+        }
+      ]
+    },
+    {
+      "id": "air-power-choose-one",
+      "name": "AIR & POWER · CHOOSE ONE",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "type": "heading",
+          "text": "OPTION 1 · APU NOW",
+          "when": {
+            "power": "apu"
+          },
+          "id": "option-1-apu-now"
+        },
+        {
+          "challenge": "APU MASTER SW",
+          "response": "ON",
+          "sourcePage": 1,
+          "when": {
+            "power": "apu"
+          },
+          "id": "apu-master-sw"
+        },
+        {
+          "challenge": "APU START",
+          "response": "PRESS · MONITOR",
+          "sourcePage": 1,
+          "when": {
+            "power": "apu"
+          },
+          "id": "apu-start"
+        },
+        {
+          "challenge": "EXT PWR A & B",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "when": {
+            "power": "apu"
+          },
+          "id": "ext-pwr-a-b"
+        },
+        {
+          "challenge": "APU BLEED",
+          "response": "ON",
+          "sourcePage": 1,
+          "when": {
+            "power": "apu"
+          },
+          "id": "apu-bleed"
+        },
+        {
+          "type": "heading",
+          "text": "OPTION 2 · GPU, APU LATER",
+          "when": {
+            "power": "gpu"
+          },
+          "id": "option-2-gpu-apu-later"
+        },
+        {
+          "challenge": "GPU (EFB)",
+          "response": "KEEP CONNECTED",
+          "sourcePage": 1,
+          "when": {
+            "power": "gpu"
+          },
+          "id": "gpu-efb"
+        }
+      ]
+    },
+    {
+      "id": "preliminary-cockpit-prep-cont",
+      "name": "PRELIMINARY COCKPIT PREP (CONT.)",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "AIR COND · WHITE LIGHTS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "air-cond-white-lights"
+        },
+        {
+          "challenge": "X-BLEED",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "x-bleed"
+        },
+        {
+          "challenge": "CKPT · CABIN TEMP",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "ckpt-cabin-temp"
+        },
+        {
+          "challenge": "CARGO AIR COND",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "cargo-air-cond"
+        },
+        {
+          "challenge": "COCKPIT LIGHTS",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "cockpit-lights"
+        },
+        {
+          "challenge": "EFB",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "efb"
+        }
+      ]
+    },
+    {
+      "id": "fmgs-pre-init-prelim-perf",
+      "name": "FMGS PRE-INIT · PRELIM PERF",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "ENG · ACFT TYPE · DATABASE",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "eng-acft-type-database"
+        },
+        {
+          "challenge": "FLIGHT NUMBER",
+          "response": "INSERT",
+          "sourcePage": 1,
+          "id": "flight-number"
+        },
+        {
+          "challenge": "FROM/TO",
+          "response": "INSERT / SIMBRIEF",
+          "sourcePage": 1,
+          "id": "from-to"
+        },
+        {
+          "challenge": "AIRFIELD DATA",
+          "response": "OBTAIN",
+          "sourcePage": 1,
+          "id": "airfield-data"
+        },
+        {
+          "challenge": "WEIGHT & BALANCE",
+          "response": "INSERT",
+          "sourcePage": 1,
+          "id": "weight-balance"
+        },
+        {
+          "challenge": "PRELIM T/O PERF",
+          "response": "COMPUTE ON EFB",
+          "sourcePage": 1,
+          "id": "prelim-t-o-perf"
+        }
+      ]
+    },
+    {
+      "id": "ecam-brakes-exterior",
+      "name": "ECAM · BRAKES · EXTERIOR",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "DOOR · HYD · ENG SD PAGES",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "door-hyd-eng-sd-pages"
+        },
+        {
+          "challenge": "FLAPS · SPEED BRAKE",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "flaps-speed-brake"
+        },
+        {
+          "challenge": "ACCU · PARK BRK · BRK PRESS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "accu-park-brk-brk-press"
+        },
+        {
+          "challenge": "ALTN BRAKING · CHOCKS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "altn-braking-chocks"
+        },
+        {
+          "challenge": "PARK BRK OFF · PEDALS",
+          "response": "PRESS · CHECK",
+          "sourcePage": 1,
+          "id": "park-brk-off-pedals"
+        },
+        {
+          "challenge": "PEDALS RELEASE · PARK BRK",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "pedals-release-park-brk"
+        },
+        {
+          "challenge": "EMERGENCY EQUIPMENT",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "emergency-equipment"
+        },
+        {
+          "challenge": "GEAR PINS & COVERS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "gear-pins-covers"
+        }
+      ]
+    },
+    {
+      "id": "cockpit-preparation",
+      "name": "COCKPIT PREPARATION",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "ALL WHITE LIGHTS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "all-white-lights"
+        },
+        {
+          "challenge": "RCDR GND CTL",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "rcdr-gnd-ctl"
+        },
+        {
+          "challenge": "EVAC CPT / PURS-CPT",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "evac-cpt-purs-cpt"
+        },
+        {
+          "challenge": "ADIRS · ALL IR MODE",
+          "response": "NAV",
+          "sourcePage": 1,
+          "id": "adirs-all-ir-mode"
+        },
+        {
+          "challenge": "FUEL PUMPS",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "STROBE · BEACON",
+          "response": "AUTO · OFF",
+          "sourcePage": 1,
+          "id": "strobe-beacon"
+        },
+        {
+          "challenge": "WING · RWY T/O · LAND · NOSE",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "wing-rwy-t-o-land-nose"
+        },
+        {
+          "challenge": "NAV & LOGO",
+          "response": "1",
+          "sourcePage": 1,
+          "id": "nav-logo"
+        },
+        {
+          "challenge": "SEAT BELTS · NO SMOKING",
+          "response": "ON · AUTO",
+          "sourcePage": 1,
+          "id": "seat-belts-no-smoking"
+        },
+        {
+          "challenge": "EMER EXIT LT",
+          "response": "ARM",
+          "sourcePage": 1,
+          "id": "emer-exit-lt"
+        },
+        {
+          "challenge": "PROBE/WINDOW HEAT",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "probe-window-heat"
+        },
+        {
+          "challenge": "LDG ELEV",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "ldg-elev"
+        },
+        {
+          "challenge": "MAN VALVE SET",
+          "response": "BOTH",
+          "sourcePage": 1,
+          "id": "man-valve-set"
+        },
+        {
+          "challenge": "PACK FLOW",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "pack-flow"
+        },
+        {
+          "challenge": "ELEC SD · BAT 1 · 2 · APU",
+          "response": "OFF THEN ON",
+          "sourcePage": 1,
+          "id": "elec-sd-bat-1-2-apu"
+        },
+        {
+          "challenge": "ELEC DC SD PAGE",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "elec-dc-sd-page"
+        },
+        {
+          "challenge": "TRIM TANK MODE · FEED",
+          "response": "AUTO",
+          "sourcePage": 1,
+          "id": "trim-tank-mode-feed"
+        },
+        {
+          "challenge": "ENG 1 & 2 FIRE · AGENT LTS",
+          "response": "CHECK · OFF",
+          "sourcePage": 1,
+          "id": "eng-1-2-fire-agent-lts"
+        },
+        {
+          "challenge": "ENG FIRE TEST",
+          "response": "PRESS & HOLD",
+          "sourcePage": 1,
+          "id": "eng-fire-test"
+        },
+        {
+          "challenge": "MAINT · VENT PANELS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "maint-vent-panels"
+        },
+        {
+          "challenge": "COM 3",
+          "response": "RECEPT",
+          "sourcePage": 1,
+          "id": "com-3"
+        },
+        {
+          "challenge": "ISIS",
+          "response": "BRIGHTNESS · CHECK",
+          "sourcePage": 1,
+          "id": "isis"
+        },
+        {
+          "challenge": "NORTH REF",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "north-ref"
+        },
+        {
+          "challenge": "DMC · ECAM ND SELECTORS",
+          "response": "AUTO · NORM",
+          "sourcePage": 1,
+          "id": "dmc-ecam-nd-selectors"
+        },
+        {
+          "challenge": "CLOCK",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "clock"
+        },
+        {
+          "challenge": "GEAR GRAVITY EXTN",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "gear-gravity-extn"
+        },
+        {
+          "challenge": "A/SKID & N/W STRG",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "a-skid-n-w-strg"
+        },
+        {
+          "challenge": "RMP CPT & FO",
+          "response": "ON · COMM TUNE",
+          "sourcePage": 1,
+          "id": "rmp-cpt-fo"
+        },
+        {
+          "challenge": "GREEN NAV · SEL LTS",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "green-nav-sel-lts"
+        },
+        {
+          "challenge": "ACP INT · VHF KNOBS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "acp-int-vhf-knobs"
+        },
+        {
+          "challenge": "ACCU · PARK BRK · BRK PRESS",
+          "response": "CHECK · ON",
+          "sourcePage": 1,
+          "id": "accu-park-brk-brk-press"
+        },
+        {
+          "challenge": "COCKPIT DOOR",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "cockpit-door"
+        },
+        {
+          "challenge": "SWITCHING PANEL",
+          "response": "NORM",
+          "sourcePage": 1,
+          "id": "switching-panel"
+        },
+        {
+          "challenge": "THRUST LEVERS · REVERSERS",
+          "response": "IDLE · STOWED",
+          "sourcePage": 1,
+          "id": "thrust-levers-reversers"
+        },
+        {
+          "challenge": "ENG MASTERS · ENG START",
+          "response": "OFF · NORM",
+          "sourcePage": 1,
+          "id": "eng-masters-eng-start"
+        },
+        {
+          "challenge": "ATC · ALT RPTG · XPDR",
+          "response": "STBY · ON · SYS 1",
+          "sourcePage": 1,
+          "id": "atc-alt-rptg-xpdr"
+        },
+        {
+          "challenge": "NAV CHARTS",
+          "response": "PREPARE",
+          "sourcePage": 1,
+          "id": "nav-charts"
+        }
+      ]
+    },
+    {
+      "id": "fmgs-preparation",
+      "name": "FMGS PREPARATION",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "INIT · FROM/TO · ALTN",
+          "response": "CHECK / REQUEST",
+          "sourcePage": 1,
+          "id": "init-from-to-altn"
+        },
+        {
+          "challenge": "FLT NBR · CI · CRZ FL",
+          "response": "ENTER",
+          "sourcePage": 1,
+          "id": "flt-nbr-ci-crz-fl"
+        },
+        {
+          "challenge": "CRZ FL TEMP",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "crz-fl-temp"
+        },
+        {
+          "challenge": "DEPARTURE · ROUTE · ARRIVAL",
+          "response": "SELECT · INSERT",
+          "sourcePage": 1,
+          "id": "departure-route-arrival"
+        },
+        {
+          "challenge": "WINDS · SEC F-PLN",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "winds-sec-f-pln"
+        },
+        {
+          "challenge": "RADIO NAV",
+          "response": "CHECK / SET",
+          "sourcePage": 1,
+          "id": "radio-nav"
+        },
+        {
+          "challenge": "WEIGHT / PERF",
+          "response": "CALCULATE ON EFB",
+          "sourcePage": 1,
+          "id": "weight-perf"
+        },
+        {
+          "challenge": "INIT B · ZFW/ZFWCG · BLOCK",
+          "response": "INSERT",
+          "sourcePage": 1,
+          "id": "init-b-zfw-zfwcg-block"
+        },
+        {
+          "challenge": "PERF T.O · V1 · VR · V2",
+          "response": "INSERT",
+          "sourcePage": 1,
+          "id": "perf-t-o-v1-vr-v2"
+        },
+        {
+          "challenge": "FLEX TEMP · FLAPS/THS",
+          "response": "INSERT",
+          "sourcePage": 1,
+          "id": "flex-temp-flaps-ths"
+        },
+        {
+          "challenge": "THR RED/ACC · EO ACC ALT",
+          "response": "CHECK / SET",
+          "sourcePage": 1,
+          "id": "thr-red-acc-eo-acc-alt"
+        },
+        {
+          "challenge": "NEXT PHASE · PRESET SPEEDS",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "next-phase-preset-speeds"
+        }
+      ]
+    },
+    {
+      "id": "fcu-instruments",
+      "name": "FCU · INSTRUMENTS",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "LOUDSPEAKER",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "loudspeaker"
+        },
+        {
+          "challenge": "BARO",
+          "response": "SET ALL",
+          "sourcePage": 1,
+          "id": "baro"
+        },
+        {
+          "challenge": "FD 1 / 2",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "fd-1-2"
+        },
+        {
+          "challenge": "LS · ND MODE/RANGE · ADF/VOR",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "ls-nd-mode-range-adf-vor"
+        },
+        {
+          "challenge": "SPD/MACH WINDOW",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "spd-mach-window"
+        },
+        {
+          "challenge": "HDG-VS / TRK-FPA",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "hdg-vs-trk-fpa"
+        },
+        {
+          "challenge": "ALT WINDOW",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "alt-window"
+        },
+        {
+          "challenge": "A/THR",
+          "response": "ARMS AT FLX/TOGA",
+          "sourcePage": 1,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "a-thr"
+        },
+        {
+          "challenge": "A/THR",
+          "response": "MANUAL THRUST",
+          "sourcePage": 1,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "a-thr-2"
+        },
+        {
+          "challenge": "REGUL LO PR",
+          "response": "NOT DISPLAYED",
+          "sourcePage": 1,
+          "id": "regul-lo-pr"
+        },
+        {
+          "challenge": "DOOR/OXY SD PAGE",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "door-oxy-sd-page"
+        },
+        {
+          "challenge": "PFD · ND",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "pfd-nd"
+        },
+        {
+          "challenge": "PRESS SD · STS · INOP SYS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "press-sd-sts-inop-sys"
+        },
+        {
+          "challenge": "IRS ALIGN",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "irs-align"
+        },
+        {
+          "challenge": "TAKEOFF BRIEFING",
+          "response": "PERFORM",
+          "sourcePage": 1,
+          "id": "takeoff-briefing"
+        }
+      ]
+    },
+    {
+      "id": "before-pushback-or-start",
+      "name": "BEFORE PUSHBACK OR START",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "FINAL LOADSHEET · ZFW/ZFWCG",
+          "response": "CHECK / REVISE",
+          "sourcePage": 1,
+          "id": "final-loadsheet-zfw-zfwcg"
+        },
+        {
+          "challenge": "LOADSHEET CG · ECAM CG · FOB",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "loadsheet-cg-ecam-cg-fob"
+        },
+        {
+          "challenge": "FINAL T/O PERF",
+          "response": "RECOMPUTE",
+          "sourcePage": 1,
+          "id": "final-t-o-perf"
+        },
+        {
+          "challenge": "FMS T/O DATA",
+          "response": "REVISE",
+          "sourcePage": 1,
+          "id": "fms-t-o-data"
+        },
+        {
+          "challenge": "MCDU CPT · FO",
+          "response": "PERF TO · F-PLN",
+          "sourcePage": 1,
+          "id": "mcdu-cpt-fo"
+        },
+        {
+          "challenge": "EXT PWR",
+          "response": "DISCONNECT",
+          "sourcePage": 1,
+          "id": "ext-pwr"
+        },
+        {
+          "challenge": "ACARS INIT",
+          "response": "COMPLETED",
+          "sourcePage": 1,
+          "id": "acars-init"
+        },
+        {
+          "challenge": "GEAR PINS & COVERS · SIGNS",
+          "response": "REMOVED · ON/AUTO",
+          "sourcePage": 1,
+          "id": "gear-pins-covers-signs"
+        },
+        {
+          "challenge": "ADIRS · FUEL QTY",
+          "response": "NAV · CHECK",
+          "sourcePage": 1,
+          "id": "adirs-fuel-qty"
+        },
+        {
+          "challenge": "T/O DATA · BARO REF",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "t-o-data-baro-ref"
+        },
+        {
+          "challenge": "PUSHBACK / START CLEARANCE",
+          "response": "OBTAIN",
+          "sourcePage": 1,
+          "id": "pushback-start-clearance"
+        },
+        {
+          "challenge": "WINDOWS · DOORS · FLT DECK DOOR",
+          "response": "CLOSED",
+          "sourcePage": 1,
+          "id": "windows-doors-flt-deck-door"
+        },
+        {
+          "challenge": "SLIDES",
+          "response": "ARMED",
+          "sourcePage": 1,
+          "id": "slides"
+        },
+        {
+          "challenge": "BEACON",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "beacon"
+        },
+        {
+          "challenge": "THRUST LEVERS",
+          "response": "IDLE",
+          "sourcePage": 1,
+          "id": "thrust-levers"
+        },
+        {
+          "challenge": "ACCU PRESS · PARK BRK",
+          "response": "CHECK · ON",
+          "sourcePage": 1,
+          "id": "accu-press-park-brk"
+        },
+        {
+          "challenge": "NW STRG DISC MEMO",
+          "response": "DISPLAYED",
+          "sourcePage": 1,
+          "id": "nw-strg-disc-memo"
+        },
+        {
+          "challenge": "TRANSPONDER",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "transponder"
+        }
+      ]
+    },
+    {
+      "id": "engine-start",
+      "name": "ENGINE START",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "ENG START SELECTOR",
+          "response": "IGN START",
+          "sourcePage": 1,
+          "id": "eng-start-selector"
+        },
+        {
+          "challenge": "ENG 1 MASTER",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "eng-1-master"
+        },
+        {
+          "challenge": "ENG 1 IDLE PARAMETERS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "eng-1-idle-parameters"
+        },
+        {
+          "challenge": "ENG 2 MASTER",
+          "response": "ON",
+          "sourcePage": 1,
+          "id": "eng-2-master"
+        },
+        {
+          "challenge": "ENG 2 IDLE PARAMETERS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "eng-2-idle-parameters"
+        }
+      ]
+    },
+    {
+      "id": "after-start",
+      "name": "AFTER START",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "ENG START SELECTOR",
+          "response": "NORM",
+          "sourcePage": 1,
+          "id": "eng-start-selector"
+        },
+        {
+          "challenge": "APU BLEED",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "apu-bleed"
+        },
+        {
+          "challenge": "ENG · WING ANTI-ICE",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "eng-wing-anti-ice"
+        },
+        {
+          "challenge": "APU MASTER SW",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "apu-master-sw"
+        },
+        {
+          "challenge": "NWS TOWING FAULT LT",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "nws-towing-fault-lt"
+        },
+        {
+          "challenge": "GROUND SPOILERS",
+          "response": "ARM",
+          "sourcePage": 1,
+          "id": "ground-spoilers"
+        },
+        {
+          "challenge": "RUDDER TRIM RESET",
+          "response": "PRESS · ZERO",
+          "sourcePage": 1,
+          "id": "rudder-trim-reset"
+        },
+        {
+          "challenge": "FLAPS",
+          "response": "SET · CHECK",
+          "sourcePage": 1,
+          "id": "flaps"
+        },
+        {
+          "challenge": "PITCH TRIM",
+          "response": "CHECK / SET",
+          "sourcePage": 1,
+          "id": "pitch-trim"
+        },
+        {
+          "challenge": "ECAM STS",
+          "response": "REVIEW",
+          "sourcePage": 1,
+          "id": "ecam-sts"
+        },
+        {
+          "challenge": "NW STRG DISC MEMO",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "nw-strg-disc-memo"
+        },
+        {
+          "challenge": "GROUND EQUIPMENT",
+          "response": "CLEAR",
+          "sourcePage": 1,
+          "id": "ground-equipment"
+        }
+      ]
+    },
+    {
+      "id": "taxi-out",
+      "name": "TAXI-OUT",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "TAXI CLEARANCE",
+          "response": "OBTAIN",
+          "sourcePage": 1,
+          "id": "taxi-clearance"
+        },
+        {
+          "challenge": "NOSE · RWY TURN OFF",
+          "response": "TAXI · AS REQD",
+          "sourcePage": 1,
+          "id": "nose-rwy-turn-off"
+        },
+        {
+          "challenge": "PARK BRK",
+          "response": "OFF",
+          "sourcePage": 1,
+          "id": "park-brk"
+        },
+        {
+          "challenge": "BRAKES",
+          "response": "CHECK · PRESS ZERO",
+          "sourcePage": 1,
+          "id": "brakes"
+        },
+        {
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECK",
+          "sourcePage": 1,
+          "id": "flight-controls"
+        },
+        {
+          "challenge": "ATC CLEARANCE",
+          "response": "CONFIRM",
+          "sourcePage": 1,
+          "id": "atc-clearance"
+        },
+        {
+          "challenge": "F-PLN SID · INIT CLB SPEED",
+          "response": "REVISE / CHECK",
+          "sourcePage": 1,
+          "id": "f-pln-sid-init-clb-speed"
+        },
+        {
+          "challenge": "FCU ALT · HDG",
+          "response": "SET · AS REQD",
+          "sourcePage": 1,
+          "id": "fcu-alt-hdg"
+        },
+        {
+          "challenge": "BOTH FD · PFD/ND",
+          "response": "ON · CHECK",
+          "sourcePage": 1,
+          "id": "both-fd-pfd-nd"
+        },
+        {
+          "challenge": "T/O BRIEFING",
+          "response": "CONFIRM",
+          "sourcePage": 1,
+          "id": "t-o-briefing"
+        },
+        {
+          "challenge": "RADAR · PWS",
+          "response": "ON · AUTO",
+          "sourcePage": 1,
+          "id": "radar-pws"
+        },
+        {
+          "challenge": "XPDR CODE/MODE",
+          "response": "SET",
+          "sourcePage": 1,
+          "id": "xpdr-code-mode"
+        },
+        {
+          "challenge": "TERR ON ND",
+          "response": "AS REQD",
+          "sourcePage": 1,
+          "id": "terr-on-nd"
+        },
+        {
+          "challenge": "AUTO BRAKE",
+          "response": "MAX",
+          "sourcePage": 1,
+          "id": "auto-brake"
+        },
+        {
+          "challenge": "T.O CONFIG",
+          "response": "TEST",
+          "sourcePage": 1,
+          "id": "t-o-config"
+        },
+        {
+          "challenge": "T.O MEMO",
+          "response": "NO BLUE",
+          "sourcePage": 1,
+          "id": "t-o-memo"
+        },
+        {
+          "challenge": "CABIN REPORT",
+          "response": "RECEIVED",
+          "sourcePage": 1,
+          "id": "cabin-report"
+        }
+      ]
+    },
+    {
+      "id": "before-take-off-checklist",
+      "name": "BEFORE TAKE-OFF CHECKLIST",
+      "description": "iniBuilds A330 / page 1",
+      "sourcePages": [
+        1
+      ],
+      "items": [
+        {
+          "challenge": "F/CTL · INSTRUMENTS",
+          "response": "CHECKED",
+          "sourcePage": 1,
+          "id": "f-ctl-instruments"
+        },
+        {
+          "challenge": "BRIEFING · FLAPS",
+          "response": "CONFIRMED",
+          "sourcePage": 1,
+          "id": "briefing-flaps"
+        },
+        {
+          "challenge": "V1 · VR · V2 / FLEX",
+          "response": "ANNOUNCE",
+          "sourcePage": 1,
+          "id": "v1-vr-v2-flex"
+        },
+        {
+          "challenge": "SPLRS · AUTO BRK",
+          "response": "ARMED · MAX",
+          "sourcePage": 1,
+          "id": "splrs-auto-brk"
+        },
+        {
+          "challenge": "T.O CONFIG",
+          "response": "NORM",
+          "sourcePage": 1,
+          "id": "t-o-config"
+        }
+      ]
+    },
+    {
+      "id": "runway-line-up",
+      "name": "RUNWAY LINE-UP",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "BRAKE TEMP · FANS",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "brake-temp-fans"
+        },
+        {
+          "challenge": "LINE-UP CLEARANCE",
+          "response": "OBTAIN",
+          "sourcePage": 2,
+          "id": "line-up-clearance"
+        },
+        {
+          "challenge": "STROBE · TCAS",
+          "response": "ON · TA/RA",
+          "sourcePage": 2,
+          "id": "strobe-tcas"
+        },
+        {
+          "challenge": "APPROACH PATH",
+          "response": "CLEAR",
+          "sourcePage": 2,
+          "id": "approach-path"
+        },
+        {
+          "challenge": "CABIN CREW",
+          "response": "ADVISE",
+          "sourcePage": 2,
+          "id": "cabin-crew"
+        },
+        {
+          "challenge": "SLIDING TABLES",
+          "response": "STOW",
+          "sourcePage": 2,
+          "id": "sliding-tables"
+        },
+        {
+          "challenge": "T/O RUNWAY",
+          "response": "CONFIRM",
+          "sourcePage": 2,
+          "id": "t-o-runway"
+        },
+        {
+          "challenge": "PACKS 1 & 2",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "packs-1-2"
+        }
+      ]
+    },
+    {
+      "id": "take-off",
+      "name": "TAKE-OFF",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "NOSE · RWY TURN OFF · LAND",
+          "response": "T.O · ON · ON",
+          "sourcePage": 2,
+          "id": "nose-rwy-turn-off-land"
+        },
+        {
+          "challenge": "SIDESTICK",
+          "response": "½ FWD (FULL >20 KT XW)",
+          "sourcePage": 2,
+          "id": "sidestick"
+        },
+        {
+          "challenge": "BRAKES",
+          "response": "RELEASE",
+          "sourcePage": 2,
+          "id": "brakes"
+        },
+        {
+          "challenge": "THRUST LEVERS",
+          "response": "FLX OR TOGA",
+          "sourcePage": 2,
+          "id": "thrust-levers"
+        },
+        {
+          "challenge": "FMA · A/THR",
+          "response": "ARMED / ACTIVE",
+          "sourcePage": 2,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "fma-a-thr"
+        },
+        {
+          "challenge": "A/THR",
+          "response": "DISCONNECT · MANUAL",
+          "sourcePage": 2,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "a-thr"
+        },
+        {
+          "challenge": "CHRONO · T/O EPR/N1",
+          "response": "START · CHECK",
+          "sourcePage": 2,
+          "id": "chrono-t-o-epr-n1"
+        },
+        {
+          "challenge": "100 KT",
+          "response": "STICK NEUTRAL",
+          "sourcePage": 2,
+          "id": "100-kt"
+        },
+        {
+          "challenge": "VR",
+          "response": "ROTATE",
+          "sourcePage": 2,
+          "id": "vr"
+        },
+        {
+          "challenge": "POSITIVE CLIMB",
+          "response": "GEAR UP",
+          "sourcePage": 2,
+          "id": "positive-climb"
+        },
+        {
+          "challenge": "AUTOPILOT",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "autopilot"
+        },
+        {
+          "challenge": "THR RED · THRUST LEVERS",
+          "response": "CL",
+          "sourcePage": 2,
+          "id": "thr-red-thrust-levers"
+        },
+        {
+          "challenge": "PACKS",
+          "response": "ON (IF OFF)",
+          "sourcePage": 2,
+          "id": "packs"
+        },
+        {
+          "challenge": "F SPEED · S SPEED",
+          "response": "FLAPS 1 · FLAPS 0",
+          "sourcePage": 2,
+          "id": "f-speed-s-speed"
+        },
+        {
+          "challenge": "GROUND SPOILERS",
+          "response": "DISARM",
+          "sourcePage": 2,
+          "id": "ground-spoilers"
+        },
+        {
+          "challenge": "NOSE · RWY TURN OFF",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "nose-rwy-turn-off"
+        }
+      ]
+    },
+    {
+      "id": "after-take-off-climb",
+      "name": "AFTER TAKE-OFF · CLIMB",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "APU BLEED · APU MASTER",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "apu-bleed-apu-master"
+        },
+        {
+          "challenge": "TCAS",
+          "response": "TA/RA",
+          "sourcePage": 2,
+          "id": "tcas"
+        },
+        {
+          "challenge": "ENG · WING ANTI-ICE",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "eng-wing-anti-ice"
+        },
+        {
+          "challenge": "GEAR · FLAPS · PACKS",
+          "response": "UP · RET · ON",
+          "sourcePage": 2,
+          "id": "gear-flaps-packs"
+        },
+        {
+          "challenge": "MCDU PF · PM",
+          "response": "PERF CLB · F-PLN",
+          "sourcePage": 2,
+          "id": "mcdu-pf-pm"
+        },
+        {
+          "challenge": "BARO",
+          "response": "STD",
+          "sourcePage": 2,
+          "id": "baro"
+        },
+        {
+          "challenge": "FMA · THR CLB",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "fma-thr-clb"
+        },
+        {
+          "challenge": "THRUST",
+          "response": "HOLD CLIMB SPEED",
+          "sourcePage": 2,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "thrust"
+        },
+        {
+          "challenge": "FL100 · LAND LTS",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "fl100-land-lts"
+        },
+        {
+          "challenge": "SEAT BELTS · EFIS",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "seat-belts-efis"
+        },
+        {
+          "challenge": "ECAM MEMO · NAVAIDS",
+          "response": "REVIEW · CLEAR",
+          "sourcePage": 2,
+          "id": "ecam-memo-navaids"
+        },
+        {
+          "challenge": "OPT/MAX ALT",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "opt-max-alt"
+        }
+      ]
+    },
+    {
+      "id": "cruise",
+      "name": "CRUISE",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "ECAM MEMO",
+          "response": "REVIEW",
+          "sourcePage": 2,
+          "id": "ecam-memo"
+        },
+        {
+          "challenge": "SD PAGES (ENG…FUEL)",
+          "response": "REVIEW",
+          "sourcePage": 2,
+          "id": "sd-pages-eng-fuel"
+        },
+        {
+          "challenge": "FLIGHT PROGRESS",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "flight-progress"
+        },
+        {
+          "challenge": "STEP FL",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "step-fl"
+        },
+        {
+          "challenge": "NAV ACCURACY · RADAR TILT",
+          "response": "MONITOR · ADJUST",
+          "sourcePage": 2,
+          "id": "nav-accuracy-radar-tilt"
+        },
+        {
+          "challenge": "FMA · MACH",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "fma-mach"
+        },
+        {
+          "challenge": "THRUST",
+          "response": "SET FOR MACH",
+          "sourcePage": 2,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "thrust"
+        }
+      ]
+    },
+    {
+      "id": "descent-preparation",
+      "name": "DESCENT PREPARATION",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "WX · LANDING INFO · CHARTS",
+          "response": "OBTAIN",
+          "sourcePage": 2,
+          "id": "wx-landing-info-charts"
+        },
+        {
+          "challenge": "APPR · STAR · TRANS · VIA",
+          "response": "ENTER",
+          "sourcePage": 2,
+          "id": "appr-star-trans-via"
+        },
+        {
+          "challenge": "F-PLN · DES WIND",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "f-pln-des-wind"
+        },
+        {
+          "challenge": "PERF CRZ · DES",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "perf-crz-des"
+        },
+        {
+          "challenge": "PERF APPR · QNH · TEMP · WIND",
+          "response": "ENTER",
+          "sourcePage": 2,
+          "id": "perf-appr-qnh-temp-wind"
+        },
+        {
+          "challenge": "MINIMUM · LDG CONF",
+          "response": "INSERT · AS REQD",
+          "sourcePage": 2,
+          "id": "minimum-ldg-conf"
+        },
+        {
+          "challenge": "PERF GO-AROUND",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "perf-go-around"
+        },
+        {
+          "challenge": "RADIO NAV · SEC F-PLN",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "radio-nav-sec-f-pln"
+        },
+        {
+          "challenge": "LDG ELEV",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "ldg-elev"
+        },
+        {
+          "challenge": "AUTO BRK",
+          "response": "LOW / MED",
+          "sourcePage": 2,
+          "id": "auto-brk"
+        },
+        {
+          "challenge": "APPROACH BRIEFING",
+          "response": "CONFIRM",
+          "sourcePage": 2,
+          "id": "approach-briefing"
+        },
+        {
+          "challenge": "TERR · RADAR · ANTI-ICE",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "terr-radar-anti-ice"
+        }
+      ]
+    },
+    {
+      "id": "descent",
+      "name": "DESCENT",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "DESCENT CLEARANCE · FCU ALT",
+          "response": "OBTAIN · SET",
+          "sourcePage": 2,
+          "id": "descent-clearance-fcu-alt"
+        },
+        {
+          "challenge": "ALT KNOB",
+          "response": "PUSH (DES) / PULL",
+          "sourcePage": 2,
+          "id": "alt-knob"
+        },
+        {
+          "challenge": "MCDU PF · PM",
+          "response": "PROG/PERF · F-PLN",
+          "sourcePage": 2,
+          "id": "mcdu-pf-pm"
+        },
+        {
+          "challenge": "FMA · THR IDLE",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "fma-thr-idle"
+        },
+        {
+          "challenge": "THRUST",
+          "response": "IDLE / AS REQD",
+          "sourcePage": 2,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "thrust"
+        },
+        {
+          "challenge": "BARO · ECAM STS",
+          "response": "SET · CHECK",
+          "sourcePage": 2,
+          "id": "baro-ecam-sts"
+        },
+        {
+          "challenge": "FL100 · LAND LTS · SEAT BELTS",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "fl100-land-lts-seat-belts"
+        },
+        {
+          "challenge": "EFIS CSTR · LS",
+          "response": "ON · AS REQD",
+          "sourcePage": 2,
+          "id": "efis-cstr-ls"
+        },
+        {
+          "challenge": "NAVAIDS · NAV ACCURACY",
+          "response": "SELECT · CHECK",
+          "sourcePage": 2,
+          "id": "navaids-nav-accuracy"
+        },
+        {
+          "challenge": "APPROACH CHECKLIST",
+          "response": "COMPLETE",
+          "sourcePage": 2,
+          "id": "approach-checklist"
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "name": "APPROACH",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "APPROACH PHASE",
+          "response": "CHECK ACTIVE",
+          "sourcePage": 2,
+          "id": "approach-phase"
+        },
+        {
+          "challenge": "SPEED BRAKES · RADAR",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "speed-brakes-radar"
+        },
+        {
+          "challenge": "TCAS",
+          "response": "TA/RA",
+          "sourcePage": 2,
+          "id": "tcas"
+        },
+        {
+          "challenge": "FLAPS 1 · FLAPS 2",
+          "response": "SELECT",
+          "sourcePage": 2,
+          "id": "flaps-1-flaps-2"
+        },
+        {
+          "challenge": "LANDING GEAR",
+          "response": "DOWN",
+          "sourcePage": 2,
+          "id": "landing-gear"
+        },
+        {
+          "challenge": "AUTO BRAKE",
+          "response": "CONFIRM",
+          "sourcePage": 2,
+          "id": "auto-brake"
+        },
+        {
+          "challenge": "GROUND SPOILERS",
+          "response": "ARM",
+          "sourcePage": 2,
+          "id": "ground-spoilers"
+        },
+        {
+          "challenge": "NOSE · RWY TURN OFF",
+          "response": "T.O · ON",
+          "sourcePage": 2,
+          "id": "nose-rwy-turn-off"
+        },
+        {
+          "challenge": "FLAPS 3 · WHEEL SD",
+          "response": "SELECT · CHECK",
+          "sourcePage": 2,
+          "id": "flaps-3-wheel-sd"
+        },
+        {
+          "challenge": "FLAPS FULL",
+          "response": "SELECT",
+          "sourcePage": 2,
+          "id": "flaps-full"
+        },
+        {
+          "challenge": "A/THR · SPEED",
+          "response": "CHECK (VAPP)",
+          "sourcePage": 2,
+          "note": "Autothrust on (AT)",
+          "when": {
+            "autothrust": "on"
+          },
+          "id": "a-thr-speed"
+        },
+        {
+          "challenge": "THRUST",
+          "response": "HOLD VAPP",
+          "sourcePage": 2,
+          "note": "Without autothrust (NO AT)",
+          "when": {
+            "autothrust": "off"
+          },
+          "id": "thrust"
+        },
+        {
+          "challenge": "WING ANTI-ICE · TABLE",
+          "response": "OFF · STOW",
+          "sourcePage": 2,
+          "id": "wing-anti-ice-table"
+        },
+        {
+          "challenge": "CABIN REPORT · LDG MEMO",
+          "response": "CHECK",
+          "sourcePage": 2,
+          "id": "cabin-report-ldg-memo"
+        }
+      ]
+    },
+    {
+      "id": "approach-type-choose-one",
+      "name": "APPROACH TYPE · CHOOSE ONE",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "type": "heading",
+          "text": "OPTION 1 · ILS (LOC/GS)",
+          "when": {
+            "approach": "ils"
+          },
+          "id": "option-1-ils-loc-gs"
+        },
+        {
+          "challenge": "APPR PB · BOTH AP",
+          "response": "PRESS · ENGAGE",
+          "sourcePage": 2,
+          "when": {
+            "approach": "ils"
+          },
+          "id": "appr-pb-both-ap"
+        },
+        {
+          "challenge": "LOC · G/S",
+          "response": "ARMED · CAPTURE",
+          "sourcePage": 2,
+          "when": {
+            "approach": "ils"
+          },
+          "id": "loc-g-s"
+        },
+        {
+          "challenge": "GO-AROUND ALT",
+          "response": "SET",
+          "sourcePage": 2,
+          "when": {
+            "approach": "ils"
+          },
+          "id": "go-around-alt"
+        },
+        {
+          "challenge": "LAND MODE",
+          "response": "ENGAGED",
+          "sourcePage": 2,
+          "when": {
+            "approach": "ils"
+          },
+          "id": "land-mode"
+        },
+        {
+          "type": "heading",
+          "text": "OPTION 2 · RNAV (GNSS)",
+          "when": {
+            "approach": "rnav"
+          },
+          "id": "option-2-rnav-gnss"
+        },
+        {
+          "challenge": "PROG · RWY BRG/DIST",
+          "response": "INSERT",
+          "sourcePage": 2,
+          "when": {
+            "approach": "rnav"
+          },
+          "id": "prog-rwy-brg-dist"
+        },
+        {
+          "challenge": "APPR PB · APP NAV",
+          "response": "PRESS · ARMED",
+          "sourcePage": 2,
+          "when": {
+            "approach": "rnav"
+          },
+          "id": "appr-pb-app-nav"
+        },
+        {
+          "challenge": "FINAL APP",
+          "response": "ENGAGED",
+          "sourcePage": 2,
+          "when": {
+            "approach": "rnav"
+          },
+          "id": "final-app"
+        },
+        {
+          "challenge": "GO-AROUND ALT",
+          "response": "SET",
+          "sourcePage": 2,
+          "when": {
+            "approach": "rnav"
+          },
+          "id": "go-around-alt-2"
+        },
+        {
+          "type": "heading",
+          "text": "OPTION 3 · NPA (TRK/FPA)",
+          "when": {
+            "approach": "npa"
+          },
+          "id": "option-3-npa-trk-fpa"
+        },
+        {
+          "challenge": "NAV / LOC",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "when": {
+            "approach": "npa"
+          },
+          "id": "nav-loc"
+        },
+        {
+          "challenge": "TRK-FPA (BIRD)",
+          "response": "SELECT",
+          "sourcePage": 2,
+          "when": {
+            "approach": "npa"
+          },
+          "id": "trk-fpa-bird"
+        },
+        {
+          "challenge": "FPA · PULL",
+          "response": "SET · ENGAGED",
+          "sourcePage": 2,
+          "when": {
+            "approach": "npa"
+          },
+          "id": "fpa-pull"
+        },
+        {
+          "challenge": "GO-AROUND ALT",
+          "response": "SET",
+          "sourcePage": 2,
+          "when": {
+            "approach": "npa"
+          },
+          "id": "go-around-alt-3"
+        },
+        {
+          "type": "heading",
+          "text": "BOTH OPTIONS · CONTINUE",
+          "id": "both-options-continue"
+        },
+        {
+          "challenge": "MINIMUM",
+          "response": "CONTINUE / GO-AROUND",
+          "sourcePage": 2,
+          "id": "minimum"
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "LANDING",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "CABIN CREW",
+          "response": "ADVISED",
+          "sourcePage": 2,
+          "id": "cabin-crew"
+        },
+        {
+          "challenge": "AUTO THRUST · AUTOBRAKE",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "auto-thrust-autobrake"
+        },
+        {
+          "challenge": "MISSED APPR ALT · ECAM MEMO",
+          "response": "SET · CHECK",
+          "sourcePage": 2,
+          "id": "missed-appr-alt-ecam-memo"
+        }
+      ]
+    },
+    {
+      "id": "go-around",
+      "name": "GO-AROUND",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "THRUST LEVERS",
+          "response": "TOGA",
+          "sourcePage": 2,
+          "id": "thrust-levers"
+        },
+        {
+          "challenge": "ROTATION · FLAPS",
+          "response": "PERFORM · −1 STAGE",
+          "sourcePage": 2,
+          "id": "rotation-flaps"
+        },
+        {
+          "challenge": "POSITIVE CLIMB",
+          "response": "GEAR UP",
+          "sourcePage": 2,
+          "id": "positive-climb"
+        },
+        {
+          "challenge": "NAV / HDG · AP",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "nav-hdg-ap"
+        },
+        {
+          "challenge": "THRUST LEVERS",
+          "response": "CL",
+          "sourcePage": 2,
+          "id": "thrust-levers-2"
+        },
+        {
+          "challenge": "F · S SPEED",
+          "response": "FLAPS 1 · 0",
+          "sourcePage": 2,
+          "id": "f-s-speed"
+        },
+        {
+          "challenge": "SPOILERS · NOSE · RWY T/O",
+          "response": "DISARM · OFF",
+          "sourcePage": 2,
+          "id": "spoilers-nose-rwy-t-o"
+        }
+      ],
+      "alternate": true,
+      "note": "Use for a go-around."
+    },
+    {
+      "id": "after-landing",
+      "name": "AFTER LANDING",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "GROUND SPOILERS",
+          "response": "DISARM",
+          "sourcePage": 2,
+          "id": "ground-spoilers"
+        },
+        {
+          "challenge": "LAND · STROBE · NOSE",
+          "response": "OFF · AUTO · TAXI",
+          "sourcePage": 2,
+          "id": "land-strobe-nose"
+        },
+        {
+          "challenge": "RADAR · PWS",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "radar-pws"
+        },
+        {
+          "challenge": "ENG START · FLAPS",
+          "response": "NORM · RETRACT",
+          "sourcePage": 2,
+          "id": "eng-start-flaps"
+        },
+        {
+          "challenge": "TCAS · ATC",
+          "response": "STBY · AS REQD",
+          "sourcePage": 2,
+          "id": "tcas-atc"
+        },
+        {
+          "challenge": "APU",
+          "response": "START",
+          "sourcePage": 2,
+          "id": "apu"
+        },
+        {
+          "challenge": "ANTI-ICE · BRAKE TEMP/FANS",
+          "response": "AS REQD",
+          "sourcePage": 2,
+          "id": "anti-ice-brake-temp-fans"
+        }
+      ]
+    },
+    {
+      "id": "parking",
+      "name": "PARKING",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "ACCU PRESS · PARK BRK",
+          "response": "CHECK · ON",
+          "sourcePage": 2,
+          "id": "accu-press-park-brk"
+        },
+        {
+          "challenge": "ANTI-ICE",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "APU BLEED",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "apu-bleed"
+        },
+        {
+          "challenge": "ALL ENG MASTERS",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "all-eng-masters"
+        },
+        {
+          "challenge": "SLIDES",
+          "response": "DISARMED",
+          "sourcePage": 2,
+          "id": "slides"
+        },
+        {
+          "challenge": "SEAT BELTS · BEACON",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "seat-belts-beacon"
+        },
+        {
+          "challenge": "FUEL PUMPS · ATC",
+          "response": "OFF · STBY",
+          "sourcePage": 2,
+          "id": "fuel-pumps-atc"
+        }
+      ]
+    },
+    {
+      "id": "securing",
+      "name": "SECURING",
+      "description": "iniBuilds A330 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "PARK BRK",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "park-brk"
+        },
+        {
+          "challenge": "OXYGEN CREW SUPPLY",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "oxygen-crew-supply"
+        },
+        {
+          "challenge": "ALL IR MODE",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "all-ir-mode"
+        },
+        {
+          "challenge": "EXTERIOR LIGHTS",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "exterior-lights"
+        },
+        {
+          "challenge": "APU BLEED · EXT PWR",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "apu-bleed-ext-pwr"
+        },
+        {
+          "challenge": "APU MASTER SW",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "apu-master-sw"
+        },
+        {
+          "challenge": "EMER EXIT LT · SIGNS",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "emer-exit-lt-signs"
+        },
+        {
+          "challenge": "BAT 1 · 2 · APU",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "bat-1-2-apu"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "normal-checklist",
+      "title": "Airbus A330-300 - Maverick1994",
+      "path": "references/inibuilds-a330-300/normal-checklist.pdf"
+    }
+  ]
+}

@@ -49,6 +49,7 @@ public final class ChecklistProgress {
         return true;
     }
     public void resetAll() { checked.clear(); completed.clear(); }
+    public void reopen(String aircraftId, String checklistId) { completed.remove(key(aircraftId, checklistId)); }
     public Set<String> checkedSnapshot() { return new HashSet<>(checked); }
     public Set<String> completedSnapshot() { return new HashSet<>(completed); }
 }

@@ -1,0 +1,3715 @@
+{
+  "id": "pmdg-777",
+  "manufacturer": "Boeing",
+  "name": "Boeing 777",
+  "operator": "PMDG / JayDee",
+  "source": "JD CL - B777 - PMDG - 2024 - 1.37.3.pdf",
+  "notice": "Imported from the supplied JayDee 1.37.3 checklist and procedures for PMDG 777. Normal checklist boxes are the default view; full procedures and reference schedules are available separately. Choose SimBrief or manual route setup for the procedure view. Source wording, placeholders, panel headings, and guidance are retained. Source legend and setup guidance remain on page 1 of the original PDF.",
+  "legend": "AS REQ / DES = as required / desired. Optional rows do not block completion. Source panel headings and reminders are informational. Fill-in responses remain prompts to verify.",
+  "checklists": [
+    {
+      "id": "preflight-checklist",
+      "name": "PREFLIGHT CHECKLIST",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "Oxygen",
+          "response": "TESTED, 100%",
+          "sourcePage": 4,
+          "id": "oxygen"
+        },
+        {
+          "challenge": "Flight Instruments",
+          "response": "Heading ___ | Altimeter ___",
+          "sourcePage": 4,
+          "id": "flight-instruments"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "SET",
+          "sourcePage": 4,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Fuel Control Switches",
+          "response": "CUTOFF",
+          "sourcePage": 4,
+          "id": "fuel-control-switches"
+        }
+      ]
+    },
+    {
+      "id": "before-start-checklist",
+      "name": "BEFORE START CHECKLIST",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "Flight Deck Door",
+          "response": "CLOSED & LOCKED",
+          "sourcePage": 4,
+          "id": "flight-deck-door"
+        },
+        {
+          "challenge": "Passenger Signs",
+          "response": "___",
+          "sourcePage": 4,
+          "id": "passenger-signs"
+        },
+        {
+          "challenge": "MCP",
+          "response": "SPD ___ | HDG ___ | ALT ___",
+          "sourcePage": 4,
+          "id": "mcp"
+        },
+        {
+          "challenge": "Takeoff Speeds",
+          "response": "(from CDU) V1 ___ | VR ___ | V2 ___",
+          "sourcePage": 4,
+          "id": "takeoff-speeds"
+        },
+        {
+          "challenge": "CDU Preflight",
+          "response": "COMPLETE",
+          "sourcePage": 4,
+          "id": "cdu-preflight"
+        },
+        {
+          "challenge": "Trim",
+          "response": "ELEVATOR TRIM ___ | 0 | 0",
+          "sourcePage": 4,
+          "id": "trim"
+        },
+        {
+          "challenge": "Taxi & Takeoff Briefing",
+          "response": "COMPLETE",
+          "sourcePage": 4,
+          "id": "taxi-takeoff-briefing"
+        },
+        {
+          "challenge": "Beacon",
+          "response": "ON",
+          "sourcePage": 4,
+          "id": "beacon"
+        }
+      ]
+    },
+    {
+      "id": "before-taxi-checklist",
+      "name": "BEFORE TAXI CHECKLIST",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "Anti-Ice",
+          "response": "___",
+          "sourcePage": 4,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "Recall",
+          "response": "CHECKED",
+          "sourcePage": 4,
+          "id": "recall"
+        },
+        {
+          "challenge": "Auto Brake",
+          "response": "RTO",
+          "sourcePage": 4,
+          "id": "auto-brake"
+        },
+        {
+          "challenge": "Flight Controls",
+          "response": "CHECKED",
+          "sourcePage": 4,
+          "id": "flight-controls"
+        },
+        {
+          "challenge": "Ground Equipment",
+          "response": "CLEAR",
+          "sourcePage": 4,
+          "id": "ground-equipment"
+        }
+      ]
+    },
+    {
+      "id": "before-takeoff-checklist",
+      "name": "BEFORE TAKEOFF CHECKLIST",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Flaps",
+          "response": "SET FOR T.O. | 5",
+          "sourcePage": 5,
+          "id": "flaps"
+        }
+      ]
+    },
+    {
+      "id": "after-takeoff-checklist",
+      "name": "AFTER TAKEOFF CHECKLIST",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Landing Gear",
+          "response": "UP",
+          "sourcePage": 5,
+          "id": "landing-gear"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "UP",
+          "sourcePage": 5,
+          "id": "flaps"
+        }
+      ]
+    },
+    {
+      "id": "descent-checklist",
+      "name": "DESCENT CHECKLIST",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "EICAS RECALL",
+          "response": "CHECK",
+          "sourcePage": 5,
+          "id": "eicas-recall"
+        },
+        {
+          "challenge": "Notes",
+          "response": "CHECK",
+          "sourcePage": 5,
+          "id": "notes"
+        },
+        {
+          "challenge": "Autobrake",
+          "response": "???",
+          "sourcePage": 5,
+          "id": "autobrake"
+        },
+        {
+          "challenge": "Landing Data",
+          "response": "VERF ??? | MINIMUMS ???",
+          "sourcePage": 5,
+          "id": "landing-data"
+        },
+        {
+          "challenge": "Approach Briefing",
+          "response": "COMPLETE",
+          "sourcePage": 5,
+          "id": "approach-briefing"
+        }
+      ]
+    },
+    {
+      "id": "approach-checklist",
+      "name": "APPROACH CHECKLIST",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Altimeters",
+          "response": "___",
+          "sourcePage": 5,
+          "id": "altimeters"
+        }
+      ]
+    },
+    {
+      "id": "landing-checklist",
+      "name": "LANDING CHECKLIST",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "Speed Brakes",
+          "response": "ARMED",
+          "sourcePage": 6,
+          "id": "speed-brakes"
+        },
+        {
+          "challenge": "Landing Gear",
+          "response": "DOWN",
+          "sourcePage": 6,
+          "id": "landing-gear"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "SET FOR LANDING | 25 or 30",
+          "sourcePage": 6,
+          "id": "flaps"
+        }
+      ]
+    },
+    {
+      "id": "shutdown-checklist",
+      "name": "SHUTDOWN CHECKLIST",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "Hydraulic Panel",
+          "response": "SET",
+          "sourcePage": 6,
+          "id": "hydraulic-panel"
+        },
+        {
+          "challenge": "Fuel Pumps",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "UP",
+          "sourcePage": 6,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "AS REQ",
+          "sourcePage": 6,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Fuel Control Switches",
+          "response": "CUTOFF",
+          "sourcePage": 6,
+          "id": "fuel-control-switches"
+        },
+        {
+          "challenge": "Weather Radar",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "weather-radar"
+        }
+      ]
+    },
+    {
+      "id": "securing-checklist",
+      "name": "SECURING CHECKLIST",
+      "description": "JayDee PMDG 777 / page 7",
+      "sourcePages": [
+        7
+      ],
+      "items": [
+        {
+          "challenge": "ADIRU",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "adiru"
+        },
+        {
+          "challenge": "Emergency Lights",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "emergency-lights"
+        },
+        {
+          "challenge": "Packs",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "packs"
+        }
+      ]
+    }
+  ],
+  "extendedChecklists": [
+    {
+      "id": "extended-safety-inspection-power-up",
+      "name": "SAFETY INSPECTION & POWER UP",
+      "description": "JayDee PMDG 777 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "FMC PMDG Options | Panel State",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "fmc-pmdg-options-panel-state"
+        },
+        {
+          "challenge": "Tablet - Ground Operations",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "tablet-ground-operations"
+        },
+        {
+          "challenge": "set GPU | ACU | Doors | Stairs | Jetway | Maintenance",
+          "response": "",
+          "sourcePage": 2,
+          "id": "set-gpu-acu-doors-stairs-jetway-maintenance"
+        },
+        {
+          "type": "heading",
+          "text": "SAFETY INSPECTION & POWER UP",
+          "sourcePage": 2,
+          "id": "safety-inspection-power-up"
+        },
+        {
+          "type": "heading",
+          "text": "OVERHEAD PANEL",
+          "sourcePage": 2,
+          "id": "overhead-panel"
+        },
+        {
+          "challenge": "Battery Switch",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "battery-switch"
+        },
+        {
+          "challenge": "Bus Tie Switches",
+          "response": "BOTH AUTO",
+          "sourcePage": 2,
+          "id": "bus-tie-switches"
+        },
+        {
+          "challenge": "Hydraulic Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "hydraulic-panel"
+        },
+        {
+          "challenge": "C1 & C2 Elec Pump Switches",
+          "response": "BOTH OFF",
+          "sourcePage": 2,
+          "id": "c1-c2-elec-pump-switches"
+        },
+        {
+          "challenge": "Demand Pump Selectors",
+          "response": "ALL 4 OFF",
+          "sourcePage": 2,
+          "id": "demand-pump-selectors"
+        },
+        {
+          "challenge": "Wiper Selectors",
+          "response": "BOTH OFF",
+          "sourcePage": 2,
+          "id": "wiper-selectors"
+        },
+        {
+          "challenge": "NAV Lights Switch (OH)",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "nav-lights-switch-oh"
+        },
+        {
+          "type": "heading",
+          "text": "PEDESTAL PANEL",
+          "sourcePage": 2,
+          "id": "pedestal-panel"
+        },
+        {
+          "challenge": "Landing Gear Lever",
+          "response": "DOWN",
+          "sourcePage": 2,
+          "id": "landing-gear-lever"
+        },
+        {
+          "challenge": "Alernate Flaps Selector",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "alernate-flaps-selector"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "AS DES | SET",
+          "sourcePage": 2,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Throttles",
+          "response": "IDLE / REV STOWED",
+          "sourcePage": 2,
+          "id": "throttles"
+        },
+        {
+          "challenge": "Fuel Control Switches",
+          "response": "CUT-OFF",
+          "sourcePage": 2,
+          "id": "fuel-control-switches"
+        },
+        {
+          "type": "heading",
+          "text": "OVERHEAD PANEL",
+          "sourcePage": 2,
+          "id": "overhead-panel-2"
+        },
+        {
+          "challenge": "EXT PWR Primary & Secondary",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "ext-pwr-primary-secondary"
+        },
+        {
+          "challenge": "APU",
+          "response": "START",
+          "sourcePage": 2,
+          "id": "apu"
+        },
+        {
+          "challenge": "APU selector → hold START → release to ON",
+          "response": "",
+          "sourcePage": 2,
+          "id": "apu-selector-hold-start-release-to-on"
+        },
+        {
+          "type": "note",
+          "text": "wait for APU Power to come live",
+          "sourcePage": 2,
+          "id": "wait-for-apu-power-to-come-live"
+        },
+        {
+          "challenge": "verify APU Generator Switches = ON",
+          "response": "",
+          "sourcePage": 2,
+          "id": "verify-apu-generator-switches-on"
+        },
+        {
+          "challenge": "EXT PWR Primary & Secondary",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "ext-pwr-primary-secondary-2"
+        }
+      ]
+    },
+    {
+      "id": "extended-preflight-part-i",
+      "name": "PREFLIGHT - Part I",
+      "description": "JayDee PMDG 777 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "type": "heading",
+          "text": "OVERHEAD PANEL SCAN",
+          "sourcePage": 2,
+          "id": "overhead-panel-scan"
+        },
+        {
+          "type": "note",
+          "text": "(top to bottom, left to right)",
+          "sourcePage": 2,
+          "id": "top-to-bottom-left-to-right"
+        },
+        {
+          "challenge": "Maintenance Panel",
+          "response": "ALL GUARDS CLOSED & LIGHTS OFF",
+          "sourcePage": 2,
+          "id": "maintenance-panel"
+        },
+        {
+          "type": "heading",
+          "text": "LEFT ROW",
+          "sourcePage": 2,
+          "id": "left-row"
+        },
+        {
+          "challenge": "ADIRU Switch",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "adiru-switch"
+        },
+        {
+          "challenge": "Thrust Asym Comp",
+          "response": "AUTO",
+          "sourcePage": 2,
+          "id": "thrust-asym-comp"
+        },
+        {
+          "challenge": "Primary Flight Computers",
+          "response": "AUTO & GUARDED | no „DISC“",
+          "sourcePage": 2,
+          "id": "primary-flight-computers"
+        },
+        {
+          "challenge": "Electrical Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "electrical-panel"
+        },
+        {
+          "challenge": "Battery Switch",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "battery-switch"
+        },
+        {
+          "challenge": "IFE/PASS Seats",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "ife-pass-seats"
+        },
+        {
+          "challenge": "Cabin Utility",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "cabin-utility"
+        },
+        {
+          "challenge": "APU",
+          "response": "START (if not already)",
+          "sourcePage": 2,
+          "id": "apu"
+        },
+        {
+          "challenge": "APU Generator Switches",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "apu-generator-switches"
+        },
+        {
+          "challenge": "L & R Bus Tie Switches",
+          "response": "AUTO",
+          "sourcePage": 2,
+          "id": "l-r-bus-tie-switches"
+        },
+        {
+          "challenge": "EXT PWR Switches",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "ext-pwr-switches"
+        },
+        {
+          "challenge": "L & R Main Generators",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "l-r-main-generators"
+        },
+        {
+          "challenge": "L & R Backup Generators",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "l-r-backup-generators"
+        },
+        {
+          "challenge": "L & R Drive Disc Swicthes",
+          "response": "„DRIVE“ & GUARDED",
+          "sourcePage": 2,
+          "id": "l-r-drive-disc-swicthes"
+        },
+        {
+          "challenge": "Left Wiper",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "left-wiper"
+        },
+        {
+          "type": "heading",
+          "text": "LEFT CENTER ROW",
+          "sourcePage": 2,
+          "id": "left-center-row"
+        },
+        {
+          "challenge": "Voice Recorder",
+          "response": "AUTO",
+          "sourcePage": 2,
+          "id": "voice-recorder"
+        },
+        {
+          "challenge": "Emergency Light",
+          "response": "ARMED & GUARDED",
+          "sourcePage": 2,
+          "id": "emergency-light"
+        },
+        {
+          "challenge": "Service Interphone",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "service-interphone"
+        },
+        {
+          "challenge": "Pass Oxygen",
+          "response": "GUARDED (don´t touch button)",
+          "sourcePage": 2,
+          "id": "pass-oxygen"
+        },
+        {
+          "challenge": "Window Heat",
+          "response": "ALL 4 ON | no „INOP“",
+          "sourcePage": 2,
+          "id": "window-heat"
+        },
+        {
+          "challenge": "Ram Air Turbine",
+          "response": "GUARDED | no „UNLKD“",
+          "sourcePage": 2,
+          "id": "ram-air-turbine"
+        },
+        {
+          "challenge": "Hydraulic Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "hydraulic-panel"
+        },
+        {
+          "challenge": "L & R Primary Eng Pump",
+          "response": "ON | but „FAULT“",
+          "sourcePage": 2,
+          "id": "l-r-primary-eng-pump"
+        },
+        {
+          "challenge": "C1 & C2 Elec Pump Switches",
+          "response": "BOTH OFF",
+          "sourcePage": 2,
+          "id": "c1-c2-elec-pump-switches"
+        },
+        {
+          "challenge": "Demand Pump Selectors",
+          "response": "ALL 4 OFF",
+          "sourcePage": 2,
+          "id": "demand-pump-selectors"
+        },
+        {
+          "challenge": "No Electronics | Smoking",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "no-electronics-smoking"
+        },
+        {
+          "challenge": "Seat Belts",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "seat-belts"
+        },
+        {
+          "challenge": "Left Lighting Panel",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "left-lighting-panel"
+        },
+        {
+          "challenge": "Interior Lights",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "interior-lights"
+        },
+        {
+          "challenge": "Storm Light",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "storm-light"
+        },
+        {
+          "challenge": "Landing Light Switches",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "landing-light-switches"
+        },
+        {
+          "type": "heading",
+          "text": "RIGHT CENTER ROW",
+          "sourcePage": 2,
+          "id": "right-center-row"
+        },
+        {
+          "challenge": "Cargo Fire Arm Switches",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "cargo-fire-arm-switches"
+        },
+        {
+          "challenge": "Cargo Fire Discharge Switch",
+          "response": "GUARDED",
+          "sourcePage": 2,
+          "id": "cargo-fire-discharge-switch"
+        },
+        {
+          "challenge": "APU Fire Discharge Handle",
+          "response": "IN",
+          "sourcePage": 2,
+          "id": "apu-fire-discharge-handle"
+        },
+        {
+          "challenge": "Fire / Overheat Test Button",
+          "response": "PRESS→VERIFY→PRESS",
+          "sourcePage": 2,
+          "id": "fire-overheat-test-button"
+        },
+        {
+          "challenge": "Engine Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "engine-panel"
+        },
+        {
+          "challenge": "EEC Mode Switches",
+          "response": "NORM & GUARDED",
+          "sourcePage": 2,
+          "id": "eec-mode-switches"
+        },
+        {
+          "challenge": "START Selectors",
+          "response": "NORM",
+          "sourcePage": 2,
+          "id": "start-selectors"
+        },
+        {
+          "challenge": "Autostart",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "autostart"
+        },
+        {
+          "challenge": "Fuel & Jettison Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "fuel-jettison-panel"
+        },
+        {
+          "challenge": "Fuel Jettison L & R Nozzles",
+          "response": "OFF | no „VALVE“",
+          "sourcePage": 2,
+          "id": "fuel-jettison-l-r-nozzles"
+        },
+        {
+          "challenge": "Fuel to Remain",
+          "response": "OFF | IN",
+          "sourcePage": 2,
+          "id": "fuel-to-remain"
+        },
+        {
+          "challenge": "Fuel Jettsion ARM",
+          "response": "OFF | no „FAULT“",
+          "sourcePage": 2,
+          "id": "fuel-jettsion-arm"
+        },
+        {
+          "challenge": "Crossfeed Switches",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "crossfeed-switches"
+        },
+        {
+          "challenge": "Fuel Pump Switches",
+          "response": "OFF | „PRESS“",
+          "sourcePage": 2,
+          "id": "fuel-pump-switches"
+        },
+        {
+          "type": "note",
+          "text": "FWD PUMP \"PRESS\" Light is OFF if APU is on",
+          "sourcePage": 2,
+          "id": "fwd-pump-press-light-is-off-if-apu-is-on"
+        },
+        {
+          "challenge": "Anti-Ice Selectors",
+          "response": "ALL 3 AUTO",
+          "sourcePage": 2,
+          "id": "anti-ice-selectors"
+        },
+        {
+          "challenge": "Right Lighting Panel",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "right-lighting-panel"
+        },
+        {
+          "challenge": "Indicator Light Switch",
+          "response": "HOLD TEST→VERIFY→RELEASE",
+          "sourcePage": 2,
+          "id": "indicator-light-switch"
+        },
+        {
+          "challenge": "Indicator Light Switch",
+          "response": "DIM AS DES",
+          "sourcePage": 2,
+          "id": "indicator-light-switch-2"
+        },
+        {
+          "challenge": "NAV Light",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "nav-light"
+        },
+        {
+          "challenge": "Logo & Wing Light",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "logo-wing-light"
+        },
+        {
+          "challenge": "Beacon",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "beacon"
+        },
+        {
+          "challenge": "Taxi | Runway Turnoff | Strobe Lights",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "taxi-runway-turnoff-strobe-lights"
+        },
+        {
+          "type": "heading",
+          "text": "RIGHT ROW",
+          "sourcePage": 2,
+          "id": "right-row"
+        },
+        {
+          "challenge": "Air Condition Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "air-condition-panel"
+        },
+        {
+          "challenge": "Equipment Cooling",
+          "response": "AUTO | no „OVRD“",
+          "sourcePage": 2,
+          "id": "equipment-cooling"
+        },
+        {
+          "challenge": "Gasper",
+          "response": "ON",
+          "sourcePage": 2,
+          "id": "gasper"
+        },
+        {
+          "challenge": "Recirc Fans",
+          "response": "ON | OFF if ACU is connected",
+          "sourcePage": 2,
+          "id": "recirc-fans"
+        },
+        {
+          "challenge": "Temp Selectors",
+          "response": "AS DES",
+          "sourcePage": 2,
+          "id": "temp-selectors"
+        },
+        {
+          "challenge": "L & R Pack",
+          "response": "AUTO | no „OFF“",
+          "sourcePage": 2,
+          "id": "l-r-pack"
+        },
+        {
+          "challenge": "L & R Trim Air",
+          "response": "ON | no „FAULT“",
+          "sourcePage": 2,
+          "id": "l-r-trim-air"
+        },
+        {
+          "challenge": "L, C & R Bleed Isolation",
+          "response": "AUTO | no „CLOSED“",
+          "sourcePage": 2,
+          "id": "l-c-r-bleed-isolation"
+        },
+        {
+          "challenge": "L & R Engine Bleed",
+          "response": "ON | but „OFF“",
+          "sourcePage": 2,
+          "id": "l-r-engine-bleed"
+        },
+        {
+          "challenge": "APU Bleed",
+          "response": "AUTO | no „OFF“",
+          "sourcePage": 2,
+          "id": "apu-bleed"
+        },
+        {
+          "challenge": "Pressurization Panel",
+          "response": "SET",
+          "sourcePage": 2,
+          "id": "pressurization-panel"
+        },
+        {
+          "challenge": "FWD & AFT Outflow Valve",
+          "response": "AUTO | no „MAN“",
+          "sourcePage": 2,
+          "id": "fwd-aft-outflow-valve"
+        },
+        {
+          "challenge": "Landing Altitude Selector",
+          "response": "OFF | IN",
+          "sourcePage": 2,
+          "id": "landing-altitude-selector"
+        },
+        {
+          "challenge": "Wiper Right",
+          "response": "OFF",
+          "sourcePage": 2,
+          "id": "wiper-right"
+        }
+      ]
+    },
+    {
+      "id": "extended-fmc-setup-part-i-with-simbrief",
+      "name": "FMC SETUP - Part I - with SimBrief",
+      "description": "JayDee PMDG 777 / page 2",
+      "sourcePages": [
+        2
+      ],
+      "items": [
+        {
+          "challenge": "ATIS & ATC Clearance (IFR)",
+          "response": "AS REQ",
+          "sourcePage": 2,
+          "id": "atis-atc-clearance-ifr"
+        },
+        {
+          "type": "heading",
+          "text": "TABLET- EFB",
+          "sourcePage": 2,
+          "id": "tablet-efb"
+        },
+        {
+          "challenge": "import SimBrief and check OFP",
+          "response": "",
+          "sourcePage": 2,
+          "id": "import-simbrief-and-check-ofp"
+        },
+        {
+          "challenge": "load Weather if desired",
+          "response": "",
+          "sourcePage": 2,
+          "id": "load-weather-if-desired"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - IDENT PAGE",
+          "sourcePage": 2,
+          "id": "fmc-ident-page"
+        },
+        {
+          "challenge": "Menu → FMC (→ INDEX → IDENT)",
+          "response": "",
+          "sourcePage": 2,
+          "id": "menu-fmc-index-ident"
+        },
+        {
+          "challenge": "verify Data",
+          "response": "",
+          "sourcePage": 2,
+          "id": "verify-data"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - POS INIT PAGE",
+          "sourcePage": 2,
+          "id": "fmc-pos-init-page"
+        },
+        {
+          "challenge": "POS INIT from IDENT Page (or → Menu → FMC → INDEX → POS INIT)",
+          "response": "",
+          "sourcePage": 2,
+          "id": "pos-init-from-ident-page"
+        },
+        {
+          "challenge": "set GPS POS with LSK4R → LSK5R",
+          "response": "",
+          "sourcePage": 2,
+          "id": "set-gps-pos-with-lsk4r-lsk5r"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - ROUTE - Page",
+          "sourcePage": 2,
+          "id": "fmc-route-page"
+        },
+        {
+          "challenge": "ROUTE from POS INIT Page",
+          "response": "",
+          "sourcePage": 2,
+          "id": "route-from-pos-init-page"
+        },
+        {
+          "challenge": "ROUTE REQUEST → choose SimBrief Route",
+          "response": "",
+          "sourcePage": 2,
+          "id": "route-request-choose-simbrief-route"
+        },
+        {
+          "challenge": "SET PAYLOAD and → SET FUEL",
+          "response": "",
+          "sourcePage": 2,
+          "id": "set-payload-and-set-fuel"
+        },
+        {
+          "challenge": "SELECT RTE (back to RTE1 Page) → ACTIVATE + EXEC",
+          "response": "",
+          "sourcePage": 2,
+          "id": "select-rte-back-to-rte1-page-activate-exec"
+        },
+        {
+          "challenge": "ROUTE UPLINK → LOAD (wait finish Loading)",
+          "response": "",
+          "sourcePage": 2,
+          "id": "route-uplink-load-wait-finish-loading"
+        },
+        {
+          "challenge": "ACTIVATE + EXEC",
+          "response": "",
+          "sourcePage": 2,
+          "id": "activate-exec"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - DEP/ARR - Page",
+          "sourcePage": 2,
+          "id": "fmc-dep-arr-page"
+        },
+        {
+          "challenge": "select DEPARTURE & ARRIVAL",
+          "response": "",
+          "sourcePage": 2,
+          "id": "select-departure-arrival"
+        },
+        {
+          "challenge": "(optional) select ARRIVAL (optional later in flight)",
+          "response": "",
+          "sourcePage": 2,
+          "optional": true,
+          "id": "optional-select-arrival-optional-later-in-flight"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - LEGS - Page",
+          "sourcePage": 2,
+          "id": "fmc-legs-page"
+        },
+        {
+          "challenge": "check Waypoints",
+          "response": "",
+          "sourcePage": 2,
+          "id": "check-waypoints"
+        },
+        {
+          "challenge": "clear all ROUTE DISCONTINUITIES",
+          "response": "",
+          "sourcePage": 2,
+          "id": "clear-all-route-discontinuities"
+        },
+        {
+          "challenge": "(optional) clear all VECTORS (recommended for Beginners)",
+          "response": "",
+          "sourcePage": 2,
+          "optional": true,
+          "id": "optional-clear-all-vectors-recommended-for-beginners"
+        },
+        {
+          "challenge": "to clear → select next Waypoint LSK then click LSK to replace",
+          "response": "",
+          "sourcePage": 2,
+          "id": "to-clear-select-next-waypoint-lsk-then-click-lsk-to-replace"
+        },
+        {
+          "challenge": "important! ACTIVATE + EXEC after changes are made",
+          "response": "",
+          "sourcePage": 2,
+          "id": "important-activate-exec-after-changes-are-made"
+        }
+      ],
+      "when": {
+        "route-source": "simbrief"
+      }
+    },
+    {
+      "id": "extended-fmc-setup-part-i-without-simbrief",
+      "name": "FMC SETUP - Part I - without SimBrief",
+      "description": "JayDee PMDG 777 / page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "challenge": "ATIS & ATC Clearance (IFR)",
+          "response": "AS REQ",
+          "sourcePage": 3,
+          "id": "atis-atc-clearance-ifr"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - IDENT PAGE",
+          "sourcePage": 3,
+          "id": "fmc-ident-page"
+        },
+        {
+          "challenge": "Menu → FMC (→ INDEX → IDENT)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "menu-fmc-index-ident"
+        },
+        {
+          "challenge": "verify Data",
+          "response": "",
+          "sourcePage": 3,
+          "id": "verify-data"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - POS INIT PAGE",
+          "sourcePage": 3,
+          "id": "fmc-pos-init-page"
+        },
+        {
+          "challenge": "POS INIT from IDENT Page (or → Menu → FMC → INDEX → POS INIT)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "pos-init-from-ident-page"
+        },
+        {
+          "challenge": "set GPS POS with LSK4R → LSK5R",
+          "response": "",
+          "sourcePage": 3,
+          "id": "set-gps-pos-with-lsk4r-lsk5r"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - ROUTE - Page",
+          "sourcePage": 3,
+          "id": "fmc-route-page"
+        },
+        {
+          "challenge": "ROUTE from POS INIT Page",
+          "response": "",
+          "sourcePage": 3,
+          "id": "route-from-pos-init-page"
+        },
+        {
+          "challenge": "enter ORIGIN & DEST",
+          "response": "",
+          "sourcePage": 3,
+          "id": "enter-origin-dest"
+        },
+        {
+          "challenge": "ACTIVATE + EXEC",
+          "response": "",
+          "sourcePage": 3,
+          "id": "activate-exec"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - DEP/ARR - Page",
+          "sourcePage": 3,
+          "id": "fmc-dep-arr-page"
+        },
+        {
+          "challenge": "select DEPARTURE & ARRIVAL",
+          "response": "",
+          "sourcePage": 3,
+          "id": "select-departure-arrival"
+        },
+        {
+          "challenge": "(optional) select ARRIVAL (optional later in flight)",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "optional-select-arrival-optional-later-in-flight"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - LEGS - Page",
+          "sourcePage": 3,
+          "id": "fmc-legs-page"
+        },
+        {
+          "challenge": "enter Enroute Waypoints (optional - skip this step)",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "enter-enroute-waypoints-optional-skip-this-step"
+        },
+        {
+          "challenge": "clear all ROUTE DISCONTINUITIES",
+          "response": "",
+          "sourcePage": 3,
+          "id": "clear-all-route-discontinuities"
+        },
+        {
+          "challenge": "(optional) clear all VECTORS (recommended for Beginners)",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "optional-clear-all-vectors-recommended-for-beginners"
+        },
+        {
+          "challenge": "to clear → select next Waypoint LSK then click LSK to replace",
+          "response": "",
+          "sourcePage": 3,
+          "id": "to-clear-select-next-waypoint-lsk-then-click-lsk-to-replace"
+        },
+        {
+          "challenge": "important! ACTIVATE + EXEC after changes are made",
+          "response": "",
+          "sourcePage": 3,
+          "id": "important-activate-exec-after-changes-are-made"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - MENU - FS ACTION - Page",
+          "sourcePage": 3,
+          "id": "fmc-menu-fs-action-page"
+        },
+        {
+          "challenge": "MENU → FS ACTIONS",
+          "response": "",
+          "sourcePage": 3,
+          "id": "menu-fs-actions"
+        },
+        {
+          "challenge": "FUEL → set Pounds or Percent\nor use Short | Medium | Long Range",
+          "response": "",
+          "sourcePage": 3,
+          "id": "fuel-set-pounds-or-percent-or-use-short-medium-long-range"
+        },
+        {
+          "challenge": "RETURN",
+          "response": "",
+          "sourcePage": 3,
+          "id": "return"
+        },
+        {
+          "challenge": "PAYLOAD → use Max | Empty | Random\nor set PAX & CARGO manually",
+          "response": "",
+          "sourcePage": 3,
+          "id": "payload-use-max-empty-random-or-set-pax-cargo-manually"
+        }
+      ],
+      "when": {
+        "route-source": "manual"
+      }
+    },
+    {
+      "id": "extended-fmc-setup-part-ii-performance",
+      "name": "FMC SETUP - Part II - Performance",
+      "description": "JayDee PMDG 777 / page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "type": "note",
+          "text": "Do this after Refuel & Boarding is complete",
+          "sourcePage": 3,
+          "id": "do-this-after-refuel-boarding-is-complete"
+        },
+        {
+          "type": "heading",
+          "text": "TABLET- PERFORMANCE TOOL (optional)",
+          "sourcePage": 3,
+          "id": "tablet-performance-tool-optional"
+        },
+        {
+          "challenge": "Takeoff Performance Page",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "takeoff-performance-page"
+        },
+        {
+          "challenge": "enter Data or Import Data",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "enter-data-or-import-data"
+        },
+        {
+          "challenge": "Calculate",
+          "response": "",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "calculate"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - PERF INIT - Page",
+          "sourcePage": 3,
+          "id": "fmc-perf-init-page"
+        },
+        {
+          "challenge": "INIT REF → (INDEX →) PERF INIT",
+          "response": "",
+          "sourcePage": 3,
+          "id": "init-ref-index-perf-init"
+        },
+        {
+          "challenge": "set ZFW (two Clicks on LSK3L)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "set-zfw-two-clicks-on-lsk3l"
+        },
+        {
+          "challenge": "enter Reserves (Fuel) (e.g.20)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "enter-reserves-fuel-e-g-20"
+        },
+        {
+          "challenge": "either: enter CRZ ALT & COST INDEX (0-9999) manually\nor: use REQUEST LSK5L and then ACCEPT\nif unsure what Cost Index to use → enter 85",
+          "response": "",
+          "sourcePage": 3,
+          "id": "either-enter-crz-alt-cost-index-0-9999-manually-or-use-request-lsk5l-and-then-accept-if-unsure-what-cost-index-to-use-enter-85"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - THRUST LIMIT - Page",
+          "sourcePage": 3,
+          "id": "fmc-thrust-limit-page"
+        },
+        {
+          "challenge": "THRUST LIM from PERF INIT PAGE",
+          "response": "",
+          "sourcePage": 3,
+          "id": "thrust-lim-from-perf-init-page"
+        },
+        {
+          "challenge": "either: enter SEL and choose TO|CLB as per Performance Tool\nor: same as Oat to SEL and choose TO | CLB with LSK2L & 2R",
+          "response": "",
+          "sourcePage": 3,
+          "id": "either-enter-sel-and-choose-to-clb-as-per-performance-tool-or-same-as-oat-to-sel-and-choose-to-clb-with-lsk2l-2r"
+        },
+        {
+          "type": "heading",
+          "text": "FMC - TAKEOFF REF - Page",
+          "sourcePage": 3,
+          "id": "fmc-takeoff-ref-page"
+        },
+        {
+          "challenge": "TAKEOFF form THRUST LIM Page",
+          "response": "",
+          "sourcePage": 3,
+          "id": "takeoff-form-thrust-lim-page"
+        },
+        {
+          "challenge": "optional: enter TAKEOFF REF Page 2 (Next page)\nenter WIND | SLOPE COND | REF OAT\nverify or set Accel & Reductions Heights",
+          "response": "",
+          "sourcePage": 3,
+          "id": "optional-enter-takeoff-ref-page-2-next-page-enter-wind-slope-cond-ref-oat-verify-or-set-accel-reductions-heights"
+        },
+        {
+          "challenge": "back to TAKEOFF REF Page 1",
+          "response": "",
+          "sourcePage": 3,
+          "id": "back-to-takeoff-ref-page-1"
+        },
+        {
+          "challenge": "enter FLAPS as per Performance Tool or enter 5",
+          "response": "",
+          "sourcePage": 3,
+          "id": "enter-flaps-as-per-performance-tool-or-enter-5"
+        },
+        {
+          "challenge": "set CG TRIM (two Clicks on LSK3L)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "set-cg-trim-two-clicks-on-lsk3l"
+        },
+        {
+          "challenge": "verify REF SPDS is ON (LSK5R",
+          "response": "",
+          "sourcePage": 3,
+          "id": "verify-ref-spds-is-on-lsk5r"
+        },
+        {
+          "challenge": "verify GRWT in Line 4 is correct, else enter correct TOGW",
+          "response": "",
+          "sourcePage": 3,
+          "id": "verify-grwt-in-line-4-is-correct-else-enter-correct-togw"
+        },
+        {
+          "challenge": "verify and set V1,VR & V2 (each with a Click on its LSK)",
+          "response": "",
+          "sourcePage": 3,
+          "id": "verify-and-set-v1-vr-v2-each-with-a-click-on-its-lsk"
+        }
+      ]
+    },
+    {
+      "id": "extended-preflight-part-ii",
+      "name": "PREFLIGHT - Part II",
+      "description": "JayDee PMDG 777 / page 3",
+      "sourcePages": [
+        3
+      ],
+      "items": [
+        {
+          "type": "heading",
+          "text": "GLARESHIELD",
+          "sourcePage": 3,
+          "id": "glareshield"
+        },
+        {
+          "challenge": "CPT EFIS Panel",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "cpt-efis-panel"
+        },
+        {
+          "challenge": "Minimums Reference Selector",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "minimums-reference-selector"
+        },
+        {
+          "challenge": "Altimeter Baro Reference",
+          "response": "SET LOCAL",
+          "sourcePage": 3,
+          "id": "altimeter-baro-reference"
+        },
+        {
+          "challenge": "ND TFC | WXR | TERR",
+          "response": "OFF",
+          "sourcePage": 3,
+          "id": "nd-tfc-wxr-terr"
+        },
+        {
+          "challenge": "FPV | MTRS",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "fpv-mtrs"
+        },
+        {
+          "challenge": "Mode | Range",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "mode-range"
+        },
+        {
+          "challenge": "Mode Control Panel (MCP)",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "mode-control-panel-mcp"
+        },
+        {
+          "challenge": "Flight Director",
+          "response": "BOTH ON",
+          "sourcePage": 3,
+          "id": "flight-director"
+        },
+        {
+          "sourcePage": 3,
+          "id": "verify-fma-toga-toga-mode",
+          "challenge": "verify FMA TOGA | TOGA Mode",
+          "response": ""
+        },
+        {
+          "challenge": "L & R Autothrottle Switches",
+          "response": "ARM",
+          "sourcePage": 3,
+          "id": "l-r-autothrottle-switches"
+        },
+        {
+          "challenge": "Speed Selector",
+          "response": "V2+10",
+          "sourcePage": 3,
+          "id": "speed-selector"
+        },
+        {
+          "challenge": "Modes",
+          "response": "PRESELECT LNAV & VNAV",
+          "sourcePage": 3,
+          "id": "modes"
+        },
+        {
+          "challenge": "Autopilot DISENG Bar",
+          "response": "UP",
+          "sourcePage": 3,
+          "id": "autopilot-diseng-bar"
+        },
+        {
+          "challenge": "HDG Selector",
+          "response": "TAKEOFF HEADING",
+          "sourcePage": 3,
+          "id": "hdg-selector"
+        },
+        {
+          "challenge": "Altitude Selector",
+          "response": "CRUISE or CLEARED ALT",
+          "sourcePage": 3,
+          "id": "altitude-selector"
+        },
+        {
+          "challenge": "IAS↔MACH | HDG↔TRK | V/S↔FPA",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "ias-mach-hdg-trk-v-s-fpa"
+        },
+        {
+          "challenge": "F/O EFIS Panel (optional)",
+          "response": "SET",
+          "sourcePage": 3,
+          "optional": true,
+          "id": "f-o-efis-panel-optional"
+        },
+        {
+          "type": "heading",
+          "text": "LEFT SIDE & LEFT FORWARD PANEL",
+          "sourcePage": 3,
+          "id": "left-side-left-forward-panel"
+        },
+        {
+          "challenge": "Oxygen Mask",
+          "response": "TEST",
+          "sourcePage": 3,
+          "id": "oxygen-mask"
+        },
+        {
+          "challenge": "FWD Panel Brightness Controls",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "fwd-panel-brightness-controls"
+        },
+        {
+          "challenge": "Heaters",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "heaters"
+        },
+        {
+          "challenge": "Nav | Display Ctrl | Air Data Source - Switches",
+          "response": "ALL 3 OFF",
+          "sourcePage": 3,
+          "id": "nav-display-ctrl-air-data-source-switches"
+        },
+        {
+          "challenge": "Clock",
+          "response": "CHECK | SET",
+          "sourcePage": 3,
+          "id": "clock"
+        },
+        {
+          "challenge": "Inboard Display Selector",
+          "response": "MFD",
+          "sourcePage": 3,
+          "id": "inboard-display-selector"
+        },
+        {
+          "challenge": "Heading Reference",
+          "response": "GUARDED | NORM",
+          "sourcePage": 3,
+          "id": "heading-reference"
+        },
+        {
+          "challenge": "PFD/ND",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "pfd-nd"
+        },
+        {
+          "type": "heading",
+          "text": "CENTER FORWARD PANEL",
+          "sourcePage": 3,
+          "id": "center-forward-panel"
+        },
+        {
+          "challenge": "Standby Instruments",
+          "response": "CHECK | SET",
+          "sourcePage": 3,
+          "id": "standby-instruments"
+        },
+        {
+          "challenge": "G/S Inhibit",
+          "response": "OFF",
+          "sourcePage": 3,
+          "id": "g-s-inhibit"
+        },
+        {
+          "challenge": "Flap Override",
+          "response": "OFF & GUARDED",
+          "sourcePage": 3,
+          "id": "flap-override"
+        },
+        {
+          "challenge": "Gear Override",
+          "response": "OFF & GUARDED",
+          "sourcePage": 3,
+          "id": "gear-override"
+        },
+        {
+          "challenge": "Terrain Override",
+          "response": "OFF & GUARDED",
+          "sourcePage": 3,
+          "id": "terrain-override"
+        },
+        {
+          "challenge": "Landing Gear Lever",
+          "response": "DOWN",
+          "sourcePage": 3,
+          "id": "landing-gear-lever"
+        },
+        {
+          "challenge": "Alternate Gear Switch",
+          "response": "GUARDED",
+          "sourcePage": 3,
+          "id": "alternate-gear-switch"
+        },
+        {
+          "challenge": "Autobrake Selector",
+          "response": "RTO",
+          "sourcePage": 3,
+          "id": "autobrake-selector"
+        },
+        {
+          "challenge": "EICAS",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "eicas"
+        },
+        {
+          "challenge": "Gear Down",
+          "response": "CHECK GREEN",
+          "sourcePage": 3,
+          "id": "gear-down"
+        },
+        {
+          "challenge": "Fuel Quantity",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "fuel-quantity"
+        },
+        {
+          "challenge": "Cancel/Recall",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "cancel-recall"
+        },
+        {
+          "challenge": "Lower Center Display",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "lower-center-display"
+        },
+        {
+          "challenge": "Secondary Engine Indications",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "secondary-engine-indications"
+        },
+        {
+          "challenge": "Status Page",
+          "response": "CHECK",
+          "sourcePage": 3,
+          "id": "status-page"
+        },
+        {
+          "challenge": "Checklist Page",
+          "response": "RESET → RESET ALL",
+          "sourcePage": 3,
+          "id": "checklist-page"
+        },
+        {
+          "challenge": "Center Display Ctrl",
+          "response": "OFF",
+          "sourcePage": 3,
+          "id": "center-display-ctrl"
+        },
+        {
+          "challenge": "Upper & Lower Center Display Brightness",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "upper-lower-center-display-brightness"
+        },
+        {
+          "challenge": "FMC Selector (right fwd panel)",
+          "response": "AUTO",
+          "sourcePage": 3,
+          "id": "fmc-selector-right-fwd-panel"
+        },
+        {
+          "type": "heading",
+          "text": "CENTER PEDESTAL",
+          "sourcePage": 3,
+          "id": "center-pedestal"
+        },
+        {
+          "challenge": "Alternate Pitch Trim Levers",
+          "response": "NEUTRAL",
+          "sourcePage": 3,
+          "id": "alternate-pitch-trim-levers"
+        },
+        {
+          "challenge": "Speedbrake Lever",
+          "response": "DOWN | FWD",
+          "sourcePage": 3,
+          "id": "speedbrake-lever"
+        },
+        {
+          "challenge": "Thrust Levers",
+          "response": "IDLE | REV STOWED",
+          "sourcePage": 3,
+          "id": "thrust-levers"
+        },
+        {
+          "challenge": "Flap Lever",
+          "response": "IN AGREEMENT | UP",
+          "sourcePage": 3,
+          "id": "flap-lever"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "Stabilizer Cutout Switches",
+          "response": "GUARDED",
+          "sourcePage": 3,
+          "id": "stabilizer-cutout-switches"
+        },
+        {
+          "challenge": "Fuel Control Switches",
+          "response": "CUTOFF & NOT LIT",
+          "sourcePage": 3,
+          "id": "fuel-control-switches"
+        },
+        {
+          "challenge": "Alternate Flaps Arm Switch",
+          "response": "OFF",
+          "sourcePage": 3,
+          "id": "alternate-flaps-arm-switch"
+        },
+        {
+          "challenge": "Alternate Flaps Selector",
+          "response": "OFF",
+          "sourcePage": 3,
+          "id": "alternate-flaps-selector"
+        },
+        {
+          "challenge": "All Audio Ctrl Panel",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "all-audio-ctrl-panel"
+        },
+        {
+          "challenge": "Eng Discharge Light",
+          "response": "EXTINGUISHED",
+          "sourcePage": 3,
+          "id": "eng-discharge-light"
+        },
+        {
+          "challenge": "Eng Fire Handles",
+          "response": "IN | NOT LIT",
+          "sourcePage": 3,
+          "id": "eng-fire-handles"
+        },
+        {
+          "challenge": "Weather Radar",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "weather-radar"
+        },
+        {
+          "challenge": "Weather Radar Test",
+          "response": "PRESS → VERIFY",
+          "sourcePage": 3,
+          "id": "weather-radar-test"
+        },
+        {
+          "challenge": "Weather Radar Auto",
+          "response": "AS DES | AUTO",
+          "sourcePage": 3,
+          "id": "weather-radar-auto"
+        },
+        {
+          "challenge": "Transponder Panel",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "transponder-panel"
+        },
+        {
+          "challenge": "Alt Source",
+          "response": "NORM",
+          "sourcePage": 3,
+          "id": "alt-source"
+        },
+        {
+          "challenge": "Squawk",
+          "response": "SET",
+          "sourcePage": 3,
+          "id": "squawk"
+        },
+        {
+          "challenge": "Mode",
+          "response": "STBY",
+          "sourcePage": 3,
+          "id": "mode"
+        },
+        {
+          "challenge": "TCAS",
+          "response": "AS DES | N - REL",
+          "sourcePage": 3,
+          "id": "tcas"
+        },
+        {
+          "challenge": "Evacuation Command",
+          "response": "GUARDED",
+          "sourcePage": 3,
+          "id": "evacuation-command"
+        },
+        {
+          "challenge": "Floor & Aisle Stand Lights",
+          "response": "AS DES",
+          "sourcePage": 3,
+          "id": "floor-aisle-stand-lights"
+        },
+        {
+          "challenge": "Observer Audio",
+          "response": "NORM",
+          "sourcePage": 3,
+          "id": "observer-audio"
+        }
+      ]
+    },
+    {
+      "id": "extended-preflight-part-iii",
+      "name": "PREFLIGHT - Part III",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "type": "heading",
+          "text": "RIGHT SIDE & RIGHT FORWARD PANEL (optional)",
+          "sourcePage": 4,
+          "id": "right-side-right-forward-panel-optional"
+        },
+        {
+          "challenge": "Oxygen Mask",
+          "response": "TEST",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "oxygen-mask"
+        },
+        {
+          "challenge": "FWD Panel Brightness Controls",
+          "response": "AS DES",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "fwd-panel-brightness-controls"
+        },
+        {
+          "challenge": "Heaters",
+          "response": "AS DES",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "heaters"
+        },
+        {
+          "challenge": "Nav | Display Ctrl | Air Data Source - Switches",
+          "response": "ALL 3 OFF",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "nav-display-ctrl-air-data-source-switches"
+        },
+        {
+          "challenge": "Clock",
+          "response": "CHECK | SET",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "clock"
+        },
+        {
+          "challenge": "Inboard Display Selector",
+          "response": "MFD",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "inboard-display-selector"
+        },
+        {
+          "challenge": "FMC Selector",
+          "response": "AUTO",
+          "sourcePage": 4,
+          "optional": true,
+          "id": "fmc-selector"
+        },
+        {
+          "type": "note",
+          "text": "call „PREFLIGHT CHECKLIST“",
+          "italic": true,
+          "sourcePage": 4,
+          "id": "call-preflight-checklist"
+        }
+      ]
+    },
+    {
+      "id": "extended-before-pushback-before-start",
+      "name": "BEFORE PUSHBACK / BEFORE START",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "FMC/CDU Setup",
+          "response": "COMPLETE",
+          "sourcePage": 4,
+          "id": "fmc-cdu-setup"
+        },
+        {
+          "challenge": "CDU Pages",
+          "response": "TAKEOFF (CPT) | LEGS (F/O)",
+          "sourcePage": 4,
+          "id": "cdu-pages"
+        },
+        {
+          "challenge": "EICAS",
+          "response": "CANCEL → RECALL → CONSIDER",
+          "sourcePage": 4,
+          "id": "eicas"
+        },
+        {
+          "challenge": "MCP Panel",
+          "response": "verify SET",
+          "sourcePage": 4,
+          "id": "mcp-panel"
+        },
+        {
+          "challenge": "Flight Deck Windows",
+          "response": "CLOSED",
+          "sourcePage": 4,
+          "id": "flight-deck-windows"
+        },
+        {
+          "challenge": "Flight Deck Door",
+          "response": "CLOSED & LOCKED",
+          "sourcePage": 4,
+          "id": "flight-deck-door"
+        },
+        {
+          "challenge": "APU",
+          "response": "verify ON",
+          "sourcePage": 4,
+          "id": "apu"
+        },
+        {
+          "challenge": "EXT Power",
+          "response": "verify OFF",
+          "sourcePage": 4,
+          "id": "ext-power"
+        },
+        {
+          "challenge": "Hydraulic Panel",
+          "response": "SET",
+          "sourcePage": 4,
+          "id": "hydraulic-panel"
+        },
+        {
+          "challenge": "R Elec Demand",
+          "response": "AUTO | no „FAULT“",
+          "sourcePage": 4,
+          "id": "r-elec-demand"
+        },
+        {
+          "challenge": "C1 & C2 Elec Primary",
+          "response": "ON | no „FAULT“ at C1",
+          "sourcePage": 4,
+          "id": "c1-c2-elec-primary"
+        },
+        {
+          "challenge": "L Elec Demand",
+          "response": "AUTO | no „FAULT“",
+          "sourcePage": 4,
+          "id": "l-elec-demand"
+        },
+        {
+          "challenge": "C1 & C2 Air Demand",
+          "response": "AUTO | no „FAULT“",
+          "sourcePage": 4,
+          "id": "c1-c2-air-demand"
+        },
+        {
+          "challenge": "Seat Belts Signs",
+          "response": "AUTO",
+          "sourcePage": 4,
+          "id": "seat-belts-signs"
+        },
+        {
+          "challenge": "No Electronics | No Smoking",
+          "response": "ON",
+          "sourcePage": 4,
+          "id": "no-electronics-no-smoking"
+        },
+        {
+          "challenge": "L & R Fuel Pumps",
+          "response": "ON",
+          "sourcePage": 4,
+          "id": "l-r-fuel-pumps"
+        },
+        {
+          "challenge": "Center Fuel Pumps",
+          "response": "OFF if empty, else ON",
+          "sourcePage": 4,
+          "id": "center-fuel-pumps"
+        },
+        {
+          "challenge": "Beacon",
+          "response": "ON",
+          "sourcePage": 4,
+          "id": "beacon"
+        },
+        {
+          "challenge": "STAB Trim",
+          "response": "SET FOR TAKEOFF",
+          "sourcePage": 4,
+          "id": "stab-trim"
+        },
+        {
+          "type": "note",
+          "text": "if not using Performance Tool → set 5.0",
+          "sourcePage": 4,
+          "id": "if-not-using-performance-tool-set-5-0"
+        },
+        {
+          "challenge": "Rudder & Aileron Trim",
+          "response": "ZERO",
+          "sourcePage": 4,
+          "id": "rudder-aileron-trim"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "XPNDR",
+          "sourcePage": 4,
+          "id": "transponder"
+        },
+        {
+          "challenge": "Tablet - Ground Operations",
+          "response": "AS DES",
+          "sourcePage": 4,
+          "id": "tablet-ground-operations"
+        },
+        {
+          "challenge": "remove GPU | ACU | Stairs | Jetway | Chocks",
+          "response": "",
+          "sourcePage": 4,
+          "id": "remove-gpu-acu-stairs-jetway-chocks"
+        },
+        {
+          "challenge": "close Doors",
+          "response": "",
+          "sourcePage": 4,
+          "id": "close-doors"
+        },
+        {
+          "type": "note",
+          "text": "call „BEFORE START CHECKLIST",
+          "italic": true,
+          "sourcePage": 4,
+          "id": "call-before-start-checklist"
+        }
+      ]
+    },
+    {
+      "id": "extended-engine-start-pushback",
+      "name": "ENGINE START |PUSHBACK",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "ATC Clearance (Pushback/Start)",
+          "response": "AS REQ",
+          "sourcePage": 4,
+          "id": "atc-clearance-pushback-start"
+        },
+        {
+          "challenge": "Pushback",
+          "response": "AS REQ",
+          "sourcePage": 4,
+          "id": "pushback"
+        },
+        {
+          "challenge": "Parking Brake",
+          "response": "AS REQ",
+          "sourcePage": 4,
+          "id": "parking-brake"
+        },
+        {
+          "type": "heading",
+          "text": "START 1st ENGINE",
+          "sourcePage": 4,
+          "id": "start-1st-engine"
+        },
+        {
+          "challenge": "Lower Center Display",
+          "response": "ENG PAGE",
+          "sourcePage": 4,
+          "id": "lower-center-display"
+        },
+        {
+          "challenge": "Start Selector",
+          "response": "L or R START",
+          "sourcePage": 4,
+          "id": "start-selector"
+        },
+        {
+          "challenge": "Respective Fuel Control Switch",
+          "response": "RUN",
+          "sourcePage": 4,
+          "id": "respective-fuel-control-switch"
+        },
+        {
+          "challenge": "EICAS & Lower Center Display",
+          "response": "MONITOR INDICATIONS",
+          "sourcePage": 4,
+          "id": "eicas-lower-center-display"
+        },
+        {
+          "challenge": "Oil Pressure",
+          "response": "verify INCREASING, else abort Start",
+          "sourcePage": 4,
+          "id": "oil-pressure"
+        },
+        {
+          "type": "heading",
+          "text": "START 2nd ENGINE",
+          "sourcePage": 4,
+          "id": "start-2nd-engine"
+        },
+        {
+          "challenge": "Start Selector",
+          "response": "L or R START",
+          "sourcePage": 4,
+          "id": "start-selector-2"
+        },
+        {
+          "challenge": "Respective Fuel Control Switch",
+          "response": "RUN",
+          "sourcePage": 4,
+          "id": "respective-fuel-control-switch-2"
+        },
+        {
+          "challenge": "EICAS & Lower Center Display",
+          "response": "MONITOR INDICATIONS",
+          "sourcePage": 4,
+          "id": "eicas-lower-center-display-2"
+        },
+        {
+          "challenge": "Oil Pressure",
+          "response": "verify INCREASING, else abort Start",
+          "sourcePage": 4,
+          "id": "oil-pressure-2"
+        }
+      ]
+    },
+    {
+      "id": "extended-before-taxi",
+      "name": "BEFORE TAXI",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "APU",
+          "response": "OFF",
+          "sourcePage": 4,
+          "id": "apu"
+        },
+        {
+          "challenge": "Generators",
+          "response": "verify ON | no „FAULT“",
+          "sourcePage": 4,
+          "id": "generators"
+        },
+        {
+          "challenge": "Left & Right Start Selector",
+          "response": "verify NORM",
+          "sourcePage": 4,
+          "id": "left-right-start-selector"
+        },
+        {
+          "challenge": "Engine Anti-Ice",
+          "response": "AS REQ | AUTO",
+          "sourcePage": 4,
+          "id": "engine-anti-ice"
+        },
+        {
+          "challenge": "Packs",
+          "response": "verify ON",
+          "sourcePage": 4,
+          "id": "packs"
+        },
+        {
+          "challenge": "Auto Brake",
+          "response": "verify RTO",
+          "sourcePage": 4,
+          "id": "auto-brake"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "SET FOR TO",
+          "sourcePage": 4,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Flight Controls",
+          "response": "verify FREE & FULL MOVEMENT",
+          "sourcePage": 4,
+          "id": "flight-controls"
+        },
+        {
+          "challenge": "EICAS",
+          "response": "RECALL → CONSIDER",
+          "sourcePage": 4,
+          "id": "eicas"
+        },
+        {
+          "challenge": "Pushback Tug",
+          "response": "REMOVED",
+          "sourcePage": 4,
+          "id": "pushback-tug"
+        },
+        {
+          "type": "note",
+          "text": "call „BEFORE TAXI CHECKLIST“",
+          "italic": true,
+          "sourcePage": 4,
+          "id": "call-before-taxi-checklist"
+        },
+        {
+          "challenge": "ATC Clearance (Taxi)",
+          "response": "AS REQ",
+          "sourcePage": 4,
+          "id": "atc-clearance-taxi"
+        },
+        {
+          "challenge": "Taxi Lights",
+          "response": "ON",
+          "sourcePage": 4,
+          "id": "taxi-lights"
+        },
+        {
+          "challenge": "Runway Turnoff Lights",
+          "response": "AS REQ",
+          "sourcePage": 4,
+          "id": "runway-turnoff-lights"
+        }
+      ]
+    },
+    {
+      "id": "extended-taxi",
+      "name": "TAXI",
+      "description": "JayDee PMDG 777 / page 4",
+      "sourcePages": [
+        4
+      ],
+      "items": [
+        {
+          "challenge": "release Parking Brake",
+          "response": "",
+          "sourcePage": 4,
+          "id": "release-parking-brake"
+        },
+        {
+          "challenge": "only slowly apply power",
+          "response": "",
+          "sourcePage": 4,
+          "id": "only-slowly-apply-power"
+        },
+        {
+          "type": "note",
+          "text": "max. 30 kts on straights & max. 8-10 kts in turns",
+          "sourcePage": 4,
+          "id": "max-30-kts-on-straights-max-8-10-kts-in-turns"
+        },
+        {
+          "challenge": "test Brakes & Steering",
+          "response": "",
+          "sourcePage": 4,
+          "id": "test-brakes-steering"
+        },
+        {
+          "challenge": "check Flight & Engine Instruments",
+          "response": "",
+          "sourcePage": 4,
+          "id": "check-flight-engine-instruments"
+        }
+      ]
+    },
+    {
+      "id": "extended-before-takeoff",
+      "name": "BEFORE TAKEOFF",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Autobrake",
+          "response": "verify RTO",
+          "sourcePage": 5,
+          "id": "autobrake"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "verify SET FOR T.O.",
+          "sourcePage": 5,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Speed Brakes",
+          "response": "DOWN | FWD",
+          "sourcePage": 5,
+          "id": "speed-brakes"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "TA ONLY or TA/RA",
+          "sourcePage": 5,
+          "id": "transponder"
+        },
+        {
+          "challenge": "WX Radar",
+          "response": "AS REQ",
+          "sourcePage": 5,
+          "id": "wx-radar"
+        },
+        {
+          "challenge": "MCP",
+          "response": "SET",
+          "sourcePage": 5,
+          "id": "mcp"
+        },
+        {
+          "challenge": "Autothrottle",
+          "response": "ARM",
+          "sourcePage": 5,
+          "id": "autothrottle"
+        },
+        {
+          "challenge": "FMA",
+          "response": "verify „TOGA | TOGA“ active (green)",
+          "sourcePage": 5,
+          "id": "fma"
+        },
+        {
+          "challenge": "FMA",
+          "response": "verify „LNAV | VNAV“ armed (white)",
+          "sourcePage": 5,
+          "id": "fma-2"
+        },
+        {
+          "challenge": "ND WXR | TFC | TERR (EFIS Panel)",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "nd-wxr-tfc-terr-efis-panel"
+        },
+        {
+          "challenge": "CDU Pages",
+          "response": "TAKEOFF (CPT) | LEGS (F/O)",
+          "sourcePage": 5,
+          "id": "cdu-pages"
+        },
+        {
+          "challenge": "EICAS",
+          "response": "CANCEL → RECALL → CONSIDER",
+          "sourcePage": 5,
+          "id": "eicas"
+        },
+        {
+          "challenge": "Cabin Crew",
+          "response": "NOTIFY",
+          "sourcePage": 5,
+          "id": "cabin-crew"
+        },
+        {
+          "type": "note",
+          "text": "call „BEFORE TAKEOFF CHECKLIST“",
+          "italic": true,
+          "sourcePage": 5,
+          "id": "call-before-takeoff-checklist"
+        },
+        {
+          "challenge": "ATC Clearance (Departure)",
+          "response": "AS REQ",
+          "sourcePage": 5,
+          "id": "atc-clearance-departure"
+        },
+        {
+          "challenge": "Start Replay-Tool",
+          "response": "IF REQ",
+          "sourcePage": 5,
+          "id": "start-replay-tool"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Runway Turnoff Lights",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "runway-turnoff-lights"
+        },
+        {
+          "challenge": "Strobe Lights",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "strobe-lights"
+        }
+      ]
+    },
+    {
+      "id": "extended-takeoff",
+      "name": "TAKEOFF",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "line up and brake",
+          "response": "",
+          "sourcePage": 5,
+          "id": "line-up-and-brake"
+        },
+        {
+          "challenge": "Throttle → 55% N1",
+          "response": "",
+          "sourcePage": 5,
+          "id": "throttle-55-n1"
+        },
+        {
+          "challenge": "press TOGA Button (Throttle or Clickspot on MCP)",
+          "response": "",
+          "sourcePage": 5,
+          "id": "press-toga-button-throttle-or-clickspot-on-mcp"
+        },
+        {
+          "challenge": "verify Autothrottle active and Takeoff power is set",
+          "response": "",
+          "sourcePage": 5,
+          "id": "verify-autothrottle-active-and-takeoff-power-is-set"
+        },
+        {
+          "challenge": "release Brakes",
+          "response": "",
+          "sourcePage": 5,
+          "id": "release-brakes"
+        },
+        {
+          "challenge": "@ V1 → start slightly pulling the Yoke back",
+          "response": "",
+          "sourcePage": 5,
+          "id": "v1-start-slightly-pulling-the-yoke-back"
+        },
+        {
+          "challenge": "@ VR → start pulling more to actual rotate slowly",
+          "response": "",
+          "sourcePage": 5,
+          "id": "vr-start-pulling-more-to-actual-rotate-slowly"
+        },
+        {
+          "challenge": "maintain ~ 12° Pitch untill Lift-Off",
+          "response": "",
+          "sourcePage": 5,
+          "id": "maintain-12-pitch-untill-lift-off"
+        },
+        {
+          "challenge": "@ positive Rate of Climb → Gear UP",
+          "response": "",
+          "sourcePage": 5,
+          "id": "positive-rate-of-climb-gear-up"
+        },
+        {
+          "challenge": "follow Flight Director",
+          "response": "",
+          "sourcePage": 5,
+          "id": "follow-flight-director"
+        },
+        {
+          "challenge": "@ 200 ft AGL → Autopilot ON",
+          "response": "",
+          "sourcePage": 5,
+          "id": "200-ft-agl-autopilot-on"
+        },
+        {
+          "challenge": "if flying manually → trim per Cyan FBW Marker on SPD Band",
+          "response": "",
+          "sourcePage": 5,
+          "optional": true,
+          "id": "if-flying-manually-trim-per-cyan-fbw-marker-on-spd-band"
+        },
+        {
+          "challenge": "@ 400 ft AGL → select Roll & Pitch Mode (if not preselected)",
+          "response": "",
+          "sourcePage": 5,
+          "id": "400-ft-agl-select-roll-pitch-mode-if-not-preselected"
+        },
+        {
+          "type": "heading",
+          "text": "ABOVE 1.500 ft AGL (Acceleration/Thrust Red Height)",
+          "sourcePage": 5,
+          "id": "above-1-500-ft-agl-acceleration-thrust-red-height"
+        },
+        {
+          "challenge": "verify Climb Thrust is set",
+          "response": "",
+          "sourcePage": 5,
+          "id": "verify-climb-thrust-is-set"
+        },
+        {
+          "challenge": "Flap Retraction per Schedule",
+          "response": "",
+          "sourcePage": 5,
+          "id": "flap-retraction-per-schedule"
+        }
+      ]
+    },
+    {
+      "id": "extended-flap-retraction-schedule",
+      "name": "FLAP RETRACTION SCHEDULE",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "type": "note",
+          "text": "Current flaps / current speed -> select flaps / select speed",
+          "sourcePage": 5,
+          "id": "current-flaps-current-speed-select-flaps-select-speed"
+        },
+        {
+          "type": "note",
+          "text": "20 / at or above 20* -> 15 / at or above 15*",
+          "sourcePage": 5,
+          "id": "20-at-or-above-20-15-at-or-above-15"
+        },
+        {
+          "type": "note",
+          "text": "15 / at or above 15* -> 5 / at or above 5*",
+          "sourcePage": 5,
+          "id": "15-at-or-above-15-5-at-or-above-5"
+        },
+        {
+          "type": "note",
+          "text": "5 / at or above 5* -> 1 / at or above 1*",
+          "sourcePage": 5,
+          "id": "5-at-or-above-5-1-at-or-above-1"
+        },
+        {
+          "type": "note",
+          "text": "1 / at or above 1* -> UP / at or above UP*",
+          "sourcePage": 5,
+          "id": "1-at-or-above-1-up-at-or-above-up"
+        },
+        {
+          "type": "note",
+          "text": "* This is the Green Marker on the Speed Band in the PFD",
+          "sourcePage": 5,
+          "id": "this-is-the-green-marker-on-the-speed-band-in-the-pfd"
+        }
+      ],
+      "alternate": true,
+      "note": "Reference schedule. See original PDF for the table layout."
+    },
+    {
+      "id": "extended-after-takeoff-climb",
+      "name": "AFTER TAKEOFF | CLIMB",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Landing Gear",
+          "response": "verify UP",
+          "sourcePage": 5,
+          "id": "landing-gear"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "verify UP",
+          "sourcePage": 5,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Autobrake",
+          "response": "verify OFF",
+          "sourcePage": 5,
+          "id": "autobrake"
+        },
+        {
+          "challenge": "Engine Anti-Ice",
+          "response": "AS REQ/AUTO",
+          "sourcePage": 5,
+          "id": "engine-anti-ice"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "TA/RA",
+          "sourcePage": 5,
+          "id": "transponder"
+        },
+        {
+          "type": "note",
+          "text": "call „AFTER TAKEOFF CHECKLIST“",
+          "italic": true,
+          "sourcePage": 5,
+          "id": "call-after-takeoff-checklist"
+        },
+        {
+          "type": "heading",
+          "text": "@ 10.000 ft",
+          "sourcePage": 5,
+          "id": "10-000-ft"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "OFF",
+          "sourcePage": 5,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Taxi & Runway Turnoff Lights",
+          "response": "OFF",
+          "sourcePage": 5,
+          "id": "taxi-runway-turnoff-lights"
+        },
+        {
+          "challenge": "Passenger Signs",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "passenger-signs"
+        },
+        {
+          "challenge": "ND WXR | TFC | TERR (EFIS Panel)",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "nd-wxr-tfc-terr-efis-panel"
+        },
+        {
+          "type": "heading",
+          "text": "@ TRANSITION ALTITUDE",
+          "sourcePage": 5,
+          "id": "transition-altitude"
+        },
+        {
+          "challenge": "Altimeters",
+          "response": "SET STD",
+          "sourcePage": 5,
+          "id": "altimeters"
+        }
+      ]
+    },
+    {
+      "id": "extended-cruise",
+      "name": "CRUISE",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "Seat Belt Signs",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "seat-belt-signs"
+        },
+        {
+          "challenge": "Pressurization",
+          "response": "CHECK",
+          "sourcePage": 5,
+          "id": "pressurization"
+        },
+        {
+          "challenge": "Flight Progress",
+          "response": "MONITOR",
+          "sourcePage": 5,
+          "id": "flight-progress"
+        },
+        {
+          "challenge": "Top Of Descent",
+          "response": "VERIFY AND CROSS CHECK",
+          "sourcePage": 5,
+          "id": "top-of-descent"
+        },
+        {
+          "type": "note",
+          "text": "Estimated Top Of Descent (TOD) Formula:",
+          "sourcePage": 5,
+          "id": "estimated-top-of-descent-tod-formula"
+        },
+        {
+          "type": "note",
+          "text": "(CRZ ALT - DEST ALT)/1000 x 3 + 20 = TOD in NM Out",
+          "sourcePage": 5,
+          "id": "crz-alt-dest-alt-1000-x-3-20-tod-in-nm-out"
+        },
+        {
+          "type": "heading",
+          "text": "~ 50 NM PRIOR TO TOD",
+          "sourcePage": 5,
+          "id": "50-nm-prior-to-tod"
+        },
+        {
+          "type": "note",
+          "text": "you can see the Distance to the TOD on the FMC PROG Page",
+          "sourcePage": 5,
+          "id": "you-can-see-the-distance-to-the-tod-on-the-fmc-prog-page"
+        },
+        {
+          "challenge": "Tablet Landing Performance",
+          "response": "CALCULATE | optional",
+          "sourcePage": 5,
+          "id": "tablet-landing-performance",
+          "optional": true
+        },
+        {
+          "challenge": "FMC DEP/ARR Page",
+          "response": "CHECK | SET ARRIVAL",
+          "sourcePage": 5,
+          "id": "fmc-dep-arr-page"
+        },
+        {
+          "challenge": "FMC Approach Page",
+          "response": "CHECK & SELECT CONFIG",
+          "sourcePage": 5,
+          "id": "fmc-approach-page"
+        },
+        {
+          "challenge": "Minimums",
+          "response": "SET",
+          "sourcePage": 5,
+          "id": "minimums"
+        },
+        {
+          "type": "note",
+          "text": "if unsure or without Maps → use 200 ft Radio Height",
+          "sourcePage": 5,
+          "id": "if-unsure-or-without-maps-use-200-ft-radio-height"
+        },
+        {
+          "challenge": "MCP Altitude Select",
+          "response": "FAF ALTITUDE | do not push Btn",
+          "sourcePage": 5,
+          "id": "mcp-altitude-select"
+        },
+        {
+          "type": "note",
+          "text": "FAF = Final Approach Fix, a Waypoit where you typically latest",
+          "sourcePage": 5,
+          "id": "faf-final-approach-fix-a-waypoit-where-you-typically-latest"
+        },
+        {
+          "type": "note",
+          "text": "catch the Glide Slope, some 6-10 NM before Destination",
+          "sourcePage": 5,
+          "id": "catch-the-glide-slope-some-6-10-nm-before-destination"
+        },
+        {
+          "challenge": "Autobrake",
+          "response": "AS DES | 2 or 3",
+          "sourcePage": 5,
+          "id": "autobrake"
+        },
+        {
+          "challenge": "EICAS",
+          "response": "CHECK RECALL",
+          "sourcePage": 5,
+          "id": "eicas"
+        },
+        {
+          "challenge": "ILS Frequency | RAD NAV Page",
+          "response": "CHECK | SET",
+          "sourcePage": 5,
+          "id": "ils-frequency-rad-nav-page"
+        },
+        {
+          "type": "note",
+          "text": "call „DESCENT CHECKLIST“",
+          "italic": true,
+          "sourcePage": 5,
+          "id": "call-descent-checklist"
+        }
+      ]
+    },
+    {
+      "id": "extended-descent",
+      "name": "DESCENT",
+      "description": "JayDee PMDG 777 / page 5",
+      "sourcePages": [
+        5
+      ],
+      "items": [
+        {
+          "challenge": "ATC Clearance | ATIS",
+          "response": "AS REQ",
+          "sourcePage": 5,
+          "id": "atc-clearance-atis"
+        },
+        {
+          "challenge": "verify that your Hardware Thrust Lever is in IDLE",
+          "response": "",
+          "sourcePage": 5,
+          "id": "verify-that-your-hardware-thrust-lever-is-in-idle"
+        },
+        {
+          "challenge": "watch for „Drag Required“ Message in FMC",
+          "response": "",
+          "sourcePage": 5,
+          "id": "watch-for-drag-required-message-in-fmc"
+        },
+        {
+          "challenge": "use Speed Brakes if necessary",
+          "response": "",
+          "sourcePage": 5,
+          "id": "use-speed-brakes-if-necessary"
+        },
+        {
+          "type": "heading",
+          "text": "@ TOP OF DESCENT",
+          "sourcePage": 5,
+          "id": "top-of-descent"
+        },
+        {
+          "challenge": "MCP Altitude Select",
+          "response": "CHECK | SET",
+          "sourcePage": 5,
+          "id": "mcp-altitude-select"
+        },
+        {
+          "challenge": "Desecent",
+          "response": "verify is initiated automactically in VNAV",
+          "sourcePage": 5,
+          "id": "desecent"
+        },
+        {
+          "challenge": "else manually initiate Descent VNAV | FLC | V/S",
+          "response": "",
+          "sourcePage": 5,
+          "id": "else-manually-initiate-descent-vnav-flc-v-s"
+        },
+        {
+          "challenge": "Seat Belt Signs",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "seat-belt-signs"
+        },
+        {
+          "type": "heading",
+          "text": "@ 10.000 ft | FL100",
+          "sourcePage": 5,
+          "id": "10-000-ft-fl100"
+        },
+        {
+          "challenge": "Speed",
+          "response": "verify max. 250 KIAS",
+          "sourcePage": 5,
+          "id": "speed"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Logo Lights",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "logo-lights"
+        },
+        {
+          "challenge": "Taxi & Runway Turnoff Lights",
+          "response": "OFF",
+          "sourcePage": 5,
+          "id": "taxi-runway-turnoff-lights"
+        },
+        {
+          "challenge": "Seat Belt Signs",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "seat-belt-signs-2"
+        },
+        {
+          "challenge": "No Electronics | No Smoking",
+          "response": "ON",
+          "sourcePage": 5,
+          "id": "no-electronics-no-smoking"
+        },
+        {
+          "challenge": "ND WXR | TFC | TERR (EFIS Panel)",
+          "response": "AS DES",
+          "sourcePage": 5,
+          "id": "nd-wxr-tfc-terr-efis-panel"
+        },
+        {
+          "challenge": "Cabin Crew",
+          "response": "NOTIFY",
+          "sourcePage": 5,
+          "id": "cabin-crew"
+        },
+        {
+          "challenge": "ILS Frequency | RAD NAV Page",
+          "response": "CHECK | SET",
+          "sourcePage": 5,
+          "id": "ils-frequency-rad-nav-page"
+        },
+        {
+          "challenge": "Pressurization",
+          "response": "CHECK",
+          "sourcePage": 5,
+          "id": "pressurization"
+        },
+        {
+          "type": "heading",
+          "text": "@ TRANSITION FLIGHT LEVEL",
+          "sourcePage": 5,
+          "id": "transition-flight-level"
+        },
+        {
+          "challenge": "Altimeters",
+          "response": "SET LOCAL",
+          "sourcePage": 5,
+          "id": "altimeters"
+        },
+        {
+          "type": "note",
+          "text": "call „APPROACH CHECKLIST“",
+          "italic": true,
+          "sourcePage": 5,
+          "id": "call-approach-checklist"
+        }
+      ]
+    },
+    {
+      "id": "extended-flap-extension-schedule",
+      "name": "FLAP EXTENSION SCHEDULE",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "type": "note",
+          "text": "Current flaps / current speed -> select flaps / select speed",
+          "sourcePage": 6,
+          "id": "current-flaps-current-speed-select-flaps-select-speed"
+        },
+        {
+          "type": "note",
+          "text": "UP / at or above UP* -> 1 / at or above 1*",
+          "sourcePage": 6,
+          "id": "up-at-or-above-up-1-at-or-above-1"
+        },
+        {
+          "type": "note",
+          "text": "1 / at or above 1* -> 5 / at or above 5*",
+          "sourcePage": 6,
+          "id": "1-at-or-above-1-5-at-or-above-5"
+        },
+        {
+          "type": "note",
+          "text": "5 / at or above 5* -> 15 / at or above 15*",
+          "sourcePage": 6,
+          "id": "5-at-or-above-5-15-at-or-above-15"
+        },
+        {
+          "type": "note",
+          "text": "15 / at or above 15* -> 20 / at or above 20*",
+          "sourcePage": 6,
+          "id": "15-at-or-above-15-20-at-or-above-20"
+        },
+        {
+          "type": "note",
+          "text": "20 / at or above 20* -> Landing Flap / VERF+CORR**",
+          "sourcePage": 6,
+          "id": "20-at-or-above-20-landing-flap-verf-corr"
+        },
+        {
+          "type": "note",
+          "text": "* This is the Green Marker on the Speed Band in the PFD",
+          "sourcePage": 6,
+          "id": "this-is-the-green-marker-on-the-speed-band-in-the-pfd"
+        },
+        {
+          "type": "note",
+          "text": "** CORR = Wind Correction - if unsure -> use 5 KNOTS",
+          "sourcePage": 6,
+          "id": "corr-wind-correction-if-unsure-use-5-knots"
+        }
+      ],
+      "alternate": true,
+      "note": "Reference schedule. See original PDF for the table layout."
+    },
+    {
+      "id": "extended-instrument-approach-landing",
+      "name": "INSTRUMENT APPROACH & LANDING",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "plan to be in Config Flaps 15 | Gear UP and at ~ 170 KIAS at FAF",
+          "response": "",
+          "sourcePage": 6,
+          "id": "plan-to-be-in-config-flaps-15-gear-up-and-at-170-kias-at-faf"
+        },
+        {
+          "challenge": "start descelerating rather early than late",
+          "response": "",
+          "sourcePage": 6,
+          "id": "start-descelerating-rather-early-than-late"
+        },
+        {
+          "challenge": "verify that your Hardware Thrust Lever is in IDLE",
+          "response": "",
+          "sourcePage": 6,
+          "id": "verify-that-your-hardware-thrust-lever-is-in-idle"
+        },
+        {
+          "challenge": "use Speed Brakes if necessary",
+          "response": "",
+          "sourcePage": 6,
+          "id": "use-speed-brakes-if-necessary"
+        },
+        {
+          "challenge": "plan to first intercept Localizer, then the Glide Slope",
+          "response": "",
+          "sourcePage": 6,
+          "id": "plan-to-first-intercept-localizer-then-the-glide-slope"
+        },
+        {
+          "type": "note",
+          "text": "you can see the Distance to the Destination on the FMC PROG Page",
+          "sourcePage": 6,
+          "id": "you-can-see-the-distance-to-the-destination-on-the-fmc-prog-page"
+        },
+        {
+          "type": "heading",
+          "text": "25 NM OUT | ~ 8.000 ft AGL",
+          "sourcePage": 6,
+          "id": "25-nm-out-8-000-ft-agl"
+        },
+        {
+          "challenge": "Altimeter",
+          "response": "LOCAL",
+          "sourcePage": 6,
+          "id": "altimeter"
+        },
+        {
+          "challenge": "Autobrake",
+          "response": "SET",
+          "sourcePage": 6,
+          "id": "autobrake"
+        },
+        {
+          "challenge": "Landing Lights",
+          "response": "ON",
+          "sourcePage": 6,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "ILS Frequency | RAD NAV Page",
+          "response": "CHECK | SET",
+          "sourcePage": 6,
+          "id": "ils-frequency-rad-nav-page"
+        },
+        {
+          "challenge": "switch to Manual Speed Mode & set UP Speed",
+          "response": "",
+          "sourcePage": 6,
+          "id": "switch-to-manual-speed-mode-set-up-speed"
+        },
+        {
+          "challenge": "@ UP Speed → select FLAPS 1 & set 1 Speed",
+          "response": "",
+          "sourcePage": 6,
+          "id": "up-speed-select-flaps-1-set-1-speed"
+        },
+        {
+          "challenge": "@ 1 Speed → select FLAPS 5 & set 5 Speed",
+          "response": "",
+          "sourcePage": 6,
+          "id": "1-speed-select-flaps-5-set-5-speed"
+        },
+        {
+          "challenge": "@ 5 Speed → select FLAPS 15 & set 170 KIAS",
+          "response": "",
+          "sourcePage": 6,
+          "id": "5-speed-select-flaps-15-set-170-kias"
+        },
+        {
+          "challenge": "if 170 KIAS is below 15 Speed → set FLAPS 20",
+          "response": "",
+          "sourcePage": 6,
+          "id": "if-170-kias-is-below-15-speed-set-flaps-20"
+        },
+        {
+          "type": "heading",
+          "text": "@ LOCALIZER INTERCEPT COURSE",
+          "sourcePage": 6,
+          "id": "localizer-intercept-course"
+        },
+        {
+          "challenge": "activate MCP LOC Mode & verify in FMA „LOC“ (white or green)",
+          "response": "",
+          "sourcePage": 6,
+          "id": "activate-mcp-loc-mode-verify-in-fma-loc-white-or-green"
+        },
+        {
+          "type": "heading",
+          "text": "@ ~12 NM OUT | ~ 4.000 ft AGL",
+          "sourcePage": 6,
+          "id": "12-nm-out-4-000-ft-agl"
+        },
+        {
+          "challenge": "activate MCP APP Mode & verify in FMA „G/S“ (white or green)",
+          "response": "",
+          "sourcePage": 6,
+          "id": "activate-mcp-app-mode-verify-in-fma-g-s-white-or-green"
+        },
+        {
+          "type": "heading",
+          "text": "ON GLIDE SLOPE or LATEST 8 NM OUT",
+          "sourcePage": 6,
+          "id": "on-glide-slope-or-latest-8-nm-out"
+        },
+        {
+          "challenge": "select Flaps 20",
+          "response": "",
+          "sourcePage": 6,
+          "id": "select-flaps-20"
+        },
+        {
+          "challenge": "select GEAR DOWN",
+          "response": "",
+          "sourcePage": 6,
+          "id": "select-gear-down"
+        },
+        {
+          "challenge": "select LADNING FLAPS & set VRFE+CORR in SPD",
+          "response": "",
+          "sourcePage": 6,
+          "id": "select-ladning-flaps-set-vrfe-corr-in-spd"
+        },
+        {
+          "challenge": "arm SPEED BRAKES",
+          "response": "",
+          "sourcePage": 6,
+          "id": "arm-speed-brakes"
+        },
+        {
+          "challenge": "preselect Missed Approach Altitude (only if you have the time)",
+          "response": "",
+          "sourcePage": 6,
+          "id": "preselect-missed-approach-altitude-only-if-you-have-the-time"
+        },
+        {
+          "type": "note",
+          "text": "call „LANDING CHECKLIST“",
+          "italic": true,
+          "sourcePage": 6,
+          "id": "call-landing-checklist"
+        },
+        {
+          "challenge": "Speed Brakes",
+          "response": "ARMED",
+          "sourcePage": 6,
+          "id": "speed-brakes"
+        },
+        {
+          "challenge": "Landing Gear",
+          "response": "DOWN",
+          "sourcePage": 6,
+          "id": "landing-gear"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "SET FOR LANDING | 25 or 30",
+          "sourcePage": 6,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Autobrakes",
+          "response": "SET",
+          "sourcePage": 6,
+          "id": "autobrakes"
+        },
+        {
+          "type": "heading",
+          "text": "@ 1.000 ft AGL",
+          "sourcePage": 6,
+          "id": "1-000-ft-agl"
+        },
+        {
+          "challenge": "be stable at LOC and G/S and not more then VREF +20",
+          "response": "",
+          "sourcePage": 6,
+          "id": "be-stable-at-loc-and-g-s-and-not-more-then-vref-20"
+        },
+        {
+          "challenge": "verify „LAND 3“ and FMA „Rollout“ and „Flare“ armed",
+          "response": "",
+          "sourcePage": 6,
+          "id": "verify-land-3-and-fma-rollout-and-flare-armed"
+        },
+        {
+          "challenge": "either leave AUTOPILOT ON for CAT III AUTOLAND\nor DISCONNECT AUTOPILOT for manual Landing",
+          "response": "",
+          "sourcePage": 6,
+          "id": "either-leave-autopilot-on-for-cat-iii-autoland-or-disconnect-autopilot-for-manual-landing"
+        },
+        {
+          "challenge": "(optional if manual Landing) AUTOTHROTTLE OFF and set",
+          "response": "",
+          "sourcePage": 6,
+          "optional": true,
+          "id": "optional-if-manual-landing-autothrottle-off-and-set"
+        },
+        {
+          "type": "note",
+          "text": "Thrust manually to maintain VREF+CORR manually",
+          "sourcePage": 6,
+          "id": "thrust-manually-to-maintain-vref-corr-manually"
+        },
+        {
+          "type": "heading",
+          "text": "@ TRESHOLD",
+          "sourcePage": 6,
+          "id": "treshold"
+        },
+        {
+          "challenge": "@ 30 ft → THROTTLE → IDLE",
+          "response": "",
+          "sourcePage": 6,
+          "id": "30-ft-throttle-idle"
+        },
+        {
+          "challenge": "@ 30 - 20 ft → flare to ~ 3-4° NOSE UP",
+          "response": "",
+          "sourcePage": 6,
+          "id": "30-20-ft-flare-to-3-4-nose-up"
+        },
+        {
+          "challenge": "touch down with Main Gear, then lower the Nose Gear",
+          "response": "",
+          "sourcePage": 6,
+          "id": "touch-down-with-main-gear-then-lower-the-nose-gear"
+        },
+        {
+          "challenge": "verify Speed Brakes | Spoilers are OUT",
+          "response": "",
+          "sourcePage": 6,
+          "id": "verify-speed-brakes-spoilers-are-out"
+        },
+        {
+          "challenge": "set REVERSE THRUST",
+          "response": "",
+          "sourcePage": 6,
+          "id": "set-reverse-thrust"
+        },
+        {
+          "challenge": "@ 60 KIAS → REVERSE IDLE",
+          "response": "",
+          "sourcePage": 6,
+          "id": "60-kias-reverse-idle"
+        },
+        {
+          "challenge": "@ 40-30 KIAS → brake manually to disable AUTOBRAKE",
+          "response": "",
+          "sourcePage": 6,
+          "id": "40-30-kias-brake-manually-to-disable-autobrake"
+        },
+        {
+          "challenge": "turn Autopilot OFF before leaving the Runway (Autoland only)",
+          "response": "",
+          "sourcePage": 6,
+          "id": "turn-autopilot-off-before-leaving-the-runway-autoland-only"
+        }
+      ]
+    },
+    {
+      "id": "extended-go-around",
+      "name": "GO AROUND",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "use TO/GA Button",
+          "response": "",
+          "sourcePage": 6,
+          "id": "use-to-ga-button"
+        },
+        {
+          "challenge": "picth Up and follow Flight Director",
+          "response": "",
+          "sourcePage": 6,
+          "id": "picth-up-and-follow-flight-director"
+        },
+        {
+          "challenge": "set FLAPS 20",
+          "response": "",
+          "sourcePage": 6,
+          "id": "set-flaps-20"
+        },
+        {
+          "challenge": "at postive rate → GEAR UP",
+          "response": "",
+          "sourcePage": 6,
+          "id": "at-postive-rate-gear-up"
+        },
+        {
+          "challenge": "follow Flight Director",
+          "response": "",
+          "sourcePage": 6,
+          "id": "follow-flight-director"
+        },
+        {
+          "challenge": "@ 200 ft AGL → Autopilot ON",
+          "response": "",
+          "sourcePage": 6,
+          "id": "200-ft-agl-autopilot-on"
+        },
+        {
+          "challenge": "if flying manually → trim per Cyan FBW Marker on SPD Band",
+          "response": "",
+          "sourcePage": 6,
+          "optional": true,
+          "id": "if-flying-manually-trim-per-cyan-fbw-marker-on-spd-band"
+        },
+        {
+          "challenge": "@ 400 ft AGL → select Roll & Pitch Mode",
+          "response": "",
+          "sourcePage": 6,
+          "id": "400-ft-agl-select-roll-pitch-mode"
+        },
+        {
+          "type": "heading",
+          "text": "ABOVE 1.500 ft AGL (Acceleration/Thrust Red Height)",
+          "sourcePage": 6,
+          "id": "above-1-500-ft-agl-acceleration-thrust-red-height"
+        },
+        {
+          "challenge": "verify Climb Thrust is set",
+          "response": "",
+          "sourcePage": 6,
+          "id": "verify-climb-thrust-is-set"
+        },
+        {
+          "challenge": "Flap Retraction per Schedule",
+          "response": "",
+          "sourcePage": 6,
+          "id": "flap-retraction-per-schedule"
+        }
+      ],
+      "alternate": true,
+      "note": "Use for a go-around."
+    },
+    {
+      "id": "extended-after-landing-clear-of-runway",
+      "name": "AFTER LANDING / CLEAR OF RUNWAY",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "Landing Lights",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "landing-lights"
+        },
+        {
+          "challenge": "Strobe Lights",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "strobe-lights"
+        },
+        {
+          "challenge": "Logo Lights",
+          "response": "AS REQ | OFF",
+          "sourcePage": 6,
+          "id": "logo-lights"
+        },
+        {
+          "challenge": "Taxi Lights",
+          "response": "ON",
+          "sourcePage": 6,
+          "id": "taxi-lights"
+        },
+        {
+          "challenge": "Runway Turnoff Lights",
+          "response": "AS DES",
+          "sourcePage": 6,
+          "id": "runway-turnoff-lights"
+        },
+        {
+          "challenge": "Speedbrake",
+          "response": "DOWN | FWD",
+          "sourcePage": 6,
+          "id": "speedbrake"
+        },
+        {
+          "challenge": "Auto Brakes",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "auto-brakes"
+        },
+        {
+          "challenge": "Flaps",
+          "response": "UP",
+          "sourcePage": 6,
+          "id": "flaps"
+        },
+        {
+          "challenge": "Transponder Mode",
+          "response": "AS REQ | XPNDR",
+          "sourcePage": 6,
+          "id": "transponder-mode"
+        },
+        {
+          "challenge": "APU",
+          "response": "AS DES | START",
+          "sourcePage": 6,
+          "id": "apu"
+        },
+        {
+          "challenge": "Anti-Ice",
+          "response": "AS REQ",
+          "sourcePage": 6,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "ND WXR | TFC | TERR (EFIS Panel)",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "nd-wxr-tfc-terr-efis-panel"
+        }
+      ]
+    },
+    {
+      "id": "extended-parking-shut-down",
+      "name": "PARKING / SHUT DOWN",
+      "description": "JayDee PMDG 777 / page 6",
+      "sourcePages": [
+        6
+      ],
+      "items": [
+        {
+          "challenge": "Parking Brake",
+          "response": "SET",
+          "sourcePage": 6,
+          "id": "parking-brake"
+        },
+        {
+          "challenge": "APU",
+          "response": "AS DES | verify ON",
+          "sourcePage": 6,
+          "id": "apu"
+        },
+        {
+          "challenge": "Fuel Control Switches",
+          "response": "CUTOFF",
+          "sourcePage": 6,
+          "id": "fuel-control-switches"
+        },
+        {
+          "challenge": "Electric Hydraulic Pumps",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "electric-hydraulic-pumps"
+        },
+        {
+          "challenge": "Fuel Pumps",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "fuel-pumps"
+        },
+        {
+          "challenge": "Anti-Ice",
+          "response": "AUTO",
+          "sourcePage": 6,
+          "id": "anti-ice"
+        },
+        {
+          "challenge": "Beacon",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "beacon"
+        },
+        {
+          "challenge": "Pass Signs",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "pass-signs"
+        },
+        {
+          "challenge": "Flight Director",
+          "response": "OFF",
+          "sourcePage": 6,
+          "id": "flight-director"
+        },
+        {
+          "challenge": "Transponder",
+          "response": "STBY",
+          "sourcePage": 6,
+          "id": "transponder"
+        },
+        {
+          "type": "note",
+          "text": "call „SHUTDOWN CHECKLIST“",
+          "italic": true,
+          "sourcePage": 6,
+          "id": "call-shutdown-checklist"
+        },
+        {
+          "challenge": "Tablet - Ground Operations",
+          "response": "AS DES",
+          "sourcePage": 6,
+          "id": "tablet-ground-operations"
+        },
+        {
+          "challenge": "disarm Doors",
+          "response": "",
+          "sourcePage": 6,
+          "id": "disarm-doors"
+        },
+        {
+          "challenge": "set Wheel Chocks & select Stairs | Jetway",
+          "response": "",
+          "sourcePage": 6,
+          "id": "set-wheel-chocks-select-stairs-jetway"
+        },
+        {
+          "challenge": "select GPU | ACU as desired",
+          "response": "",
+          "sourcePage": 6,
+          "id": "select-gpu-acu-as-desired"
+        },
+        {
+          "challenge": "APU / EXT Power",
+          "response": "AS REQ",
+          "sourcePage": 6,
+          "id": "apu-ext-power"
+        },
+        {
+          "challenge": "Cockpit Door",
+          "response": "UNLOCK",
+          "sourcePage": 6,
+          "id": "cockpit-door"
+        },
+        {
+          "challenge": "Lower Center Display",
+          "response": "STAT PAGE | CONSIDER",
+          "sourcePage": 6,
+          "id": "lower-center-display"
+        }
+      ]
+    },
+    {
+      "id": "extended-securing-the-aircraft",
+      "name": "SECURING THE AIRCRAFT",
+      "description": "JayDee PMDG 777 / page 7",
+      "sourcePages": [
+        7
+      ],
+      "items": [
+        {
+          "challenge": "ADIRU Switch",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "adiru-switch"
+        },
+        {
+          "challenge": "Emergency Exit Lights",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "emergency-exit-lights"
+        },
+        {
+          "challenge": "Packs Switches",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "packs-switches"
+        },
+        {
+          "type": "note",
+          "text": "call „SECURE CHECKLIST“",
+          "italic": true,
+          "sourcePage": 7,
+          "id": "call-secure-checklist"
+        },
+        {
+          "challenge": "APU",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "apu"
+        },
+        {
+          "challenge": "EXT Power",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "ext-power"
+        },
+        {
+          "challenge": "Battery Switch",
+          "response": "OFF",
+          "sourcePage": 7,
+          "id": "battery-switch"
+        },
+        {
+          "challenge": "Tablet - Ground Operations",
+          "response": "AS DES",
+          "sourcePage": 7,
+          "id": "tablet-ground-operations"
+        }
+      ]
+    }
+  ],
+  "showExtendedLabel": "Show full procedures",
+  "showNormalLabel": "Show normal checklists",
+  "normalModeLabel": "Normal checklists - pages 4-7",
+  "extendedModeLabel": "Full procedures - pages 2-7",
+  "normalInitialPage": 4,
+  "extendedInitialPage": 2,
+  "options": [
+    {
+      "id": "route-source",
+      "label": "FMC route setup",
+      "default": "simbrief",
+      "values": [
+        {
+          "id": "simbrief",
+          "label": "With SimBrief"
+        },
+        {
+          "id": "manual",
+          "label": "Without SimBrief"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "checklist-procedures",
+      "title": "PMDG Boeing 777 - JayDee 1.37.3",
+      "path": "references/pmdg-777/checklist-procedures.pdf"
+    }
+  ]
+}
