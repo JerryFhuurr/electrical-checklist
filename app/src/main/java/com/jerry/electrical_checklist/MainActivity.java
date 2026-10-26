@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private String renderedAircraft;
     private String renderedSidebarContext;
     private int renderedChecklistIndex;
+    private UpdateUi updates;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -127,11 +128,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         render();
+        updates = new UpdateUi(this, () -> manufacturer == null && aircraftCollection == null);
+        updates.restoreState(state);
         if (state != null) scroll.post(() -> scroll.scrollTo(0, state.getInt("scroll")));
     }
 
     @Override protected void onResume() {
         super.onResume();
+        if (updates != null) updates.checkAutomatically();
         float selected = new DisplaySettings(this).fontScale();
         if (Float.compare(selected, checklistFontScale) != 0) {
             checklistFontScale = selected;
@@ -145,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override protected void onSaveInstanceState(@NonNull Bundle state) {
         super.onSaveInstanceState(state);
+        if (updates != null) updates.saveState(state);
         if (manufacturer != null) state.putString("manufacturer", manufacturer);
         if (aircraftCollection != null) state.putString("aircraft_collection", aircraftCollection);
         if (aircraft != null) state.putString("aircraft", aircraft.id);
@@ -158,6 +163,20 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onStop() {
         pageTransitions.clear();
         super.onStop();
+    }
+
+    @Override protected void onPause() {
+        super.onPause();
+        if (updates != null) updates.hidePrompt();
+    }
+    @Override public void onWindowFocusChanged(boolean focused) {
+        super.onWindowFocusChanged(focused);
+        if (focused && updates != null) updates.maybePresent();
+    }
+
+    @Override protected void onDestroy() {
+        if (updates != null) updates.dispose();
+        super.onDestroy();
     }
 
     private void render() { render(false); }
@@ -209,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
         renderedAircraft = aircraftId;
         renderedSidebarContext = context;
         renderedChecklistIndex = checklistIndex;
+        if (updates != null && atHome) root.post(() -> { if (updates != null) updates.checkAutomatically(); });
     }
 
     private void restoreStartup() {

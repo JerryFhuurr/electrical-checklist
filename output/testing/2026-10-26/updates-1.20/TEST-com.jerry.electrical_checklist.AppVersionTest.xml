@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jerry.electrical_checklist.AppVersionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-26T11:04:10.301Z" hostname="JERRY_ASUS" time="0.085">
+  <properties/>
+  <testcase name="rejectsMalformedAndPrereleaseVersions" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.022"/>
+  <testcase name="canonicalKeysKeepEquivalentVersionsSkipped" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.003"/>
+  <testcase name="largeComponentsDoNotOverflow" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.001"/>
+  <testcase name="comparesNumericPartsInsteadOfTextOrDecimals" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.001"/>
+  <testcase name="acceptsWhitespaceAndFourPartVersions" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.002"/>
+  <testcase name="ignoresTrailingZerosAndBuildMetadata" classname="com.jerry.electrical_checklist.AppVersionTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

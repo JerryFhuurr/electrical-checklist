@@ -1,0 +1,146 @@
+{
+  "result": "PASS",
+  "old_version": "1.19",
+  "new_version": "1.20",
+  "uid_retained": "10192",
+  "commands": [
+    {
+      "command": [
+        "shell",
+        "am",
+        "force-stop",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uninstall",
+        "com.jerry.electrical_checklist.test"
+      ],
+      "stdout": "Success",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uninstall",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "Success",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "logcat",
+        "-c"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "install",
+        "C:\\Users\\fhuur\\Documents\\Project\\e-checklist\\output\\E-Checklist-v1.19-release.apk"
+      ],
+      "stdout": "Performing Incremental Install\nPerforming Streamed Install\nSuccess",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "dumpsys",
+        "package",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "Activity Resolver Table:\n  Non-Data Actions:\n      android.intent.action.MAIN:\n        818e222 com.jerry.electrical_checklist/.MainActivity filter fcad4b3\n          Action: \"android.intent.action.MAIN\"\n          Category: \"android.intent.category.LAUNCHER\"\n\nReceiver Resolver Table:\n  Non-Data Actions:\n      androidx.profileinstaller.action.SAVE_PROFILE:\n        b9d4a70 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 894090f\n          Action: \"androidx.profileinstaller.action.SAVE_PROFILE\"\n      androidx.profileinstaller.action.INSTALL_PROFILE:\n        b9d4a70 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 14701e9\n          Action: \"androidx.profileinstaller.action.INSTALL_PROFILE\"\n      androidx.profileinstaller.action.SKIP_FILE:\n        b9d4a70 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 106fe6e\n          Action: \"androidx.profileinstaller.action.SKIP_FILE\"\n      androidx.profileinstaller.action.BENCHMARK_OPERATION:\n        b9d4a70 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 2649d9c\n          Action: \"androidx.profileinstaller.action.BENCHMARK_OPERATION\"\n\nDomain verification status:\n\nPermissions:\n  Permission [com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (179614e):\n    sourcePackage=com.jerry.electrical_checklist\n    uid=10192 gids=[] type=0 prot=signature\n    perm=PermissionInfo{ca8626f com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}\n\nRegistered ContentProviders:\n  com.jerry.electrical_checklist/androidx.startup.InitializationProvider:\n    Provider{289eb7c com.jerry.electrical_checklist/androidx.startup.InitializationProvider}\n\nContentProvider Authorities:\n  [com.jerry.electrical_checklist.androidx-startup]:\n    Provider{289eb7c com.jerry.electrical_checklist/androidx.startup.InitializationProvider}\n      applicationInfo=ApplicationInfo{8613c05 com.jerry.electrical_checklist}\n\nKey Set Manager:\n  [com.jerry.electrical_checklist]\n      Signing KeySets: 37\n\nPackages:\n  Package [com.jerry.electrical_checklist] (7643067):\n    userId=10192\n    pkg=Package{3122e14 com.jerry.electrical_checklist}\n    codePath=/data/app/~~DmLGrq8U6-muRLIkCXKSeA==/com.jerry.electrical_checklist-IcQoEegQm2ejA_cX0hR5tw==\n    resourcePath=/data/app/~~DmLGrq8U6-muRLIkCXKSeA==/com.jerry.electrical_checklist-IcQoEegQm2ejA_cX0hR5tw==\n    legacyNativeLibraryDir=/data/app/~~DmLGrq8U6-muRLIkCXKSeA==/com.jerry.electrical_checklist-IcQoEegQm2ejA_cX0hR5tw==/lib\n    extractNativeLibs=false\n    primaryCpuAbi=null\n    secondaryCpuAbi=null\n    cpuAbiOverride=null\n    versionCode=21 minSdk=28 targetSdk=37\n    minExtensionVersions=[]\n    versionName=1.19\n    usesNonSdkApi=false\n    splits=[base]\n    apkSigningVersion=3\n    applicationInfo=PackageImpl{3122e14 com.jerry.electrical_checklist}\n    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]\n    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]\n    forceQueryable=false\n    queriesPackages=[]\n    queriesIntents=[Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=https:///... }]\n    dataDir=/data/user/0/com.jerry.electrical_checklist\n    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]\n    timeStamp=2026-10-26 12:10:50\n    firstInstallTime=2026-10-26 12:10:50\n    lastUpdateTime=2026-10-26 12:10:50\n    signatures=PackageSignatures{6b104b2 version:3, signatures:[427a815c], past signatures:[]}\n    installPermissionsFixed=true\n    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]\n    declared permissions:\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature, INSTALLED\n    requested permissions:\n      android.permission.INTERNET\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\n    install permissions:\n      android.permission.INTERNET: granted=true\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true\n    User 0: ceDataInode=139513 installed=true hidden=false suspended=false distractionFlags=0 stopped=true notLaunched=true enabled=0 instant=false virtual=false\n      gids=[3003]\n      runtime permissions:\n\nQueries:\n  system apps queryable: false\n  queries via package name:\n  queries via intent:\n    com.google.android.settings.intelligence:\n      com.jerry.electrical_checklist\n    com.jerry.electrical_checklist:\n      com.google.android.setupwizard\n      org.chromium.webview_shell\n      com.android.chrome\n      com.google.android.apps.docs\n  queryable via interaction:\n    User 0:\n  queryable via uses-library:\n\nPackage Changes:\n  Sequence number=19\n  User 0:\n    seq=11, package=com.google.android.gms\n    seq=15, package=com.google.android.apps.docs\n    seq=16, package=com.jerry.electrical_checklist.test\n    seq=18, package=com.jerry.electrical_checklist\n\n\nDexopt state:\n  [com.jerry.electrical_checklist]\n    path: /data/app/~~DmLGrq8U6-muRLIkCXKSeA==/com.jerry.electrical_checklist-IcQoEegQm2ejA_cX0hR5tw==/base.apk\n      x86_64: [status=verify] [reason=install]\n\n\nCompiler stats:\n  [com.jerry.electrical_checklist]\n     base.apk - 668\n\nAPEX session state:\n\nActive APEX packages:\n\n\nInactive APEX packages:\n\n\nFactory APEX packages:\n\n\nSnapshot statistics\n   Unrecorded-hits: 5390  Cork-level: 0\n   Summary stats               TotBlds     TotUsed     TotCork     BigBlds    ShortLvd     TotTime     MaxTime\n          0:27         now          11       35607           0           0           3           5           1\n          1:27        0:27          10        7779           0           1           3          55          51\n          2:27        1:27           7       26969           0           1           0         143         140\n          3:28        2:27          11       13297           0           1           1          27          25\n          4:28        3:28          23       20837           0           2           6         305         194\n          5:28        4:28          20       32274           0           1           3          33          14\n          6:30        5:28           5        2448           0           1           0          84          78\n          7:35        6:30          17       18959           0           2           0         120          58\n          8:37        7:35         106       41306           0           2           8         265         193\n          8:37         now         210      199476           0          11          24        1040         194\n\n   Build times                  <= 1ms      <= 2ms      <= 5ms     <= 10ms     <= 20ms     <= 50ms    <= 100ms     > 100ms\n          0:27         now          11           0           0           0           0           0           0           0\n          1:27        0:27           9           0           0           0           0           0           1           0\n          2:27        1:27           6           0           0           0           0           0           0           1\n          3:28        2:27          10           0           0           0           0           1           0           0\n          4:28        3:28          21           0           0           0           0           0           0           2\n          5:28        4:28          16           2           0           1           1           0           0           0\n          6:30        5:28           3           1           0           0           0           0           1           0\n          7:35        6:30           9           2           3           1           0           1           1           0\n          8:37        7:35         101           2           1           0           1           0           0           1\n          8:37         now         186           7           4           2           2           2           3           4\n\n   Use counters                   <= 1        <= 2        <= 5       <= 10       <= 20       <= 50      <= 100       > 100\n          0:27         now           3           0           0           0           0           0           2           6\n          1:27        0:27           3           0           0           0           0           0           0           7\n          2:27        1:27           0           0           0           0           0           0           0           7\n          3:28        2:27           1           0           0           2           0           0           2           6\n          4:28        3:28           6           0           0           1           1           1           2          12\n          5:28        4:28           2           0           1           1           0           1           1          14\n          6:30        5:28           0           0           0           0           1           0           0           4\n          7:35        6:30           0           0           0           0           1           1           1          14\n          8:37        7:35           3           1           3           5           5          12          22          54\n          8:37         now          18           1           4           9           8          15          30         124",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "com.jerry.electrical_checklist/.MainActivity"
+      ],
+      "stdout": "Starting: Intent { cmp=com.jerry.electrical_checklist/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.jerry.electrical_checklist/.MainActivity\nTotalTime: 1995\nWaitTime: 2033\nComplete",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "pm",
+        "list",
+        "packages",
+        "-U",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "package:com.jerry.electrical_checklist uid:10192",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "install",
+        "-r",
+        "C:\\Users\\fhuur\\Documents\\Project\\e-checklist\\output\\E-Checklist-v1.20-release.apk"
+      ],
+      "stdout": "Performing Incremental Install\nPerforming Streamed Install\nSuccess",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "dumpsys",
+        "package",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "Activity Resolver Table:\n  Non-Data Actions:\n      android.intent.action.MAIN:\n        f8fbc84 com.jerry.electrical_checklist/.MainActivity filter dbbac6d\n          Action: \"android.intent.action.MAIN\"\n          Category: \"android.intent.category.LAUNCHER\"\n\nReceiver Resolver Table:\n  Non-Data Actions:\n      androidx.profileinstaller.action.SAVE_PROFILE:\n        bfd0a2 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter af3a269\n          Action: \"androidx.profileinstaller.action.SAVE_PROFILE\"\n      androidx.profileinstaller.action.INSTALL_PROFILE:\n        bfd0a2 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 2896133\n          Action: \"androidx.profileinstaller.action.INSTALL_PROFILE\"\n      androidx.profileinstaller.action.SKIP_FILE:\n        bfd0a2 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter 8e1cf0\n          Action: \"androidx.profileinstaller.action.SKIP_FILE\"\n      androidx.profileinstaller.action.BENCHMARK_OPERATION:\n        bfd0a2 com.jerry.electrical_checklist/androidx.profileinstaller.ProfileInstallReceiver filter b6e54ee\n          Action: \"androidx.profileinstaller.action.BENCHMARK_OPERATION\"\n\nDomain verification status:\n\nPermissions:\n  Permission [com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (5d8eb61):\n    sourcePackage=com.jerry.electrical_checklist\n    uid=10192 gids=[] type=0 prot=signature\n    perm=PermissionInfo{319f686 com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}\n\nRegistered ContentProviders:\n  com.jerry.electrical_checklist/androidx.startup.InitializationProvider:\n    Provider{ccefb47 com.jerry.electrical_checklist/androidx.startup.InitializationProvider}\n\nContentProvider Authorities:\n  [com.jerry.electrical_checklist.androidx-startup]:\n    Provider{ccefb47 com.jerry.electrical_checklist/androidx.startup.InitializationProvider}\n      applicationInfo=ApplicationInfo{49acf74 com.jerry.electrical_checklist}\n\nKey Set Manager:\n  [com.jerry.electrical_checklist]\n      Signing KeySets: 37\n\nPackages:\n  Package [com.jerry.electrical_checklist] (7643067):\n    userId=10192\n    pkg=Package{8d7dc9d com.jerry.electrical_checklist}\n    codePath=/data/app/~~EsZdTt7QdP9Y2Iw2jQja2Q==/com.jerry.electrical_checklist-y-MQhq0VUCBxymQaLsV7oA==\n    resourcePath=/data/app/~~EsZdTt7QdP9Y2Iw2jQja2Q==/com.jerry.electrical_checklist-y-MQhq0VUCBxymQaLsV7oA==\n    legacyNativeLibraryDir=/data/app/~~EsZdTt7QdP9Y2Iw2jQja2Q==/com.jerry.electrical_checklist-y-MQhq0VUCBxymQaLsV7oA==/lib\n    extractNativeLibs=false\n    primaryCpuAbi=null\n    secondaryCpuAbi=null\n    cpuAbiOverride=null\n    versionCode=22 minSdk=28 targetSdk=37\n    minExtensionVersions=[]\n    versionName=1.20\n    usesNonSdkApi=false\n    splits=[base]\n    apkSigningVersion=3\n    applicationInfo=PackageImpl{8d7dc9d com.jerry.electrical_checklist}\n    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]\n    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]\n    forceQueryable=false\n    queriesPackages=[]\n    queriesIntents=[Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=https:///... }]\n    dataDir=/data/user/0/com.jerry.electrical_checklist\n    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]\n    timeStamp=2026-10-26 12:10:55\n    firstInstallTime=2026-10-26 12:10:50\n    lastUpdateTime=2026-10-26 12:10:55\n    signatures=PackageSignatures{6b104b2 version:3, signatures:[427a815c], past signatures:[]}\n    installPermissionsFixed=true\n    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]\n    declared permissions:\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature, INSTALLED\n    requested permissions:\n      android.permission.INTERNET\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\n    install permissions:\n      android.permission.INTERNET: granted=true\n      com.jerry.electrical_checklist.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true\n    User 0: ceDataInode=139513 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false\n      gids=[3003]\n      runtime permissions:\n\nQueries:\n  system apps queryable: false\n  queries via package name:\n  queries via intent:\n    com.google.android.settings.intelligence:\n      com.jerry.electrical_checklist\n    com.jerry.electrical_checklist:\n      com.google.android.setupwizard\n      org.chromium.webview_shell\n      com.android.chrome\n      com.google.android.apps.docs\n  queryable via interaction:\n    User 0:\n  queryable via uses-library:\n\nPackage Changes:\n  Sequence number=22\n  User 0:\n    seq=11, package=com.google.android.gms\n    seq=16, package=com.jerry.electrical_checklist.test\n    seq=20, package=com.jerry.electrical_checklist\n    seq=21, package=com.google.android.apps.docs\n\n\nDexopt state:\n  [com.jerry.electrical_checklist]\n    path: /data/app/~~EsZdTt7QdP9Y2Iw2jQja2Q==/com.jerry.electrical_checklist-y-MQhq0VUCBxymQaLsV7oA==/base.apk\n      x86_64: [status=verify] [reason=install]\n\n\nCompiler stats:\n  [com.jerry.electrical_checklist]\n     base.apk - 1587\n\nAPEX session state:\n\nActive APEX packages:\n\n\nInactive APEX packages:\n\n\nFactory APEX packages:\n\n\nSnapshot statistics\n   Unrecorded-hits: 369  Cork-level: 0\n   Summary stats               TotBlds     TotUsed     TotCork     BigBlds    ShortLvd     TotTime     MaxTime\n          0:33         now          26       49587           0           0           5          11           1\n          1:33        0:33          10        7779           0           1           3          55          51\n          2:33        1:33           7       26969           0           1           0         143         140\n          3:33        2:33          11       13297           0           1           1          27          25\n          4:33        3:33          23       20837           0           2           6         305         194\n          5:33        4:33          20       32274           0           1           3          33          14\n          6:35        5:33           5        2448           0           1           0          84          78\n          7:41        6:35          17       18959           0           2           0         120          58\n          8:42        7:41         106       41306           0           2           8         265         193\n          8:42         now         225      213456           0          11          26        1046         194\n\n   Build times                  <= 1ms      <= 2ms      <= 5ms     <= 10ms     <= 20ms     <= 50ms    <= 100ms     > 100ms\n          0:33         now          26           0           0           0           0           0           0           0\n          1:33        0:33           9           0           0           0           0           0           1           0\n          2:33        1:33           6           0           0           0           0           0           0           1\n          3:33        2:33          10           0           0           0           0           1           0           0\n          4:33        3:33          21           0           0           0           0           0           0           2\n          5:33        4:33          16           2           0           1           1           0           0           0\n          6:35        5:33           3           1           0           0           0           0           1           0\n          7:41        6:35           9           2           3           1           0           1           1           0\n          8:42        7:41         101           2           1           0           1           0           0           1\n          8:42         now         201           7           4           2           2           2           3           4\n\n   Use counters                   <= 1        <= 2        <= 5       <= 10       <= 20       <= 50      <= 100       > 100\n          0:33         now           5           0           0           0           1           1           4          15\n          1:33        0:33           3           0           0           0           0           0           0           7\n          2:33        1:33           0           0           0           0           0           0           0           7\n          3:33        2:33           1           0           0           2           0           0           2           6\n          4:33        3:33           6           0           0           1           1           1           2          12\n          5:33        4:33           2           0           1           1           0           1           1          14\n          6:35        5:33           0           0           0           0           1           0           0           4\n          7:41        6:35           0           0           0           0           1           1           1          14\n          8:42        7:41           3           1           3           5           5          12          22          54\n          8:42         now          20           1           4           9           9          16          32         133",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "pm",
+        "list",
+        "packages",
+        "-U",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "package:com.jerry.electrical_checklist uid:10192",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "am",
+        "start",
+        "-W",
+        "-n",
+        "com.jerry.electrical_checklist/.MainActivity"
+      ],
+      "stdout": "Starting: Intent { cmp=com.jerry.electrical_checklist/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.jerry.electrical_checklist/.MainActivity\nTotalTime: 3365\nWaitTime: 3407\nComplete",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "shell",
+        "pidof",
+        "com.jerry.electrical_checklist"
+      ],
+      "stdout": "8744",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "logcat",
+        "-d",
+        "-s",
+        "AndroidRuntime:E"
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

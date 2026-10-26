@@ -114,7 +114,7 @@
     <string name="source_code">SOURCE CODE</string>
     <string name="github_url" translatable="false">https://github.com/JerryFhuurr/electrical-checklist</string>
     <string name="open_github">Open on GitHub</string>
-    <string name="no_browser">No browser is available. You can copy the GitHub link above.</string>
+    <string name="no_browser">No browser is available. Install or enable a browser to open GitHub.</string>
     <string-array name="checklist_font_sizes">
         <item>Small (85%)</item>
         <item>Default (100%)</item>
@@ -152,4 +152,23 @@
     <string name="startup_favorite_choice">Aircraft to open</string>
     <string name="startup_favorites_empty">Star an aircraft on its model card first, then choose it here.</string>
     <string name="startup_fallback_hint">The manufacturer list opens if no favorite or saved checklist is available.</string>
+    <string name="updates_heading">UPDATES</string>
+    <string name="update_settings_hint">Checks GitHub each time you open or return to the app. Automatic update prompts appear on Home, so they do not interrupt a checklist.</string>
+    <string name="check_updates">Check for updates</string>
+    <string name="view_releases">View GitHub releases</string>
+    <string name="update_checking">Checking GitHub…</string>
+    <string name="update_installed_version">Installed version: %1$s</string>
+    <string name="update_available_status">Version %1$s is available.</string>
+    <string name="update_available_title">Update available</string>
+    <string name="update_version_message">E-Checklist %1$s is available. You have version %2$s.</string>
+    <string name="update_download_hint">Download opens the APK in your default browser. Install the downloaded file to update the app.</string>
+    <string name="update_later_hint">Remind later pauses this version for 24 hours. The reminder appears when you next return Home. Skip version hides only this version.</string>
+    <string name="update_download">Download update</string>
+    <string name="update_skip">Skip version</string>
+    <string name="update_later">Remind later</string>
+    <string name="update_no_newer">You have the latest available version.</string>
+    <string name="update_no_release">No published release is available yet.</string>
+    <string name="update_no_apk">The latest release has no supported release APK. Check GitHub releases for details.</string>
+    <string name="update_rate_limited">GitHub is limiting requests. Try again later or open GitHub releases.</string>
+    <string name="update_check_failed">Could not check for updates. Check your connection and try again.</string>
 </resources>

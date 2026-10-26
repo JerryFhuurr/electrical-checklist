@@ -19,6 +19,7 @@ import java.util.List;
 import com.jerry.electrical_checklist.ChecklistCatalog.Aircraft;
 
 public final class SettingsActivity extends AppCompatActivity {
+    private UpdateUi updates;
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         EdgeToEdge.enable(this);
@@ -53,6 +54,30 @@ public final class SettingsActivity extends AppCompatActivity {
         });
         findViewById(R.id.about_button).setOnClickListener(v -> startActivity(new Intent(this, AboutActivity.class)));
         bindStartupSettings();
+        updates = new UpdateUi(this, () -> false);
+        findViewById(R.id.check_updates_button).setOnClickListener(v -> updates.checkManually());
+        findViewById(R.id.view_releases_button).setOnClickListener(v -> BrowserLauncher.open(this, GitHubReleaseClient.RELEASES_URL));
+        updates.restoreState(state);
+    }
+    @Override protected void onResume() {
+        super.onResume();
+        if (updates != null) getWindow().getDecorView().post(updates::maybePresent);
+    }
+    @Override protected void onPause() {
+        super.onPause();
+        if (updates != null) updates.hidePrompt();
+    }
+    @Override public void onWindowFocusChanged(boolean focused) {
+        super.onWindowFocusChanged(focused);
+        if (focused && updates != null) updates.maybePresent();
+    }
+    @Override protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        if (updates != null) updates.saveState(state);
+    }
+    @Override protected void onDestroy() {
+        if (updates != null) updates.dispose();
+        super.onDestroy();
     }
     private void bindStartupSettings() {
         NavigationPreferences navigation = new NavigationPreferences(this);

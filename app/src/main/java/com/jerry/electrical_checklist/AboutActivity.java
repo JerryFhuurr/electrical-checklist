@@ -10,6 +10,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public final class AboutActivity extends AppCompatActivity {
+    private UpdateUi updates;
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         EdgeToEdge.enable(this);
@@ -26,5 +27,28 @@ public final class AboutActivity extends AppCompatActivity {
             try { startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.github_url)))); }
             catch (ActivityNotFoundException error) { Toast.makeText(this, R.string.no_browser, Toast.LENGTH_LONG).show(); }
         });
+        updates = new UpdateUi(this, () -> false);
+        findViewById(R.id.check_updates_button).setOnClickListener(v -> updates.checkManually());
+        updates.restoreState(state);
+    }
+    @Override protected void onResume() {
+        super.onResume();
+        if (updates != null) getWindow().getDecorView().post(updates::maybePresent);
+    }
+    @Override protected void onPause() {
+        super.onPause();
+        if (updates != null) updates.hidePrompt();
+    }
+    @Override public void onWindowFocusChanged(boolean focused) {
+        super.onWindowFocusChanged(focused);
+        if (focused && updates != null) updates.maybePresent();
+    }
+    @Override protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        if (updates != null) updates.saveState(state);
+    }
+    @Override protected void onDestroy() {
+        if (updates != null) updates.dispose();
+        super.onDestroy();
     }
 }

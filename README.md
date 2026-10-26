@@ -8,7 +8,7 @@ The app works offline on **Android 9 and newer**, with layouts for phones and ta
 
 ## How to use
 
-1. **Install the app.** Download the [E-Checklist v1.18 release APK](output/E-Checklist-v1.18-release.apk) to your Android device and open it to install.
+1. **Install the app.** Download the [E-Checklist v1.20 release APK](output/E-Checklist-v1.20-release.apk) to your Android device and open it to install.
 2. **Choose your aircraft.** Select a manufacturer, then a plane model, such as Boeing → Boeing 737-NG.
 3. **Open a checklist.** Choose the flight phase you want to work through, such as Before Start.
 4. **Check the items.** Tap a row or its checkbox to check or uncheck it. You can also use **Mark item as complete** to check the next required item.
@@ -36,10 +36,28 @@ If you already have the earlier debug build installed, the release APK cannot up
 - **Phone and tablet layouts:** Wide landscape screens place checklist buttons on the left and items on the right, with independently scrolling panes. Page transitions respect Android's animation preferences.
 - **Keep-awake behavior:** The screen stays on while using the checklists or original document reader.
 - **About page:** Find the app version, author, and [GitHub repository](https://github.com/JerryFhuurr/electrical-checklist) in Settings → About.
+- **GitHub updates:** Checks for a newer release each time you open or return to the app. Choose **Download update**, **Skip version**, or **Remind later**. Settings and About include manual update checks; Settings also links to releases.
 
 Available modes and procedure options depend on the aircraft. The A340 non-normal category contains **selected memory items only**.
 
 The [test report](docs/TEST-REPORT-2026-10-26.md) records the regression cases, results, environment, and testing limits.
+
+## App updates
+
+An internet connection is needed only for update checks and downloads; all bundled checklists still work offline. GitHub is checked each time you open the app or return from the background, including when returning to Settings or About. Navigating between app pages and rotating the screen do not trigger another opening check. Automatic prompts wait for Home so they do not interrupt a checklist. Skip and reminder choices still apply even though release information is checked again.
+
+- **Download update** opens the release APK in your default browser. Open the downloaded APK to install it over your existing release app. There is no automatic installation.
+- **Skip version** hides that version across restarts. A newer version can still trigger a prompt.
+- **Remind later** hides that version for 24 hours, then reminds you when you next return Home and release information is available. Closing the prompt with Back has the same effect. There are no background notifications.
+- **Settings → About → Check for updates** checks immediately, including versions you previously skipped or deferred. The same button remains available directly in Settings. **View GitHub releases** in Settings opens the release history.
+
+Resetting checklist progress keeps your update choices.
+
+For maintainers: publish a stable [GitHub release](https://github.com/JerryFhuurr/electrical-checklist/releases) with a signed release APK to announce an update. Pushing commits alone does not publish an update. Use a numeric tag such as `v1.20` and an APK named `E-Checklist-v1.20-release.apk`, with a matching app version and increased Android version code. The current `Main` release tag is also supported when its APK filename contains the version. Drafts, prereleases, debug APKs, and releases without a usable APK are excluded. Checks use GitHub's public [latest release API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release), without an account or token. Keep using the same signing key so installed releases can update without losing progress.
+
+The [update test report](docs/UPDATE-TEST-REPORT-2026-10-26.md) records update checks and the related regression tests.
+
+The [v1.20 test report](docs/UPDATE-TEST-REPORT-1.20-2026-10-26.md) covers the About button and checks on each app opening.
 
 ## Supported aircraft
 

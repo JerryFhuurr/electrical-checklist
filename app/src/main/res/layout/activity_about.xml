@@ -9,6 +9,10 @@
             <TextView style="@style/PageTitle" android:text="@string/app_name"/>
             <TextView android:id="@+id/about_version" style="@style/BodyText"/>
             <TextView style="@style/BodyText" android:text="@string/about_description"/>
+            <TextView style="@style/Eyebrow" android:layout_marginTop="32dp" android:text="@string/updates_heading"/>
+            <TextView style="@style/BodyText" android:text="@string/update_settings_hint"/>
+            <TextView android:id="@+id/update_status" style="@style/BodyText" android:accessibilityLiveRegion="polite"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/check_updates_button" style="@style/PrimaryAction" android:text="@string/check_updates" android:layout_marginTop="16dp"/>
             <TextView style="@style/Eyebrow" android:layout_marginTop="32dp" android:text="@string/author_label"/>
             <TextView android:id="@+id/about_author" style="@style/BodyText" android:text="@string/author_name" android:textIsSelectable="true"/>
             <TextView style="@style/Eyebrow" android:layout_marginTop="32dp" android:text="@string/source_code"/>
