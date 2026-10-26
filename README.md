@@ -8,7 +8,7 @@ The app works offline on **Android 9 and newer**, with layouts for phones and ta
 
 ## How to use
 
-1. **Install the app.** Download the [E-Checklist v1.17 release APK](output/E-Checklist-v1.17-release.apk) to your Android device and open it to install.
+1. **Install the app.** Download the [E-Checklist v1.18 release APK](output/E-Checklist-v1.18-release.apk) to your Android device and open it to install.
 2. **Choose your aircraft.** Select a manufacturer, then a plane model, such as Boeing → Boeing 737-NG.
 3. **Open a checklist.** Choose the flight phase you want to work through, such as Before Start.
 4. **Check the items.** Tap a row or its checkbox to check or uncheck it. You can also use **Mark item as complete** to check the next required item.
@@ -22,7 +22,7 @@ If you already have the earlier debug build installed, the release APK cannot up
 ## Features
 
 - **Offline checklists:** Use the bundled checklists and original documents without an internet connection.
-- **Manufacturer and model selection:** Browse aircraft grouped by manufacturer, with models sorted by name.
+- **Manufacturer and model selection:** Browse aircraft grouped by manufacturer, with models sorted by name. The selected model appears in the toolbar on its checklist screens.
 - **Interactive challenge/response rows:** Check items manually, track completion, and uncheck a required item to reopen a completed checklist.
 - **Optional and manual-only items:** Tick these when applicable; they do not block completion. Source headings and notes remain readable without becoming checkboxes.
 - **Automatic progression and scrolling:** Completing a normal checklist opens the next phase. Checking the bottom visible item reveals the next unchecked item.
@@ -38,6 +38,8 @@ If you already have the earlier debug build installed, the release APK cannot up
 - **About page:** Find the app version, author, and [GitHub repository](https://github.com/JerryFhuurr/electrical-checklist) in Settings → About.
 
 Available modes and procedure options depend on the aircraft. The A340 non-normal category contains **selected memory items only**.
+
+The [test report](docs/TEST-REPORT-2026-10-26.md) records the regression cases, results, environment, and testing limits.
 
 ## Supported aircraft
 

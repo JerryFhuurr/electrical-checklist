@@ -1,0 +1,5 @@
+{
+  "scenario": "Home Back -> launcher resume -> Boeing 757 Engine Start -> Back returns to phases",
+  "passed": true,
+  "launcher_resume_output": "Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.jerry.electrical_checklist/.MainActivity }\r\nWarning: Activity not started, its current task has been brought to the front\r\nStatus: ok\r\nLaunchState: UNKNOWN (0)\r\nActivity: com.jerry.electrical_checklist/.MainActivity\r\nWaitTime: 36\r\nComplete\r\n"
+}

@@ -142,7 +142,7 @@ public class SettingsTest {
     @Test public void aboutShowsAuthorVersionAndOpensRepositoryLink() {
         settings(); onView(withId(R.id.about_button)).perform(scrollTo(), click());
         onView(withId(R.id.about_author)).check(matches(withText("Jerry Cao (JerryFhuurr)")));
-        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.17"))));
+        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.18"))));
         AtomicReference<Intent> launched = new AtomicReference<>();
         Instrumentation.ActivityMonitor monitor = new Instrumentation.ActivityMonitor() {
             @Override public Instrumentation.ActivityResult onStartActivity(Intent intent) {

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "M01",
+    "description": "Boeing 757 Engine Start displays the aircraft in the phone toolbar.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\phone-757-engine-start.png"
+  },
+  {
+    "id": "M02",
+    "description": "Long 737 MAX model name remains readable in the normal phone toolbar.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\phone-737-max.png"
+  },
+  {
+    "id": "M03",
+    "description": "Visual review found the 320dp toolbar truncating the 737 MAX Family name before the three-line fix.",
+    "result": "failed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\narrow-phone-737-max.png"
+  },
+  {
+    "id": "M04",
+    "description": "Tablet landscape retains A320 Extended selection with day mode and 175% checklist text.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-a320-day-large.png"
+  },
+  {
+    "id": "M05",
+    "description": "Tablet sidebar switches phase while the aircraft toolbar stays correct.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-a320-before-start.png"
+  }
+]

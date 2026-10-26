@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf8'?>
+<testsuites tests="79" failures="0" errors="0" skipped="0">
+  <testsuite name="com.jerry.electrical_checklist.A340ChecklistTest" tests="6" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="normalIsDefaultAndCategoryButtonsOpenRelevantSourcePages" time="22.156" />
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="memoryConditionsKeepNotesAndZeroApplicableItemsAreNotCompleted" time="20.031" />
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="tcasAndWindshearOptionsAreScopedAndPreserveOtherSelections" time="14.297" />
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="manualEngineProgressIsIndependentAndAutomaticStartIncludesAllFourEngines" time="18.734" />
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="evacuationBranchesAreExclusiveAndOnlyAffectedCompletionReopens" time="16.703" />
+    <testcase classname="com.jerry.electrical_checklist.A340ChecklistTest" name="normalAdvancesAndMemoryCompletionStaysScopedAfterRotationAndReset" time="16.156" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.A350ChecklistTest" tests="5" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.A350ChecklistTest" name="inFmsIsBoldNonClickableAndSkippedDuringCompletion" time="7.188" />
+    <testcase classname="com.jerry.electrical_checklist.A350ChecklistTest" name="notesKeepOriginalCaseItalicsAlignmentAndFormattingAfterRotation" time="4.328" />
+    <testcase classname="com.jerry.electrical_checklist.A350ChecklistTest" name="catalogSeparatesCheckableItemsAndOrderedTextRows" time="2.766" />
+    <testcase classname="com.jerry.electrical_checklist.A350ChecklistTest" name="originalThreePagePdfOpensAndReturnsToSameChecklist" time="4.796" />
+    <testcase classname="com.jerry.electrical_checklist.A350ChecklistTest" name="textOnlySectionsContinueWithoutCreatingCheckedItemsOrCompletion" time="4.188" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.A380ChecklistTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.A380ChecklistTest" name="textOnlySectionsContinueAndInFmsHeadingNeverCountsAsAnItem" time="9.031" />
+    <testcase classname="com.jerry.electrical_checklist.A380ChecklistTest" name="catalogIncludesAllThreePagesFourEngineChecksAndFormattedNotes" time="1.922" />
+    <testcase classname="com.jerry.electrical_checklist.A380ChecklistTest" name="engineChecksPersistAfterRotationAdvanceAndStaySeparateFromOtherModels" time="5.75" />
+    <testcase classname="com.jerry.electrical_checklist.A380ChecklistTest" name="originalThreePagePdfReturnsWithoutLosingA380ChecksAndResetClearsThem" time="5.922" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.AirbusChecklistTest" tests="5" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.AirbusChecklistTest" name="normalAndExtendedProgressStayIndependentAndGlobalResetClearsBoth" time="5.5" />
+    <testcase classname="com.jerry.electrical_checklist.AirbusChecklistTest" name="readerOpensPageOneForNormalAndPageTwoForExtendedAndNavigatesAllPages" time="5.328" />
+    <testcase classname="com.jerry.electrical_checklist.AirbusChecklistTest" name="normalIsDefaultAndReenteringAircraftReturnsToNormal" time="3.079" />
+    <testcase classname="com.jerry.electrical_checklist.AirbusChecklistTest" name="extendedCompletionAdvancesWithinExtendedAndRotationRestoresMode" time="6.063" />
+    <testcase classname="com.jerry.electrical_checklist.AirbusChecklistTest" name="catalogContainsNormalAndExtendedItemsWithDistinctIdsAndFourPageReference" time="1.5" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.AircraftNavigationTest" tests="8" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="lastStartupResumesNextChecklistAndManufacturerSettingOpensHome" time="10.391" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="favoritesPersistAndQuickLinksKeepProgressWhileResetPreservesPreferences" time="8.578" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="favoriteStartupChoosesConfiguredPlaneAndRotationKeepsCurrentNavigation" time="8.375" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="recentsAreUniqueMostRecentFirstAndLimitedToFive" time="4.671" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="collectionPagesHaveEmptyStatesAndRestoreTheirBackDestinationAfterRotation" time="9.547" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="missingOrStaleStartupTargetsFallBackToHome" time="6.313" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="removingStartupFavoriteUsesRemainingFavoriteThenFallsBackToHome" time="5.547" />
+    <testcase classname="com.jerry.electrical_checklist.AircraftNavigationTest" name="lastStartupRestoresExtendedAndMemoryCategoryIncludingCompletion" time="9.641" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.Boeing757767Test" tests="3" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.Boeing757767Test" name="nativeReferenceShowsFourPagesForEachModelAndPreservesOwnTicks" time="9.563" />
+    <testcase classname="com.jerry.electrical_checklist.Boeing757767Test" name="bothEngineGroupsRequiredAndSavedSeparatelyAcrossModelsAndRotation" time="10.906" />
+    <testcase classname="com.jerry.electrical_checklist.Boeing757767Test" name="normalFlowSkipsFuelAlternateAndBothFinalChecklistsStayOpenThenReset" time="24.953" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.BoeingMaxChecklistTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.BoeingMaxChecklistTest" name="catalogMatches8200SourceIncludingEltAndBelowLineDivider" time="1.89" />
+    <testcase classname="com.jerry.electrical_checklist.BoeingMaxChecklistTest" name="maxAdvancesSeparatelyFromNgAndFinalChecklistStaysOpen" time="11.516" />
+    <testcase classname="com.jerry.electrical_checklist.BoeingMaxChecklistTest" name="original8200PdfReturnsToSameMaxChecklistAndChecks" time="3.969" />
+    <testcase classname="com.jerry.electrical_checklist.BoeingMaxChecklistTest" name="supplementalFlightPhasesAdvanceInOrderAndKeepNgMaxProgressSeparate" time="32.109" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.ChecklistAppTest" tests="8" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="bundledCatalogHasAllSourceSectionsAndItems" time="0.875" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="progressSurvivesActivityRestartAndStaysScopedToPhase" time="5.047" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="completingChecklistAdvancesAndUncheckingReopensIt" time="5.141" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="checkingBottomVisibleRowRevealsNextWithoutScrollingForTopRow" time="2.61" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="resetCanBeCancelledAndThenClearsSavedProgress" time="4.047" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="completingLastChecklistStaysOnLastAndCanBeReopened" time="4.89" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="originalChecklistOpensFromItemsAndReturnsWithoutLosingProgress" time="3.406" />
+    <testcase classname="com.jerry.electrical_checklist.ChecklistAppTest" name="rotationPreservesSelectedChecklistAndIndependentCheckboxValues" time="2.484" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.DocumentReaderTest" tests="3" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.DocumentReaderTest" name="rotationRestoresTheDocumentAndZoom" time="1.735" />
+    <testcase classname="com.jerry.electrical_checklist.DocumentReaderTest" name="invalidAircraftHasAnErrorAndWorkingBackButton" time="2.344" />
+    <testcase classname="com.jerry.electrical_checklist.DocumentReaderTest" name="pdfZoomPanAndFitWorkWithSinglePageNavigationDisabled" time="2.546" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.LandscapeChecklistTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.LandscapeChecklistTest" name="switchingPhasesAndRotationPreserveChecksAndSelection" time="7.531" />
+    <testcase classname="com.jerry.electrical_checklist.LandscapeChecklistTest" name="extendedModeAndLargeTextRemainAvailableAfterThemeChange" time="11.469" />
+    <testcase classname="com.jerry.electrical_checklist.LandscapeChecklistTest" name="a340CategoriesOptionsAndSourceReaderWorkFromSidebar" time="15.281" />
+    <testcase classname="com.jerry.electrical_checklist.LandscapeChecklistTest" name="advancementAndIndependentScrollingKeepBothPanesUsable" time="26.578" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.ManufacturerNavigationTest" tests="3" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.ManufacturerNavigationTest" name="switchingManufacturersPreservesChecksAndHomeResetClearsEveryGroup" time="7.735" />
+    <testcase classname="com.jerry.electrical_checklist.ManufacturerNavigationTest" name="rotationRestoresManufacturerAndBackFromRestoredChecklistKeepsItsGroup" time="3.625" />
+    <testcase classname="com.jerry.electrical_checklist.ManufacturerNavigationTest" name="manufacturerSelectionFiltersModelsAndBackReturnsThroughEachLevel" time="4.172" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.Md11ChecklistTest" tests="5" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.Md11ChecklistTest" name="optionalTicksSurviveRotationAndDoNotReopenCompletedChecklist" time="9.812" />
+    <testcase classname="com.jerry.electrical_checklist.Md11ChecklistTest" name="originalPdfAndResetPreserveThenClearBothKindsOfTicks" time="7.188" />
+    <testcase classname="com.jerry.electrical_checklist.Md11ChecklistTest" name="manualRowsAreClickableButButtonSkipsThemAndCompletionIgnoresThem" time="8.765" />
+    <testcase classname="com.jerry.electrical_checklist.Md11ChecklistTest" name="catalogMatchesSourceAndOnlyGreyRowsAreOptional" time="2.187" />
+    <testcase classname="com.jerry.electrical_checklist.Md11ChecklistTest" name="allPhasesCompleteWithEveryManualRowUncheckedAndLastStaysOpen" time="33.625" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.NavigationLifecycleTest" tests="1" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.NavigationLifecycleTest" name="launcherResumeAfterHomeBackKeepsSystemAndToolbarBackWorking" time="6.625" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.NewModelsTest" tests="8" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="a330OptionsAndChecksSurviveRotationRestartAndCancelWhileResetOnlyClearsTicks" time="10.453" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="catalogsAndOriginalReferencesMatchAllThreeSources" time="0.969" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="a330PowerSelectorRequiresOnlyChosenPathAndReopensAffectedCompletion" time="10.75" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="boeingNormalAndFullProceduresUseChosenRouteAndSkipReferenceSchedules" time="14.984" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="normalLandingSkipsGoAroundButAlternateRemainsSelectable" time="6.25" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="atrUsesRequiredChecksDespiteGreySourceRowsAndKeepsTimingNotes" time="10.969" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="boeingOriginalReaderStartsOnRelevantPageAndOptionalFoPanelDoesNotBlock" time="6.578" />
+    <testcase classname="com.jerry.electrical_checklist.NewModelsTest" name="a330AutothrustAndApproachSelectorsHideConflictingAlternatives" time="10.844" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.ReferenceSourceTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.ReferenceSourceTest" name="multipagePdfRendersCorrectPagesAndRejectsInvalidIndex" time="0.14" />
+    <testcase classname="com.jerry.electrical_checklist.ReferenceSourceTest" name="unreadableImageReportsFailureAndReleasesOwnedFile" time="0.0" />
+    <testcase classname="com.jerry.electrical_checklist.ReferenceSourceTest" name="pngJpegAndWebpImagesAreDecodedAtBoundedResolution" time="0.14" />
+    <testcase classname="com.jerry.electrical_checklist.ReferenceSourceTest" name="originalBundledPdfRenders" time="0.36" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.SettingsTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.SettingsTest" name="fontPreviewAndSavedSizePreserveTicksAndResetKeepsSettings" time="8.282" />
+    <testcase classname="com.jerry.electrical_checklist.SettingsTest" name="dayAndNightRetainChecklistAndApplyToReaderAndRestart" time="12.328" />
+    <testcase classname="com.jerry.electrical_checklist.SettingsTest" name="aboutShowsAuthorVersionAndOpensRepositoryLink" time="3.735" />
+    <testcase classname="com.jerry.electrical_checklist.SettingsTest" name="largestFontWrapsLongResponsesAndKeepsSourceNotesInformational" time="3.625" />
+  </testsuite>
+  <testsuite name="com.jerry.electrical_checklist.ToolbarTitleTest" tests="4" failures="0" errors="0" skipped="0">
+    <testcase classname="com.jerry.electrical_checklist.ToolbarTitleTest" name="engineStartTitleSurvivesSettingsReaderRotationAndRecreation" time="9.563" />
+    <testcase classname="com.jerry.electrical_checklist.ToolbarTitleTest" name="narrowPhoneKeepsLongAircraftNamesCompleteAndControlsAvailable" time="7.235" />
+    <testcase classname="com.jerry.electrical_checklist.ToolbarTitleTest" name="shortcutPagesUseBrandAndSelectedAircraftUsesModel" time="4.641" />
+    <testcase classname="com.jerry.electrical_checklist.ToolbarTitleTest" name="everyAircraftShowsItsModelInPickerAndChecklistAndHomeRestoresBrand" time="21.687" />
+  </testsuite>
+</testsuites>

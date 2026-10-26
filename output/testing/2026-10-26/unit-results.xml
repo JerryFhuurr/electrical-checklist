@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jerry.electrical_checklist.ChecklistProgressTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-26T09:09:54.721Z" hostname="JERRY_ASUS" time="0.009">
+  <properties/>
+  <testcase name="optionalOnlyChecklistStillNeedsExplicitAcknowledgementAndRealRows" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.002"/>
+  <testcase name="reopeningAfterOptionChangePreservesTicksAndOtherAircraftCompletion" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="snapshotsCanBeSavedAndRestoredWithoutSharingMutableSets" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="completionRequiresEveryItemAndExplicitAcknowledgement" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="resetClearsAllAircraftAndCompletions" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="emptyChecklistCannotBeCompleted" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="aircraftAndPhasesHaveIndependentProgress" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <testcase name="optionalChecksDoNotSatisfyRequirementsOrReopenCompletedChecklist" classname="com.jerry.electrical_checklist.ChecklistProgressTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

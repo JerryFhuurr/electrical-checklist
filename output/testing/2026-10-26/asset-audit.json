@@ -1,0 +1,40 @@
+{
+  "aircraft_entries": 12,
+  "manufacturers": [
+    "ATR",
+    "Airbus",
+    "Boeing",
+    "McDonnell Douglas"
+  ],
+  "referenced_documents": 11,
+  "asset_count": 27,
+  "sha256": {
+    "checklists/airbus-a320-family.json": "91e99c44f6cddb030f37322184899871414826155ddd9806bddf771fa6b4a163",
+    "checklists/airbus-a340-300.json": "696988d6f80506ec9f64e8890b3af2c9246faf607f80e094919fd42f64d8ed49",
+    "checklists/atr-42-72.json": "71a2ee2fbad85b16557f71d1810735a964288f1f7d9737b68328d17e1535a7aa",
+    "checklists/boeing-757.json": "937503768eb4a2cc7a77029c7e585df64d9f3300fef1d0a43b205543c14771b3",
+    "checklists/boeing-767.json": "ea572b3349fea192372ae4eacced53bf7bf1e494d47be971902108b1003166b6",
+    "checklists/fbw-a380x.json": "3ddc6ec3a00ab732858b67bd9350cedfe06c411b04592d9a19d408f04066ad39",
+    "checklists/index.json": "e98fc56b70ace3f54ef04f3891bbcb4d642d0a19adedc3846229b2ed3ae675f8",
+    "checklists/ini-a350.json": "e86f6cf18dd7c398dbb5097fc60cea7af0b4fe8374378095a8ea6e316b895e43",
+    "checklists/inibuilds-a330-300.json": "156d043146f6b3f2e715375931dede7c70caf181a55e683809dc2cfa667779ac",
+    "checklists/mcdonnell-douglas-md11.json": "357eabe6cb10cc826506443a710b968b38d6572939adb2a86681771134950cd4",
+    "checklists/pmdg-777.json": "2e3c5856cee84292ea95dca6e1ee9dadfb018c27a82c289f12038242155ce9ac",
+    "checklists/README.md": "ccbd157ab6a4eea900a93187bfc57db2e2c16989237cb54c24124bb74d8f9c7a",
+    "checklists/ryanair-737-max.json": "80b6a813112a02562c77910793bfe4c27929db4bf8b48d64e0aeb53a45c65b88",
+    "checklists/ryanair-737-ng.json": "4b0f75be448ddc72f7e7b58470fc954be82a7ff85b37b6a109dd8c91735a4800",
+    "references/README.md": "c5e097517696af82d8f0023956d37d24d446c0d8c10b7dc5aa8671c0d0ec4008",
+    "references/airbus-a320-family/normal-extended-v26.pdf": "7b3b368fa83776fdd300708bfeda88fdeaadcaaadbec1d96c94752aeb275a3f6",
+    "references/airbus-a340-300/normal-checklist.pdf": "27fd02395620282f51b917b466eb0f0cb3f1ca427e59e59a10ca69056dbfade0",
+    "references/atr-42-72/normal-checklist.pdf": "aa6235d154a83cd9ee39302f199d05828ce4e3ec8a756cc3999e772b95e38591",
+    "references/boeing-757-767/normal-checklist.pdf": "a4e6145fc5d3a756275cdf1563a471791ea1c8a5c9a6ca7e534875efeb5c2780",
+    "references/fbw-a380x/full-sop-checklist.pdf": "becfc63f0c0a616ed9ea7f3fdb4eeb9af43537669efb2e2478d1e0fa3577d2d3",
+    "references/ini-a350/ini-a350.pdf": "4ba62b3853437b097f8989cb9719bf7b0c74b92a59c56d98df770fbed8e16f77",
+    "references/inibuilds-a330-300/normal-checklist.pdf": "cfae2a35e0d03ef0c322280e23a2c0fae2c1f62ed1459cec3e3ddb38462572a7",
+    "references/inibuilds-a330-300/original-checklist.html": "c7e797764ca8dd45c93961b13a860e33b549004623a7ebb002fa4f00cc974e17",
+    "references/mcdonnell-douglas-md11/normal-procedures.pdf": "ef577bacf4737a5b14810e8eb3e99d1548d7ccb4b680292a8a967a29027dcc0a",
+    "references/pmdg-777/checklist-procedures.pdf": "faf233360f8177790cbf7082fb51e8b3359c30e0d255a3197106b9bd33a08331",
+    "references/ryanair-737-max/normal-checklist.pdf": "7e178e5e433bc32e7d4bd20437d06c7bd6d8f5edfd202b64cd807ae1017cf050",
+    "references/ryanair-737-ng/normal-checklist.pdf": "df48ca5bba669ec00d1574ed896b644997e41ba1f9f69f8e74a125f4127d8248"
+  }
+}

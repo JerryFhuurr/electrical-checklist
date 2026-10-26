@@ -119,7 +119,11 @@ public class MainActivity extends AppCompatActivity {
                 else if (aircraft != null) { aircraft = null; showExtended = false; if (aircraftCollection != null) manufacturer = null; render(true); }
                 else if (manufacturer != null) { manufacturer = null; render(true); }
                 else if (aircraftCollection != null) { aircraftCollection = null; render(true); }
-                else { setEnabled(false); getOnBackPressedDispatcher().onBackPressed(); }
+                else {
+                    setEnabled(false);
+                    try { getOnBackPressedDispatcher().onBackPressed(); }
+                    finally { setEnabled(true); } // Android may background the root activity and reuse it later.
+                }
             }
         });
         render();
@@ -179,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
         sidebarButtons.clear();
         container.removeAllViews();
         itemViews.clear();
+        label(root, R.id.brand_label, aircraft == null ? getString(R.string.brand) : aircraft.name);
         boolean atHome = manufacturer == null && aircraftCollection == null;
         root.findViewById(R.id.back_button).setVisibility(atHome ? View.GONE : View.VISIBLE);
         root.findViewById(R.id.home_button).setVisibility(atHome ? View.GONE : View.VISIBLE);

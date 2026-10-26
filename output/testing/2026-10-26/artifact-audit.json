@@ -1,0 +1,14 @@
+[
+  {
+    "path": "output\\flight-check-debug.apk",
+    "size_bytes": 17669221,
+    "sha256": "f9ccb93661be5551c0d55331af4b19596c0139350a8c195615aed22e42f22144",
+    "matching_assets": 27
+  },
+  {
+    "path": "output\\E-Checklist-v1.18-release.apk",
+    "size_bytes": 9433775,
+    "sha256": "0432f3834d24a0fc60c4f795b81347a0500c4edd4df4e0cfbb80051863dde028",
+    "matching_assets": 27
+  }
+]

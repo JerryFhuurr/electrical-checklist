@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M01",
+    "description": "Boeing 757 Engine Start displays the aircraft in the phone toolbar.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\phone-757-engine-start.png"
+  },
+  {
+    "id": "M02",
+    "description": "Long 737 MAX model name remains readable in the normal phone toolbar.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\phone-737-max.png"
+  },
+  {
+    "id": "M03",
+    "description": "320dp narrow phone shows the full model and usable toolbar actions.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\narrow-phone-737-max.png"
+  },
+  {
+    "id": "M04",
+    "description": "Tablet landscape retains A320 Extended selection with day mode and 175% checklist text.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-a320-day-large.png"
+  },
+  {
+    "id": "M05",
+    "description": "Tablet sidebar switches phase while the aircraft toolbar stays correct.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-a320-before-start.png"
+  },
+  {
+    "id": "M06",
+    "description": "Original A320 Extended PDF renders on page 2 without network access.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\offline-native-reader.png"
+  },
+  {
+    "id": "M07",
+    "description": "Cold restart restores the last Extended checklist and aircraft toolbar.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-last-startup.png"
+  },
+  {
+    "id": "M08",
+    "description": "Tablet portrait keeps the selected checklist, model and large text.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\tablet-portrait-a320.png"
+  },
+  {
+    "id": "M09",
+    "description": "Home and Recent restore app branding when page animations are disabled.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\home-branding.png"
+  },
+  {
+    "id": "M10",
+    "description": "After Home Back and launcher resume, Engine Start Back returns to phases (regression fixed).",
+    "result": "passed",
+    "screenshot": null
+  }
+]

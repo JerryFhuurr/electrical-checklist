@@ -1,0 +1,555 @@
+[
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "normalIsDefaultAndCategoryButtonsOpenRelevantSourcePages",
+    "result": "passed",
+    "duration_seconds": 22.156,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "memoryConditionsKeepNotesAndZeroApplicableItemsAreNotCompleted",
+    "result": "passed",
+    "duration_seconds": 20.031,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "tcasAndWindshearOptionsAreScopedAndPreserveOtherSelections",
+    "result": "passed",
+    "duration_seconds": 14.297,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "manualEngineProgressIsIndependentAndAutomaticStartIncludesAllFourEngines",
+    "result": "passed",
+    "duration_seconds": 18.734,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "evacuationBranchesAreExclusiveAndOnlyAffectedCompletionReopens",
+    "result": "passed",
+    "duration_seconds": 16.703,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A340ChecklistTest",
+    "name": "normalAdvancesAndMemoryCompletionStaysScopedAfterRotationAndReset",
+    "result": "passed",
+    "duration_seconds": 16.156,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A350ChecklistTest",
+    "name": "inFmsIsBoldNonClickableAndSkippedDuringCompletion",
+    "result": "passed",
+    "duration_seconds": 7.188,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A350ChecklistTest",
+    "name": "notesKeepOriginalCaseItalicsAlignmentAndFormattingAfterRotation",
+    "result": "passed",
+    "duration_seconds": 4.328,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A350ChecklistTest",
+    "name": "catalogSeparatesCheckableItemsAndOrderedTextRows",
+    "result": "passed",
+    "duration_seconds": 2.766,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A350ChecklistTest",
+    "name": "originalThreePagePdfOpensAndReturnsToSameChecklist",
+    "result": "passed",
+    "duration_seconds": 4.796,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A350ChecklistTest",
+    "name": "textOnlySectionsContinueWithoutCreatingCheckedItemsOrCompletion",
+    "result": "passed",
+    "duration_seconds": 4.188,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A380ChecklistTest",
+    "name": "textOnlySectionsContinueAndInFmsHeadingNeverCountsAsAnItem",
+    "result": "passed",
+    "duration_seconds": 9.031,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A380ChecklistTest",
+    "name": "catalogIncludesAllThreePagesFourEngineChecksAndFormattedNotes",
+    "result": "passed",
+    "duration_seconds": 1.922,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A380ChecklistTest",
+    "name": "engineChecksPersistAfterRotationAdvanceAndStaySeparateFromOtherModels",
+    "result": "passed",
+    "duration_seconds": 5.75,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.A380ChecklistTest",
+    "name": "originalThreePagePdfReturnsWithoutLosingA380ChecksAndResetClearsThem",
+    "result": "passed",
+    "duration_seconds": 5.922,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AirbusChecklistTest",
+    "name": "normalAndExtendedProgressStayIndependentAndGlobalResetClearsBoth",
+    "result": "passed",
+    "duration_seconds": 5.5,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AirbusChecklistTest",
+    "name": "readerOpensPageOneForNormalAndPageTwoForExtendedAndNavigatesAllPages",
+    "result": "passed",
+    "duration_seconds": 5.328,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AirbusChecklistTest",
+    "name": "normalIsDefaultAndReenteringAircraftReturnsToNormal",
+    "result": "passed",
+    "duration_seconds": 3.079,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AirbusChecklistTest",
+    "name": "extendedCompletionAdvancesWithinExtendedAndRotationRestoresMode",
+    "result": "passed",
+    "duration_seconds": 6.063,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AirbusChecklistTest",
+    "name": "catalogContainsNormalAndExtendedItemsWithDistinctIdsAndFourPageReference",
+    "result": "passed",
+    "duration_seconds": 1.5,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "lastStartupResumesNextChecklistAndManufacturerSettingOpensHome",
+    "result": "passed",
+    "duration_seconds": 10.391,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "favoritesPersistAndQuickLinksKeepProgressWhileResetPreservesPreferences",
+    "result": "passed",
+    "duration_seconds": 8.578,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "favoriteStartupChoosesConfiguredPlaneAndRotationKeepsCurrentNavigation",
+    "result": "passed",
+    "duration_seconds": 8.375,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "recentsAreUniqueMostRecentFirstAndLimitedToFive",
+    "result": "passed",
+    "duration_seconds": 4.671,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "collectionPagesHaveEmptyStatesAndRestoreTheirBackDestinationAfterRotation",
+    "result": "passed",
+    "duration_seconds": 9.547,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "missingOrStaleStartupTargetsFallBackToHome",
+    "result": "passed",
+    "duration_seconds": 6.313,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "removingStartupFavoriteUsesRemainingFavoriteThenFallsBackToHome",
+    "result": "passed",
+    "duration_seconds": 5.547,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.AircraftNavigationTest",
+    "name": "lastStartupRestoresExtendedAndMemoryCategoryIncludingCompletion",
+    "result": "passed",
+    "duration_seconds": 9.641,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Boeing757767Test",
+    "name": "nativeReferenceShowsFourPagesForEachModelAndPreservesOwnTicks",
+    "result": "passed",
+    "duration_seconds": 9.563,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Boeing757767Test",
+    "name": "bothEngineGroupsRequiredAndSavedSeparatelyAcrossModelsAndRotation",
+    "result": "passed",
+    "duration_seconds": 10.906,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Boeing757767Test",
+    "name": "normalFlowSkipsFuelAlternateAndBothFinalChecklistsStayOpenThenReset",
+    "result": "passed",
+    "duration_seconds": 24.953,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.BoeingMaxChecklistTest",
+    "name": "catalogMatches8200SourceIncludingEltAndBelowLineDivider",
+    "result": "passed",
+    "duration_seconds": 1.89,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.BoeingMaxChecklistTest",
+    "name": "maxAdvancesSeparatelyFromNgAndFinalChecklistStaysOpen",
+    "result": "passed",
+    "duration_seconds": 11.516,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.BoeingMaxChecklistTest",
+    "name": "original8200PdfReturnsToSameMaxChecklistAndChecks",
+    "result": "passed",
+    "duration_seconds": 3.969,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.BoeingMaxChecklistTest",
+    "name": "supplementalFlightPhasesAdvanceInOrderAndKeepNgMaxProgressSeparate",
+    "result": "passed",
+    "duration_seconds": 32.109,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "bundledCatalogHasAllSourceSectionsAndItems",
+    "result": "passed",
+    "duration_seconds": 0.875,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "progressSurvivesActivityRestartAndStaysScopedToPhase",
+    "result": "passed",
+    "duration_seconds": 5.047,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "completingChecklistAdvancesAndUncheckingReopensIt",
+    "result": "passed",
+    "duration_seconds": 5.141,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "checkingBottomVisibleRowRevealsNextWithoutScrollingForTopRow",
+    "result": "passed",
+    "duration_seconds": 2.61,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "resetCanBeCancelledAndThenClearsSavedProgress",
+    "result": "passed",
+    "duration_seconds": 4.047,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "completingLastChecklistStaysOnLastAndCanBeReopened",
+    "result": "passed",
+    "duration_seconds": 4.89,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "originalChecklistOpensFromItemsAndReturnsWithoutLosingProgress",
+    "result": "passed",
+    "duration_seconds": 3.406,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ChecklistAppTest",
+    "name": "rotationPreservesSelectedChecklistAndIndependentCheckboxValues",
+    "result": "passed",
+    "duration_seconds": 2.484,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.DocumentReaderTest",
+    "name": "rotationRestoresTheDocumentAndZoom",
+    "result": "passed",
+    "duration_seconds": 1.735,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.DocumentReaderTest",
+    "name": "invalidAircraftHasAnErrorAndWorkingBackButton",
+    "result": "passed",
+    "duration_seconds": 2.344,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.DocumentReaderTest",
+    "name": "pdfZoomPanAndFitWorkWithSinglePageNavigationDisabled",
+    "result": "passed",
+    "duration_seconds": 2.546,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.LandscapeChecklistTest",
+    "name": "switchingPhasesAndRotationPreserveChecksAndSelection",
+    "result": "passed",
+    "duration_seconds": 7.531,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.LandscapeChecklistTest",
+    "name": "extendedModeAndLargeTextRemainAvailableAfterThemeChange",
+    "result": "passed",
+    "duration_seconds": 11.469,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.LandscapeChecklistTest",
+    "name": "a340CategoriesOptionsAndSourceReaderWorkFromSidebar",
+    "result": "passed",
+    "duration_seconds": 15.281,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.LandscapeChecklistTest",
+    "name": "advancementAndIndependentScrollingKeepBothPanesUsable",
+    "result": "passed",
+    "duration_seconds": 26.578,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ManufacturerNavigationTest",
+    "name": "switchingManufacturersPreservesChecksAndHomeResetClearsEveryGroup",
+    "result": "passed",
+    "duration_seconds": 7.735,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ManufacturerNavigationTest",
+    "name": "rotationRestoresManufacturerAndBackFromRestoredChecklistKeepsItsGroup",
+    "result": "passed",
+    "duration_seconds": 3.625,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ManufacturerNavigationTest",
+    "name": "manufacturerSelectionFiltersModelsAndBackReturnsThroughEachLevel",
+    "result": "passed",
+    "duration_seconds": 4.172,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Md11ChecklistTest",
+    "name": "optionalTicksSurviveRotationAndDoNotReopenCompletedChecklist",
+    "result": "passed",
+    "duration_seconds": 9.812,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Md11ChecklistTest",
+    "name": "originalPdfAndResetPreserveThenClearBothKindsOfTicks",
+    "result": "passed",
+    "duration_seconds": 7.188,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Md11ChecklistTest",
+    "name": "manualRowsAreClickableButButtonSkipsThemAndCompletionIgnoresThem",
+    "result": "passed",
+    "duration_seconds": 8.765,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Md11ChecklistTest",
+    "name": "catalogMatchesSourceAndOnlyGreyRowsAreOptional",
+    "result": "passed",
+    "duration_seconds": 2.187,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.Md11ChecklistTest",
+    "name": "allPhasesCompleteWithEveryManualRowUncheckedAndLastStaysOpen",
+    "result": "passed",
+    "duration_seconds": 33.625,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NavigationLifecycleTest",
+    "name": "launcherResumeAfterHomeBackKeepsSystemAndToolbarBackWorking",
+    "result": "passed",
+    "duration_seconds": 6.625,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "a330OptionsAndChecksSurviveRotationRestartAndCancelWhileResetOnlyClearsTicks",
+    "result": "passed",
+    "duration_seconds": 10.453,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "catalogsAndOriginalReferencesMatchAllThreeSources",
+    "result": "passed",
+    "duration_seconds": 0.969,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "a330PowerSelectorRequiresOnlyChosenPathAndReopensAffectedCompletion",
+    "result": "passed",
+    "duration_seconds": 10.75,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "boeingNormalAndFullProceduresUseChosenRouteAndSkipReferenceSchedules",
+    "result": "passed",
+    "duration_seconds": 14.984,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "normalLandingSkipsGoAroundButAlternateRemainsSelectable",
+    "result": "passed",
+    "duration_seconds": 6.25,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "atrUsesRequiredChecksDespiteGreySourceRowsAndKeepsTimingNotes",
+    "result": "passed",
+    "duration_seconds": 10.969,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "boeingOriginalReaderStartsOnRelevantPageAndOptionalFoPanelDoesNotBlock",
+    "result": "passed",
+    "duration_seconds": 6.578,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.NewModelsTest",
+    "name": "a330AutothrustAndApproachSelectorsHideConflictingAlternatives",
+    "result": "passed",
+    "duration_seconds": 10.844,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ReferenceSourceTest",
+    "name": "multipagePdfRendersCorrectPagesAndRejectsInvalidIndex",
+    "result": "passed",
+    "duration_seconds": 0.14,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ReferenceSourceTest",
+    "name": "unreadableImageReportsFailureAndReleasesOwnedFile",
+    "result": "passed",
+    "duration_seconds": 0.0,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ReferenceSourceTest",
+    "name": "pngJpegAndWebpImagesAreDecodedAtBoundedResolution",
+    "result": "passed",
+    "duration_seconds": 0.14,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ReferenceSourceTest",
+    "name": "originalBundledPdfRenders",
+    "result": "passed",
+    "duration_seconds": 0.36,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.SettingsTest",
+    "name": "fontPreviewAndSavedSizePreserveTicksAndResetKeepsSettings",
+    "result": "passed",
+    "duration_seconds": 8.282,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.SettingsTest",
+    "name": "dayAndNightRetainChecklistAndApplyToReaderAndRestart",
+    "result": "passed",
+    "duration_seconds": 12.328,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.SettingsTest",
+    "name": "aboutShowsAuthorVersionAndOpensRepositoryLink",
+    "result": "passed",
+    "duration_seconds": 3.735,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.SettingsTest",
+    "name": "largestFontWrapsLongResponsesAndKeepsSourceNotesInformational",
+    "result": "passed",
+    "duration_seconds": 3.625,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ToolbarTitleTest",
+    "name": "engineStartTitleSurvivesSettingsReaderRotationAndRecreation",
+    "result": "passed",
+    "duration_seconds": 9.563,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ToolbarTitleTest",
+    "name": "narrowPhoneKeepsLongAircraftNamesCompleteAndControlsAvailable",
+    "result": "passed",
+    "duration_seconds": 7.235,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ToolbarTitleTest",
+    "name": "shortcutPagesUseBrandAndSelectedAircraftUsesModel",
+    "result": "passed",
+    "duration_seconds": 4.641,
+    "stack": ""
+  },
+  {
+    "class": "com.jerry.electrical_checklist.ToolbarTitleTest",
+    "name": "everyAircraftShowsItsModelInPickerAndChecklistAndHomeRestoresBrand",
+    "result": "passed",
+    "duration_seconds": 21.687,
+    "stack": ""
+  }
+]

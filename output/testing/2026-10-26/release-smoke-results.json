@@ -1,0 +1,50 @@
+[
+  {
+    "id": "R01",
+    "description": "Actual signed Release v1.18 installs fresh and launches as a non-debuggable app.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\release-home.png"
+  },
+  {
+    "id": "R02",
+    "description": "Fresh release has working empty Favorites and Recent pages.",
+    "result": "passed",
+    "screenshot": null
+  },
+  {
+    "id": "R03",
+    "description": "Release shows Boeing 757 in the Engine Start toolbar and checks the next required row.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\release-757-engine-start.png"
+  },
+  {
+    "id": "R04",
+    "description": "Release renders the bundled four-page Boeing PDF while offline.",
+    "result": "passed",
+    "screenshot": "output\\testing\\2026-10-26\\screens\\release-offline-reader.png"
+  },
+  {
+    "id": "R05",
+    "description": "Release check persists after force-stop and cold restart.",
+    "result": "passed",
+    "screenshot": null
+  },
+  {
+    "id": "R06",
+    "description": "Release Favorites/Recent shortcuts show model names and return to their originating list.",
+    "result": "passed",
+    "screenshot": null
+  },
+  {
+    "id": "R07",
+    "description": "Release reset cancellation retains checks; confirmation clears them while keeping favorites.",
+    "result": "passed",
+    "screenshot": null
+  },
+  {
+    "id": "R08",
+    "description": "Actual signed release keeps nested Back navigation working after Home Back and launcher re-entry.",
+    "result": "passed",
+    "screenshot": null
+  }
+]
