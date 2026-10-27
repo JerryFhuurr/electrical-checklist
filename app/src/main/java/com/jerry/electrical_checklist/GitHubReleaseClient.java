@@ -28,7 +28,8 @@ public final class GitHubReleaseClient implements Callable<GitHubReleaseClient.R
     public GitHubReleaseClient() { this(url -> (HttpURLConnection) url.openConnection()); }
     GitHubReleaseClient(ConnectionFactory connections) { this.connections = connections; }
 
-    public enum Status { RELEASE, NO_RELEASE, NO_APK, ERROR, RATE_LIMITED }
+    public enum Status { RELEASE, NO_RELEASE, NO_APK, ERROR, RATE_LIMITED,
+        NETWORK_UNAVAILABLE, DNS_ERROR, CONNECTION_TIMEOUT, SECURE_CONNECTION_ERROR }
     public static final class Release {
         public final String version, downloadUrl;
         Release(String version, String downloadUrl) { this.version = version; this.downloadUrl = downloadUrl; }

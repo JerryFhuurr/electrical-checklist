@@ -8,7 +8,7 @@ The app works offline on **Android 9 and newer**, with layouts for phones and ta
 
 ## How to use
 
-1. **Install the app.** Download the [E-Checklist v1.20 release APK](output/E-Checklist-v1.20-release.apk) to your Android device and open it to install.
+1. **Install the app.** Download the [E-Checklist v1.21 release APK](output/E-Checklist-v1.21-release.apk) to your Android device and open it to install.
 2. **Choose your aircraft.** Select a manufacturer, then a plane model, such as Boeing → Boeing 737-NG.
 3. **Open a checklist.** Choose the flight phase you want to work through, such as Before Start.
 4. **Check the items.** Tap a row or its checkbox to check or uncheck it. You can also use **Mark item as complete** to check the next required item.
@@ -53,11 +53,15 @@ An internet connection is needed only for update checks and downloads; all bundl
 
 Resetting checklist progress keeps your update choices.
 
+If Wi-Fi is connected but updates fail, check whether Android blocks network access for the app. Settings and About now distinguish unavailable/blocked networks, DNS failures, timeouts and secure-connection failures. For unavailable networks or DNS failures, **App network settings** opens E-Checklist's Android app info. On LineageOS, open **Wi-Fi data usage** and enable **Allow network access**. Return to the app and press **Check for updates** again.
+
 For maintainers: publish a stable [GitHub release](https://github.com/JerryFhuurr/electrical-checklist/releases) with a signed release APK to announce an update. Pushing commits alone does not publish an update. Use a numeric tag such as `v1.20` and an APK named `E-Checklist-v1.20-release.apk`, with a matching app version and increased Android version code. The current `Main` release tag is also supported when its APK filename contains the version. Drafts, prereleases, debug APKs, and releases without a usable APK are excluded. Checks use GitHub's public [latest release API](https://docs.github.com/en/rest/releases/releases#get-the-latest-release), without an account or token. Keep using the same signing key so installed releases can update without losing progress.
 
 The [update test report](docs/UPDATE-TEST-REPORT-2026-10-26.md) records update checks and the related regression tests.
 
 The [v1.20 test report](docs/UPDATE-TEST-REPORT-1.20-2026-10-26.md) covers the About button and checks on each app opening.
+
+The [v1.21 test report](docs/TEST-REPORT-1.21-2026-10-27.md) records the Mi MIX 2S network fix, preserved phone progress and replacement A350 tests.
 
 ## Supported aircraft
 
@@ -73,7 +77,7 @@ There are currently **12 aircraft entries across 4 manufacturers**. Family entri
 | Airbus | Airbus A320 Family (A319 / A320 / A321) | Normal checklist and Extended items. |
 | Airbus | Airbus A330-300 | iniBuilds / Maverick1994 checklist with selectable autothrust, power, and approach paths. |
 | Airbus | Airbus A340-300 | Normal checklists, emergency evacuation, other procedures, and selected non-normal memory items. |
-| Airbus | Airbus A350 | iniBuilds checklist, including formatted source headings and notes. |
+| Airbus | Airbus A350 | Iberia Virtual normal checklist (July 2024), with separate evacuation checks and rejected-takeoff reference guidance. |
 | Airbus | Airbus A380 | FlyByWire A380X Full SOP Checklist. |
 | McDonnell Douglas | MD-11 | FedEx MD-11F normal procedures, including optional manual-only items. |
 | ATR | ATR 42 / 72 | BritishAvgeek / Osprey Airways summarized checklist. |

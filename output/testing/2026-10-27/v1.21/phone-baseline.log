@@ -1,0 +1,6 @@
+INSTRUMENTATION_RESULT: result=PASS
+INSTRUMENTATION_RESULT: stream=Progress before: a394091face37deaa8944f43e40de4444ffe2e20e2c64a0214664965bd272d11
+Live HTTPS: RELEASE version=1.20
+Read-only pre-upgrade baseline PASS
+
+INSTRUMENTATION_CODE: -1

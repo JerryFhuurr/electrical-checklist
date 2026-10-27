@@ -59,7 +59,7 @@ public class ManufacturerNavigationTest {
         onView(withContentDescription("Open checklists for Airbus A320 Family")).check(matches(isDisplayed()));
         onView(withContentDescription("Open checklists for Airbus A350")).perform(scrollTo()).check(matches(isDisplayed()));
         model("Airbus A350");
-        onView(withText("Before TOD")).perform(scrollTo(), click());
+        onView(withText("Before Start")).perform(scrollTo(), click());
         onView(withContentDescription("Back to checklists")).perform(click());
         onView(withId(R.id.model_title)).check(matches(withText("Airbus A350")));
         onView(withContentDescription("Back to aircraft")).perform(click());

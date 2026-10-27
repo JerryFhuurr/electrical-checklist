@@ -38,6 +38,7 @@
             <TextView style="@style/BodyText" android:text="@string/update_settings_hint"/>
             <TextView android:id="@+id/update_status" style="@style/BodyText" android:accessibilityLiveRegion="polite"/>
             <com.google.android.material.button.MaterialButton android:id="@+id/check_updates_button" style="@style/PrimaryAction" android:layout_marginTop="16dp" android:text="@string/check_updates"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/app_network_settings_button" style="@style/TextAction" android:text="@string/app_network_settings" android:visibility="gone"/>
             <com.google.android.material.button.MaterialButton android:id="@+id/view_releases_button" style="@style/TextAction" android:text="@string/view_releases"/>
             <com.google.android.material.button.MaterialButton android:id="@+id/about_button" style="@style/PrimaryAction" android:layout_marginTop="28dp" android:text="@string/about"/>
         </LinearLayout>

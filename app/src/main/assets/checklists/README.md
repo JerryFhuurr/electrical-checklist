@@ -27,7 +27,9 @@ The `items` array also supports non-interactive text rows in source order. These
 }
 ```
 
-Use `type: "note"` for body notes. Text retains its capitalization and line breaks. `bold` defaults to true for headings and false for notes; `italic` defaults to false. `indent` adds 0-128dp to the text column's base indentation; `alignment` is `start` (default) or `end`. A section containing only text rows displays **Reference notes** and a **Continue to next checklist** button, disabled on the final section. See `ini-a350.json` for the 31-section, three-page A350 example.
+Use `type: "note"` for body notes. Text retains its capitalization and line breaks. `bold` defaults to true for headings and false for notes; `italic` defaults to false. `indent` adds 0-128dp to the text column's base indentation; `alignment` is `start` (default) or `end`. A section containing only text rows displays **Reference notes** and a **Continue to next checklist** button, disabled on the final section. See `fbw-a380x.json` for a full SOP example.
+
+`ini-a350.json` now contains the supplied Iberia Virtual A350 normal checklist (July 2024): eight normal phases, 58 checkbox rows (one optional heavy-rain item), separate evacuation checks and rejected-takeoff reference guidance. The aircraft ID is retained for favorites, but new `normal-` checklist IDs prevent old full-SOP progress from marking replacement procedures complete.
 
 Keep IDs stable to preserve saved progress. Store original PDFs/images in the sibling `references/` folder and link them through `references` entries containing `id`, `title`, and `path`. See the project README for examples.
 

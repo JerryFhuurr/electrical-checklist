@@ -1,0 +1,10 @@
+INSTRUMENTATION_RESULT: result=PASS
+INSTRUMENTATION_RESULT: stream=Progress before: a394091face37deaa8944f43e40de4444ffe2e20e2c64a0214664965bd272d11
+Live HTTPS: RELEASE version=1.20
+About manual update: latest available version; no connection error
+A350: 8 normal phases / 58 checkboxes / 2 extra procedure buttons; tick and untick passed
+Native source reader: pages 1 and 2 render; checklist restored
+Progress after: a394091face37deaa8944f43e40de4444ffe2e20e2c64a0214664965bd272d11 (unchanged)
+PASS
+
+INSTRUMENTATION_CODE: -1

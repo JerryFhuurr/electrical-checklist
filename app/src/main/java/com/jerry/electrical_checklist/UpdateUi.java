@@ -32,12 +32,22 @@ final class UpdateUi {
         try { installed = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).versionName; }
         catch (android.content.pm.PackageManager.NameNotFoundException error) { throw new IllegalStateException(error); }
         status(activity.getString(R.string.update_installed_version, installed));
+        View networkSettings = activity.findViewById(R.id.app_network_settings_button);
+        if (networkSettings != null) networkSettings.setOnClickListener(v -> {
+            try {
+                activity.startActivity(new android.content.Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        android.net.Uri.parse("package:" + activity.getPackageName())));
+            } catch (android.content.ActivityNotFoundException error) {
+                android.widget.Toast.makeText(activity, R.string.update_settings_unavailable, android.widget.Toast.LENGTH_LONG).show();
+            }
+        });
     }
     void checkAutomatically() {
         request(false, false); maybePresent();
     }
     void checkManually() {
         manualStarted = repository.now(); pendingManual = null;
+        networkHelp(false);
         checking(true); request(true, true);
     }
     private void request(boolean force, boolean manual) {
@@ -52,6 +62,7 @@ final class UpdateUi {
         if (manual) {
             if (started != manualStarted) return;
             checking(false);
+            networkHelp(result.status == Status.NETWORK_UNAVAILABLE || result.status == Status.DNS_ERROR);
             if (result.status == Status.RELEASE && UpdateRules.newer(result.release.version, installed)) {
                 pendingManual = result.release;
                 status(activity.getString(R.string.update_available_status, result.release.version));
@@ -60,7 +71,11 @@ final class UpdateUi {
                 int message = result.status == Status.RELEASE ? R.string.update_no_newer
                         : result.status == Status.NO_RELEASE ? R.string.update_no_release
                         : result.status == Status.NO_APK ? R.string.update_no_apk
-                        : result.status == Status.RATE_LIMITED ? R.string.update_rate_limited : R.string.update_check_failed;
+                        : result.status == Status.RATE_LIMITED ? R.string.update_rate_limited
+                        : result.status == Status.NETWORK_UNAVAILABLE ? R.string.update_network_unavailable
+                        : result.status == Status.DNS_ERROR ? R.string.update_dns_error
+                        : result.status == Status.CONNECTION_TIMEOUT ? R.string.update_timeout
+                        : result.status == Status.SECURE_CONNECTION_ERROR ? R.string.update_secure_error : R.string.update_check_failed;
                 status(activity.getString(message));
             }
         }
@@ -111,17 +126,24 @@ final class UpdateUi {
         TextView status = activity.findViewById(R.id.update_status);
         if (status != null) status.setText(message);
     }
+    private void networkHelp(boolean visible) {
+        View help = activity.findViewById(R.id.app_network_settings_button);
+        if (help != null) help.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
     void saveState(Bundle state) {
         state.putLong("update_manual_started", manualStarted);
         state.putBoolean("update_prompt_visible", dialog != null || restoringPrompt);
         TextView status = activity.findViewById(R.id.update_status);
         if (status != null) state.putCharSequence("update_status", status.getText());
+        View help = activity.findViewById(R.id.app_network_settings_button);
+        state.putBoolean("update_network_help", help != null && help.getVisibility() == View.VISIBLE);
     }
     void restoreState(Bundle state) {
         if (state == null) return;
         restoringPrompt = state.getBoolean("update_prompt_visible");
         CharSequence message = state.getCharSequence("update_status");
         if (message != null) status(message.toString());
+        networkHelp(state.getBoolean("update_network_help"));
         manualStarted = state.getLong("update_manual_started");
         if (manualStarted > 0) {
             Result completed = repository.isChecking() ? null : repository.resultSince(manualStarted);

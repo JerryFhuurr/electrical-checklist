@@ -126,7 +126,7 @@ public class SettingsTest {
     @Test public void largestFontWrapsLongResponsesAndKeepsSourceNotesInformational() {
         instrumentation.runOnMainSync(() -> new DisplaySettings(context).setFontChoice(4));
         start(); onView(withContentDescription("Choose aircraft from Airbus")).perform(scrollTo(), click());
-        onView(withContentDescription("Open checklists for Airbus A350")).perform(scrollTo(), click());
+        onView(withContentDescription("Open checklists for Airbus A380")).perform(scrollTo(), click());
         onView(withText("Before TOD")).perform(scrollTo(), click());
         onView(withText("IN FMS")).perform(scrollTo()).check(matches(not(isClickable())));
         onView(withContentDescription("DES PANEL OF THE FMS ACTIVE/PERF PAGE, INSERT/CHECK")).perform(scrollTo()).check(matches(isDisplayed()));
@@ -142,7 +142,7 @@ public class SettingsTest {
     @Test public void aboutShowsAuthorVersionAndOpensRepositoryLink() {
         settings(); onView(withId(R.id.about_button)).perform(scrollTo(), click());
         onView(withId(R.id.about_author)).check(matches(withText("Jerry Cao (JerryFhuurr)")));
-        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.20"))));
+        onView(withId(R.id.about_version)).check(matches(withText(startsWith("Version 1.21"))));
         AtomicReference<Intent> launched = new AtomicReference<>();
         Instrumentation.ActivityMonitor monitor = new Instrumentation.ActivityMonitor() {
             @Override public Instrumentation.ActivityResult onStartActivity(Intent intent) {

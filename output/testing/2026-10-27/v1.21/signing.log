@@ -1,0 +1,18 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=E-Checklist
+Signer #1 certificate SHA-256 digest: 85cddbb180d91649c82d4c178394d91008fc3e2933fffc5b6ea3986fc746e993
+Signer #1 certificate SHA-1 digest: e00b5876bf6c77ae72696e9f8b6b79ce6eb3f182
+Signer #1 certificate MD5 digest: ba2f589e922badd8b9f62fa5bd7b3ca0
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: f9805f2663cb7be95d55460aa35552c384c67e569fb201db046d06e5ca3d15ee
+Signer #1 public key SHA-1 digest: 78ab9740fe51b7fc964cdddff59054b783cbd001
+Signer #1 public key MD5 digest: 7ad5c2afb89df9842fa39b24d8825fa9
+Signed release: C:\Users\fhuur\Documents\Project\e-checklist\output\E-Checklist-v1.21-release.apk

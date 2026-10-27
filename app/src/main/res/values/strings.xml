@@ -170,5 +170,11 @@
     <string name="update_no_release">No published release is available yet.</string>
     <string name="update_no_apk">The latest release has no supported release APK. Check GitHub releases for details.</string>
     <string name="update_rate_limited">GitHub is limiting requests. Try again later or open GitHub releases.</string>
-    <string name="update_check_failed">Could not check for updates. Check your connection and try again.</string>
+    <string name="update_check_failed">Could not check GitHub. Try again or open GitHub releases.</string>
+    <string name="update_network_unavailable">No network is available to this app. Connect to Wi-Fi or mobile data and allow network access for E-Checklist in Android app settings.</string>
+    <string name="update_dns_error">Could not resolve GitHub. Check your DNS or allow network access for E-Checklist in Android app settings.</string>
+    <string name="update_timeout">GitHub did not respond in time. Try again or open GitHub releases.</string>
+    <string name="update_secure_error">Could not connect securely to GitHub. Check the device date, time and network certificate settings.</string>
+    <string name="app_network_settings">App network settings</string>
+    <string name="update_settings_unavailable">Android app settings are unavailable on this device.</string>
 </resources>

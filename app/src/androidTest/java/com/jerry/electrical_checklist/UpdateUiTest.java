@@ -240,6 +240,45 @@ public class UpdateUiTest {
         onView(withId(R.id.update_status)).check(matches(withText(R.string.update_no_newer)));
         assertEquals(3, calls.get());
     }
+    @Test public void blockedNetworkAndDnsFailuresOfferAppSettingsAndSurviveRotation() {
+        startMain(); completed(); about();
+        for (Status failure : new Status[]{Status.NETWORK_UNAVAILABLE, Status.DNS_ERROR}) {
+            answer.set(Result.of(failure));
+            onView(withId(R.id.check_updates_button)).perform(scrollTo(), click()); completed();
+            onView(withId(R.id.update_status)).check(matches(withText(failure == Status.DNS_ERROR
+                    ? R.string.update_dns_error : R.string.update_network_unavailable)));
+            onView(withId(R.id.app_network_settings_button)).perform(scrollTo()).check(matches(isDisplayed()));
+            recreate(); onView(withId(R.id.app_network_settings_button)).perform(scrollTo()).check(matches(isDisplayed()));
+        }
+        AtomicReference<Intent> opened = new AtomicReference<>();
+        Instrumentation.ActivityMonitor monitor = new Instrumentation.ActivityMonitor() {
+            @Override public Instrumentation.ActivityResult onStartActivity(Intent intent) {
+                if (android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS.equals(intent.getAction())) {
+                    opened.set(intent); return new Instrumentation.ActivityResult(0, null);
+                }
+                return null;
+            }
+        };
+        instrumentation.addMonitor(monitor);
+        try { onView(withId(R.id.app_network_settings_button)).perform(scrollTo(), click()); }
+        finally { instrumentation.removeMonitor(monitor); }
+        assertNotNull(opened.get());
+        assertEquals("package:" + context.getPackageName(), opened.get().getDataString());
+        answer.set(Result.available(new Release("1.0", GitHubReleaseClientTest.APK)));
+        onView(withId(R.id.check_updates_button)).perform(scrollTo(), click()); completed();
+        onView(withId(R.id.update_status)).check(matches(withText(R.string.update_no_newer)));
+        onView(withId(R.id.app_network_settings_button)).check(matches(withEffectiveVisibility(Visibility.GONE)));
+    }
+    @Test public void timeoutAndCertificateFailuresHaveSpecificMessages() {
+        startMain(); completed(); about();
+        for (Status failure : new Status[]{Status.CONNECTION_TIMEOUT, Status.SECURE_CONNECTION_ERROR}) {
+            answer.set(Result.of(failure));
+            onView(withId(R.id.check_updates_button)).perform(scrollTo(), click()); completed();
+            onView(withId(R.id.update_status)).check(matches(withText(failure == Status.CONNECTION_TIMEOUT
+                    ? R.string.update_timeout : R.string.update_secure_error)));
+            onView(withId(R.id.check_updates_button)).check(matches(isEnabled()));
+        }
+    }
     @Test public void promptActionsRemainVisibleInDayLandscapeAndNightPortrait() throws Exception {
         startMain(); completed(); answer.set(Result.available(release()));
         onView(withId(R.id.settings_button)).perform(click());

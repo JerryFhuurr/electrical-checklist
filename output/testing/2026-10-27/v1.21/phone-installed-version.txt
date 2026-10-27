@@ -1,0 +1,4 @@
+versionCode=23 minSdk=28 targetSdk=37
+    versionName=1.21
+      android.permission.INTERNET: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true

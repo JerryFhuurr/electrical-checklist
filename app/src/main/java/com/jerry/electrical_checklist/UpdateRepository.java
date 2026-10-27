@@ -3,6 +3,8 @@ package com.jerry.electrical_checklist;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.net.ConnectivityManager;
+import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -24,7 +26,13 @@ final class UpdateRepository {
     private boolean checking;
     private Result lastResult;
     private long completedAt;
-    UpdateRepository(Context context) { this(new UpdatePreferences(context), new GitHubReleaseClient(), System::currentTimeMillis); }
+    UpdateRepository(Context context) {
+        this(new UpdatePreferences(context), () -> {
+            ConnectivityManager network = context.getSystemService(ConnectivityManager.class);
+            if (network != null && network.getActiveNetwork() == null) return Result.of(Status.NETWORK_UNAVAILABLE);
+            return new GitHubReleaseClient().call();
+        }, System::currentTimeMillis);
+    }
     UpdateRepository(UpdatePreferences preferences, Callable<Result> source, LongSupplier clock) {
         this.preferences = preferences; this.source = source; this.clock = clock;
     }
@@ -42,7 +50,10 @@ final class UpdateRepository {
         worker.execute(() -> {
             Result result;
             try { result = source.call(); }
-            catch (Exception error) { result = Result.of(Status.ERROR); }
+            catch (Exception error) {
+                Log.w("UpdateCheck", "GitHub update check failed", error);
+                result = Result.of(UpdateFailure.classify(error));
+            }
             preferences.record(result, now());
             Result response = result;
             main.post(() -> finish(response));
